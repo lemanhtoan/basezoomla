@@ -1,0 +1,346 @@
+.pdg_sectionfrm{
+	margin:0px;
+	padding:0px;
+}
+#pdg-status,#pdg-stage,#pdg-scriptname{display:none;}
+.pdg-flat-input,.pdg-flat-input-focus
+{
+	border: 1PX SOLID #B1B1B1;
+	background-color:#FBFBFB;
+	padding:2px;
+}
+
+.pdg-flat-input-focus{
+	border: 1PX SOLID #333333;
+	background-color:#FFFFFF;
+	padding:2px;
+}
+
+#page-styles{ /*Overall font useage*/
+	font-family: Helvetica, Arial, FreeSans, sans-serif;
+	font-size: 12px;
+}
+
+#page-styles hr {border: none 0;
+border-top: 1px solid #8F9090;/*the border*/
+height: 1px;/*whatever the total width of the border-top and border-bottom equal*/
+} 
+
+#page-styles .pdgnav {
+font-size: 10px;
+margin-left: 0px; 
+margin-top: 0px; 
+border-top-width: 0; 
+border-left-width: 0; 
+color:#ffffff;
+background-color:#0982C4;
+}
+
+#pdgcopynotice{
+	filter:alpha(opacity=50);
+	-moz-opacity:.50;
+	opacity:.50;
+	text-align:right;
+	font-family: Arial; 
+	font-size: 10px;
+	color:#FFFFFF;
+	margin-right:7px;
+}
+
+#page-styles .pdgdata1 {
+background-color:#EEEEEE;
+vertical-align:middle;
+border-bottom:1PX SOLID #D4D4D4;
+padding:2px;
+color:#000000; }
+
+#page-styles .pdgdata2 {
+background-color:#E8E8E8;
+vertical-align:middle;
+border-bottom:1PX SOLID #D4D4D4; 
+padding:2px}
+
+#page-styles .pdgnote {
+font-family: "Trebuchet MS", sans-serif;
+font-size: 12px;
+font-style:italic;
+color:#0066FF;
+}
+#page-styles .pdgheader .pdgnote{/*Notes in headers should be off white*/
+	color:#e2e2e2 !important;
+}
+
+#page-styles a.pdgmainnav {
+font-size: 16px;
+font-weight: bold;
+color: #0982C4;}
+
+#page-styles a.pdgmainnav:link {
+font-size: 16px;
+font-weight: bold;
+color: #0982C4;}215FFD
+
+#page-styles a.pdgmainnav:visited {
+font-size: 16px;
+font-weight: bold;
+color: #0982C4;}
+
+#page-styles a.pdgmainnav:hover {
+font-size: 16px;
+font-weight: bold;
+color: #0982C4;}
+
+#page-styles .pdgbody {
+font-size: 10px;}
+
+#page-styles .pdgheader {
+	background-image:url(./../images/section-header2.gif);
+	background-repeat:repeat-x;
+	height:32px;
+	overflow:hidden;
+	padding:0px !Important;
+	margin:0px !Important;
+}
+#page-styles .pdgheader B
+{
+	display:block;
+	height:24px !Important;
+	overflow:hidden;
+	color: #F5F5F5;
+	line-height:22px;
+	padding-top:0px !Important;
+	padding-bottom:0px !Important;
+	padding-left:4px;
+	padding-top:4px;
+	font-size:12px;
+	border-left: 1PX SOLID #000000;
+	border-right: 1PX SOLID #000000;
+	font-weight:normal;
+	font-family: "Trebuchet MS", sans-serif;
+}
+#page-styles .nopdgheader {
+	display:none;
+}
+
+#page-styles .pdgheader2{/*Used on email page*/
+
+	border-bottom: 1PX SOLID #5F6D80;
+}
+
+/*
+	we are using these subheaders on the
+	adminaccessform
+*/
+#page-styles .pdgsubheaders .pdgheader{
+	background:none;
+	background-color:#5F6D80;
+	border:0px;
+	border-bottom: 1PX SOLID;
+	padding:4px !Important;
+	font-weight:bold !Important;
+	font-family: "Trebuchet MS", sans-serif;	
+	border-color: #C1CCD9;
+	margin-bottom:8px;
+	color:#FFFFFF;
+}
+
+#page-styles .pdgsubheaders .pdgdata2{
+	padding:4px !Important;
+	background-color:#E5EBEF;
+	text-align:left;
+}
+#page-styles .pdgsubheaders .pdgdata1{
+	padding:4px !Important;
+	background-color:#FFFFFF;
+	text-align:left;
+}
+
+
+#page-styles .pdgmargin {vertical-align:top;}
+
+#page-styles .pdgnavdata {
+font-size: 12px;
+vertical-align:top; 
+text-align:left;
+color: #ffffff;}
+
+#page-styles .pdgcopy {
+font-family: Arial; 
+font-size: 10px;
+color: #646464;
+}
+
+#page-styles .divborder {
+border-width: 2px;
+border-style: solid;
+border-color: #C1CCD9;
+width: 90%;
+}
+
+#page-styles td {
+font-size: 12px;
+vertical-align:top}
+
+#page-styles .pdgnavlink {
+font-size: 11px;
+color:#ffffff;
+text-decoration:none;}
+
+#page-styles .pdgnavlink:visited {
+font-size: 11px;
+color:#ffffff;
+text-decoration:none;}
+
+#page-styles .pdgnavlink:hover {
+font-size: 11px;
+color:#ffffff;
+text-decoration:underline;}
+
+#page-styles a {
+font-size: 12px;
+text-decoration:none;
+color:#215FFD;
+}
+
+#page-styles a:visited {
+font-size: 12px;
+text-decoration:none;
+color:#215FFD;}
+
+#page-styles a:hover {
+font-size: 12px;
+text-decoration:underline;
+color:#0090FF;}
+
+#page-styles input.pdgbutton { 
+/*
+color: #0962c4; 
+font-size: 12px; 
+font-weight: bold;
+*/
+}
+
+/*Wrapper for editors*/
+.pdg-taeditor{
+	height:10px;/*Give it layout*/
+	/*overflow:visible;*/
+	margin-top:2px;
+}
+
+
+.pdg-taeditor TEXTAREA{
+	margin:0px;
+	/*padding:0px;*/
+}
+
+TEXTAREA.pdg-fullwidth
+{
+	width:99%;
+}
+
+.pdg-taeditor .pdg-htmeditlnk,.pdg-taeditor .pdg-htmeditlnk:hover{
+	width:22px;
+	height:99%;
+	margin:0px;
+	padding:0px;
+	display:block;
+	border: 1PX SOLID #767D87;
+	background-color: #979DA4;
+	background-image:url(./../../images/icons/edit_icon_cold.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.pdg-taeditor{
+	border-collapse:collapse;	
+}
+/*.pdg-talnktd{
+	width:65px !important;
+	margin:0px;
+	padding:0px;
+	border: 1PX SOLID #767D87;
+	background-color: #979DA4;
+	background-image:url(./../../images/icons/edit_icon_cold.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+}*/
+
+.pdg-edtlnktd,.pdg-edtlnktd-hover{
+	margin:0px;
+	padding:0px;
+	border: 1PX SOLID #767D87;
+	background-color: #979DA4;
+	background-image:url(./../../images/icons/edit_icon_cold.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+
+.pdg-edtlnktd-hover{
+	background-image:url(./../../images/icons/edit_icon_hot.png);
+	background-color: #BDC1C6;
+}
+
+.pdg-taeditor .pdg-htmeditlnk:hover{
+	background-image:url(./../../images/icons/edit_icon_hot.png);
+	background-color: #BDC1C6;
+}
+.pdg-htmeditlnk{
+	float: left; 
+	height: 100%;
+	/*position:absolute; 
+	left:0px; 
+	top:0px;
+	*/
+}
+
+/* Image uploader link*/
+#page-styles a.pdg-imageupload{
+	/*display:block;
+	float:left;*/
+	background-image:url(./../../images/famicons/folder_go.png);
+	background-repeat:no-repeat;
+	padding-left:22px;
+	margin-left:8px;
+	color:#215FFD;
+	cursor:pointer;
+	font-style:italic;
+}
+/* other misc styles */
+#page-styles .frmhidden{display:none;}/*added for hidden form pieces*/
+#page-styles .frmblk{margin:0px;padding:0px;}/*added for forms inside of tables*/
+#page-styles .fntsmaller{font-size:smaller;}/*added to replace font size=-1 tags*/
+#page-styles .fntsmall{font-size:small;}/*added to replace font size=-2 tags*/
+#page-styles .fntlarger{font-size:larger;}/*added to replace font size=+1 tags*/
+#page-styles .fntlarge{font-size:large;}/*added to replace font size=+2 tags*/
+#page-styles .centered{text-align:center;}/*added to replace center tags*/
+#page-styles .errortxt{color:#990000;}/*added to replace red font tags*/
+#page-styles .underlined{text-decoration:underline;}/*added to replace U tags - the underline should really not be used*/
+/* element effect styling */
+.pdg-sunken{
+	border-left-color:#4F657D;
+	border-right-color:#C1CCD9;
+	border-top-color:#000000;
+	border-bottom-color:#C1CCD9;
+}
+.pdg-raised{
+	border-right-color:#4F657D;
+	border-left-color:#C1CCD9;
+	border-bottom-color:#000000;
+	border-top-color:#C1CCD9;
+}
+.pdg-edge1{
+	border-width:1PX;
+	border-style:SOLID;
+}
+.pdg-edge2{
+	border-width:2PX;
+	border-style:SOLID;
+}
+/* table styling */
+TABLE.pdg-flattenborders{
+	border-collapse:collapse;
+}

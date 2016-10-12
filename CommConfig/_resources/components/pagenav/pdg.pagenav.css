@@ -1,0 +1,373 @@
+/*
+top-level navigation : tree
+secondary-level: tabs
+tertiary: menu-slider
+
+Section
+	PageTab (tabs)
+	PageSection ( menu slider)
+*/
+body {
+	margin:0;
+	padding:0;
+	background-color:transparent;	
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+
+#pdg-cshelp
+{
+	float:right;
+	display:block;
+	width:16px;
+	height:16px;
+	overflow:hidden;
+	background-image: url(images/cshelp.gif);
+	background-repeat:no-repeat;	
+	margin-right:6px;
+	margin-top:4px;
+	display:none;
+}
+#pdg-pagetoplinks
+{
+	display:none;
+}
+.pdg-pagetoplink
+{
+	float:left;
+	padding: 3px 3px 0px 14px;/* top right(6) bottom left(6) */
+	font-size: 12px;
+	background-image: url(images/slarrow.png);
+	background-position: 0px 4px;
+	background-repeat:no-repeat;	
+	color:#333333;
+	text-decoration:none;
+}
+.pdg-pagetoplink:hover{
+	color:#FFFFFF;
+}
+/*page-container : only one per page
+=============================================================================================*/
+#page-container{ 
+	margin:0px;
+    line-height:normal;
+	position:relative;
+}
+/*
+	tab-borders...
+*/
+#pct-borders {/*left border*/
+
+	position:relative;
+	height:2px;
+	overflow:hidden;
+	top:23px;
+	left:0px;
+	background-image: url(images/tabview_left_side.gif);
+	background-repeat:no-repeat;
+}
+#pct-borders DIV { /*right border*/
+
+	width:2px;
+	float:right;
+	height:2px;
+	background-color:#00FFFF;
+	overflow:hidden;
+	background-image: url(images/tabview_right_side.gif);
+	background-repeat:no-repeat;
+}
+
+
+#page-container-tabs ul {
+	margin:0;
+	padding:0px 0px 0;
+	list-style:none;
+	background: url(images/tab_bottom.gif) bottom repeat-x;
+	height: 23px;
+}
+#page-container-tabs ul li {
+	float: left;
+	text-align: center;
+	overflow: hidden;
+	margin-left: 0px;
+	margin-right:4px;
+	/*padding:0 0 0 -6px;*/
+}
+#page-container-tabs ul li a {
+	display: block;
+	padding: 0px 3px 0px 3px;/* top right(6) bottom left(6) */
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration:none;
+	color:#666666;
+}
+
+#page-container-tabs ul li a:active {
+	outline: none;
+}
+#page-container-tabs ul li a:focus {
+ 	-moz-outline-style: none;
+}
+		
+#page-container-tabs ul li a:hover {
+	color: #000000;
+}
+#page-container-tabs ul li.selected {
+
+}
+#page-container-tabs ul li.selected a {
+
+	padding-bottom: 8px;
+	color: #000000;
+	font-weight:bold;
+}
+
+#page-container-tabs li span.close,
+#page-container-tabs li span.loading {
+	background-repeat:no-repeat;
+	display: block;
+	overflow: hidden;
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin-right:-3px;
+}
+
+#page-container-tabs li span.close
+{
+	background-position: 0px 2px;
+	background-image: url(images/tab_close.gif);
+	cursor:pointer;
+}
+	
+#page-container-tabs li span.loading
+{
+	top: 2px;
+	background-image: url(images/tiny_red.gif);
+	background-position: 0px 2px;
+}
+
+/* Left piece of tab */
+#page-container-tabs ul li b {
+
+	display:block;
+	background: url(images/tab_left.gif) left top no-repeat;
+	width:6px;
+	height:21px;
+	overflow:hidden;
+	float:left;	
+}
+/* Right piece of tab */
+#page-container-tabs ul li div {
+
+	float:left;
+	padding-right:6px;
+	background: url(images/tab_right.gif) right top no-repeat;
+	height:21px;
+	overflow:hidden;	
+}
+#page-container-tabs ul li.selected b {
+
+	background: url(images/tab_left_sel.gif) left top no-repeat;
+	height:23px;
+}
+#page-container-tabs ul li.selected div {
+
+	height:23px;
+	background: url(images/tab_right_sel.gif) right top no-repeat;
+}
+
+/*page sections groupings
+=============================================================================================*/
+/*page-section-container 
+
+	-Defines left and right border of entire window-like container	
+*/
+div.page-sections-container{
+	border-left: 1PX SOLID #000000;
+	border-right: 1PX SOLID #000000;
+	background-color:#EEEEEE;
+}
+/*yui-content
+
+	yahoo tabview widget contents.
+	our tabview is actually containing the page-section menu and its associated sections...
+*/
+div.yui-content {
+
+}
+
+/*page-section-menu
+
+	container for a page-section (sliding) menu
+*/
+.page-sections-menu
+{
+	height:25px;
+	overflow:hidden;
+	position:relative;
+}
+.page-sections-menu DIV{ /*wrapper which Defines the background and height*/
+	height:25px;
+	overflow:hidden;
+	padding: 0px;
+	margin-left:1px;/*We move it over to accomodate the section border styling*/
+	margin-right:0px;
+	background-image:url(images/secondary_back.gif);
+	background-repeat:repeat-x;	
+}
+.page-sections-menu DIV DIV{ /*Acutal menu piece*/
+    line-height:normal;
+	position:relative;
+}
+.page-sections-menu DIV DIV ul {
+	margin:0;
+	padding:0px 0px 0;
+	list-style:none;
+	height: 19px;
+	margin-left:4px;
+	margin-top:4px;		
+	overflow:hidden;
+}
+.page-sections-menu DIV DIV ul li {
+	float: left;
+	/*background: url(images/testing/tab_right.gif) right top no-repeat;*/
+	text-align: center;
+	overflow: hidden;
+	margin-left: 0px;
+	margin-right:0px;
+	/*padding:0 0 0 -6px;*/
+}
+.page-sections-menu DIV DIV ul li a {
+	display: block;
+	padding: 0px 7px 0px 3px;/* top right(6) bottom left(6) */
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration:none;
+	color:#333333;
+	height:20px;
+}
+.page-sections-menu DIV DIV ul li a:hover {
+	color:#FFFFFF;
+}
+.page-sections-menu DIV DIV ul li.selected {
+	/*background: url(images/testing/tab_right.gif) right top no-repeat;*/	
+}
+.page-sections-menu DIV DIV ul li.selected a {
+	/*background: url(images/testing/tab_left.gif) left top no-repeat;*/
+	padding-bottom: 8px;
+	color: #FFFFFF;
+	font-weight:bold;
+}
+.page-sections-menu DIV DIV ul li a:active {
+	outline: none;
+}
+.page-sections-menu DIV DIV ul li a:focus {
+ 	-moz-outline-style: none;
+}
+.page-sections-menu DIV DIV ul li.seperator
+{
+	background:url(images/secondary_sep.gif);
+	background-repeat:no-repeat;
+	width:2px;
+	overflow:hidden;
+	height:17px;
+	margin-left:4px;
+	margin-right:4px;
+}
+/*page-section-pointer
+
+	little arrow that points at currently selected page-section
+*/
+.page-section-pointer,.page-section-pointer-cp
+{
+	position:absolute;
+	background:url(images/secondary_ptr.gif);
+	width:11px;
+	height:6px;
+	overflow:hidden;
+	top:45px;
+	left:0px;
+	z-index:99;
+}
+.page-section-pointer-cp{
+	top:20px;
+}
+
+
+/*page-sections ( contains the sections )
+
+	the client area of the window-like container....
+	
+	defines borders, padding etc....
+*/
+.page-section-frame{
+	border-bottom: 1PX SOLID #000000;
+	background-color:#EEEEEE;
+	/*min-height:300px;*/
+}
+.page-sections{
+	border-top:1PX SOLID #000000;
+	border-bottom: 1PX SOLID #000000;
+	padding: 4px;
+	background-color:#EEEEEE;
+	min-height:200px;
+}
+.page-section{display:none;}
+
+.page-section-visible{display:block;height:auto !important;overflow:hidden}
+
+
+.pdg-longcontent PRE{
+	display:block;
+	padding:8px;
+	margin:0px;
+	overflow:visible;
+	min-height:100px;
+	/*height:900000px;*/
+}
+
+.pdg-longcontent {
+	background-color:#FFFFFF;
+	max-height:500px;
+	overflow:scroll;
+}
+/* Child page class*/
+/* Child pages do not show the full nav
+
+*/
+.pdg-childpage #page-container{ 
+	margin:0px;
+    line-height:normal;
+}
+.pdg-childpage #page-container-tabs
+{
+	display:none;
+}
+
+.pdg-childpage .page-sections-container{
+	border:0px;
+}
+.pdg-childpage .page-section-pointer{
+	position:absolute;
+	background:url(secondary_ptr.gif);
+	width:11px;
+	height:6px;
+	overflow:hidden;
+	top:20px;
+	left:0px;
+}
+
+.pdg-childpage .page-sections{
+	border-top:1PX SOLID #000000;
+	border-bottom: 0PX;
+	padding: 8px;
+	background-color:#EEEEEE;
+	min-height:300px;
+}
+
+body.pdg-childpage{background-color:#EEEEEE !Important;}

@@ -1,0 +1,46 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1184699-->                                    
+<!--secureform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Secure (SSL) Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Secure (SSL) Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+	<input type="hidden" name="shopperlogurl" value="!---SHOPPER_LOG_URL---">
+	<input type="hidden" name="sslcheckouttemplatefile" value="!---SSL_CHECKOUT_TEMPLATE---">
+	<input type="hidden" name="sslverifytemplatefile" value="!---SSL_VERIFY_TEMPLATE---">
+	<input type="hidden" name="sslthankyoutemplatefile" value="!---SSL_THAKYOU_TEMPLATE---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Secure (SSL) Options</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Complete URL to a SSL Secure
+				<!---ADMIN_HEADER_LABEL--->
+				Executable:</td>
+			<td class="pdgdata2"><input type="text" name="secureshopperurl" value="!---SECURE_SHOPPER_URL---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Do Not Show the 'Check-out' (non-ssl) Button on Basket: </td>
+			<td class="pdgdata2"><input type="checkbox" name="donotshowcheckoutbutton" !---DO_NOT_SHOW_CHECKOUT--- value="yes" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><hr>
+				<input type="submit" class="pdgbutton" name="changesecureoptions" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><span class="pdgnote"><b>** Note: PDG strongly advises that you utilize GPG Encryption software to encrypt sensitive data that will be stored on your web server. This is in addition to utilizing an SSL Digital Certificate to encrypt sensitive data as it is being transmitted from your customer's browser to the web server. For details, please visit <a href="http://www.pdgsoft.com/ecommerce.htm#Doc" target="_blank" >http://www.pdgsoft.com/ecommerce.htm#Doc.</a> </b><br>
+				</span> &nbsp; </td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

@@ -1,0 +1,74 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1534543-->                                    
+<!-- aimform.htm -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Authorize.Net Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Authorize.Net Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" id=form1 name=form1>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b> Authorize.Net Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Authorize.Net Version:</td>
+			<td width=50% class="pdgdata2"><select name="aimversion">
+					<!---AIM_VERSION--->
+				</select></td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Authorize.Net Check Processing:</td>
+			<td width=50% class="pdgdata1"><select name="aimcheck">
+					<!---AIM_CHECK--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Authorize.Net account login ID:</td>
+			<td class="pdgdata2"><input type=text name="aimlogin" value="!---AIM_LOGIN---" size=50 maxlength=20></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> Authorize.Net account password:<br>
+				<div class="pdgnote"><b>Note:</b> Enter if no Transaction Key is designated in your Authorize.Net Merchant Terminal settings.</div></td>
+			<td valign=top class="pdgdata1"><input type=text name="aimpassword" value="!---AIM_PASSWORD---" size=50 maxlength=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Authorize.Net Transaction Key:<br>
+				<div class="pdgnote"><b>Note:</b> Enter if designated in your Authorize.Net Merchant Terminal settings. This option is only available for Authorize.Net versions. </div></td>
+			<td valign=top class="pdgdata2"><input type=text name="aimtranskey" value="!---AIM_TRANSKEY---" size=50 maxlength=16></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> Authorize.Net Gateway URL:</td>
+			<td class="pdgdata1"><input type=text name="aimserver" value="!---AIM_SERVER---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Authorize.Net authorization type:</td>
+			<td class="pdgdata2"><select name="aimauthtype">
+					<!---AIM_AUTHTYPE--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> Authorize.Net MD5 Hash:</td>
+			<td class="pdgdata1"><input type=text name="aimhash" value="!---AIM_MD5HASH---" size=50 maxlength=20></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">File to which Authorize.Net transactions are logged: </td>
+			<td valign=top class="pdgdata2"><input type=text name="aimlogfile" value="!---AIM_LOGFILE---" size=50></td>
+		</tr>
+		<tr>
+			<td colspan=3><hr></td>
+		</tr>
+		<tr>
+			<td align=center colspan=3><input type="submit" class="pdgbutton" name="changeaim" value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3><hr></td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

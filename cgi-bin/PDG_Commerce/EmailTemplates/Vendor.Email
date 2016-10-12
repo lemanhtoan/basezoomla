@@ -1,0 +1,16 @@
+<sitename> Order <invoicenumber>
+Order <invoicenumber>
+For <contactname>:
+
+
+<!---ORDER--->
+
+
+SHIP TO:
+<!---SHIPTO--->
+
+
+BILL TO:
+<!---BILLTO--->
+
+<!---PASSTHROUGH--->

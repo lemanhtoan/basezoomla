@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<AddressValidationRequest>
+	<Request>
+		<TransactionReference>
+			<CustomerContext>customer IP data</CustomerContext>
+			<XpciVersion>1.0001</XpciVersion>
+		</TransactionReference>
+		<RequestAction>AV</RequestAction>
+	</Request>
+	<Address>
+		<City>city</City>
+		<StateProvinceCode>state</StateProvinceCode>
+		<PostalCode>zip</PostalCode>
+	</Address>
+</AddressValidationRequest>

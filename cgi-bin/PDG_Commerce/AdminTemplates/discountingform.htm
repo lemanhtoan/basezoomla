@@ -1,0 +1,63 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1057483-->                                    
+<!--discountingform.htm-->
+<title>PDG Commerce Order Discounting Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Order Discounting Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table width=100% border=0 cellspacing=0 cellpadding=5>
+		<tr>
+			<td class="pdgheader"><b>Order Subtotal Discounts</b></td>
+		</tr>
+	</table>
+	<table width="100%" border="0">
+		<!---DISPLAY_ALL_DISCOUNTS--->
+	</table>
+	<table width="100%" border="0" cellspacing=0 cellpadding=5>
+		<tr>
+			<td align=center class="pdgheader"><b>Subtotal Discounts Management</b></td>
+		</tr>
+		<tr>
+			<td align=center class="pdgdata1"><br>
+				Copy
+				<select name=srcdisccustcat>
+					<option value=-1> Select Customer Category</option>
+					<!---CUST_CAT_SELECT_LIST--->
+				</select>
+				to <b>ALL</b> other order subtotal discounts
+				<input type="submit" class="pdgbutton" name=copycustcatdiscforsubtotal value="Copy Selected Subtotal Discount To All Other Subtotal Discounts">
+				<br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td align=center class="pdgdata2"><br>
+				Copy from
+				<select name=copysrcdisccustcat>
+					<option value=-1>Select Customer Category</option>
+					<!---CUST_CAT_SELECT_LIST--->
+				</select>
+				subtotal discount to
+				<select name=copydestdisccustcat>
+					<option value=-1>Select Customer Category</option>
+					<!---CUST_CAT_SELECT_LIST--->
+				</select>
+				<br>
+				<input type="submit" class="pdgbutton" name=copysinglecustcatdiscforsubtotal value="Copy Selected Subtotal Discount Table">
+				<br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td align=center class="pdgdata1"><br>
+				<input type="submit" class="pdgbutton" name=setdiscforsubtotal value="DELETE ALL Subtotal Discount Tables">
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

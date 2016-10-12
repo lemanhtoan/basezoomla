@@ -1,0 +1,370 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--6225633-->                                    
+<!--ordermainform.htm-->
+<title>Orders and Reports</title>
+<script LANGUAGE="JavaScript">
+function CheckDBSource(){
+	if( document.pdgorderform.sourcefile[0].checked)
+	{
+		if( (document.pdgorderform.orderaction[2].checked) ||
+			(document.pdgorderform.orderaction[3].checked) ||
+			(document.pdgorderform.orderaction[4].checked) )
+		{
+			alert("You have selected the wrong DataBase Source For the Report.\n Commerce is resetting the Database Source to Commerce DB");
+		document.pdgorderform.sourcefile[0].checked=false;
+		document.pdgorderform.sourcefile[1].checked=true;
+		return(false);
+		}
+	}
+	return(true);
+}
+
+
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Orders and Reports</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<li><a href="javascript:void(0)" tsid="orders-section">Orders</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="reports-section">Reports</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="logging-section">Logging Settings</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-close.htm--->
+<!--cmt: reports-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="orders-section" class="page-section">
+<form method="post" action="!---MODULE_NAME---" name="pdgorderform">
+<table width=100%>
+<tr>
+	<td>
+		<table>
+			<tr><td colspan=2>Order Type:</td></tr>
+			<tr><td>
+			<input type="radio" name="listtype" value="new" !---ORDER_TYPE_NEW_CHECKED--- > New Orders<br>
+			<input type="radio" name="listtype" value="archived" !---ORDER_TYPE_ARCHIVE_CHECKED--- > Archived Orders<br>
+			<input type="radio" name="listtype" value="all" !---ORDER_TYPE_ALL_CHECKED--- > All Orders<br>
+			Or <br>
+			Invoice: <input type="text" name="listinvoice" value="!---ORDER_TYPE_INVOICE---" size="6">
+			</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table>
+			<tr><td>Filter by Date:</td></tr>
+			<tr><td>
+			Start:
+			<select name="omStartMonth">
+				<!---START_ORDER_MONTH_LIST--->
+			</select>
+			<select name="omStartDay">
+				<!---START_ORDER_DAY_LIST--->
+			</select>
+			<select name="omStartYear">
+				<!---START_ORDER_YEAR_LIST--->
+			</select>
+			</td>
+			</tr>
+			<tr><td>
+			End:
+			<select name="omEndMonth">
+				<!---END_ORDER_MONTH_LIST--->
+			</select>
+			<select name="omEndDay">
+				<!---END_ORDER_DAY_LIST--->
+			</select>
+			<select name="omEndYear">
+				<!---END_ORDER_YEAR_LIST--->
+			</select>
+			</td></tr>
+			<tr>
+			<td>
+				<input type=checkbox name=usedatefilter value=yes !---USE_DATE_FILTER_CHECK--- > Use Date Range Filter
+			</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table>
+			<tr><td colspan=2>Filter by Pay Status:</td></tr>
+			<tr><td>
+				<select name=payfilter><!---PAY_STATE_SELECT_OPT---></select>
+			</td>
+			</tr>
+			<tr>
+			<td>
+			<input type=checkbox name=usepayfilter value=yes !---USE_PAY_FILTER_CHECK--- > Use Pay Filter
+			</td></tr>
+		</table>
+	</td>
+	<td>
+		<table>
+			<tr><td colspan=2>Filter by Ship Status:</td></tr>
+			<tr><td>
+				<select name=shipfilter><!---SHIP_STATE_SELECT_OPT---></select>
+			</td>
+			</tr>
+			<tr>
+			<td>
+			<input type=checkbox name=useshipfilter value=yes !---USE_SHIP_FILTER_CHECK--- > Use Ship Filter
+			</td></tr>
+		</table>
+	</td>
+	</tr>	
+	<tr>
+	<td colspan=4 align=center>
+		<input type=submit name=displayreportmenu value="Display Filtered Order List">
+	</td>
+	</tr>
+</table>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+		<td colspan=7>
+		<hr>
+		</td>
+		</tr>
+		<tr>
+		<td>Invoice</td>
+		<td>Date</td>
+		<td>Name</td>
+		<td>Amount</td>
+		<td>Payment</td>
+		<td>Ship</td>
+		<td>&nbsp;</td>
+		</tr>
+		<tr>
+		<td colspan=7>
+		<hr>
+		</td>
+		</tr>
+
+		<!---ORDER_MATRIX--->
+		
+		<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><input type="submit" name="updateallordermanager" value="Update All"></td>
+		</tr>
+</table>
+	
+	
+</form>
+<center><!---ORDER_MATRIX_PREVIOUS_PAGE---><!---ORDER_MATRIX_NEXT_PAGE---></center>
+</div>
+<!--cmt: reports-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="reports-section" class="page-section">
+<form method="post" action="!---MODULE_NAME---" name="pdgorderform" OnSubmit="return(CheckDBSource());">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2><b><!---ORDER_SECURE_MSG---></b></td>
+		</tr>
+		<tr>
+			<td colspan=2><span class="pdgnote">Note: You must use either database logging or an order log file for Commerce order reports to function.</span> </td>
+		</tr>
+		<tr>
+			<td width=100% align=center valign=top colspan=2><table border=1 width=80%>
+					<tr>
+						<td colspan=2  align=left  class="pdgheader"><b>Step 1:</b> Select Data Source </td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="sourcefile" !---LOG_FILE_SELECTED--- value="orderlog">
+							Get Data From Order Log File </td>
+						<td><input type="radio" name="sourcefile"
+		!---COMM_DB_SELECTED---  value="comdb">
+							Get Data From Commerce Database <br>
+							<span class=pdgnote>Commerce Database Must Be Selected for Sales Reports and Show Order Invoices By User Name</span> </td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td width=100% align=center valign=top colspan=2><table border=1 width=80%>
+					<tr>
+						<td colspan=3 align=left  class="pdgheader"><b>Step 2:</b> Select Date Range </td>
+					</tr>
+					<tr>
+						<td><input type="radio" name=orderrange value="today" checked>
+							Today's Orders </td>
+						<td><input type="radio" name=orderrange value="thisweek">
+							This Week's Orders </td>
+						<td><input type="radio" name=orderrange value="userrange">
+							Start date:
+							<select name="tmStartMonth">
+								<!---ORDER_MONTH_LIST--->
+							</select>
+							<select name="tmStartDay">
+								<!---ORDER_DAY_LIST--->
+							</select>
+							<select name="tmStartYear">
+								<!---ORDER_YEAR_LIST--->
+							</select>
+							<br>
+&nbsp;&nbsp;&nbsp;&nbsp;End date:
+							<select name="tmEndMonth">
+								<!---ORDER_MONTH_LIST--->
+							</select>
+							<select name="tmEndDay">
+								<!---ORDER_DAY_LIST--->
+							</select>
+							<select name="tmEndYear">
+								<!---ORDER_YEAR_LIST--->
+							</select>
+							<br>
+						</td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td valign=middle align=center width=100% colspan=2><br>
+				<span class="pdgnote">*You have two (2) different kinds of reports to choose from for the next step</span> <br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td align=center valign=top width=50%><table border=1 width=80% cellpadding=5>
+					<tr>
+						<td colspan=2  align=left  class="pdgheader"><b>Step 3a:</b> Show Order Invoices </td>
+					</tr>
+					<tr>
+						<td width=100%><input type="radio" name=orderaction value="orders" checked >
+							All Orders <br>
+							<input type="radio" name=orderaction value="invoice">
+							Invoice Number:
+							<input type="text" name="tmInvoiceNum">
+							<br>
+							<input type="radio" name=orderaction value="custorder">
+							User Name:
+							<input type="text" name="username" value="" >
+						</td>
+					</tr>
+					<tr>
+						<td width=100%> Display One at a Time:
+							<input type="checkbox" name="displaystart" value="0">
+							<br>
+							Display Invoice Header:
+							<input type="checkbox" name="displayheader" value="yes">
+						</td>
+					</tr>
+				</table></td>
+			<td valign=middle align=center width=100%><table border=1 width=80% cellpadding=5>
+					<tr>
+						<td colspan=2 align=left  class="pdgheader"><b>Step 3b:</b> Show Sales Reports </td>
+					</tr>
+					<tr>
+						<td width=100%><input type="radio" name=orderaction  value="prodsales" >
+							Product Qty Sales <br>
+							<input type="radio" name=orderaction  value="affiliatesales">
+							Sales Totals <br>
+						</td>
+					</tr>
+					<tr>
+						<td> Graphical Display:
+							<input type="checkbox" name="displaygraph" value="yes">
+							<br>
+							Display Description:
+							<input type="checkbox" name="displaydesc" value="yes">
+							* <br>
+							Affiliates Only:
+							<input type="checkbox" name="affiliatesonly" value="yes">
+							** <br>
+							Display Invoice Header:
+							<input type="checkbox" name="displayheader" value="yes">
+							<br>
+							<br>
+							<span class=pdgnote>*'Description' is Only for Product Sales Reports</span> <br>
+							<span class=pdgnote>**'Affiliates Only' is Only for Sales Totals</span> </td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td  colspan=2 align=center><br>
+				<input type="submit" class="pdgoitab pdgbutton" name=orderreport value="Display Order Report">
+				<!---TODAYS_ORDER_FEILDS--->
+				<!---THIS_WEEKS_ORDER_FEILDS--->
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+</div>
+<!--cmt: logging-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="logging-section" class="page-section">
+<form method="post" action="!---MODULE_NAME---" name=pdgordersetform>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class=pdgdata2>Log Orders to Database:<br>
+				<span class="pdgnote">Note: You must specify database logging for database order reports.</span> </td>
+			<td class=pdgdata2><input type="checkbox" name="logtocommdb" !---LOG_ORDER_TO_COMM_DB--- value="yes" ></td>
+		</tr>
+		<tr>
+			<td class=pdgdata1>Order Log text File:<br>
+				<span class="pdgnote">Note: You must specify an order log file for order log reports.</span> </td>
+			<td class=pdgdata1><input type="text" name="orderlogfile" value="!---ORDER_LOG_FILE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class=pdgdata2>Order Log CSV File:</td>
+			<td class=pdgdata2><input type="text" name="ordercsvfile" value="!---ORDER_CSV_FILE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class=pdgdata1>Order Log XML File:</td>
+			<td class=pdgdata1><input type="text" name="orderxmlfile" value="!---ORDER_XML_FILE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class=pdgdata2>CSV Text Delimiter:</td>
+			<td class=pdgdata2><input type="text" name="ordertextcsvdelimiter" value="!---CSV_TEXT_DELIM---" size="5"></td>
+		</tr>
+		<tr>
+			<td class=pdgdata1>CSV Delimiter:</td>
+			<td class=pdgdata1><input type="text" name="ordercsvfiledelimiter" value="!---CSV_DELIMITER---" size="5"></td>
+		</tr>
+		<tr>
+			<td class=pdgdata2>Invoice Number Prefix:</td>
+			<td class=pdgdata2><input type="text" name="invoicenumberformat" value="!---INVOICE_PREFIX---" size="5" maxlength="20"></td>
+		</tr>
+		<tr>
+			<td class=pdgdata1>Invoice Header File:</td>
+			<td class=pdgdata1><input type="text" name="invoiceheader" value="!---INVOICE_HEADER---" size="50" ></td>
+		</tr>
+		<tr>
+			<td colspan=2  class=pdgdata2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 class=pdgdata1><input type="checkbox" name="relationalcsv" !---RELATIONAL_CSV--- >
+				Create Relational CSV File. <span class=pdgnote>*Adds invoice number to each record</span> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class=pdgdata2><input type="checkbox" name="onelinecsv" !---ONE_LINE_CSV--- >
+				Create One Line CSV File. </td>
+		</tr>
+		<tr>
+			<td colspan=2 class=pdgdata1><input type="checkbox" name=onelinedescincsv !---ONE_LINE_DESC_IN_CSV--- >
+				Add One-Line Product Description to CSV File. (does not work with One Line CSV) </td>
+		</tr>
+		<tr>
+			<td colspan=2 class=pdgdata2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2  class=pdgdata1><span class=pdgnote> Note: Maintaining any of the log files above is an optional service in PDG Commerce. If you elect to log orders from your web store, PDG strongly advises that you utilize GPG Encryption Software to encrypt such data. For details please visit <a href=http://www.pdgsoft.com/keyman_encryption.htm taget="_blank"> http://www.pdgsoft.com/keyman_encryption.htm.</a> </span> </td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" class=pdgdata2><br>
+				<input type="submit" class="pdgbutton"  name="changeorderlogging" value="Submit Changes">
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-ftr.htm--->

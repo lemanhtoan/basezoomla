@@ -1,0 +1,75 @@
+<ul id="side-menu" class="nav">
+    <?php foreach ($this->container as $page) : ?>
+        <?php if (! $this->navigation()->accept($page, false)) continue ?>
+
+        <?php
+        $secondLevelPages = array();
+        foreach ($page as $secondLevelpage) {
+            if ($this->navigation()->accept($secondLevelpage, false)) {
+                $secondLevelPages[] = $secondLevelpage;
+            }
+        }
+        ?>
+
+        <?php if (! $secondLevelPages && $page->getHref() === '#') continue ?>
+
+        <li <?php if ($page->isActive(true)) echo 'class="active"' ?>>
+            <a href="<?php echo $page->getHref() ?>" <?php if ($page->isActive()) echo 'class="active"' ?>>
+                <?php if ($page->get('icon')) : ?>
+                    <i class="<?php echo $page->get('icon') ?>"></i>
+                <?php endif ?>
+
+                <?php echo $this->translate($page->getLabel()) ?>
+
+                <?php if ($secondLevelPages) : ?>
+                    <span class="fa arrow"></span>
+                <?php endif ?>
+            </a>
+
+            <?php if ($secondLevelPages) : ?>
+                <?php
+                $thirdLevelPages = array();
+                foreach ($secondLevelpage as $thirdLevelPage) {
+                    if ($this->navigation()->accept($thirdLevelPage, false)) {
+                        $thirdLevelPages[] = $thirdLevelPage;
+                    }
+                }
+                ?>
+
+                <ul class="nav nav-second-level <?php if (! $page->isActive(true)) echo 'collapse' ?>">
+                    <?php foreach ($secondLevelPages as $secondLevelpage) : ?>
+                        <li <?php if ($secondLevelpage->isActive(true)) echo 'class="active"' ?>>
+                            <a href="<?php echo $secondLevelpage->getHref() ?>" <?php if ($secondLevelpage->isActive()) echo 'class="active"' ?>>
+                                <?php if ($secondLevelpage->get('icon')) : ?>
+                                    <i class="<?php echo $secondLevelpage->get('icon') ?>"></i>
+                                <?php endif ?>
+
+                                <?php echo $this->translate($secondLevelpage->getLabel()) ?>
+
+                                <?php if ($thirdLevelPages) : ?>
+                                    <span class="fa arrow"></span>
+                                <?php endif ?>
+                            </a>
+
+                            <?php if ($thirdLevelPages) : ?>
+                                <ul class="nav nav-third-level <?php if (! $secondLevelpage->isActive(true)) echo 'collapse' ?>">
+                                    <?php foreach ($thirdLevelPages as $thirdLevelpage) : ?>
+                                        <li>
+                                            <a href="<?php echo $thirdLevelpage->getHref() ?>" <?php if ($thirdLevelpage->isActive()) echo 'class="active"' ?>>
+                                                <?php if ($thirdLevelpage->get('icon')) : ?>
+                                                    <i class="<?php echo $thirdLevelpage->get('icon') ?>"></i>
+                                                <?php endif ?>
+
+                                                <?php echo $this->translate($thirdLevelpage->getLabel()) ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach ?>
+                                </ul>
+                            <?php endif ?>
+                        </li>
+                    <?php endforeach ?>
+                </ul>
+            <?php endif ?>
+        </li>
+    <?php endforeach ?>
+</ul>

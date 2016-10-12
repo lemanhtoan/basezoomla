@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<!---PDG_HEAD_INSERT--->
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+<!--  Inserted from document Templates/Top_Nav.html BEGIN-->
+<!---TOP_NAV--->
+<!--  Inserted from document templates/Top_Nav.html END-->
+
+	<h1>Advanced Search</h1>
+
+	<div class="form">
+	<form method="post" action="!---SCRIPT_NAME---" id="searchform">
+	<fieldset>
+	<legend>Search</legend>
+	<p>Use the fields below to search for specific products.</p>
+	<label for="keywords">keywords:<input type="text" name="keywords" tabindex="1" id="keywords" /></label>
+	*Tip - use words like &quot;and&quot;, &quot;or&quot; and &quot;not&quot; to narrow results
+	<label for="sku">sku/item #:<input type="text" name="sku" tabindex="2" id="sku" /></label>
+	<label for="pricerange">price Range:<select name="pricerange" tabindex="3" id="pricerange">
+          <option>Price Range</option>
+          <option value="&lt;50">Less then $50</option>
+          <option value="50-100">$50 to $100</option>
+          <option value="100-150">$100 to $ 150</option>
+          <option value="150-200">$150 to $200</option>
+          <option value="&gt;200">Greater then $200</option>
+        </select></label>
+	<label for="category">category:<select name="category" tabindex="4" id="category">
+          <!---LIST_CATEGORIES PDGCommTemplates/Header_Footer/Category_Select.html--->
+	</select></label>
+	<label for="sortkey">sort by:<select name="sortkey" tabindex="5" id="sortkey">
+          <option value="description">Description</option>
+          <option value="sku">Product Code</option>
+          <option value="price">Price</option>
+          <option value="order">Products</option>
+        </select></label>
+	<label for="sortorder">sort order:<select name="sortorder" tabindex="6" id="sortorder">
+          <option value="descending">Descending</option>
+          <option value="ascending">Ascending</option>
+        </select></label>
+	<p>&nbsp;</p>
+	<div id="inputsubmit"><input type="hidden" name="rewrite" value="off" /><input type="hidden" name="rewrite" value="off" /><!---SEARCH_SUBMIT---></div>
+	</fieldset>
+	</form>
+	</div>
+
+<!--  Inserted from document Templates/Bottom_Nav.html BEGIN-->
+<!---BOTTOM_NAV--->
+<!--  Inserted from document templates/Bottom_Nav.html END-->
+</body>
+</html>

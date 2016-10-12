@@ -1,0 +1,485 @@
+#simplemodal-overlay {background-color:#000;}
+
+#simplemodal-container a.modalCloseImg {
+   background: url(../images/close.png) bottom no-repeat;
+  width: 26px;
+  height: 26px;
+  display: inline;
+  z-index: 3200;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;   
+}
+div#btl-success-2 {
+  padding: 30px;
+  text-align: center;
+}
+
+.simplemodal-wrap{
+	overflow:visible!important;
+}
+.nav-user {
+	padding: 0;
+	background: #F5F5F5;
+	margin-bottom: 0;
+}
+.btl-content-block{
+    /*background: none repeat scroll 0 0 #FFFFFF;*/
+    display: none;
+    height: auto;
+    overflow: hidden;
+    text-align: left;	
+	position:relative;
+    background: url(../images/bg-form.png) #fff no-repeat bottom !important
+}
+.btl-content-block form{
+	margin:0;
+	padding:0;
+}
+.btl-content-block h3{
+    font-weight: normal;
+	line-height: 35px;
+	margin:0px;    
+	padding: 10px 5px 15px 18px!important;
+	font-size:18px;
+	text-align: center;   text-transform: uppercase;   color: #333333;
+	font-size: 20px;
+}
+.btl-input > input[type=text],
+.btl-input > input[type=password],
+#recaptcha > input{
+    border: 1px solid #dadada;
+    border-radius:4px;
+    margin: 5px 0;   
+    text-indent: 5px;
+    width: 230px;
+    height: 33px;
+	padding:0;
+}
+#recaptcha > input{
+	width: 100px;
+}
+.btl-input > input:focus,
+#recaptcha > input:focus{
+
+}
+#recaptcha span#btl-captcha-reload{
+	display: inline-block;
+	width: 16px; height: 16px;
+	background: url('../images/reload.png') no-repeat;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+#btl{
+	position:relative;
+}
+#btl .btl-panel{
+	overflow:hidden;
+	
+}
+#btl .btl-panel > #btl-panel-profile{
+	background:url(../images/btl-panel-bg.png) top right no-repeat;
+	padding-right:30px;
+	margin-right: 70px;
+}
+button::-moz-focus-inner {
+padding:0; border: none;
+}
+#btl .btl-panel > span{
+	display:inline-block;
+	height:26px;
+	line-height:28px;
+	padding:0 18px;
+	cursor:pointer;
+	text-indent: 0!important;
+	width: auto;	
+}
+#btl .btl-panel > span{
+	margin:2px 0px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+#btl .btl-panel > span,button.btl-buttonsubmit,input.btl-buttonsubmit{
+	border-radius:3px;
+}
+#btl .btl-panel > span.active,button.btl-buttonsubmit:focus,input.btl-buttonsubmit:focus{
+	opacity:0.8;
+}
+.btl-error{
+	display:none;
+}
+.btl-error-detail{
+	display:none;
+	float: right;
+	color: #FF0000;
+	margin-bottom:4px;
+}
+.btl-field,#register-link,.btl-error-detail,.btl-error,.btl-note{
+	margin-left: 30px;
+	margin-right: 30px!important;
+	overflow:hidden;
+}
+ .btl-label{
+	float:left!important;
+}
+
+.btl-label, .btl-input {
+	line-height: 50px;
+	height: 50px;
+}
+#recaptcha{
+	height: auto!important;
+	float:right;
+}
+#btl-content-login .btl-input input, #btl-content-forgot .btl-input input{
+	width: 190px;
+}
+#btl-input-remember{
+}
+#btl-checkbox-remember{
+	width: 15px!important;
+	vertical-align:middle;
+	padding:0;
+	margin:0;
+}
+.clear{
+	clear:both;
+}
+.btl-error{
+	color: #FF0000;
+	margin-left: 35px !important;	
+}
+
+div.btl-buttonsubmit{
+	text-align:center!important;
+	padding: 15px 0 15px 0!important;
+}
+div.btl-buttonsubmit:focus{
+	outline: none;
+}
+
+#btl-content > .btl-content-block{
+	position:absolute!important;
+	z-index:9999;
+}
+#btl-content #btl-content-login, #btl-content #btl-content-forgot{
+	width:350px;
+}
+
+#btl-content-registration{
+	min-width:350px;
+	/*max-height: 550px;*/
+	overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#btl-content-login .spacer{
+	height:14px;
+}
+
+#btl-content div.btl-buttonsubmit{
+	border-top: 1px dotted #c4c4c4;
+}
+#btl-content #btl-content-login .btl-label {
+	line-height:38px;
+	min-width: 0px!important;
+}
+
+/* CSS FOR USER PROFILE MODULE**/
+#btl-content  #btl-content-profile{
+	overflow:hidden;
+	margin-top: 10px;
+	margin-right: 80px;
+}
+#module-in-profile{
+	min-width:200px;
+}
+#btl-content #btl-content-profile #module-in-profile ul{
+	position: static;	
+	text-align: left;
+	margin: 0 0 0 15px;
+	padding: 0!important;
+	
+}
+#btl-content-profile ul.menu li {
+    background: url("../images/bullet.png") no-repeat scroll 5px 15px transparent;
+    padding: 0 0 0 20px!important;
+	border-bottom: 1px solid #E8E8E8;
+	display:list-item!important;
+    line-height: 37px;
+	
+}
+#btl-content #btl-content-profile #module-in-profile ul li a{
+	color: #6b6b6b;
+	text-decoration: none !important;
+	text-transform: none!important;
+	font-family: arial,tahoma;
+}
+
+#btl-content-profile ul.menu li a {
+    color: #616161!important;
+	text-decoration:none!important;
+	border:none!important;
+	background:none!important;
+	display:inline!important;
+	padding:0!important;
+	margin:0!important;
+	text-transform: none!important;
+}
+#btl-content-profile div.btl-buttonsubmit{
+	clear:both;
+	margin-bottom:15px;
+	border: none!important;
+	text-align: center;
+	margin-top: 0!important;
+	
+}
+/* style panel when action process */
+#btl-login-in-process{
+	display: none;
+	background: url("../images/loading.gif") no-repeat #000 50%;
+	opacity: 0.4;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 9999;
+	top:-1px;
+	left:-1px;
+	padding-top:1px;
+	padding-left:1px;
+}
+
+#btl-register-in-process {
+	display: none;
+	background: url("../images/loading.gif") no-repeat #000 50%;
+	opacity: 0.4;
+	width: 100%;
+        min-height: 100%;
+	position: absolute;
+	z-index: 9999;
+	top:-1px;
+	left:-1px;
+	padding-top:1px;
+	padding-left:1px;
+}
+
+/* style panel when register success */
+#btl-success{
+	display: none;
+/*	background:url("../images/notice-info.png") no-repeat;*/
+	display: none;
+	color:#000;
+	font-size:14px;
+	padding: 10px 10px 10px 25px;
+}
+/* style for ul in login panel*/
+
+/* for modal*/
+#btl-content-login ul{
+	position: static!important;	
+	text-align: left;
+	list-style-type: disc !important;
+	padding-bottom: 40px;
+}
+#btl-content-login ul li{
+	margin-top: 3px;
+}
+#bt_ul li a{
+	padding: 0!important;
+/*	text-decoration: none!important;*/
+	color:#545454!important;
+	
+}
+#btl-wrap-module{
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-top: 10px;
+}
+
+#btl-content-login  input[type="text"], #btl-content-registration input[type="text"],  #btl-content-forgot  input[type="text"],
+
+#btl-content-login input[type="password"], #btl-content-registration input[type="password"]{
+	border: none;
+	border-bottom: 1px solid #dadada;
+	width: 100%;
+	line-height: 32px;
+	font-style: italic;
+}
+#btl-content-login ul#bt_ul li {
+	float: left;
+	width: 50%;
+}
+#btl-content-login input[type="text"]:focus,  #btl-content-registration input[type="text"]:focus,  #btl-content-forgot input[type="text"]:focus,
+#btl-content-login input[type="email"]:focus,  #btl-content-registration input[type="email"]:focus, 
+#btl-content-login input[type="password"]:focus,  #btl-content-registration input[type="password"]:focus,
+.btl-buttonsubmit {
+    outline: none;
+}
+
+input.btl-buttonsubmit{
+  width: 40%;
+  border-radius: 30px;
+  border: none;
+  background: #333 !important;
+  color: #dadada !important;
+  font-size: 18px;
+}
+#register-link a{
+	text-decoration: underline;
+	font-weight: bold;
+}
+#phone-number{
+	display: none;
+}
+
+/*Scrollbar style webkit*/
+#btl-content-registration::-webkit-scrollbar {
+    width: 6px;
+} 
+/* Track */
+#btl-content-registration::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+/* Handle */
+#btl-content-registration::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #BCBCBC; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+#btl-content-registration::-webkit-scrollbar-thumb:window-inactive {
+	background: #BCBCBC; 
+}
+input#btl-input-zipcode {
+    padding-left: 5px;
+}
+#btl-content-forgot{
+     /* width: 450px;
+  margin: 0 auto;*/
+}
+#btl-content-forgot p {
+    margin-left: 20px;
+}
+button.btl-buttonsubmit-forgot {
+  border: none !important;
+  border-radius: 30px !important;
+  border: none;
+  background: #333 !important;
+  color: #dadada !important;
+  font-size: 18px;
+  padding: 10px 40px;
+  margin-top: 40px;
+  text-align: center;
+  margin-left: 100px;
+  margin-bottom: 35px;
+}
+
+#btl-content-forgot input[type="text"]{
+  border: none;
+  border-bottom: 1px solid #dadada;
+  width: 91%;
+  line-height: 32px;
+  font-style: italic;
+  margin-left: 20px;
+}
+#btl-content-forgot .btl-buttonsubmit-forgot:focus{
+    outline: none;
+}
+.reset-confirm{
+    width: 400px;
+}
+#show-popup input[type="text"], #show-popup input[type="password"]{ 
+    border: none; 
+    border-bottom: 1px solid #dadada; 
+    width: 100%; 
+    line-height: 32px; 
+    font-style: italic;
+}
+#show-popup input[type="text"]:focus, #show-popup input[type="password"]:focus{
+    outline: none;
+}
+#hide-popup{
+    background: black; opacity: 0.5; position: fixed; width: 100%; height: 100%; z-index: 1000; top: 0; left: 0;
+}
+
+#show-popup {
+  /* top: 100px; */
+  /* left: 39%; */
+  z-index: 1234;
+  /* background: white; */
+  width: 400px;
+  padding: 10px 20px;
+  background: url(../images/bg-form.png) #fff no-repeat bottom !important;
+  margin: 10px auto;
+  position: relative;
+}
+
+#popup-wrapper {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	z-index: 1000;
+	margin-top: -30px;
+	left: 0;
+}
+/*#show-popup{
+    top: 100px;
+    left: 39%;
+    z-index: 1100;
+    background: white;
+    width: 400px;
+    padding: 10px 20px;
+    background: url(../images/bg-form.png) #fff no-repeat bottom !important;
+    margin: 10px auto;
+}*/
+#show-popup p {
+	text-align: center;
+}
+#show-popup #btn-email{
+      width: 40%;
+  border-radius: 30px;
+  border: none;
+  background: #333 !important;
+  color: #dadada !important;
+  font-size: 18px;
+  margin: 20px 0px 0px 110px;
+}
+
+#btn-email:focus{
+    outline: none;
+}
+
+#show-popup h3{
+    font-weight: normal;
+  line-height: 35px;
+  margin: 0px;
+  padding: 10px 5px 15px 18px!important;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333333;
+  font-size: 20px;
+}
+span#val_email, span#val_code, span#val_pass_similar, span#val_pass1, span#val_pass2, span#val_email_format{
+    margin-left: 0px;
+}
+
+a.modalCloseImg.simplemodal-close {
+  background: url(../images/close.png) bottom no-repeat;
+  width: 26px;
+  height: 26px;
+  display: inline;
+  z-index: 3200;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;
+}
+
+h3#register-success{
+    display: none;
+}
+

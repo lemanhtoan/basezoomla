@@ -1,0 +1,85 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--985924-->                                     
+<!--  dataexportform.htm  -->
+<title><!---ADMIN_HEADER_LABEL---> Export Products</title>
+<script type="text/javascript">
+PDG.callOnPageLoad(function(){
+	setTimeout('document.forms.pdgexport.submit()', 15000);
+});
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Export Products</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---" name=pdgexport>
+<!---EXPORT_ENTRIES--->
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+	<td class="pdgheader">
+	<b>Exporting Products (<!---EXPORT_COUNT--->)</b>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<br>
+	<br>
+	Please Wait While We Export Your Products  
+		<script type="text/javascript">
+		var message="..............."
+		var tccbasecolor="#EEEEEE"
+		var tcctextcolor="#004880"
+		var flashspeed=1000  //in milliseconds
+
+		///No need to edit below this line/////
+
+		var n=0
+		if (document.all){
+			document.write('<font color="'+tccbasecolor+'">')
+			for (m=0;m<message.length;m++)
+				document.write('<span id="tcclight">'+message.charAt(m)+'</span>')
+			document.write('</font>')
+
+			//cache reference to tcclight array
+			var tempref=document.all.tcclight
+		}
+		else
+			document.write(message)
+
+		function tcc(){
+		//Change all letters to base color
+		if (n==0){
+		for (m=0;m<message.length;m++)
+			tempref[m].style.color=tccbasecolor
+		}
+
+		//cycle through and change individual letters to tcc color
+		 tempref[n].style.color=tcctextcolor 
+
+		 if (n<tempref.length-1) 
+		 n++ 
+		 else{ 
+		 n=0 
+		 clearInterval(flashing) 
+		 setTimeout("begintcc()",150) 
+		 return 
+		 } 
+		 } 
+
+		 function begintcc(){ 
+		 if (document.all) 
+		 flashing=setInterval("tcc()",flashspeed) 
+		 } 
+		 begintcc() 
+		 </script> 
+	</td>
+	</tr>
+
+	<tr>
+	<td>&nbsp;
+	
+	</td>
+	</tr>
+</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

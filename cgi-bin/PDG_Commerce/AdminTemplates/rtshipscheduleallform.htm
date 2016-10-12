@@ -1,0 +1,91 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1216503-->                                    
+<!--rtshipscheduleallform.htm-->
+<title>Schedule All Shipments</title>
+<script type="text/javascript">
+PDG.callOnPageLoad(function(){
+	setTimeout('document.forms.pdgshipall.submit()', 15000);
+});
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Schedule All Shipments</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---" name=pdgshipall>
+	<input type=hidden name=scheduleneworders value=go>
+	<input type=hidden name=invoicelist value="!---SHIP_ALL_INVOICE_LIST---">
+	<input type=hidden name=defservice value="!---DEFAULT_SHIP_ALL_SERVICE---">
+	<input type=hidden name=defpackage value="!---DEFAULT_SHIP_ALL_PACKAGE---">
+	<!---CHECK_FAILED_ORDERS--->
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader"><b>Currently Processing
+				<!---SHIP_ALL_CURRENT_INVOICE--->
+				</b> </td>
+		</tr>
+		<tr>
+			<td><br>
+				<br>
+				Please Wait While We Schedule Your Shipments
+				<script language="JavaScript">
+		var message="..............."
+		var tccbasecolor="#EEEEEE"
+		var tcctextcolor="#004880"
+		var flashspeed=1000  //in milliseconds
+
+		///No need to edit below this line/////
+
+		var n=0
+		if (document.all){
+			document.write('<div style="color:'+tccbasecolor+';">')
+			for (m=0;m<message.length;m++)
+				document.write('<span id="tcclight">'+message.charAt(m)+'</span>')
+			document.write('</div>')
+
+			//cache reference to tcclight array
+			var tempref=document.all.tcclight
+		}
+		else
+			document.write(message)
+
+		function tcc(){
+		//Change all letters to base color
+		if (n==0){
+		for (m=0;m<message.length;m++)
+			tempref[m].style.color=tccbasecolor
+		}
+
+		//cycle through and change individual letters to tcc color
+		 tempref[n].style.color=tcctextcolor 
+
+		 if (n<tempref.length-1) 
+		 n++ 
+		 else{ 
+		 n=0 
+		 clearInterval(flashing) 
+		 setTimeout("begintcc()",150) 
+		 return 
+		 } 
+		 } 
+
+		 function begintcc(){ 
+		 if (document.all) 
+		 flashing=setInterval("tcc()",flashspeed) 
+		 } 
+		 begintcc() 
+		 </script>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	<table width=100%>
+		<tr>
+			<td align=center class="pdgcopy">&copy;1997-
+				<!---CURRENT_YEAR--->
+				PDG Software, Inc. </td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

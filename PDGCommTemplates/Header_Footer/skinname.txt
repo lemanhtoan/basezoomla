@@ -1,0 +1,1 @@
+Primary Header/Footer Set for non-XHTML Skins (utilized by many PDG 'skins' - DO NOT DELETE)

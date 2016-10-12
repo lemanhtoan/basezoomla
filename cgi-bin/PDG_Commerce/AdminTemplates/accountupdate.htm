@@ -1,0 +1,46 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--826904-->                                     
+<!--createadmin.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+- Update Administration Account</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Admin Users</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+<input type="hidden" name="userkey" value="!---UPDATE_USER_KEY---">
+	<table width="100%" cellspacing="0" cellpadding="5" border="0">
+		<tr>
+			<td colspan="2" class="pdgheader"><b>Update User Account</b></td>
+		</tr>
+		<tr>
+			<td colspan="2" >Please Note You Will Have To Login Once Your Account Information Has Been Saved!</td>
+		</tr>
+		<tr>
+			<td width="50%" align=right> User Name: </td>
+			<td width="50%" align=left> <!---USER_NAME---> </td>
+		</tr>
+		<tr>
+			<td width="50%" align=right> Password: </td>
+			<td width="50%" align=left> <input type="password" name="password" size="25"> </td>
+		</tr>
+		<tr>
+			<td width="50%" align=right> Confirm Password: </td>
+			<td width="50%" align=left> <input type="password" name="password2" size="25"> </td>
+		</tr>
+		<tr>
+			<td width="50%" align=right> Email: </td>
+			<td width="50%" align=left> <input type="text" name="email" value="!---USER_EMAIL---" size="25"> </td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name="accountupdate" value="Submit">
+
+			</td>
+		</tr>
+	</table>
+<!---INCLUDE AdminTemplates/_includes/account_security.htm--->
+</form>
+
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

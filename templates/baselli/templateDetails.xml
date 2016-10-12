@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>baselli</name>
+	<version>1.0</version>
+	<creationDate>2015-05-11</creationDate>
+	<author>SD3-JAV</author>
+	<authorEmail>sd3@qsoftvietnam.com</authorEmail>
+	<authorUrl>http://www.qsoftvietnam.com</authorUrl>
+	<copyright>SD3 Team</copyright>
+	<description>Baselli</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>index.html</filename>
+		<filename>about-us.html</filename>
+		<filename>blog-v1.html</filename>
+		<filename>blog-v2.html</filename>
+		<filename>collection.html</filename>
+		<filename>contact.html</filename>
+		<filename>details-category.html</filename>
+		<filename>single-product.html</filename>
+		<folder>fonts</folder>
+		<folder>images</folder>
+		<folder>scripts</folder>
+		<folder>styles</folder>
+	</files>
+	<positions>		
+		<position>main</position>
+		<position>main-menu</position>
+        
+        <position>user-menu</position>
+        
+		<position>languages</position>
+		<position>slideshow</position>
+		<position>footer</position>		
+		<position>newsletter</position>
+		<position>social</position>
+		<position>debug</position>
+	</positions>
+</extension>

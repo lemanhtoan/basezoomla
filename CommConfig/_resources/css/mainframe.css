@@ -1,0 +1,480 @@
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+background:#0A478A;
+}
+body { 
+	position:relative;	
+	overflow:visible;
+}
+/*DWS: Table to wrap everything.  Fixes lots of weirdness*/
+#outerwrapper{
+	margin:0px;
+	padding:0px;
+	background: url(./../images/layout/pdg-wallpaper6.jpg) repeat-y top right; 
+	height:100%;
+}
+#pdg-status,#pdg-stage,#pdg-scriptname{display:none;}
+.hiddenform{
+	display:none;
+}
+/*Updated DWS: fix minimum width to allow scroll control*/
+#main-view{position:relative;min-width:800px;}
+#main-view #pdggarbageframe{clear:both;}
+
+#pdg-load-indicator{
+	position:absolute;
+	top:120px;
+	left:0px;
+	filter:alpha(opacity=50);
+	-moz-opacity:.50;
+	opacity:.50;
+	text-align:center;
+	height:100px;
+	width:100%;
+	display:none;
+}
+#pdgcopynotice{
+	filter:alpha(opacity=50);
+	-moz-opacity:.50;
+	opacity:.50;
+	text-align:center;
+	font-family: Arial; 
+	font-size: 10px;
+	color:#FFFFFF;
+	margin-right:40px;
+}
+/* navpanel
+
+	top level navigation container
+
+==================================================*/
+#navpanel{
+	width:300px;
+	/*height:800px;For testing purposes*/	
+	min-width:230px;
+	margin-top:0px;
+}
+
+#navpanel-content{
+	background-color:#FFFFFF;
+}
+
+#navpanel TABLE TR{
+	vertical-align:top;
+}
+#navpanel TABLE TD{
+	padding:0px;
+	margin:0px;
+}
+#navpanel TABLE{
+	border-collapse:collapse;
+	border:0px;
+	width:100%;
+}
+/* content column */
+.navpanel-content-col{
+	width:99%;
+	
+}
+
+/* right-side */
+.navpanel-rgt-col{
+	width:8px;
+	overflow:hidden;
+}
+
+/* shadow column */
+.navpanel-sdo-col{
+	width:6px;
+	overflow:hidden;
+}
+
+/*Make sure all layout images display properly*/
+.navpanel-sdo-col img,
+.navpanel-rgt-col img{
+	border:0px;
+	margin:0px;
+	padding:0px;
+	vertical-align:bottom;
+	display: block;
+}
+
+/*navpanel-top groupings
+==================================================*/
+#navpanel-top{
+	padding:0px;
+	margin:0px;
+	height:27px;
+	overflow:hidden;
+	border:0px;
+	background:url(./../images/layout/nav-top-rpt.jpg);
+	background-repeat:repeat-x;
+}
+#navpanel-top DIV{/*Wrapper*/
+	background:url(./../images/layout/nav-top.jpg);
+	background-position: top right;
+	background-repeat:no-repeat;
+}
+#navpanel-top DIV DIV{ /*Title label*/
+	line-height:27px;
+	height:27px;
+	overflow:hidden;
+	margin-left:8px;
+	font-size:12px;
+}
+/* Image Groupings*/
+#img-nav-top-right,
+#img-nav-top-right-sdo {
+	height:27px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+}
+
+#img-nav-top-right{
+	background-image:url(./../images/layout/nav-top-right.png);
+}
+#img-nav-top-right-sdo{
+	background-image:url(./../images/layout/nav-top-right-sdo.png);
+}
+/*navpanel-content groupings
+==================================================*/
+#navpanel-content-right{
+	background:url(./../images/layout/nav-right-rpt.jpg);
+	background-repeat:repeat-y;
+}
+#navpanel-content-right DIV{ /*Right - side gradient*/
+	background:url(./../images/layout/nav-right.jpg);
+	height:422px;
+}
+#navpanel-content-right-sdo{
+	background:url(./../images/layout/nav-right-sdo2.png);
+	background-repeat:repeat-y;	
+}
+/*navpanel-bottom groupings
+==================================================*/
+#navpanel-bottom{
+	height:8px;
+	overflow:hidden;
+	background:url(./../images/layout/nav-bottom-rpt.jpg);
+	background-repeat:repeat-x;
+}
+#navpanel-bottom DIV{
+	background:url(./../images/layout/nav-bottom.jpg);
+	background-position: top left;
+	background-repeat:no-repeat;
+	height:8px;
+	overflow:hidden;
+}
+/* Image Groupings*/
+#img-navpanel-bottom-right,
+#img-navpanel-bottom-right-sdo {
+	height:8px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+}
+#img-navpanel-bottom-right{
+	width:8px;
+	background:url(./../images/layout/nav-bottom-right.png);
+}
+#img-navpanel-bottom-right-sdo{
+	background:url(./../images/layout/nav-bottom-right-sdo.png);
+	width:6px;
+}
+/*navpanel-bshadow groupings
+==================================================*/
+#navpanel-bshadow{
+	height:8px;
+	overflow:hidden;
+	background:url(./../images/layout/nav-bshadow-rpt.png);
+	background-repeat:repeat-x;
+}
+/* Image Groupings*/
+#img-navpanel-bshadow-right,
+#img-navpanel-bshadow-right-sdo {
+	height:8px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+}
+#img-navpanel-bshadow-right{
+	background:url(./../images/layout/nav-bshadow-right.png);
+	width:8px;
+}
+#img-navpanel-bshadow-right-sdo{
+	background:url(./../images/layout/nav-bshadow-fright.png);
+	width:6px;
+}
+/*pdg-top-box groupings
+==================================================*/
+#pdg-top-box{
+	margin-right:8px;
+	padding-top:8px;
+	padding-bottom:8px;
+/*	padding-top:8px;
+	padding-bottom:8px;
+
+	height:75px;
+	overflow:hidden;
+		*/
+}
+#pdg-top-box-right{
+	background-image:url(./../images/layout/top-box-right.png);
+	background-repeat:no-repeat;
+	height:75px;
+	width:14px;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	overflow:hidden;
+	float:right;
+}
+#pdg-top-box-content{
+	background-image:url(./../images/layout/top-box-rpt2.png);
+	background-repeat:repeat-x;
+	height:75px;
+	overflow:hidden;
+	margin:0px;
+	padding:0px;
+	border:0px;
+}
+/*resizer skin
+==================================================*/
+/* Give the handle a background color */
+.yui-skin-sam .yui-resize .yui-resize-handle {
+
+}
+/* Give the active handle a different color */
+.yui-skin-sam .yui-resize .yui-resize-handle-active {
+    background-color: #7D98B8;
+
+    zoom: 1;
+}
+/* Show the active handle when hovered */
+.yui-skin-sam .yui-resize-hover .yui-resize-handle-active {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+/* Style the resize proxy */
+.yui-skin-sam .yui-resize-proxy {
+    border: 1px dashed #426FD9;
+}
+
+/* Setup the gripper */
+.yui-skin-sam .yui-resize .yui-resize-handle-inner-r,
+.yui-skin-sam .yui-resize .yui-resize-handle-inner-l {
+
+}
+
+/* Setup the gripper */
+.yui-skin-sam .yui-resize .yui-resize-handle-inner-t,
+.yui-skin-sam .yui-resize .yui-resize-handle-inner-b {
+
+}
+
+/* Bottom Right Gripper */
+.yui-skin-sam .yui-resize .yui-resize-handle-br {
+}
+
+/* Top Right Gripper */
+.yui-skin-sam .yui-resize .yui-resize-handle-tr {
+}
+/*panel pieces
+==================================================*/
+#nav-panel-hider{
+	display:block;
+	width:14px;
+	height:27px;
+	overflow:hidden;	
+	background-repeat:no-repeat;
+	text-decoration:none;
+	border:0px;
+	margin:0px;
+}
+
+A.pnl-expanded{
+	background-image: url(./../images/layout/panel_collapse.gif);
+}
+
+A.pnl-expanded:hover{
+	background-image: url(./../images/layout/panel_collapse_hot.gif);
+}
+A.pnl-collapsed{
+	background-image: url(./../images/layout/panel_expand.gif);
+}
+
+A.pnl-collapsed:hover{
+	background-image: url(./../images/layout/panel_expand_hot.gif);
+}
+#main-view{
+	/*margin-left:325px;*/
+	margin-right:16px;	
+}
+#left-view{
+	width:300px;
+	overflow:hidden;
+
+}
+#navpanel-content{
+	background-color:#FFFFFF;
+}
+
+#resize{ /*Container for tree and everything else - controls size*/
+	width:300px;
+	height:420px;
+	overflow:hidden;
+	background-color:#FFFFFF;
+}
+#nav-tree-outer{
+	position:relative;
+	overflow:auto;
+}
+#nav-tree-container{ /*Defaults*/
+	overflow:auto;
+	height:300px;
+	margin-left:8px;
+	margin-right:6px;
+	position:relative;
+	background-color:#FFFFFF;
+}
+/*qsearch-container groupings
+==================================================*/
+#qsearch-form{
+	margin:0px;
+	padding:0px;
+}
+#pdg-qsearch-container{ /* top border is controlled by combobox*/
+	margin-top:0px;
+	margin-right:6px;
+	margin-bottom:0px;
+	height:54px;
+	border-bottom:1PX SOLID #525B5C;
+	border-right: 1PX SOLID #525B5C;	
+}
+#pdg-qsearch-inputbx{ /*Box containing input text control and submit button*/
+	border-top:0px;/*1PX SOLID #3A555E;*/
+	position: relative;
+}
+
+#pdg-qsearch-text{
+	display:block;
+	border: 0px;
+	padding:4px;
+	height:20px;
+	overflow:hidden;
+	width:100%;
+}
+#pdg-qsearch-submit{
+	cursor:pointer;
+	display:block;
+	border:0px;
+	width:32px;
+	margin:0px;
+	border:0px;
+	height:24px;
+	overflow:hidden;
+	background-image:url(./../images/icons/qsearch.png);
+	background-position: center center;
+	background-color:#FCFDFD;
+	background-repeat:no-repeat;
+}
+LABEL.over { color: #ccc; position: absolute; top: 6px; left: 9px;font-style:italic;font-weight:bold; cursor:text;}
+
+/*Main overlay - mouse move catch
+==================================================*/
+#main-view-overlay,#main-editor-overlay{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1px;
+	height:1px;
+	display:none;
+	z-index:400;
+	cursor:e-resize;
+}
+#main-view-overlay IMG,#main-editor-overlay IMG{
+	width:100%;
+	height:100%;
+}
+#main-editor-overlay{
+	background-color:#000000;
+	cursor:default;
+	z-index:400;
+	filter:alpha(opacity=10);
+	-moz-opacity:.10;
+	opacity:.10;
+}
+
+
+/*top box groupings
+==================================================*/
+#pdg-logout:hover,#pdg-makelive:hover,#pdg-discardchanges:hover,#pdg-video-doc:hover{
+	color:#FFFFFF;
+}
+#pdg-logout,#pdg-makelive,#pdg-discardchanges{
+	display:block;
+	color:#373737;
+	font-size:12px;
+	text-decoration:none;
+	padding-left:18px;
+	background-image:url(./../images/famicons/cancel.png);
+	background-position: center left;
+	background-repeat:no-repeat;
+	line-height: 16px;
+	text-align:left;
+	margin-bottom:16px;
+	margin-top:2px;
+	overflow:visible;
+	margin-right:8px;
+}
+#pdg-video-doc{
+	display:block;
+	color:#373737;
+	font-size:12px;
+	text-decoration:none;
+	padding-left:18px;
+	background-image:url(./../images/famicons/camera.png);
+	background-position: center left;
+	background-repeat:no-repeat;
+	line-height: 16px;
+	text-align:left;
+	margin-bottom:16px;
+	margin-top:2px;
+	overflow:visible;
+	margin-right:8px;
+}
+#pdg-makelive{
+	background-image:url(./../images/famicons/database_go.png);
+}
+#pdg-discardchanges{
+	background-image:url(./../images/famicons/database_delete.png);
+}
+
+#pdg-top-box-info{
+	color:#DAFAFF;
+	font-size:10px;
+	margin-left:8px;
+}
+#pdg-top-box-live{
+	margin-top:2px;
+	background-image:url(./../images/famicons/accept.png);
+	background-position: center left;
+	background-repeat:no-repeat;
+	padding-left:18px;
+	margin-left:5px;
+	color:#FFFFFF;
+	font-size:12px;
+	display:none;
+}
+#pdg-top-box-notlive{
+	margin-top:2px;
+	background-image:url(./../images/famicons/database_error.png);
+	background-position: center left;
+	background-repeat:no-repeat;
+	padding-left:18px;
+	margin-left:5px;
+	color:#31515A;
+	font-size:12px;
+	font-weight:bold;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+<jdiction>
+<component>com_modules</component>
+<sections>
+  <section>
+    <tables>
+      <table>
+        <name>#__modules</name>
+        <key>id</key>
+        <class>JTableModule</class>
+        <file>module.php</file>
+        <exportfilter>(language = '*')</exportfilter>
+        <cache fullfetch="1" />
+      </table>
+    </tables>
+    <views>
+      <view name="module" list="modules" layout="edit" default="true">
+        <form import="module.xml">
+          <fieldset name="main" label="COM_JDICTION_TRANSLATION_FIELDSET_MAIN">
+            <field name="title" />
+            <fieldset name="Subscribe_setting">
+
+                <field name="email_template" type="note" 
+                	label="EMAIL_TEMPLATE" close="true" />
+
+                <field name="email_subject" type="text" 
+                	label="EMAIL_SUBJECT"/>
+                <field name="email_sendor_name" type="text" 
+                	label="EMAIL_SENDER_NAME" />
+                <field name="reply_to_name" type="text" 
+                	label="REPLY_TO_NAME" />
+                <field name="reply_to_email" type="text" 
+                	label="REPLY_TO_EMAIL" />
+                <field name="email_template_content" type="editor"
+                	label="TEMPLATE_CONTENT" filter="safehtml" /> 
+			</fieldset>
+			<fieldset name="Order_setting" label="Order Setting">            
+
+                <field name="order_email_template" type="note" 
+                	label="EMAIL_TEMPLATE" close="true" />
+
+                <field name="order_email_subject" type="text" 
+                	label="EMAIL_SUBJECT"/>
+                <field name="order_email_sendor_name" type="text" 
+                	label="EMAIL_SENDER_NAME" />
+                <field name="order_reply_to_name" type="text" 
+                	label="REPLY_TO_NAME" />
+                <field name="order_reply_to_email" type="text" 
+                	label="REPLY_TO_EMAIL" />
+                <field name="order_email_template_content" type="editor"
+                	label="TEMPLATE_CONTENT" filter="safehtml" /> 
+			</fieldset>
+            <fieldset name="claim_setting" label="Claim setting">
+
+                <field name="claim_email_template" type="note" 
+                	label="EMAIL_TEMPLATE" close="true" />
+
+                <field name="claim_email_subject" type="text" 
+                	label="EMAIL_SUBJECT" />
+                <field name="claim_email_sendor_name" type="text" 
+                	label="EMAIL_SENDER_NAME" />
+                <field name="claim_reply_to_name" type="text" 
+                	label="REPLY_TO_NAME" />
+                <field name="claim_reply_to_email" type="text" 
+                	label="REPLY_TO_EMAIL" />
+                <field name="claim_template_content" type="editor"
+                	label="TEMPLATE_CONTENT" filter="safehtml" /> 
+			</fieldset>
+          </fieldset>
+        </form>
+      </view>
+    </views>
+  </section>
+</sections>
+</jdiction>
+
+-->

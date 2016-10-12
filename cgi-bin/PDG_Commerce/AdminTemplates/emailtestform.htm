@@ -1,0 +1,28 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--540668-->                                     
+<!-- emailtestform.htm  -->
+<title> 
+<!---ADMIN_HEADER_LABEL--->
+Email Test</title>
+<script language="JavaScript">
+function setccvalue(){
+	document.emailform.stopccinfo.checked=document.emailform.stopccinfo.defaultChecked;
+	return(true);
+	}
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Email Test</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" name=emailform >
+  <input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+  <table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+    <tr> 
+      <td class="pdgheader"> <b>Email Test</b> </td>
+    </tr>
+    <tr> 
+      <td class="pdgdata1"> Emails sent as customer email with the appropriate customer attachments as specified. (except for windows command line email utilities).</td>
+    </tr>
+</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

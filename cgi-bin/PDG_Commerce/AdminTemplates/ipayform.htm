@@ -1,0 +1,209 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2910066-->                                    
+<!-- ipayform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+PayByTouch Gateway Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>PayByTouch Gateway Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>PayByTouch Gateway Settings</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Company key:</td>
+			<td class="pdgdata2"><input type="text" name="ipaycompanykey" value="!---IPAY_COMPANY_KEY---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata1">PIN:</td>
+			<td width="50%" class="pdgdata1"><input type="text" name="ipaypin" value="!---IPAY_PIN---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata2">Terminal ID:</td>
+			<td width="50%" class="pdgdata2"><input type="text" name="ipaytermid" value="!---IPAY_TERMID---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">File to which PayByTouch Gateway transactions are logged: </td>
+			<td class="pdgdata1"><input type="text" name="ipaylogfile" value="!---IPAY_LOGFILE---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">PayByTouch Gateway URL:<br>
+				<span class=pdgnote>ps1.ipay.com (do not include https://)</span></td>
+			<td class="pdgdata2"><input type="text" name="ipayurl" value="!---IPAY_GATEWAY---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Authorization Type: </td>
+			<td class="pdgdata1"><select name="ipayauth">
+					<!---IPAY_AUTH--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Test mode: </td>
+			<td class="pdgdata2"><input type="checkbox" name="ipaytest" !---IPAY_TEST---  value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">AVS Deny codes:<br>
+				<span class=pdgnote>Note: These codes are used on approved credit card sale transactions. If the AVS code returned by PayByTouch is in the list you provided then the software will automatically void the approved transaction.</span></td>
+			<td class="pdgdata1"><input type="text" name="ipayavsdeny" value="!---IPAY_AVS_DENY---">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">CVV Deny codes:<br>
+				<span class=pdgnote>Note: These codes are used on approved credit card sale transactions. If the CVV code returned by PayByTouch is in the list you provided then the software will automatically void the approved transaction.</span></td>
+			<td class="pdgdata2"><input type="text" name="ipaycvvdeny" value="!---IPAY_CVV_DENY---">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><hr>
+				<input type="submit" class="pdgbutton" name="changeipay" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+	</table>
+	<table align=center >
+		<tr>
+			<td align=center style="vertical-align=top;"><table border=1 align=center style="vertical-align=top;">
+					<tr>
+						<td colspan="3" align="center"> AVS Response Codes </td>
+					</tr>
+					<tr>
+						<td> Code </td>
+						<td> Text </td>
+						<td> Description </td>
+					</tr>
+					<tr>
+						<td> 0 (zero) </td>
+						<td> CAPTURE (or decline reason) </td>
+						<td> AVS not performed </td>
+					</tr>
+					<tr>
+						<td> A </td>
+						<td> ADDRESS MATCH </td>
+						<td> Address match only </td>
+					</tr>
+					<tr>
+						<td> B* </td>
+						<td> ADDRESS MATCH </td>
+						<td> Street address match. Postal Code not verified. </td>
+					</tr>
+					<tr>
+						<td> C* </td>
+						<td> SERV UNAVAILABLE </td>
+						<td> Street address and Postal Code not verified </td>
+					</tr>
+					<tr>
+						<td> D* </td>
+						<td> EXACT MATCH </td>
+						<td> Street address match </td>
+					</tr>
+					<tr>
+						<td> E </td>
+						<td> INELIGIBLE </td>
+						<td> Not a mail/phone order </td>
+					</tr>
+					<tr>
+						<td> G </td>
+						<td> INFO NOT VERIFIED </td>
+						<td> Global non-AVS participant-address information </td>
+					</tr>
+					<tr>
+						<td> I* </td>
+						<td> VER UNAVAILABLE </td>
+						<td> Address information not verified </td>
+					</tr>
+					<tr>
+						<td> N </td>
+						<td> NO MATCH </td>
+						<td> No address or postal code match </td>
+					</tr>
+					<tr>
+						<td> P* </td>
+						<td> ZIP MATCH </td>
+						<td> Postal Code. Street address not verified. </td>
+					</tr>
+					<tr>
+						<td> R </td>
+						<td> RETRY </td>
+						<td> Issuer system unavailable </td>
+					</tr>
+					<tr>
+						<td> S </td>
+						<td> SVC UNAVAILABLE </td>
+						<td> Service not supported </td>
+					</tr>
+					<tr>
+						<td> U </td>
+						<td> VER UNAVAILABLE </td>
+						<td> Address unavailable </td>
+					</tr>
+					<tr>
+						<td> X </td>
+						<td> EXACT MATCH </td>
+						<td> Exact match: address and 9 digit postal code </td>
+					</tr>
+					<tr>
+						<td> Y </td>
+						<td> EXACT MATCH </td>
+						<td> Exact match: address and 5 digit postal code </td>
+					</tr>
+					<tr>
+						<td> W </td>
+						<td> ZIP MATCH </td>
+						<td> 9-digit postal code match only </td>
+					</tr>
+					<tr>
+						<td> Z </td>
+						<td> ZIP MATCH </td>
+						<td> 5-digit postal code match only </td>
+					</tr>
+					<tr>
+						<td colspan=3 align=center> * Denotes an International code. Their availability is limited based on issuer participation.<br>
+							International issuers may also send non-international codes. </td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td align=center style="vertical-align=top;"><table border=1 align=center style="vertical-align=top;">
+					<tr>
+						<td colspan=2 align=center> CARD VERIFICATION VALUE RESULT CODES </td>
+					</tr>
+					<tr>
+						<td> CODE </td>
+						<td> DESCRIPTION </td>
+					</tr>
+					<tr>
+						<td> M </td>
+						<td> CVV Match </td>
+					</tr>
+					<tr>
+						<td> N </td>
+						<td> CVV No Match </td>
+					</tr>
+					<tr>
+						<td> P </td>
+						<td> Not Processed </td>
+					</tr>
+					<tr>
+						<td> S </td>
+						<td> Merchant has indicated that CVV is not present on card </td>
+					</tr>
+					<tr>
+						<td> U </td>
+						<td> Issuer is not certified and/or has not provided Visa encryption keys </td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

@@ -1,0 +1,149 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1908240-->                                    
+<!--qbmsform.htm-->
+<title>QuickBooks Merchant Services Settings</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>QuickBooks Merchant Services Settings</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<li><a href="javascript:void(0)" tsid="gen-section">General</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="adv-section">Advanced</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-close.htm--->
+<!--cmt: reports-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="gen-section" class="page-section">
+<form method="post" action="!---MODULE_NAME---" name="qbms">
+<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0">
+	<tr>
+	<td colspan=2 class="pdgheader">
+	<b>QuickBooks Merchant Services Settings</b>
+	</td>
+	</tr>
+	<tr>
+
+	<tr>
+	<td colspan=2 class="pdgdata2">
+	<a href="http://www.pdgsoft.com/intuit-merchant-services.htm" target="_blank">Sign up for a QBMS Merchant Account</a>
+	</td>
+	</tr>
+
+	<tr>
+	<td class="pdgdata1">
+	QBMS Application Login:
+	</td>
+	<td class="pdgdata1">
+	<input type=password name=qbmsapplogin value="!---QBMS_APPLOGIN---">
+	</td>
+	</tr>
+
+	<tr>
+	<td class="pdgdata2">
+	QBMS Application ID:
+	</td>
+	<td class="pdgdata2">
+	<input type=password name=qbmsappid value="!---QBMS_APPID---">
+	</td>
+	</tr>
+
+	<tr>
+	<td class="pdgdata1">
+	QBMS Authorization Type:
+	</td>
+	<td class="pdgdata1">
+	<select name=qbmsauth>
+	<!---QBMS_AUTH--->
+	</select>
+	</td>
+	</tr>
+
+	<tr>
+	<td class="pdgdata2">
+	QBMS Log File:
+	</td>
+	<td class="pdgdata3">
+	<input type=text name=qbmslogfile value="!---QBMS_LOGFILE---">
+	</td>
+	</tr>
+
+	<tr>
+	<td colspan=2 class="pdgheader">
+	<b>QuickBooks Merchant Services Connection Ticket</b>
+	</td>
+	</tr>
+
+	<tr>
+	<td class="pdgdata1">
+	Connection Ticket:
+	</td>
+	<td class="pdgdata1">
+	<input type=password name=qbmsconntkt value="!---QBMS_CONNECTION_TICKET---">
+	</td>
+	</tr>
+
+	<tr>
+	<td class="pdgdata2">
+	Connection Ticket Status:
+	</td>
+	<td class="pdgdata2">
+	<!---QBMS_CONNECTION_TCKT--->
+	</td>
+	</tr>
+
+	<tr>
+	<td align=center colspan=2>
+	<input type=submit class=pdgbutton value="Submit Changes" name=changeqbms>
+	</td>
+	</tr>
+</table>
+</div>
+<!--cmt: logging-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="adv-section" class="page-section">
+<table class="pdgbody" width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+	<td colspan=2 class="pdgheader">
+	<b>QuickBooks Merchant Services Hosted Settings (PDG support use only)</b>
+	</td>
+	</tr>
+	<tr>
+
+	<tr>
+	<td class="pdgdata1">
+	Intuit Certificate File:<br>
+	<a href="!---MODULE_NAME---?getqbmsservername=a" target=_blank style="text-decoration:none;color:black;"><font class=pdgnote>Reverse DNS for Server</font></a>
+	</td>
+	<td class="pdgdata1">
+	<input type=text name=qbmscertchain value="!---QBMS_CERT_CHAIN---">
+	</td>
+	</tr>
+
+	<tr>
+	<td class="pdgdata2">
+	QBMS PEM file:
+	</td>
+	<td class="pdgdata2">
+	<input type=text name=qbmscertkey value="!---QBMS_CERT_KEY---">
+	</td>
+	</tr>
+
+	<tr>
+	<td class="pdgdata1">
+	QBMS Private Key PassPhrase:
+	</td>
+	<td class="pdgdata1">
+	<input type=password name=qbmspass value="!---QBMS_PASS---">
+	</td>
+	</tr>
+
+	<tr>
+	<td align=center colspan=2>
+	<input type=submit class=pdgbutton value="Submit Changes" name=changeqbms>
+	</td>
+	</tr>
+
+</table>
+</form>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-ftr.htm--->

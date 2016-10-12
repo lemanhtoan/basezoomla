@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<!---PDG_HEAD_INSERT--->
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+
+	<h1>Verify and Complete your Order</h1>
+        <!---USERMSG [USER], You Are Ordering the Following: ---><br /><br />
+        <div id="basket">
+	<!---ORDER--->
+	</div>
+        <form method="post" action="!---SCRIPT_NAME---">
+        <div class="pdg-no-display">
+        <input type="hidden" name="defaction" value="buyit" />
+        <!---PDGCARTFORMDATA--->
+        </div>
+        <table>
+        <tr>
+         <td colspan="2" style="text-align:center">
+        Payment Information
+        <p>Please verify that the following information is correct. If it is not, then
+        use your browser's back arrow and make the necessary changes. After
+        you have verified that the information is correct, please supply the
+        necessary payment information to place your order.</p>
+        </td>
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:center">
+        <h3>Method of Payment</h3>
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;vertical-align:top">
+        Payment Method:</td>
+        <td style="text-align:right;vertical-align:top"><!---BILLMETHOD--->
+        </td>
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:center">
+        <h3>Credit Card Information</h3>
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;vertical-align:top">
+        Type of Card:</td>
+        <td style="text-align:right;vertical-align:top">
+			        <select name="cardtype">
+                                                <option selected="selected">Visa</option>
+                                                <option>Mastercard</option>
+                                                <option value="AMEX">American Express</option>
+                                                <option>Discover</option>
+                                                      </select><br /><br />
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;vertical-align:top">
+             Credit Card Number:</td>
+        <td style="text-align:right;vertical-align:top"> 
+				<input type="text" name="cardnumber" /><br /><br />
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;vertical-align:top">
+        Expiration Date:</td>
+        <td style="text-align:right;vertical-align:top">
+				<select name="cardexpmonth" style="width:75px;">
+                                                <option value="00">Month</option>
+                                                <option value="01">Jan</option>
+                                                <option value="02">Feb</option>
+                                                <option value="03">Mar</option>
+                                                <option value="04">Apr</option>
+                                                <option value="05">May</option>
+                                                <option value="06">Jun</option>
+                                                <option value="07">Jul</option>
+                                                <option value="08">Aug</option>
+                                                <option value="09">Sep</option>
+                                                <option value="10">Oct</option>
+                                                <option value="11">Nov</option>
+                                                <option value="12">Dec</option>
+                                                      </select><br /><br /><br /><select name="cardexpyear" style="width:75px;">
+                                                <option value="">Year</option>
+                                                <option value="09">2009</option>
+                                                <option value="10">2010</option>
+                                                <option value="11">2011</option>
+                                                <option value="12">2012</option>
+                                                <option value="13">2013</option>
+                                                <option value="14">2014</option>
+                                                <option value="15">2015</option>
+                                                <option value="16">2016</option>
+                                                <option value="17">2017</option>
+                                                <option value="18">2018</option>
+                                                <option value="19">2019</option>
+                                                <option value="20">2020</option>
+                                                <option value="21">2021</option>
+                                                <option value="22">2022</option>
+                                                <option value="23">2023</option>
+                                                <option value="24">2024</option>
+                                                <option value="25">2025</option>
+                                                <option value="26">2026</option>
+                                                <option value="27">2027</option>
+                                                <option value="28">2028</option>
+                                                <option value="29">2029</option>
+                                                </select><br /><br />
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;vertical-align:top">
+        Card Verification (CVV):</td>
+        <td style="text-align:right;vertical-align:top"> <input type="text" name="ccv2" style="width:75px;" /><br /><br /><br />
+        </td>
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:center">
+        <!---SUBMIT_LINK--->
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:center">
+        <h3>Shipping Information</h3>
+        <!---CUSTOMER--->
+        </td>
+        </tr>
+        </table>
+        </form>
+
+</body>
+</html>

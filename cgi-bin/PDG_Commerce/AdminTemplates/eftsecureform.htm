@@ -1,0 +1,53 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1001826-->                                    
+<!-- eftsecureform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Sage Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Sage Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b> Sage Settings</b> </td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata2"> Sage account login ID:</td>
+			<td width="50%" class="pdgdata2"><input type="text" name="eslogin" value="!---EFT_LOGIN---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> Sage account password:</td>
+			<td class="pdgdata1"><input type="text" name="espassword" value="!---EFT_PASSWORD---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Sage Server Name:<br>
+				<span class=pdgnote>Please do not include http:// or https://</span></td>
+			<td class="pdgdata2"><input type="text" name="esserver" value="!---EFT_SERVER---" size="50">
+				<input type="hidden" name=usesage value=yes>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Authorize Only (does NOT capture funds immediately):<br>
+				<span class=pdgnote>uncheck for sale - does capture funds immediately</span> </td>
+			<td class="pdgdata1"><input type="checkbox" name="escapture" value="yes" !---EFT_CAPTURE_CHECK--- >
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">File to which Sage transactions are logged: </td>
+			<td class="pdgdata2"><input type="text" name="eslogfile" value="!---EFT_LOGFILE---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><hr>
+				<input type="submit" class="pdgbutton" name="changeeftsecure" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

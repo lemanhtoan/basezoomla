@@ -1,0 +1,151 @@
+<!-- wrap starts here -->
+<div id="wrap">
+
+	<!--header -->
+	<div id="header">			
+				
+		<h1 id="logo-text"><a href="/" title="">!---SITENAME---</a></h1>		
+		<p id="slogan">!---SITE_TEXT---</p>		
+			
+<script type="text/javascript">
+function clickclear(thisfield, defaulttext) {
+if (thisfield.value == defaulttext) {
+thisfield.value = "";
+}
+}
+
+function clickrecall(thisfield, defaulttext) {
+if (thisfield.value == "") {
+thisfield.value = defaulttext;
+}
+}
+</script>
+		<form id="quick-search" action="!---sCRIPT_NAME---" method="post" >
+			<p>
+			<label for="qsearch">Search:</label>
+			<input class="tbox" id="qsearch" type="text" name="keywords" value="Search..." title="Start typing and hit ENTER" onclick="clickclear(this, 'Search...')" onblur="clickrecall(this,'Search...')" />
+                        <input type="hidden" name="defaction" value="search" />
+			<input type="hidden" name="rewrite" value="off" />
+			<input class="btn" style="margin:0 0 10px 0;" alt="Search" type="image" name="search" title="Search" src="/PDGCommTemplates/003/images/search.gif" />
+			</p>
+		</form>	
+
+		<div id="header-basket">
+			<a href="!---SCRIPT_NAME---?display"><img src="/PDGCommTemplates/003/images/viewcart.gif" alt="view cart" style="float:right;margin-top:20px;padding:0px;border:0px;" /></a>
+			<p class="tbox"><a href="!---SCRIPT_NAME---?display">View Cart/Checkout</a></p>
+			<p class="tbox"># of Items:&nbsp;<!---CURRENT_ITEMS_NUM---></p>
+			<p class="tbox">Subtotal:&nbsp;<!---CURRENT_SUBTOTAL---></p>
+
+		</div>
+			
+	<!--header ends-->					
+	</div>
+		
+	<!-- navigation starts-->	
+	<div  id="nav">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="!---SCRIPT_NAME---?listcategories">Products</a></li>
+			<li><a href="!---SCRIPT_NAME---?search=action&amp;keywords=nav_specials">Specials</a></li>
+			<li><a href="!---SCRIPT_NAME---?display=search">Search</a></li>
+			<li><a href="!---SCRIPT_NAME---?display=contact">Contact</a></li>
+			<li><a href="!---SCRIPT_NAME---?display=about">About</a></li>		
+		</ul>
+	<!-- navigation ends-->	
+	</div>					
+			
+	<!-- content starts -->
+	<div id="content">
+
+		<!-- sidebar starts -->	
+		<div id="sidebar">
+		<div class="form">
+<!---IF_LOGGED_IN--->
+	<form method="post" action="!---SCRIPT_NAME---" id="navloginform">
+	<fieldset>
+	<legend>My Account</legend>
+	<div style="margin:0px 10px 10px 10px;"><a href="!---SCRIPT_NAME---?displayuser">Update Account</a><br />
+	<a href="!---SCRIPT_NAME---?orderhistory">Purchase History</a><br />
+	<a href="!---SCRIPT_NAME---?logout">Logout</a><br /></div>
+	</fieldset>
+	</form>
+<!---END_IF_LOGGED_IN--->
+
+<!---IF_NOT_LOGGED_IN--->
+	<form method="post" action="!---SCRIPT_NAME---" id="navloginform">
+	<!---FORCE_COOKIE_BABBLE--->
+	<!---BABBLE_EXPIRE_DATA--->
+	<fieldset>
+	<legend>Log in</legend>
+	<label for="navusername">username:<input type="text" name="username" tabindex="1" id="navusername" /></label>
+	<label for="navpassword">password:<input type="password" name="password" tabindex="2" id="navpassword" /></label>
+	<div id="navinputsubmit"><input name="login" class="navsubmitform" type="submit" id="navsubmit" tabindex="3" value="Log In" /></div><br /><br />
+        <div style="clear:both;"></div>New User? <a href="!---SCRIPT_NAME---?register">Register</a><br />
+	</fieldset>
+	</form>
+<!---END_IF_NOT_LOGGED_IN--->
+		</div>
+			
+			<h3>Products</h3>
+<script type="text/javascript">
+		$(function() {
+			$("#tree").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "cookie"
+			});
+		})
+		
+	</script>
+<div id="sidetree" style="margin:0 0 0 20px;">
+<div class="treeheader">&nbsp;</div>
+<div id="sidetreecontrol"><a href="?#">Collapse All</a> | <a href="?#">Expand All</a></div>
+
+			!---PROD_CAT_UNORDERED_LIST id="tree"---
+
+</div>
+
+<!---BEGIN_PRODUCT_DISPLAY--->
+<!---PRODUCT_DISPLAY_LABEL newly added--->
+<!---PRODUCT_LIST_PER_ROW 1--->
+<!---PRODUCT_LIST_PER_PAGE 4--->
+<h3>What's New?</h3>
+<ul class="sidemenu">
+<!---BEGIN_PRODUCT_DISPLAY_ROW--->
+<!---BEGIN_PRODUCT_DISPLAY_ITEM--->
+<li>
+<a href="!---SCRIPT_NAME---?preadd=action&amp;key=!---SKU---">!---DESC---</a>
+</li>
+<!---END_PRODUCT_DISPLAY_ITEM--->
+<!---END_PRODUCT_DISPLAY_ROW--->
+<li><a href="!---SCRIPT_NAME---?search=action&amp;sortkey=order&amp;sortorder=descending">See All</a></li>
+</ul>
+<!---END_PRODUCT_DISPLAY--->
+				
+			<h3>Links</h3>
+			<ul class="sidemenu">
+				<li><a href="http://www.pdgsoft.com/">shopping cart by pdgsoft.com</a></li>
+			</ul>
+			
+			<h3>Other</h3>
+			<ul class="sidemenu">
+				<li><a href="/">Other</a></li>
+			</ul>
+			
+			<h3>Product Search</h3>	
+			<form class="searchform" action="!---SCRIPT_NAME---" method="post">
+				<p>
+				<input name="keywords" class="textbox" type="text" />
+                        	<input type="hidden" name="defaction" value="search" />
+				<input type="hidden" name="rewrite" value="off" />
+  				<input name="search" class="button" value="Search" type="submit" />
+				</p>			
+			</form>	
+				
+		<!-- sidebar ends -->		
+		</div>	
+	
+		<div id="main">
+
+<div class="crumb_nav"><!---BREAD_CRUMBS &gt;&gt; ---></div>

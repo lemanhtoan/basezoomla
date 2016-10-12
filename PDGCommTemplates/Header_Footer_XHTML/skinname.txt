@@ -1,0 +1,1 @@
+Primary Header/Footer Set for XHTML Compliant Templates (utilized by many PDG 'skins' - DO NOT DELETE)

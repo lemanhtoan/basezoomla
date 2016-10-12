@@ -1,0 +1,39 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--683786-->                                     
+<!--invskumatchform.htm-->
+<title>Current Inventory for PDG Commerce</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Current Inventory</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table border=0 cellpadding=5 cellspacing=0 width=100%>
+	<tr>
+		<td class="pdgheader"> Current Inventory </td>
+	</tr>
+</table>
+<form method="post" action="!---MODULE_NAME---">
+	<table border=0 cellpadding=5 width=100% class="pdgbody">
+		<tr>
+			<td colspan=5> Commerce will only display up to 50 products that matched the entered SKU. </td>
+		</tr>
+		<tr>
+			<td colspan=5><input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+			</td>
+		</tr>
+		<tr>
+			<td><b> Product Code</b></td>
+			<td><b>In Stock</b></td>
+			<td><b>Do Not Allow Backordering?</b></td>
+			<td><b>Do Not Display in Searches If Out Of Stock?</b></td>
+		</tr>
+		<!---PRODUCT_INV--->
+		<tr>
+			<td align=center colspan=5><br>
+				<input type="submit" class="pdgbutton" name="changefullinventory" value="Submit">
+				<input type=hidden name=navbaraction value="!---INV_PARTIAL_SKU---">
+				<input type=hidden name=productskuinv value="!---INV_PARTIAL_SKU---">
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

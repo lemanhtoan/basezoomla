@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form> 
+	<fieldset name="contact" addrulepath="components/com_contact/models/rules" label="COM_CONTACT_FORM_LABEL">
+		<field name="contact_name"
+			type="text"
+			id="contact-name"
+			label="COM_CONTACT_CONTACT_EMAIL_NAME_LABEL"
+			filter="string"
+			required="true"
+			placeholder="name"
+			hint="COM_CONTACT_CONTACT_EMAIL_NAME_LABEL"
+		/> 
+		<field name="contact_subject"
+			type="text"
+			id="contact-emailmsg"
+			size="60"
+			label="COM_CONTACT_CONTACT_MESSAGE_SUBJECT_LABEL"
+			filter="string"
+			validate="contactemailsubject"
+		/>
+		<field name="contact_address"
+			type="text"
+			id="contact-address"
+			label="COM_CONTACT_CONTACT_ADDRESS_NAME_LABEL"
+			filter="string"
+			required="true"
+			hint="COM_CONTACT_CONTACT_ADDRESS_NAME_LABEL"
+		/>
+		<field name="contact_telephone"
+			type="text"
+			id="contact-telephone"
+			label="COM_CONTACT_CONTACT_TELEPHONE_NAME_LABEL"
+			filter="string"
+			required="true"
+			hint="COM_CONTACT_CONTACT_TELEPHONE_NAME_LABEL"
+		/>
+		<field name="contact_email"
+			type="email"
+			id="contact-email"
+			label="COM_CONTACT_EMAIL_LABEL"
+			filter="string"
+			validate="contactemail"
+			required="true"
+			hint="COM_CONTACT_EMAIL_LABEL"
+		/>
+		<field name="contact_message"
+			type="textarea"
+			cols="50"
+			rows="10"
+			id="contact-message"
+			label="COM_CONTACT_CONTACT_ENTER_MESSAGE_LABEL"
+			filter="safehtml" 
+			hint="COM_CONTACT_CONTACT_ENTER_MESSAGE_LABEL"
+		/>
+		<field name="contact_captcha"
+			type="text"
+			id="contact-captcha"
+			required="true"
+			class="captcha-input"
+		/>
+	</fieldset>
+	<fieldset name="claim" addrulepath="components/com_contact/models/rules" label="COM_CONTACT_FORM_LABEL">
+		<field name="name_of_product"
+			type="text"
+			id="name-of-product"
+			label="NAME_OF_PRODUCT"
+			filter="string"
+			hint="NAME_OF_PRODUCT"
+		/> 
+		<field name="color_of_product"
+			type="text"
+			id="color-of-product"
+			label="COLOR_OF_PRODUCT"
+			filter="string"
+			hint="COLOR_OF_PRODUCT"
+		/> 
+		<field name="invoice_number"
+			type="text"
+			id="invoice-number"
+			label="INVOICE_NUMBER"
+			filter="string"
+			hint="INVOICE_NUMBER"
+		/> 
+		<field name="type_of_issue_1" type="checkbox" label="MECHANICAL_ISSUE" description="" value="Mechanical issue" />
+		<field name="type_of_issue_2" type="checkbox" label="COLOR_ISSUE" description="" value="Color issue"  />
+		<field name="description"
+			type="textarea"
+			cols="50"
+			rows="10"
+			id="description"
+			label="DESCRIPTION"
+			filter="safehtml"
+			hint="DESCRIPTION"
+		/>
+	</fieldset>	
+</form>

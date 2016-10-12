@@ -1,0 +1,488 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--19964961-->                                   
+<!--fedexregform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+FedEx&reg;Registration</title>
+<script language=Javascript>
+function copycontoship(){
+document.fedexform.shipstreet1.value=document.fedexform.contactstreet1.value;
+document.fedexform.shipstreet2.value=document.fedexform.contactstreet2.value;
+document.fedexform.shipcity.value=document.fedexform.contactcity.value;
+document.fedexform.shipstate.value=document.fedexform.contactstate.value;
+document.fedexform.shipcountry.value=document.fedexform.contactcountry.value;
+document.fedexform.shipzip.value=document.fedexform.contactzip.value;
+document.fedexform.shipresidential.checked=document.fedexform.contactresidential.checked;
+}
+
+function copycontobill(){
+document.fedexform.billstreet1.value=document.fedexform.contactstreet1.value;
+document.fedexform.billstreet2.value=document.fedexform.contactstreet2.value;
+document.fedexform.billcity.value=document.fedexform.contactcity.value;
+document.fedexform.billstate.value=document.fedexform.contactstate.value;
+document.fedexform.billcountry.value=document.fedexform.contactcountry.value;
+document.fedexform.billzip.value=document.fedexform.contactzip.value;
+document.fedexform.billresidential.checked=document.fedexform.contactresidential.checked;
+}
+
+function UpdateFedExDisplay(){
+	if(document.fedexform.fedexkey.value.length>0){
+		document.getElementById('fedexconifg').style.visibility = "visible";
+		document.getElementById('fedexreg').style.visibility = "hidden";
+	}
+	else{
+		document.getElementById('fedexreg').style.visibility = "visible";
+		document.getElementById('fedexconifg').style.visibility = "hidden";
+	}
+}
+
+function fedexregdisplay(){
+	document.getElementById('fedexconifg').style.visibility = "hidden";
+	document.getElementById('fedexreg').style.visibility = "visible";
+}
+
+function fedexconfigdisplay(){
+	document.getElementById('fedexconifg').style.visibility = "visible";
+	document.getElementById('fedexreg').style.visibility = "hidden";
+}
+
+//PDG.callOnPageLoad(UpdateFedExDisplay);
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>FedEx&reg; Registration</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<!--cmt: li menu and seperators go here--->
+<li><A href="javascript:void(0)" tsid="settings-section">Shipping Settings</A></li>
+<li class="seperator"></li>
+<li><A href="javascript:void(0)" tsid="registration-section">Registration Information</A></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-close.htm--->
+<!--cmt: settings-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="settings-section">
+<form method="post" name=fedexconfigform action="!---MODULE_NAME---">
+	<table class="pdgbody" width="100%" cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader"><b>FedEx Shipping Settings &nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:{}" OnClick="fedexregdisplay();"><span style="color:white">[ Click Here to See Registration Settings ]</span></a></b> </td>
+		</tr>
+		<tr>
+			<td align=center><table cellpadding=3 width="100%">
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx General Settings</b> </td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> Insure Shipment: </td>
+						<td align=left class="pdgdata2"><input type=checkbox name=insurance value=yes !---FEDEX_INSURANCE_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> Saturday Pickup: </td>
+						<td align=left class="pdgdata1"><input type=checkbox name=satpickup value=yes !---FEDEX_SATURDAY_PICKUP_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> Number of Days to Ship an Order: </td>
+						<td align=left class="pdgdata2"><input type=text name=daystoship value="!---FEDEX_DAYS_TO_SHIP---" size=3>
+						</td>
+					</tr>
+				</table>
+				<table cellpadding=3 width="100%">
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx Service Settings</b> </td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> Signature Requirements: </td>
+						<td align=left class="pdgdata1"><select type=text name=signaturetype>
+								<!---FEDEX_SIGNATURE_OPTIONS--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> FedEx Home Delivery&reg; Type: </td>
+						<td align=left class="pdgdata2"><select type=text name=homedeliverytype>
+								<!---FEDEX_HOME_DELIVERY_OPTIONS--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> FedEx Home Delivery&reg; Date Certain Number of Days:<br>
+							<span class=pdgnote>number of days to the delivery date</span> </td>
+						<td align=left class="pdgdata1"><input type=text name=homedeliverydate value="!---FEDEX_HOME_DAYS_TO_DELIVER---" size=3>
+						</td>
+					</tr>
+				</table>
+				<table cellpadding=3 width="100%">
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx Rate Comparison Filter</b> </td>
+					</tr>
+					<tr>
+						<td colspan=2><span class=pdgnote>Please check off the methods you want to include</span> </td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> FedEx First Overnight&reg;: </td>
+						<td align=left class="pdgdata1"><input type=checkbox name=FIRST_OVERNIGHT value=yes !---FIRST_OVERNIGHT_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> FedEx Priority Overnight&reg;: </td>
+						<td align=left class="pdgdata2"><input type=checkbox name=PRIORITY_OVERNIGHT value=yes !---PRIORITY_OVERNIGHT_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> FedEx Standard Overnight&reg;: </td>
+						<td align=left class="pdgdata1"><input type=checkbox name=STANDARD_OVERNIGHT value=yes !---STANDARD_OVERNIGHT_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> FedEx 2Day&reg;: </td>
+						<td align=left class="pdgdata2"><input type=checkbox name=FEDEX_2_DAY value=yes !---FEDEX_2_DAY_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> FedEx Express Saver&reg;: </td>
+						<td align=left class="pdgdata1"><input type=checkbox name=FEDEX_EXPRESS_SAVER value=yes !---FEDEX_EXPRESS_SAVER_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> FedEx Ground&reg;: </td>
+						<td align=left class="pdgdata2"><input type=checkbox name=FEDEX_GROUND value=yes !---FEDEX_GROUND_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> FedEx Home Delivery&reg;: </td>
+						<td align=left class="pdgdata1"><input type=checkbox name=GROUND_HOME_DELIVERY value=yes !---GROUND_HOME_DELIVERY_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> FedEx International First&reg;: </td>
+						<td align=left class="pdgdata2"><input type=checkbox name=INTERNATIONAL_FIRST value=yes !---INTERNATIONAL_FIRST_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> FedEx International Priority&reg;: </td>
+						<td align=left class="pdgdata1"><input type=checkbox name=INTERNATIONAL_PRIORITY value=yes !---INTERNATIONAL_PRIORITY_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> FedEx International Economy&reg;: </td>
+						<td align=left class="pdgdata2"><input type=checkbox name=INTERNATIONAL_ECONOMY value=yes !---INTERNATIONAL_ECONOMY_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> FedEx 1Day&reg; Freight: </td>
+						<td align=left class="pdgdata1"><input type=checkbox name=FEDEX_1_DAY_FREIGHT value=yes !---FEDEX_1_DAY_FREIGHT_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> FedEx 2Day&reg; Freight: </td>
+						<td align=left class="pdgdata2"><input type=checkbox name=FEDEX_2_DAY_FREIGHT value=yes !---FEDEX_2_DAY_FREIGHT_CHECK--- >
+						</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata1"> FedEx 3Day&reg; Freight: </td>
+						<td align=left class="pdgdata1"><input type=checkbox name=FEDEX_3_DAY_FREIGHT value=yes !---FEDEX_3_DAY_FREIGHT_CHECK--- >
+						</td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+	<div class="centered">
+		<input type="submit" class="pdgbutton" name="updatefedexcspconfig" value="Submit">
+	</div>
+</form>
+</div>
+<!--cmt: registration-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="registration-section">
+<form method="post" name=fedexform action="!---MODULE_NAME---" Onsubmit="if(this.FEDEX_EULA_ACCEPT.checked){return true;}else{alert('Please accept the FedEx EULA');this.FEDEX_EULA_ACCEPT.focus();return false;}">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+<table class="pdgbody" width="100%" cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader" colspan=2><b>FedEx&reg; Registration Information &nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:{}" OnClick="fedexconfigdisplay();"><span class="color:white">[ Click Here to See Configuration Settings ]</span></a></b> </td>
+		</tr>
+		<tr>
+			<td align=center><table cellpadding=3 width="100%">
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx Contact Information</b> </td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> First Name: </td>
+						<td class="pdgdata1"><input type="text" name="contactfirstname" value="!---FEDEX_CON_FIRST_NAME---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Last Name: </td>
+						<td class="pdgdata2"><input type="text" name="contactlastname" value="!---FEDEX_CON_LAST_NAME---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Company: </td>
+						<td class="pdgdata1"><input type="text" name="contactcompany" value="!---FEDEX_CON_COMPANY---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Department: </td>
+						<td class="pdgdata2"><input type="text" name="contactdept" value="!---FEDEX_CON_DEPT---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Title: </td>
+						<td class="pdgdata1"><input type="text" name="contacttitle" value="!---FEDEX_CON_TITLE---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Email: </td>
+						<td class="pdgdata2"><input type="text" name="contactemail" value="!---FEDEX_CON_EMAIL---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Phone: </td>
+						<td class="pdgdata1"><input type="text" name="contactphone" value="!---FEDEX_CON_PHONE---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Street 1: </td>
+						<td class="pdgdata2"><input type="text" name="contactstreet1" value="!---FEDEX_CON_STREET1---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Street 2: </td>
+						<td class="pdgdata1"><input type="text" name="contactstreet2" value="!---FEDEX_CON_STREET2---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> City: </td>
+						<td class="pdgdata2"><input type="text" name="contactcity" value="!---FEDEX_CON_CITY---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> State: </td>
+						<td class="pdgdata1"><select name="contactstate">
+								<!---FEDEX_CON_STATE--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Postal Code: </td>
+						<td class="pdgdata2"><input type="text" name="contactzip" value="!---FEDEX_CON_ZIP---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Country: </td>
+						<td class="pdgdata1"><select name="contactcountry">
+								<!---FEDEX_CON_COUNTRY--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Residential Address: </td>
+						<td class="pdgdata2"><input type="checkbox" name="contactresidential" value="yes" !---FEDEX_CON_RESIDENTIAL--- >
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1" colspan=2 align=center><input type=button  class="pdgbutton" name="Copy to Billing" value="Copy to Billing" onClick="copycontobill();">
+&nbsp; &nbsp;
+							<input  class="pdgbutton" type=button name="Copy to Shipping" value="Copy to Shipping" onClick="copycontoship();">
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table cellpadding=3 width="100%">
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx Billing Address</b> </td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Street 1: </td>
+						<td class="pdgdata1"><input type="text" name="billstreet1" value="!---FEDEX_BILL_STREET1---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Street 2: </td>
+						<td class="pdgdata2"><input type="text" name="billstreet2" value="!---FEDEX_BILL_STREET2---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> City: </td>
+						<td class="pdgdata1"><input type="text" name="billcity" value="!---FEDEX_BILL_CITY---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> State: </td>
+						<td class="pdgdata2"><select name="billstate">
+								<!---FEDEX_BILL_STATE--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Postal Code: </td>
+						<td class="pdgdata1"><input type="text" name="billzip" value="!---FEDEX_BILL_ZIP---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Country: </td>
+						<td class="pdgdata2"><select name="billcountry">
+								<!---FEDEX_BILL_COUNTRY--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Residential Address: </td>
+						<td class="pdgdata1"><input type="checkbox" name="billresidential" value="yes" !---FEDEX_BILL_RESIDENTIAL--- >
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table cellpadding=3 width="100%">
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx Shipping Address</b> (optional) </td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Street 1: </td>
+						<td class="pdgdata1"><input type="text" name="shipstreet1" value="!---FEDEX_SHIP_STREET1---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Street 2: </td>
+						<td class="pdgdata2"><input type="text" name="shipstreet2" value="!---FEDEX_SHIP_STREET2---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> City: </td>
+						<td class="pdgdata1"><input type="text" name="shipcity" value="!---FEDEX_SHIP_CITY---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> State: </td>
+						<td class="pdgdata2"><select name="shipstate">
+								<!---FEDEX_SHIP_STATE--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Postal Code: </td>
+						<td class="pdgdata1"><input type="text" name="shipzip" value="!---FEDEX_SHIP_ZIP---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Country: </td>
+						<td class="pdgdata2"><select name="shipcountry">
+								<!---FEDEX_SHIP_COUNTRY--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Residential Address: </td>
+						<td class="pdgdata1"><input type="checkbox" name="shipresidential" value="yes" !---FEDEX_SHIP_RESIDENTIAL--- >
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table cellpadding=3 width="100%">
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx&reg; EULA</b> </td>
+					</tr>
+					<tr>
+						<td class="pdgdata1" colspan=2><textarea name="FedEx_EULA" cols=55 rows=20 style="width:100%" readonly>END USER LICENSE AGREEMENT
+
+(DISTRIBUTION AGREEMENT)
+
+IN ORDER TO USE THE APPLICATION (AS DEFINED BELOW), YOU MUST AGREE TO ABIDE BY THIS AGREEMENT. THIS AGREEMENT GIVES EACH OF US CERTAIN RIGHTS AND RESPONSIBILITIES. YOU WILL BE ASSUMING FULL AND SOLE RESPONSIBILITY FOR ALL USE OF THE APPLICATION OCCURRING UNDER YOUR ACCOUNT NUMBER; YOU WILL BE LIMITING YOUR REMEDIES. PLEASE READ THIS AGREEMENT CAREFULLY.
+
+You will be required to accept this Agreement in order to complete the registration process. By clicking the &quot;I accept&quot; button, you accept and agree to be bound by all of the provisions of this Agreement, including those incorporated by reference, without modification, limitation or qualification. You will be binding yourself or your company to this Agreement. You represent that you have the authority to bind your company, if done on behalf of a company, to this Agreement. If you do not have such authority, you must click the &quot;I decline&quot; button. You must also click the &quot;I decline&quot; button if you do not agree with this Agreement. If you decline, you will not be authorized to access or use the Application and/or the FedEx services available through such Application.
+
+
+FEDEX END-USER LICENSE AGREEMENT
+
+This license agreement (Agreement) is entered by and between FedEx Corporate Services, Inc. (FedEx) and you (Licensee).  
+
+In consideration of the mutual promises and obligations set out below, the sufficiency of which the Parties acknowledge, FedEx and Licensee acknowledge and agree as follows: 
+
+Section 1.  (a) Grant.  Subject to the terms and conditions of this Agreement, FedEx grants Licensee a non-exclusive, royalty-free, non-assignable, non-transferable, limited, revocable license, without the right to grant sublicenses, to access and use, within the United States, the FedEx shipping services application (Application), solely as integrated into and made accessible to Licensee as a part of the shipping services system (Software) provided to Licensee by Licensees shipping system supplier (Software Manufacturer), solely to access those shipping and shipping related services offered, from time to time, by FedEx or its Affiliates as incorporated into the Application (FedEx Services) which may include, as the case may be, functionality enabling Licensee to label, rate, route, record, track and invoice shipments tendered to FedEx for carriage on behalf of Licensee and for no other purpose. For purposes of this Agreement, the term FedEx shall mean and include FedEx Corporate Services, Inc. and its parent company, FedEx Corporation, and FedEx Corporations subsidiary companies.  This Agreement governs Licensees access and use of the Application at the physical locations and under the FedEx account numbers and/or registration numbers provided to Licensee by FedEx.  The Application may be accessed and used by Licensee and (through Licensee) by Licensees retail customers that remotely access the Software for the purpose of conducting e-commerce transactions with Licensee and requesting FedEx Services.  Such access by retail customers does not extend to third party shippers or resellers or consolidators of shipping or shipping related services, and except as may be expressly permitted by a separate written agreement between FedEx and Licensee, use of the Application to perform or order FedEx Services by or for the benefit of such parties is prohibited.  To the extent FedEx or the Software Manufacturer makes available to Licensee any updates, upgrades, enhancements, bug-fixes or other modifications to the Application (collectively, Modifications), such Modifications shall be considered a part of the Application and subject to the terms and conditions of this Agreement.
+
+(b) Restrictions.  (i) The license does not permit, and Licensee will not (and will not permit any employee or other third party to): 
+
+1.	reverse engineer, decompile, disassemble, or translate the Application;
+2.	apply any procedure or process to the Application in order to ascertain, derive, and/or appropriate for any reason or purpose, the source code or source listings for the Application or any trade secret or confidential information or process contained in the Application;
+3.	remove any product identification, copyright or other notices;
+4.	transfer the Application or the license, in whole or in part, or grant any rights in the Application or the license, in whole or in part by sublicense or otherwise;
+5.	except as allowed under Section 1(a) herein, provide, lease, lend, or otherwise use or allow others to use or have access to the Application or any portion thereof;
+6.	disseminate or disclose performance information or analysis (including, without limitation, benchmarks) relating to the Application without the prior written consent of FedEx;  
+7.	use or display (including, without limitation, doing either on a stand-alone basis (i.e., not as integrated with the Software)) the Application except as expressly authorized in and in accordance with Section 1(a) above; 
+8.	reproduce or distribute the Application; or, 
+9.	modify or create derivative works of the Application. 
+
+(ii) Licensee shall promptly notify FedEx in writing upon its discovery of any unauthorized use of the Application.  FedEx may prevent access to or use of the Application or its systems if FedEx has reason to believe that (a) Licensee or third party using the Application licensed to Licensee may be involved in potential unauthorized use of or other infringement of FedExs proprietary rights or (b) Licensee or its use of the Application is in violation of this Agreement. 
+
+(iii) In addition to the provisions of this Agreement, if Licensee is an agency, department, or other entity of the United States Government (Government), the use, duplication, reproduction, release, modification, disclosure or transfer of the Application, manuals, or any technical specifications, or any related documentation of any kind, including technical data (Documentation), is further restricted in accordance with Federal Acquisition Regulation (FAR) 12.212 for civilian agencies and Defense Federal Acquisition Regulation Supplement (DFARS) 227.7202 for military agencies. The Application and Documentation is commercial computer software and commercial computer software documentation.  Manufacturer is FedEx Corporate Services, Inc.  30 FedEx Parkway, Collierville, TN 38017.
+
+(iv) Licensee acknowledges and agrees that the Application is subject to export restrictions and controls imposed by various statutes and regulations, including the Export Administration Act and the Export Administration Regulations (collectively, &quot;the Acts&quot;).  Licensee agrees and certifies that neither the Application nor any direct product thereof is being or will be (a) used for any purpose prohibited by the Acts or (b) exported from the United States in violation of the Acts.
+
+(v) Licensee acknowledges that the Software and other services provided by Software Manufacturer are not provided by FedEx, and Licensee waives any and all claims against FedEx arising from or relating to Licensees use of the Software or the other services provided by Software Manufacturer.
+
+Section 2.  (a) Licensee Obligations.  Licensee will follow FedEx's instructions, including those provided in the Application and/or Documentation, provided from time to time, for access and use of the Application.  Licensee is solely responsible for providing and maintaining all hardware necessary to access and use the Application.  In addition, Licensee is solely responsible for obtaining access to the Internet or World Wide Web. Such access is required to utilize the Application.  In addition to such access, the Licensee shall provide FedEx and/or the Software Manufacturer with on-demand remote access to the Application (whether via Internet or dedicated communication line (e.g., telephone))  so that  FedEx and/or the Software Manufacturer may access the Application, from time to time, in order to configure the Application, make Modifications to, recover FedEx Services and related data from, and/or download rating and routing information to the Application as it resides on Licensees systems and/or disable the Application in the event Licensees license is terminated. FedEx may, and may require the Software Manufacturer, to Modify the Application at any time for any reason and Licensee hereby consents to all such Modifications.  In the event FedEx and/or the Software Manufacturer is unable to establish communication with Licensees systems for reasons not attributable to FedEx or the Software Manufacturer, Licensee will assist FedEx and/or Software Manufacturer within a commercially reasonable time to initiate such communication.  If the FedEx Services available to Licensee through the Application include shipping transaction functionality, Licensee will complete an End of Day Close Process as required by FedEx to ensure FedEx shipping transactions are uploaded to FedEx at the close of each business day.  
+
+(b) Maintenance. Licensee agrees to look solely to the Software Manufacturer for all technical support and maintenance of the Software and Application, unless otherwise instructed by FedEx.
+
+Section 3.  Termination.  This Agreement is effective until terminated by either party.  This Agreement will terminate independently without notice if Licensee fails to comply with any provision of this Agreement or any instructions regarding the Application provided by FedEx.  Upon termination for any reason, Licensee must cease all use of the Application.  FedEx reserves the right to unilaterally terminate this Agreement and the use of the Application at any time, for any reason, and by whatever means.
+
+Section 4.  Payment.  To the extent applicable to the FedEx Services available to Licensee through the Application, Licensee agrees to remit payment, in accordance with the terms and conditions contained in the applicable FedEx transportation agreement, FedEx Service Guide (&quot;Service Guide&quot;), or as otherwise instructed by FedEx, for all invoices generated by using the Application and to reference the invoice number when payment is remitted.  Licensee is responsible for payment of all charges generated through use of the Application under Licensees account number and registration number.
+
+Section 5.  Billing and Refunds. To the extent applicable to the FedEx Services available to Licensee through the Application, Licensee may bill shipping charges for transactions conducted through the Application only to valid account numbers, either bill sender, bill recipient or bill third party. To the extent applicable to the FedEx Services available to Licensee through the Application, shipments tendered to FedEx with incorrect routing, labeling, commitment date, service designation or other errors through no fault of FedEx will not be eligible for refunds under FedEx's money-back guarantees.  Refunds requested by Licensee with respect to any shipment must be made in accordance with the applicable Service Guide.  Licensee will not be entitled to any refund or credit under FedEx's money-back guarantees if FedEx determines that the claim resulted from improper use of the Application.  FedEx, in its sole discretion, may suspend its money-back guarantees in the event Application fails or is inoperable for any reason.
+
+Section 6.  Disclaimer of Warranty.  LICENSEE EXPRESSLY ACKNOWLEDGES AND AGREES THAT ACCESS TO THE APPLICATION IS PROVIDED TO LICENSEE BY THE SOFTWARE MANUFACTURER AND THAT FEDEX IS NEITHER PROVIDING THE SOFTWARE NOR CHARGING LICENSEE A FEE FOR USE OF THE APPLICATION.  THE APPLICATION IS PROVIDED AS-IS.  TO THE EXTENT PERMITTED BY APPLICABLE LAW, FEDEX AND ITS REPRESENTATIVES (AS DEFINED IN SECTION 8 BELOW), DISCLAIM AND EXCLUDE ALL WARRANTIES, WHETHER, EXPRESS, STATUTORY, OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, AND THE WARRANTIES OF NON-INFRINGEMENT OR QUIET ENJOYMENT.  FEDEX DOES NOT WARRANT THAT THE APPLICATION WILL MEET ANY OR ALL OF LICENSEES REQUIREMENTS OR THAT ITS OPERATIONS WILL BE UNINTERRUPTED OR ERROR FREE OR THAT ANY DEFECT WITHIN THE APPLICATION WILL BE CORRECTED.  FEDEX DOES NOT WARRANT THAT THE APPLICATION OR ANY RELATED SERVICES OR CONTENT IS FREE FROM BUGS, VIRUSES, ERRORS OR OTHER PROGRAM LIMITATIONS.  FEDEX DOES NOT WARRANT ACCESS TO THE INTERNET OR TO ANY OTHER SERVICE OR CONTENT THROUGH THE APPLICATION.  FURTHERMORE, FEDEX DOES NOT WARRANT OR MAKE ANY REPRESENTATION REGARDING THE RESULTS OF LICENSEES INSTALLATION OR USE OF THE APPLICATION IN TERMS OF CAPABILITY, CORRECTNESS, ACCURACY, RELIABILITY OR OTHERWISE. NO ORAL OR WRITTEN INFORMATION, REPRESENTATION OR ADVICE GIVEN BY FEDEX, THE SOFTWARE MANUFACTURER OR AN AUTHORIZED REPRESENTATIVE OF EITHER SHALL CREATE ANY WARRANTY.  SOME STATES DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSIONS MAY NOT APPLY TO LICENSEE.  IN THAT EVENT, ANY IMPLIED WARRANTIES ARE LIMITED IN DURATION TO SIXTY (60) DAYS FROM THE DATE OF PURCHASE OF THE SOFTWARE.  HOWEVER, SOME STATES DO NOT ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATION MAY NOT APPLY TO LICENSEE.  THIS WARRANTY GIVES LICENSEE SPECIFIC LEGAL RIGHTS AND LICENSEE MAY HAVE OTHER RIGHTS AS WELL WHICH VARY FROM STATE TO STATE. 
+
+Section 7.  Remedies.  YOUR SOLE REMEDY FOR ANY DISSATISFACTION WITH THE APPLICATION IS TO STOP USING THE APPLICATION.  Licensee agrees to look to the Software Manufacturer for any and all remedies for damages of any nature arising out of Licensees access, use or inability to access or use the Application and/or Software.  Licensee acknowledges and agrees that it is Licensees sole responsibility to arrange with the Software Manufacturer for any and all warranties, maintenance requirements and remedies arising out of Licensees access and use of the Application and/or Software.  Licensee agrees that the remedy set forth in this Section is Licensees exclusive remedy under this Agreement for any dissatisfaction with its access to or use of (or inability to do either) the Application or the Software. 
+
+Section 8.  LIMITATION OF LIABILITY. LICENSEE ACKNOWLEDGES THAT FEDEX IS PROVIDING THE APPLICATION TO LICENSEE FREE OF CHARGE.  EXCEPT FOR FEDEXS INDEMNITY OBLIGATIONS UNDER SECTION 12(A) BELOW, THE ENTIRE LIABILITY OF FEDEX AND ITS REPRESENTATIVES (AS DEFINED BELOW) FOR ANY REASON SHALL BE LIMITED TO $100.00.  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, FEDEX AND ITS PARENT COMPANY AND SUBSIDIARIES AND AFFILIATES, DIRECT AND INDIRECT, OF ITS PARENT COMPANY, LICENSORS, SUPPLIER, OR ANY OF THE FOREGOINGS RESPECTIVE EMPLOYEES, OFFICERS, DIRECTORS AND/OR AGENTS (COLLECTIVELY, REPRESENTATIVES) ARE NOT AND SHALL NOT BE LIABLE FOR ANY SPECIAL, INCIDENTAL, EXEMPLARY, PUNITIVE, CONSEQUENTIAL OR OTHER INDIRECT DAMAGES (INCLUDING:  DAMAGES FOR LOSS OF BUSINESS, LOSS OF DATA, LOSS OF PROFITS, DAMAGES TO LICENSEES COMPUTER SYSTEMS OR THE LIKE), WHETHER BASED ON BREACH OF CONTRACT, BREACH OF WARRANTY, TORT (INCLUDING, NEGLIGENCE), PRODUCT LIABILITY, STATUTORY OR STRICT LIABILITY OR OTHERWISE EVEN IF FEDEX OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND EVEN IF A REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE.  SOME STATES DO NOT ALLOW THE LIMITATION AND/OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION OR EXCLUSION MAY NOT APPLY TO YOU.  THE LIMITATIONS OF DAMAGES SET FORTH ABOVE ARE FUNDAMENTAL ELEMENTS OF THE BASIS OF THE BARGAIN BETWEEN FEDEX AND LICENSEE.  FEDEX WOULD NOT BE ABLE TO PROVIDE THE APPLICATION WITHOUT SUCH LIMITATIONS.  
+
+Section 9.  Controlling Law and Severability.  This Agreement shall be governed by and construed in accordance with the laws of the United States and the State of Tennessee, excluding its conflicts of law provisions.  If for any reason a court of competent jurisdiction finds any provision of this Agreement, or a portion thereof, to be unenforceable, that provision shall be enforced to the maximum extent permissible so as to effect the intent of the parties and the remainder of this Agreement shall remain in full force and effect.  Any cause of action with respect to Application must be instituted within one (1) year after the claim or cause of action has arisen in Shelby County, Tennessee or be barred.
+
+Section 10.  Terms and Conditions of Carriage. To the extent applicable to the FedEx Services available to Licensee through the Application, (a) Licensee agrees that domestic and international carriage by FedEx of any shipments tendered to FedEx using the Application shall be in accordance with the terms, conditions and limitations of liability set out on the NONNEGOTIABLE Air Waybill, Label, Manifest, or Pick-Up Record (collectively Shipping Documentation) regarding the shipments and as appropriate any transportation agreement between Licensee and FedEx covering such shipment and in any applicable tariff, Service Guide or Standard Conditions of Carriage, copies of which are available upon request, and which are incorporated into this Agreement by reference.  If there is a conflict regarding a shipment between the Shipping Documentation and any such document then in effect or this Agreement, the transportation agreement, tariff, Service Guide, Standard Conditions of Carriage, or this Agreement will control, in that order of priority.  
+
+(b) In the event Licensee uses the Application to process shipments tendered to FedEx for delivery to locations outside the United States, Licensee will, at Licensees sole expense, assure that the terms and conditions of international carriage supplied by FedEx from time to time (and which may be amended or modified from time to time at FedEx's sole discretion) are placed on the Shipping Documentation, as instructed by FedEx, for all such international shipments. LICENSEE SHALL DEFEND, INDEMNIFY AND HOLD HARMLESS FEDEX AND ITS REPRESENTATIVES FROM AND AGAINST ANY AND ALL CLAIMS, DEMANDS, SUITS, DAMAGES, COSTS, EXPENSES, FINES AND JUDGMENTS, INCLUDING  REASONABLE ATTORNEYS FEES, ARISING OUT OF LICENSEE'S FAILURE TO APPLY THE INTERNATIONAL CARRIAGE TERMS TO THE SHIPPING DOCUMENTATION FOR SUCH INTERNATIONAL SHIPMENTS, INCLUDING WITHOUT LIMITATION CLAIMS FROM THE RECIPIENT OF ANY SHIPMENT, AND LICENSEE'S FAILURE TO FOLLOW FEDEX'S INSTRUCTIONS IN REGARD TO THE PLACEMENT OF THE TERMS ON THE SHIPPING DOCUMENTATION FOR SUCH INTERNATIONAL SHIPMENTS. 
+
+(c) Licensee acknowledges that if the Application is used to process shipments to locations outside the United States or other country of shipment origin, Licensee must enter the name of the person completing the Shipping Documentation to print in lieu of such persons manual or script signature on the Shipping Documentation, as applicable, for all shipments tendered by Licensee to FedEx using the Application.  Licensee further acknowledges that such printed name shall be sufficient to constitute the Licensees signature, and acceptance of FedEx's terms and conditions of carriage contained in the applicable transportation agreement, tariff, Service Guide, Standard Conditions, or Shipping Documentation, under which the shipment is accepted by FedEx, or its independent contractor. 
+
+(d) Unless otherwise indicated, the shippers address indicated on the face of any Shipping Documentation is the place of execution and the place of departure and the recipients address listed on the face of the Shipping Documentation is the place of destination. Unless otherwise indicated on the face of the Shipping Documentation the first carrier of all shipments is FedEx Express, P.O. Box 727, Memphis, TN 38194. In the event another carrier is listed on any such document, that carrier is the first carrier of the shipment. The address for FedEx Ground is P.O. Box 108, Coraopolis, PA 15230.
+
+Section 11.  INDEMNITY.   LICENSEE SHALL, AT LICENSEES SOLE COST AND EXPENSE, DEFEND, INDEMNIFY AND HOLD HARMLESS FEDEX AND ITS REPRESENTATIVES FROM ALL CLAIMS, DEMANDS, SUITS, DAMAGES, COSTS, EXPENSES, FINES AND JUDGMENTS, INCLUDING  REASONABLE ATTORNEYS FEES, (HEREINAFTER, COLLECTIVELY, CLAIMS) ARISING OUT OF OR RELATING TO LICENSEES INSTALLATION, USE AND/OR REMOVAL OF THE APPLICATION OR ANY OTHER MATERIALS PROVIDED TO LICENSEE BY OR ON BEHALF OF FEDEX OR ITS REPRESENTATIVES. FEDEX MAY INTERVENE AND ASSUME ITS DEFENSE IN ANY SUCH CLAIMS, AT ITS EXPENSE AND IN ITS SOLE DISCRETION.  LICENSEE WILL NOT SETTLE ANY CLAIMS INVOLVING FEDEX OR THE APPLICATION WITHOUT THE PRIOR WRITTEN CONSENT OF FEDEX. 
+
+Section 12. Complete Agreement.  This Agreement constitutes the entire agreement between Licensee and FedEx with respect to the Application, and supersedes any prior or contemporaneous understandings, representations, statements or agreements, written or oral, regarding the Application.  As used in this Agreement, including means including, without limitation and is illustrative rather than exhaustive.  No amendment to or modification of this Agreement will be binding on FedEx without FedEx's written consent.  Licensee may not assign or otherwise transfer this Agreement or the licenses granted herein, including by operation of law without the prior written consent of FedEx.  Any assignment or transfer in violation of the foregoing is void and of no effect.  In addition, except for FedEx Representatives, Licensee and FedEx acknowledge and agree that there are no third party beneficiaries to this Agreement. The provisions of Sections 1(b), 4, 5, 6, 7, 8, 9, 10 11, and 12 will survive the termination of this Agreement.</textarea>
+							<br>
+							<input type=checkbox name=FEDEX_EULA_ACCEPT value=YES !---CHECK_FEDEX_EULA_ACCEPT--- >
+							I have read and accept the terms of the FedEx EULA </td>
+					</tr>
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx&reg; Account Number</b> </td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Account: </td>
+						<td class="pdgdata1"><input type="text" name="fedexaccount" value="!---FEDEX_ACCOUNT---" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgheader" colspan=2><b>FedEx Registration Keys</b> </td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"> Key: </td>
+						<td class="pdgdata1"><!---FEDEX_KEY--->
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Password: </td>
+						<td class="pdgdata2"><!---FEDEX_PASSWORD--->
+						</td>
+					</tr>
+					<tr>
+						<td class="pdgdata1" colspan=2><!---FEDEX_REGISTRATION_MSG--->
+						</td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+	<div class="centered">
+		<input type="submit" class="pdgbutton" name="registerfedexcspuser" value="Submit">
+	</div>
+</form>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-ftr.htm--->

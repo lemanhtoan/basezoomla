@@ -1,0 +1,407 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--9493494-->                                    
+<!--qboeform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+QuickBooks Online Edition Settings</title>
+<script language="JavaScript">
+
+function updateexampleimage(pathcheck){
+	var selectidx=document.qbwc.QBOE_IMAGE_NAME_SOURCE.selectedIndex;
+	if((selectidx==1) && (document.qbwc.QBOE_IMAGE_EXTENSION.value.length>0) && (document.qbwc.QBOE_IMAGE_PATH.value.length>0)){
+		document.qbwc.showimagesetting.value=	document.qbwc.QBOE_IMAGE_PATH.value+ "[code/SKU/reference number]"+ document.qbwc.QBOE_IMAGE_EXTENSION.value;
+	}
+	else{
+		document.qbwc.showimagesetting.value="";
+	}
+}
+
+function updateexamplethumb(pathcheck){
+	var selectidx=document.qbwc.QBOE_THUMB_NAME_SOURCE.selectedIndex;
+	if((selectidx==1) && (document.qbwc.QBOE_THUMB_EXTENSION.value.length>0) && (document.qbwc.QBOE_THUMB_PATH.value.length>0)){
+		document.qbwc.showthumbsetting.value=	document.qbwc.QBOE_THUMB_PATH.value+ "[code/SKU/reference number]"+ document.qbwc.QBOE_THUMB_EXTENSION.value;
+	}
+	else{
+		document.qbwc.showthumbsetting.value="";
+	}
+}
+
+function initpage(){
+
+}
+
+PDG.callOnPageLoad(initpage);
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>QuickBooks Online Edition Settings</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<li><a href="javascript:void(0)" tsid="general-section">General</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="order-section">Orders</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="product-section">Products</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="image-section">Images</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="advanced-section">Advanced</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form.htm--->
+<form method="post" name=qbwc action="!---MODULE_NAME---" OnSubmit="return(checkVersion());" class="pdg_sectionfrm">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form-close.htm--->	
+<!--cmt: general-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="general-section">
+
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>QBWC Execution Settings <!---QBOE_ACTIVE---></b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Initiate Order Import:</td>
+			<td class="pdgdata2"><a href="!---MODULE_NAME---?qboecgiexec=a" target=_blank>Import Orders</a></td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1">Automatic Order Import:<br> <span class="pdgnote">Note: Enter commconfig path to import orders when they are placed</span> </td>
+			<td width=50% class="pdgdata1"><input type=text name=QBOE_EXEC_FILE value="!---QBOE_EXEC_FILE---">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>QBWC Connection Settings  </b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> QuickBooks Online Edition AppID: </td>
+			<td width=50% class="pdgdata1"><input type=text name=QBOE_APPID value="!---QBOE_APPID---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> QuickBooks Online Edition AppLogin: </td>
+			<td width=50% class="pdgdata2"><input type=text name=QBOE_APPLOGIN value="!---QBOE_APPLOGIN---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> QuickBooks Online Edition User: </td>
+			<td width=50% class="pdgdata1"><input type=text name=QBOE_CHRON_USER value="!---QBOE_CHRON_USER---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> QuickBooks Online Edition Password: </td>
+			<td width=50% class="pdgdata2"><input type=text name=QBOE_CHRON_PW value="!---QBOE_CHRON_PW---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> QuickBooks Online Edition Certificate Key File: </td>
+			<td width=50% class="pdgdata1"><input type=text name=QBOE_KEY_FILE value="!---QBOE_KEY_FILE---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> QuickBooks Online Edition Certificate File: </td>
+			<td width=50% class="pdgdata2"><input type=text name=QBOE_CERT_FILE value="!---QBOE_CERT_FILE---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> QuickBooks Online Edition Passphrase: </td>
+			<td width=50% class="pdgdata1"><input type=password name=QBOE_PASSPHRASE value="!---QBOE_PASSPHRASE---">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Reverse DNS Lookup:</td>
+			<td class="pdgdata2"><a href="!---MODULE_NAME---?getqbmsservername=a" target=_blank >Get Reverse DNS Information</a></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Test Certificate:</td>
+			<td class="pdgdata1"><a href="!---MODULE_NAME---?qboetestcert=a" target=_blank>Initiate Certificate Test</a></td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2">QuickBooks Online Edition Manage Connection Ticket Link:<br><font class="pdgnote">Internet Explorer Only</font></td>
+			<td width=50% class="pdgdata2"><a href="!---QBOE_MANAGE_CONNTKT_LINK---" target=_Blank>Manage Connection Ticket</a></td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>QBWC Account Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Account to deposit sales receipts: </td>
+			<td width=50% class="pdgdata1"><input type=text name=QBOE_SALES_ACCOUNT value="!---QBOE_SALES_ACCOUNT---" >
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan="2"><input type=submit class=pdgbutton value="Submit Changes" name=changeqboesettings>
+			</td>
+		</tr>
+</table>
+</div>
+<!--cmt: order-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="order-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="nopdgheader"><b>Quickbooks Online Edition Order Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1" valign=top> Import all orders as: </td>
+			<td width=50% class="pdgdata1"><input type=radio name=QBOE_IMPORT_TYPE value="1" !---QBOE_IMPORT_INVOICES_CHECK--- >
+				Invoices<br>
+				<input type=radio name=QBOE_IMPORT_TYPE value="2" !---QBOE_IMPORT_SALES_RECEIPT_CHECK--- >
+				Sales Receipts<br>
+				<input type=radio name=QBOE_IMPORT_TYPE value="0" !---QBOE_IMPORT_ON_PAYMENT_CHECK--- >
+				Based on Payment Type<br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Import Items Tax Status: </td>
+			<td width=50% class="pdgdata2"><input type=radio name=QBOE_ITEMS_TAX value="tax" !---QBOE_ITEMS_TAX_CHECK--- >
+				All items are taxable<br>
+				<input type=radio name=QBOE_ITEMS_TAX value="non" !---QBOE_ITEMS_NONTAX_CHECK--- >
+				All items are NOT taxable<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Item name for shipping charges: </td>
+			<td width=50% class="pdgdata1"><input type=text name=QBOE_SHIP_ITEM value="!---QBOE_SHIP_ITEM---" >
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Item name for discounting charges: </td>
+			<td width=50% class="pdgdata2"><input type=text name=QBOE_DISCOUNT_ITEM value="!---QBOE_DISCOUNT_ITEM---" >
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan="2"><input type=submit class=pdgbutton value="Submit Changes" name=changeqboesettings>
+			</td>
+		</tr>
+</table>
+</div>
+<!--cmt: product-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="product-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="nopdgheader"><b>Quickbooks Online Edition Product Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2" valign=top> Product Category Specification: </td>
+			<td width=50% class="pdgdata2"><input type=radio name=QBOE_PRODCAT value="USE_QB_TOP_LEVEL" !---QBOE_USE_QB_TOP_LEVEL_CAT_CHECK--- >
+				Use QuickBooks top level items as categories<br>
+				<input type=radio name=QBOE_PRODCAT value="USE_INACTIVE" !---QBOE_USE_NO_CAT_CHECK--- >
+				Do not create categories - import as inactive products<br>
+				<input type=radio name=QBOE_PRODCAT value="USE_ONE_CAT" !---QBOE_USE_ONE_CAT_CHECK--- >
+				Use one category - import all products into a single category<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Product code/SKU/reference number: </td>
+			<td width=50% class="pdgdata1"><input type=radio name=QBOE_prod_code value="USE_QB_NAME" !---QBOE_USE_QB_NAME_FOR_SKU_CHECK--- >
+				Use QuickBooks Name for Product Code<br>
+				<input type=radio name=QBOE_prod_code value="USE_QB_LISTID" !---QBOE_USE_QB_LISTID_CHECK--- >
+				Use QuickBooks Generated Number for Product Code<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Replace bad characters with:<br>
+				<span class=pdgnote>*for product description and code/SKU/reference number</span> </td>
+			<td width=50% class="pdgdata2"><input type=text name=QBOE_CHAR_REPLACE value="!---QBOE_CHAR_REPLACE---" size=4 maxlength=2>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Account for internet products that are added to QuickBooks:<br>
+				<span class=pdgnote>*products that are not in QuickBooks are added as Non-Inventory Items.</span> </td>
+			<td width=50% class="pdgdata1"><input type=text name=QBOE_NEWPROD_ACCT value="!---QBOE_NEWPROD_ACCT---" >
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan="2"><input type=submit class=pdgbutton value="Submit Changes" name=changeqboesettings>
+			</td>
+		</tr>
+	</table>
+</div>
+<!--cmt: image-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="image-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="nopdgheader"><b>Quickbooks Online Edition Image Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Set image file: <br>
+				<br>
+				Example:
+				<input type=text name=showimagesetting class="pdgdata1" style="border:none" value="" OnFocus()="this.blur(); alert('Please make your adjustments to image settings in the section to the right.');" size=40>
+			</td>
+			<td width=50% class="pdgdata1" ><b>Image directory path:</b>
+				<input type=text name=QBOE_IMAGE_PATH value="!---QBOE_IMAGE_PATH---" size=15 onBlur="updateexampleimage(1);" onFocus="updateexampleimage(1);">
+				<br>
+				<b>Image file name source:</b>
+				<select name=QBOE_IMAGE_NAME_SOURCE onchange="updateexampleimage(0);">
+					<!---QBOE_IMAGE_NAME_SOURCE--->
+				</select>
+				<br>
+				<b>Image file name extension:</b>
+				<input type=text name=QBOE_IMAGE_EXTENSION value="!---QBOE_IMAGE_EXTENSION---" onBlur="updateexampleimage(0);" onFocus="updateexampleimage(0);">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Set thumbnail image file: <br>
+				<br>
+				Example:
+				<input type=text name=showthumbsetting class="pdgdata2" style="border:none" value="" size=40>
+			</td>
+			<td width=50% class="pdgdata2" ><b>Thumbnail image directory path:</b>
+				<input type=text name=QBOE_THUMB_PATH value="!---QBOE_THUMB_PATH---" size=15 onBlur="updateexamplethumb(1);" onFocus="updateexamplethumb(1);">
+				<br>
+				<b>Thumbnail image file name source:</b>
+				<select name=QBOE_THUMB_NAME_SOURCE onchange="updateexamplethumb(0);">
+					<!---QBOE_THUMB_NAME_SOURCE--->
+				</select>
+				<br>
+				<b>Thumbnail image file name extension:</b>
+				<input type=text name=QBOE_THUMB_EXTENSION value="!---QBOE_THUMB_EXTENSION---" onBlur="updateexamplethumb(0);" onFocus="updateexamplethumb(0);">
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan="2"><input type=submit class=pdgbutton value="Submit Changes" name=changeqboesettings>
+			</td>
+		</tr>
+	</table>
+</div>
+<!--cmt: advanced-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="advanced-section">
+		<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td colspan=2 class="nopdgheader"><b>Advanced Settings
+					<!---QBOE_ACTIVE--->
+					</b> </td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> QuickBooks Online Edition Log file: </td>
+				<td width=50% class="pdgdata2"><input type=text name=QBOE_LOG_FILE value="!---QBOE_LOG_FILE---">
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 class="pdgheader"><b>Advanced Order Settings</b> </td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Set 'to be printed' for new orders: </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name=QBOE_SET_TO_BE_PRINTED value="yes" !---QBOE_SET_TO_BE_PRINTED_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> Set class for orders: </td>
+				<td width=50% class="pdgdata1"><input type=radio name=QBOE_CLASS_TYPE value=string !---QBOE_CLASS_TYPE_STRING_CHECK--- >
+					Based on string
+					<input type=text name=QBOE_CLASS_STRING value="!---QBOE_CLASS_STRING---" size=20>
+					<br>
+					<input type=radio name=QBOE_CLASS_TYPE value=custcat !---QBOE_CLASS_TYPE_CUSTCAT_CHECK--- >
+					Based on Customer Category<br>
+					<input type=radio name=QBOE_CLASS_TYPE value=pass !---QBOE_CLASS_TYPE_PASS_CHECK--- >
+					Based on value of HTML form entry '
+					<!---QBOE_CLASS_TYPE_PASS_NAME--->
+					'<br>
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 class="pdgheader"><b>Advanced Product Settings</b> </td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Do not change image settings for existing products: </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name="QBOE_DONT_CHANGE_IMAGE" value="yes" !---QBOE_DONT_CHANGE_IMAGE_CHECK--->
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1"> Do not change weight setting for existing products: </td>
+				<td class="pdgdata1"><input type=checkbox name=QBOE_DONT_CHANGE_WT value="yes" !---QBOE_DONT_CHANGE_WT_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2"> Do not change the taxable status for existing products: </td>
+				<td class="pdgdata2"><input type=checkbox name=QBOE_DO_NOT_UPDATE_TAXABLE value="yes" !---QBOE_DO_NOT_UPDATE_TAXABLE_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">Default product weight:</td>
+				<td class="pdgdata1"><input type=text name=QBOE_DEFAULT_WT value="!---QBOE_DEFAULT_WT---" size=6>
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Do not move products from their assigned category within PDG during synchronization: </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name="QBOE_DO_NOT_MOVE_PROD_TO_CAT" value="yes" !---QBOE_DO_NOT_MOVE_PROD_TO_CAT_CHECK--- OnClick="if(this.checked){document.qbwc.QBOE_LEAVE_IN_STAGE.checked=true;}else{document.qbwc.QBOE_LEAVE_IN_STAGE.checked=false;}">
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> Do not move products from the 'Inactive Product Category' during synchronization: </td>
+				<td width=50% class="pdgdata1"><input type=checkbox name="QBOE_LEAVE_IN_STAGE" value="yes" !---QBOE_LEAVE_IN_STAGE_CHECK--- OnClick="if(document.qbwc.QBOE_DO_NOT_MOVE_PROD_TO_CAT.checked){this.checked=true;alert('Must remain checked based on setting above!');}">
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> DO NOT update the Product's Description: </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name="QBOE_DONT_CHANGE_ITEM_DESC" value="yes" !---QBOE_DONT_CHANGE_ITEM_DESC_CHECK--- >
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> DO NOT import $0.00 Products: </td>
+				<td width=50% class="pdgdata1"><input type=checkbox name="QBOE_DONT_IMPORT_ZERO_PRICE" value="yes" !---QBOE_DONT_IMPORT_ZERO_PRICE_CHECK--- >
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Use QuickBooks subitem hierarchy for product description:<br>
+					<span class=pdgnote>*otherwise defaults to the first 255 characters of the description or sales description which is determined by item settings</span> </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name=QBOE_USE_FULLNAME_FOR_DESC value="yes" !---QBOE_USE_FULLNAME_FOR_DESC_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> Use QuickBooks description for extended product text:<br>
+					<span class=pdgnote>*this allows for the full description to be displayed on detailed item pages</span> </td>
+				<td width=50% class="pdgdata1"><input type=checkbox name=QBOE_USE_QB_DESC_FOR_PROD_TEXT value="yes" !---QBOE_USE_QB_DESC_FOR_PROD_TEXT_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">Store QuickBooks Generated Number (listid) in User Defined: </td>
+				<td class="pdgdata2"><input type=text name=QBOE_LISTID_USER_DEF value="!---QBOE_LISTID_USER_DEF---" size=10></td>
+			</tr>
+			<tr>
+				<td colspan=2 class="pdgheader"><b>Advanced Customer Settings</b> </td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> Do not import customers:<br>
+					<span class=pdgnote>All orders are imported as &quot;Internet customer&quot;</span> </td>
+				<td width=50% class="pdgdata1"><input type=checkbox name=QBOE_USE_WEB_CUSTOMER value="yes" !---QBOE_USE_WEB_CUSTOMER_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Create Taxable and Non-Taxable &quot;Internet Customers&quot;:<br>
+				</td>
+				<td width=50% class="pdgdata2"><a href="!---MODULE_NAME---?addqboeinternetcustomer" target=_blank> Click Here to Create Internet Customers </a> </td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> Save the customer's IP Number: </td>
+				<td width=50% class="pdgdata1"><input type=checkbox name=QBOE_SAVE_CUST_IP value="yes" !---QBOE_SAVE_CUST_IP_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Add customers with the last name first (eg. 'Last, First'):<br>
+					<span class=pdgnote>The default setting is 'First Last'</span> </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name=QBOE_CUST_LAST_FIRST value="yes" !---QBOE_CUST_LAST_FIRST_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 class="pdgheader"><b>Force Inventory Synchronization</b> </td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Force resynchronize each connection:<br>
+				</td>
+				<td width=50% class="pdgdata2"><input type=checkbox name=QBOE_FORCE_INV_SYNC !---QBOE_FORCE_INV_SYNC_CHECK--- value=yes>
+				</td>
+			</tr>
+			<tr>
+				<td align=center colspan=2><input type=submit class=pdgbutton value="Submit Changes" name=changeqboesettings>
+				</td>
+			</tr>
+		</table>
+	</div>
+<!---INCLUDE AdminTemplates/_includes/section-formftr1.htm--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/section-formftr2.htm--->

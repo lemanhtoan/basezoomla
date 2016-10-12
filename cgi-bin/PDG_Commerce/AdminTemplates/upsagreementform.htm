@@ -1,0 +1,368 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--6519820-->                                    
+<!--upsagreementform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+- UPS OnLine Tools Agreement</title>
+<script Language="JavaScript">
+	<!-- //Hide from non-supporting browsers
+	function SetAgreement()	{
+	if (window.frames.length)	{
+	  // update from IFrame's document
+	  if (window.frames["agreement"].document.lic_win.accept.checked)
+		document.data_win.agree.value = "yes";
+	  else
+		document.data_win.agree.value = "";
+
+	  if (window.frames["agreement"].document.lic_win.decline.checked)
+		document.data_win.decline.value = "yes";
+	  else
+		document.data_win.decline.value = "";
+	} else	{
+	  // update from default table
+	  if (document.data_win.upsaccept.checked)
+		document.data_win.agree.value = document.data_win.upsaccept.value;
+	  else
+		document.data_win.agree.value = "";
+	  if (document.data_win.upsdecline)
+		document.data_win.decline.value = document.data_win.upsdecline.value;
+	  else
+		document.data_win.decline.value = "";
+	}
+	}
+
+	function isValidEmail (field)	{
+	var FirstPass = field.value.match (/\b(^(\S+@).+(\..{2,4})$)\b/gi);
+
+	if (FirstPass)	{
+	  var Pattern=/^(.+)@(.+)$/;
+	  var name, domain;
+	  var mray = field.value.match (Pattern); 
+
+	  if (mray == null)
+		return false; 
+	  name = mray[1]; 
+	  domain = mray[2];
+	  for (i = 0; i < name.length; i++) { 
+		if (name.charCodeAt (i) > 127)
+		  return false; 
+	  } 
+	  for (i = 0; i < domain.length; i++) { 
+		if (domain.charCodeAt (i) > 127)
+		  return false; 
+	  }
+	  return true;
+	}
+	alert ('The email address that you have entered is not valid. Please re-enter this value and submit again.');
+	field.focus();
+	return false;
+	}
+
+	function ValidateForm ()	{
+	SetAgreement ();
+	if ((document.data_win.decline.value == "yes") && (document.data_win.agree.value == "yes"))	{
+	  alert ("You can not both agree and decline this agreement!");
+	  return false;
+	}
+	if (document.data_win.decline.value == "yes")
+	  return true;
+	if ((document.data_win.agree.value == '') && (document.data_win.decline.value ==''))	{
+	  alert ("You must either agree or decline the agreement!");
+	  if (window.frames.length)	{
+		window.frames["agreement"].scroll(0, 25000);
+		window.frames["agreement"].document.lic_win.accept.focus ();
+	  } else	{
+		document.data_win.upsaccept.focus();
+	  }
+	  return false;
+	}
+	if (document.data_win.upscontact.value == "")	{
+	  alert ("You need to enter a Contact Name.");
+	  document.data_win.upscontact.focus ();
+	  return false;
+	}
+	if (document.data_win.upstitle.value == "")	{
+	  alert ("You need to specify your Title/Position.");
+	  document.data_win.upstitle.focus ();
+	  return false;
+	}
+	if (document.data_win.upsemail.value == "")	{
+	  alert ("You need to specify your Email Address.");
+	  document.data_win.upsemail.focus ();
+	  return false;
+	}
+	if (document.data_win.upscompany.value == "")	{
+	  alert ("You need to specify your company name.");
+	  document.data_win.upscompany.focus ();
+	  return false;
+	}
+	if (document.data_win.upsaddr1.value == "")	{
+	  alert ("You need to provide your address information.");
+	  document.data_win.upsaddr1.focus ();
+	  return false;
+	}
+	if (document.data_win.upscity.value == "")	{
+	  alert ("You need to provide your city.");
+	  document.data_win.upscity.focus ();
+	  return false;
+	}
+	if (document.data_win.upswebsite.value == "")	{
+	  alert ("You need to specify the Web Site to be using the UPS OnLine Tools.");
+	  document.data_win.upswebsite.focus ();
+	  return false;
+	}
+	if (!document.data_win.upscallback[0].checked && !document.data_win.upscallback[1].checked)	{
+	  alert ("You need to indicate if the UPS representative is to contact you.");
+	  return false;
+	}
+	return true;
+	}
+	// -->
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>UPS Agreement</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" id=data_win name=data_win onSubmit="return ValidateForm();">
+	<!---PASS_VALUES--->
+	<input type=hidden name=upsterms value="!---UPS_AGREEMENT_TEXT---">
+	<input type=hidden name=agree value="">
+	<input type=hidden name=decline value="">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td height=6 class="pdgheader" colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=3 align="center"><img src="!---CONFIGROOT---UPS_LOGO_S.gif" width=45 height=50 border=0>
+				<h2>UPS OnLine<sup>&reg;</sup> Tools Licensing &amp; Registration</h2></td>
+		</tr>
+		<tr>
+			<td colspan=3 align="center"><iframe src="!---MODULE_NAME---?upsagreement=action&upsuser=yes" name=agreement frameborder=1
+		height=300 width=560 scrolling=auto>
+				<input type=hidden name=framesupport value=no>
+				<table>
+					<tr>
+						<td colspan=2><h3 align=center>UPS OnLine<sup>&reg;</sup> Tools Access User Terms Agreement</h3>
+							<!---UPS_AGREEMENT--->
+&nbsp; </td>
+					</tr>
+					<tr>
+						<td align=center width=50%><input type=checkbox name=upsaccept value=yes>
+							Yes, I Agree</td>
+						<td align=center width=50%><input type=checkbox name=upsdecline value=yes>
+							No, I Do Not Agree</td>
+					</tr>
+					<tr>
+						<script Language=JavaScript>
+            <!-- //Hide from non-supporting browsers
+            function DoPrintWindow ()	{
+              var h = 600;
+              var w = 800;
+              var winl = (screen.width - w) / 2;
+              var wint = (screen.height -h) / 2;
+
+              childwindow=window.open('!---MODULE_NAME---?upsagreement=action&upsuser=yes','agreement_form','scrollbars=yes,menubar=yes,resizable=yes'+',width='+w+',height='+h+',top='+wint+',left='+winl);
+            }
+            // -->
+            </script>
+						<td colspan=2 align=center><input type=button name=print value="Printer Friendly Version" onClick="DoPrintWindow();">
+						</td>
+					</tr>
+				</table>
+				</iframe>
+			</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Contact Name: &nbsp;</td>
+			<td><input type=text name=upscontact size=50></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Title: &nbsp;</td>
+			<td><input type=text name=upstitle size=30></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Company Name: &nbsp;</td>
+			<td><input type=text name=upscompany size=50></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Phone Number: &nbsp;</td>
+			<td><input type=text name=upsphone size=25>
+				Ext:
+				<input type=text name=upsext size=10></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Email: &nbsp;</td>
+			<td><input type=text name=upsemail size=25 onBlur="isValidEmail(this);"></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Address: &nbsp;</td>
+			<td><input type=text name=upsaddr1 size=50></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Room/Floor/Suite</td>
+			<td><input type=text name=upsaddr2 size=50></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Department</td>
+			<td><input type=text name=upsaddr3 size=50></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>City: &nbsp;</td>
+			<td><input type=text name=upscity size=25></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>State/Province: &nbsp;</td>
+			<td><select name=upsprov>
+					<option value="">Non US/Canadian Address</option>
+					<option value="AL">Alabama (US)</option>
+					<option value="AK">Alaska (US)</option>
+					<option value="AB">Alberta (Canada)</option>
+					<option value="AZ">Arizona (US)</option>
+					<option value="AR">Arkansas (US)</option>
+					<option value="BC">British Columbia (Canada)</option>
+					<option value="CA">California (US)</option>
+					<option value="CO">Colorado (US)</option>
+					<option value="CT">Connecticut (US)</option>
+					<option value="DE">Delaware (US)</option>
+					<option value="DC">District of Columbia (US)</option>
+					<option value="FL">Florida (US)</option>
+					<option value="GA">Georgia (US)</option>
+					<option value="HI">Hawaii (US)</option>
+					<option value="ID">Idaho (US)</option>
+					<option value="IL">Illinois (US)</option>
+					<option value="IN">Indiana (US)</option>
+					<option value="IA">Iowa (US)</option>
+					<option value="KS">Kansas (US)</option>
+					<option value="KY">Kentucky (US)</option>
+					<option value="LA">Louisiana (US)</option>
+					<option value="ME">Maine (US)</option>
+					<option value="MB">Manitoba (Canada)</option>
+					<option value="MD">Maryland (US)</option>
+					<option value="MA">Massachusetts (US)</option>
+					<option value="MI">Michigan (US)</option>
+					<option value="MN">Minnesota (US)</option>
+					<option value="MS">Mississippi (US)</option>
+					<option value="MO">Missouri (US)</option>
+					<option value="MT">Montana (US)</option>
+					<option value="NE">Nebraska (US)</option>
+					<option value="NV">Nevada (US)</option>
+					<option value="NB">New Brunswick (Canada)</option>
+					<option value="NH">New Hampshire (US)</option>
+					<option value="NJ">New Jersey (US)</option>
+					<option value="NM">New Mexico (US)</option>
+					<option value="NY">New York (US)</option>
+					<option value="NF">Newfoundland (Canada)</option>
+					<option value="NC">North Carolina (US)</option>
+					<option value="ND">North Dakota (US)</option>
+					<option value="NT">Northwest Territories (Canada)</option>
+					<option value="NS">Nova Scotia (Canada)</option>
+					<option value="NU">Nunavut (Canada)</option>
+					<option value="OH">Ohio (US)</option>
+					<option value="OK">Oklahoma (US)</option>
+					<option value="OR">Oregon (US)</option>
+					<option value="ON">Ontario (Canada)</option>
+					<option value="PA">Pennsylvania (US)</option>
+					<option value="PE">Prince Edward Island (Canada)</option>
+					<option value="QC">Quebec (Canada)</option>
+					<option value="RI">Rhode Island (US)</option>
+					<option value="SK">Saskatchewan (Canada)</option>
+					<option value="SC">South Carolina (US)</option>
+					<option value="SD">South Dakota (US)</option>
+					<option value="TN">Tennessee (US)</option>
+					<option value="TX">Texas (US)</option>
+					<option value="UT">Utah (US)</option>
+					<option value="VT">Vermont (US)</option>
+					<option value="VA">Virginia (US)</option>
+					<option value="WA">Washington (US)</option>
+					<option value="WV">West Virginia (US)</option>
+					<option value="WI">Wisconsin (US)</option>
+					<option value="WY">Wyoming (US)</option>
+					<option value="YT">Yukon Territory (Canada) </option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Postal Code: &nbsp;</td>
+			<td><input type=text name=upszip size=15></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Country: &nbsp;</td>
+			<td><select name="upscntry">
+					<!---UPS_CNTRY_REGISTER--->
+				</select>
+&nbsp; </td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Website URL: &nbsp;</td>
+			<td><input type=text name=upswebsite size=25></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right>Primary&nbsp;UPS&nbsp;Account&nbsp;Number:&nbsp;*&nbsp;</td>
+			<td><input type=text name=upsaccountnum size=25></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align=right> Additional&nbsp;UPS&nbsp;Account&nbsp;Number:&nbsp;*&nbsp;<br>
+				(maximum of four additional accounts) </td>
+			<td><input type=text name=upsaccountnum2 size=25>
+				<br>
+				<input type=text name=upsaccountnum3 size=25>
+				<br>
+				<input type=text name=upsaccountnum4 size=25>
+				<br>
+				<input type=text name=upsaccountnum5 size=25>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3 align="center"> To Open a UPS Account, click <a 
+        href="https://www.ups.com/servlet/login?returnto=http%3a//www.ups.com/usingcustserv/accountsetup/registration.html&reasonCode=-1&appid=OPENACCT" 
+        target="_blank">here</a> or call 1-800-PICK-UPS. </td>
+		</tr>
+		<tr>
+			<td colspan=3 align="center"> I would like a UPS Sales Representative to contact me about opening a UPS shipping <br>
+				account or to answer questions about UPS services.
+				<input type=radio name=upscallback value=yes>
+				Yes
+				<input type=radio name=upscallback value=no>
+				No </td>
+		</tr>
+		<tr>
+			<td colspan=3><hr>
+				<div align=left>*Optional Information </div>
+				<div align=center>
+					<input type="submit" class="pdgbutton" name="upslicense" value="Next">
+&nbsp;&nbsp;
+					<input type="submit" class="pdgbutton" name="cancel" value="Cancel">
+				</div></td>
+		</tr>
+		<tr>
+			<td align=center colspan=3><h5>UPS<sup>&reg;</sup>, UPS &amp; Shield Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup><br>
+					are registered trademarks of United Parcel Service of America, Inc.</h5></td>
+		</tr>
+	</table>
+	<table width=100%>
+		<tr>
+			<td align=center class="pdgnote">&copy;1997-
+				<!---CURRENT_YEAR--->
+				PDG Software, Inc. </td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

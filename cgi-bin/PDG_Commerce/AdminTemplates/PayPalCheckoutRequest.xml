@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding"> 
+	<SOAP-ENV:Header> 
+	<RequesterCredentials xmlns="urn:ebay:api:PayPalAPI" SOAP-ENV:mustUnderstand="1"> 
+		<Credentials xmlns="urn:ebay:apis:eBLBaseComponents"> 
+		<Username></Username>
+		<Password></Password>
+		<Subject/>
+		</Credentials> 
+	</RequesterCredentials> 
+	</SOAP-ENV:Header> 
+	<SOAP-ENV:Body> 
+		<SetExpressCheckoutReq xmlns="urn:ebay:api:PayPalAPI"> 
+			<SetExpressCheckoutRequest> 
+			<Version xmlns="urn:ebay:apis:eBLBaseComponents">1.00</Version> 
+				<SetExpressCheckoutRequestDetails xmlns="urn:ebay:apis:eBLBaseComponents"> 
+				<OrderTotal currencyID="USD">0.0</OrderTotal>
+				<ReturnURL></ReturnURL>
+				<CancelURL></CancelURL>
+				<PaymentAction></PaymentAction> 
+				</SetExpressCheckoutRequestDetails> 
+			</SetExpressCheckoutRequest> 
+		</SetExpressCheckoutReq> 
+	</SOAP-ENV:Body> 
+</SOAP-ENV:Envelope> 
+ 

@@ -1,0 +1,10 @@
+<div class="widget<?php echo $this->class ? ' '. $this->class : ''; ?>"<?php echo $this->id ? ' id="'. $this->id . '"' : '';?>>
+    <?php if (strlen($this->title)): ?>
+    <div class="widget-heading">
+        <h1 class="widget-title page-header"><?php echo $this->title; ?></h1>
+    </div>
+    <?php endif; ?>
+    <div class="widget-body">
+        <?php echo $content; ?>
+    </div>
+</div>

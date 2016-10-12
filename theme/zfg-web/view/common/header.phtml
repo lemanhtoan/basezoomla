@@ -1,0 +1,43 @@
+<style>
+    #main-menu li a {color: <?php echo $this->config('core.menuColorInActive');?>;}
+    #subscribe {border-bottom: 1px solid <?php echo $this->config('core.menuColorInActive');?>;}
+    .email::-webkit-input-placeholder {
+        color: <?php echo $this->config('core.menuColorActive');?>;
+    }
+
+    .email:-moz-placeholder { /* Firefox 18- */
+        color: <?php echo $this->config('core.menuColorActive');?>;  
+    }
+
+    .email::-moz-placeholder {  /* Firefox 19+ */
+        color: <?php echo $this->config('core.menuColorActive');?>;  
+    }
+
+    .email:-ms-input-placeholder {  
+        color: <?php echo $this->config('core.menuColorActive');?>;  
+    }
+</style>
+<header style="background: <?php echo $this->config('core.headerColor');?>">
+    <a href="<?php echo $this->url('web');?>" id="logo">
+        <?php if ($this->config('core.siteLogo')) : ?>
+            <img src="<?php echo $this->config('core.siteLogo')->getImageUrl($this->config('core.siteLogo')->width, $this->config('core.siteLogo')->height) ?>" alt="<?php echo $this->config('core.siteName') ?>" ?>
+        <?php else : ?>
+            <?php echo $this->config('core.siteName') ?>
+        <?php endif ?>
+    </a>
+    <div class="container main-menu">
+        <div class="row">
+            <div class="col-md-12">
+                <?php echo $this->menu(array('menuId' => 4, 'layout' => false)); ?>
+                
+            </div>
+            <button id="toggle-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <?php echo $this->languageSwitcher()->render() ?>
+</header>
+<!-- end header -->

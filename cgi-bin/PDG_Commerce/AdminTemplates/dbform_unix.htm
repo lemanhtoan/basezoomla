@@ -1,0 +1,66 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1200601-->                                    
+<!--dbform_unix.htm-->
+<title>PDG Commerce Database Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Database Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<table border=0 cellpadding=5 cellspacing=0 width=100%>
+		<tr>
+			<td colspan=2 class="nopdgheader"><b>Database Options</b></td>
+		</tr>
+	</table>
+	<table border=0 cellpadding=5 cellspacing=0 width=100% class="pdgbody">
+		<tr>
+			<td colspan=2> These options define the database connectivity configuration of PDG Commerce. These configurations are vital to the operation of PDG Commerce. When finished, press the <b>Submit Changes</b> button, then immediately return to the <a href="!---MODULE_NAME---?displayinframes=a" target="_top">Main Page</a> and <b>'Make Changes Live'.</b><br>
+				<br></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><b>
+				<!---DB_CONFIG_INFO--->
+				</b><br>
+				<br></td>
+		</tr>
+		<tr>
+			<td width=40% class="pdgdata1">MySQL Server:</td>
+			<td width=60% class="pdgdata1"><input type=text maxlength=50 name="sqlsrvr" value="!---SQL_SERVER---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">MySQL Server Database:</td>
+			<td class="pdgdata2"><input type=text  maxlength=50 name="dbname" value="!---DB_NAME---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Login Name:</td>
+			<td class="pdgdata1"><input type=text  maxlength=50 name="dblogin" value="!---DB_LOGIN---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Password:</td>
+			<td class="pdgdata2"><input type=password  maxlength=50 name="dbpw" value="!---DB_PW---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">MySQL Socket: <br>
+				<span class="pdgnote">*Leave blank for default MySQL configuration</span></td>
+			<td class="pdgdata1"><input type=text  maxlength=50 name="dbsocket" value="!---DB_SOCKET---">
+				<br></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><!---MYSQL_INDEX_TOGGLE--->
+				<br></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><br>
+				<br>
+&nbsp;
+				<input type="submit" class="pdgbutton" name="changedboptions" value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>
+	<!---CONNECT_STATUS--->
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

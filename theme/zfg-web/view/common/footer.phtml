@@ -1,0 +1,81 @@
+<script type="text/javascript">
+    function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+
+    $(document).ready(function () {
+        $(".btn_subscribe").on("click", function () {
+            var email = $('.email').val();
+            if ($.trim(email).length == 0) {
+                alert('Please enter valid email address');
+                return false;
+            }
+
+            if(isEmail(email))
+            {
+                var data = {email: email};
+                $.ajax({
+                    type: "POST",
+                    dataType: 'json',
+                    url: '<?php echo $this->url('web/subscribe');?>',
+                    data: data,
+                    cache: false,
+                    success: function (response) {
+//                        console.log(response);
+                        if (response['error_code'] == 0) {
+                            alert('sucessful!');
+                        } else {
+                            alert('Email exist');
+                        }
+                        location.reload();
+                        return false;
+                    },
+                });
+            } else {
+                alert('Invalid Email Address');
+                return false;
+            }
+            return false;
+        });
+
+
+    });
+
+
+</script>
+
+<footer style="background: <?php echo $this->config('core.footerColor'); ?>">
+    <p style="color: <?php echo $this->config('core.menuColorInActive');?>">&copy; <?php echo date('Y'); ?> BASELLI. All Rights Reserved</p>
+    
+    <?php
+        $routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
+               ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+        if($routeName == 'web/contact'
+                || $routeName == 'web/cms/article/list'
+                || $routeName == 'web/cms/article/page'):
+    ?>
+        <div class="subscribe">
+            <span style="color: <?php echo $this->config('core.menuColorInActive');?>"><?php echo $this->translate('subscribe'); ?></span>
+            <form action="#" id="subscribe">
+                <input type="text" placeholder="<?php echo $this->translate('Your e-mail'); ?>" name="email" class="email" >
+                <input type="submit" class="btn_subscribe">
+                <img class="fa" src="<?php if($this->config('core.subscribeIcon')) echo $this->config('core.subscribeIcon')->getImageUrl(22, 21) ?>" alt="">
+                <img class="fa hover" src="<?php if($this->config('core.subscribeIconHover')) echo $this->config('core.subscribeIconHover')->getImageUrl(22, 21) ?>" alt="">
+            </form>
+        </div>
+    <?php endif;?>
+    
+    <p class="social">
+        <?php if (count($this->SocialHelper()) > 0): ?>
+            <?php foreach ($this->SocialHelper() as $item): ?>
+                <a href="<?php echo $item->url; ?>" style="text-decoration: none;" target="_blank">
+                    <img src="<?php echo $item->image->getImageUrl($item->image->width, $item->image->height); ?>" alt="<?php echo $item->name; ?>">
+                    <img class="hover" src="<?php echo $item->image_hover->getImageUrl($item->image_hover->width, $item->image_hover->height); ?>" alt="<?php echo $item->name; ?>">
+                </a>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </p>
+</footer>
+<!-- end footer -->
+<script src="<?php echo $this->themePath(); ?>js/detect.js"></script>

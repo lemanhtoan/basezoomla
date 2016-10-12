@@ -1,0 +1,66 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1152895-->                                    
+<!--shippingqtytable.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Quantity Shipping Table Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Quantity Shipping Tables Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" name="shiprules">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=6 class="pdgheader"><b>Shipping Charges by Quantity</b> </td>
+		</tr>
+		<tr>
+			<td width="10%" align="left"><b>Rule #</b></td>
+			<td width="20%" align="left"><b>Min Quantity</b></td>
+			<td width="20%" align="left"><b>Max Quantity</b></td>
+			<td width="20%" align="left"><b>Shipping Cost</b></td>
+			<td width="20%" align="left"><b>Country/Zone</b></td>
+			<td width="10%" align="left">&nbsp;</td>
+		</tr>
+		<!---SHIP_QUANTITY_CHARGES--->
+		<tr>
+			<td colspan="6">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=6 class="pdgheader"><b>Add A New Shipping Quantity Rule</b> </td>
+		</tr>
+		<tr>
+			<td width="10%" align="left"><b>Rule #</b></td>
+			<td width="20%" align="left"><b>Min Quantity</b></td>
+			<td width="20%" align="left"><b>Max Quantity</b></td>
+			<td width="20%" align="left"><b>Shipping Cost</b></td>
+			<td width="20%" align="left">&nbsp;</td>
+			<td width="10%" align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="10%" align="left"><input type="text" name="shippingqtyruleno" size="2">
+			</td>
+			<td width="20%" align="left"><input type="text" name="shippingqtymin" size="10">
+			</td>
+			<td width="20%" align="left"><input type="text" name="shippingqtymax" size="10">
+			</td>
+			<td width="20%" align="left"><input type="text" name="shippingqtyamount" size="10">
+			</td>
+			<td width="20%">&nbsp;</td>
+			<td width="10%">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="left" colspan=5><b>Country/Zone:</b>
+				<select name="shippingqtycountry">
+					<!---COUNTRY_OR_ZONE_LIST--->
+				</select>
+			</td>
+			<td><input type="submit" class="pdgbutton" name="addshippingqty" value="Add">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=6>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

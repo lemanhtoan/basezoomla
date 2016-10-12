@@ -1,0 +1,19 @@
+<?php if ($this->element instanceof \Zend\Form\Element\Hidden) : ?>
+
+    <?php echo $this->formElement($this->element) ?>
+
+<?php else : ?>
+
+    <?php $hasError = (bool) $this->element->getMessages() ?>
+    <?php $hasValidated = $this->form->hasValidated() ?>
+
+    <div class="form-row <?php echo $hasValidated ? ($hasError ? 'has-error' : '') : '' ?>">
+        <?php if ($this->element->getOption('partial')) : ?>
+            <?php echo $this->partial($this->element->getOption('partial')) ?>
+        <?php else : ?>
+            <?php echo $this->formElement($this->element) ?>
+            <?php echo $this->partial('form/element-errors') ?>
+        <?php endif ?>
+    </div>
+
+<?php endif ?>

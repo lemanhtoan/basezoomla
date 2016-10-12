@@ -1,0 +1,152 @@
+body {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 10px;
+margin-left: 0px; 
+margin-right: 0px; 
+margin-top: 0px; 
+border-top-width: 0; 
+border-left-width: 0;
+border-right-width: 0; 
+background-color:#ffffff;}
+
+html {
+margin-left: 0px; 
+margin-right: 0px; 
+margin-top: 0px; 
+border-top-width: 0; 
+border-left-width: 0;
+border-right-width: 0; 
+background-color:#ffffff;}
+
+.pdgnav {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 10px;
+margin-left: 0px; 
+margin-top: 0px; 
+border-top-width: 0; 
+border-left-width: 0; 
+color:#ffffff;
+background-color:#0982C4;
+}
+
+.pdgdata1 {
+background-color:#eeeeee;
+vertical-align:middle; }
+
+.pdgdata2 {
+background-color:#ffffff;
+vertical-align:middle; }
+
+.pdgnote {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 9px;
+}
+
+a.pdgmainnav {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 16px;
+font-weight: bold;
+color: #0982C4;}
+
+a.pdgmainnav:link {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 16px;
+font-weight: bold;
+color: #0982C4;}
+
+a.pdgmainnav:visited {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 16px;
+font-weight: bold;
+color: #0982C4;}
+
+a.pdgmainnav:hover {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 16px;
+font-weight: bold;
+color: #0982C4;}
+
+.pdgbody {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 10px;}
+
+.pdgheader {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 12px;
+font-weight: bold;
+color: #ffffff;
+vertical-align:middle; 
+text-align:left;
+background-color:#0982C4;
+height: 22px;}
+
+.pdgmargin 
+{vertical-align:top;}
+
+.pdgnavdata 
+{font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 12px;
+vertical-align:top; 
+text-align:left;
+color: #ffffff;}
+
+.divborder {
+border-width: thin;
+border-style: solid;
+border-color: #0982C4;
+width: 90%;
+}
+
+td {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 12px;
+vertical-align:top}
+
+.pdgnavlink {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 11px;
+color:#ffffff;
+text-decoration:none;}
+
+.pdgnavlink:visited {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 11px;
+color:#ffffff;
+text-decoration:none;}
+
+.pdgnavlink:hover {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 11px;
+color:#ffffff;
+text-decoration:underline;}
+
+a {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 12px;
+text-decoration:none;
+color:blue;}
+
+a:visited {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 12px;
+text-decoration:none;
+color:blue;}
+
+a:hover {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 12px;
+text-decoration:underline;
+color:blue;}
+
+font {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 12px;
+vertical-align:top}
+
+
+input.pdgbutton { 
+color: #0962c4; 
+font-size: 12px; 
+font-weight: bold;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+}

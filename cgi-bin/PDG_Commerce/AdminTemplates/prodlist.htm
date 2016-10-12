@@ -1,0 +1,115 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1932093-->                                    
+<!--prodlist.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Available Products</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Available Products</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td class="pdgheader"><b>Current Category</b></td>
+	</tr>
+	<tr>
+		<td><!---BREAD_CRUMBS--->
+			<br>
+			<!---SUB_CATEGORIES--->
+		</td>
+	</tr>
+	<script language='JavaScript'>
+<!--
+if(!!---MAX_CAT_DEPTH---){
+document.write('<tr> \n');
+document.write('    <td class="pdgheader"> <b>Add A Product Category</b> </td>\n');
+document.write('  </tr>\n');
+document.write('  <tr> \n');
+document.write('    <td>\n');
+document.write('	<form method="post" action="!---MODULE_NAME---">\n');
+document.write('	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">\n');
+document.write('	<input type="hidden" name="parentcategory" value="!---PROD_CAT_CODE---">\n');
+document.write('	<input type="hidden" name="productcategory" value="!---PROD_CAT_CODE---">\n');
+document.write('	<input type="hidden" name="productlist" value="yes">\n');
+document.write('	<table class="pdgbody" cellpadding=5 cellspacing=0>\n');
+document.write('	  <tr> \n');
+document.write('	    <td align="left">&nbsp;&nbsp; <b>Code</b></td>\n');
+document.write('	    <td align="left"><b>Description</b></td>\n');
+document.write('	    <td align="left">&nbsp;</td>\n');
+document.write('	  </tr>\n');
+document.write('	  <tr> \n');
+document.write('	    <td align="left">&nbsp; \n');
+document.write('	    <input type="text" size="5" maxlength="4" name="addproductcatcode">\n');
+document.write('	    </td>\n');
+document.write('	    <td align="left">\n');
+document.write('	    <input type="text" size="35" name="addproductcatdescription">\n');
+document.write('	    </td>\n');
+document.write('	    <td align="left"> \n');
+document.write('	    <input type="submit" class="pdgbutton" name="addproductcategory" value="Add">\n');
+document.write('	    </td>\n');
+document.write('	  </tr>\n');
+document.write('	</table>\n');
+document.write('	</form>\n');
+document.write('    </td>\n');
+document.write('  </tr>\n');
+
+}
+-->
+</script>
+	<tr>
+		<td class="pdgheader"><b>Add A Product</b> </td>
+	</tr>
+	<tr>
+		<td><!---ADD_PRODUCT_ERROR_MSG--->
+			<form method="post" action="!---MODULE_NAME---">
+				<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<input type="hidden" name="productcategory" value="!---PROD_CAT_CODE---">
+				<table class="pdgbody" cellpadding=5 cellspacing=0>
+					<tr>
+						<td align="left"><b>&nbsp;&nbsp;Product Code</b></td>
+						<td align="left"><b>Description</b></td>
+						<td align="left"><b>Price</b></td>
+						<td align="left"><b>Options From</b></td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="left">&nbsp;
+							<script language='JavaScript'>
+<!--
+//this is broken
+/*
+if(!!---TOP_LEVEL_CAT---){
+	document.write('!---PROD_CAT_CODE---');
+}
+*/
+-->
+</script>
+							<input type="text" size="17" maxlength="20" name="addproductkey">
+						</td>
+						<td align="left"><input type="text" size="30" name="addproductdescription">
+						</td>
+						<td align="left"><input type="text" size="8" name="addproductprice">
+						</td>
+						<td align="left"><input type="text" size="8" name="addproductcopyopt">
+						</td>
+						<td align="left"><input type="submit" class="pdgbutton" name="addproduct" value="Add">
+						</td>
+					</tr>
+				</table>
+			</form></td>
+	</tr>
+	<tr>
+		<td class="pdgheader"><b>
+			<!---PROD_CAT_CODE--->
+			Products</b> </td>
+	</tr>
+	<tr>
+		<td><table class="pdgbody" cellpadding=5 cellspacing=0 width=100%>
+				<!---DISPLAY_PRODUCTS--->
+				<tr>
+					<td colspan=11>&nbsp;</td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

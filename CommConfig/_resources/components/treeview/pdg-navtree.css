@@ -1,0 +1,178 @@
+.treeview .hover { color: blue; cursor: pointer; }
+#pdg-navtree ul li a.nitem-selected ,#pdg-navtree li a.nitem-selected{
+	background-color:#D8EFFF;
+}
+
+#pdg-navtree ul li a ,#pdg-navtree li a{
+	text-decoration:none;
+	/*color:#215FFD;*/
+	color:#333333;
+}
+
+#pdg-navtree ul li a:active,#pdg-navtree li a:active {
+	outline: none;
+}
+#pdg-navtree ul li a:focus,#pdg-navtree li a:focus {
+ 	-moz-outline-style: none;
+}
+		
+.treeview .hover { color: #327FCF; cursor: pointer; }
+#pdg-navtree ul li a:hover,#pdg-navtree li a:hover {
+	color: #327FCF;
+	background-color:#F7F7F7;
+}
+.tree-highlight{
+background-color:#F2F4F9 !important;
+ 
+}
+.pdg-navtree span.configfolder{ padding: 1px 0 1px 20px; display: block; background: url(./../../images/famicons/folder_wrench.png) 0 0 no-repeat; }
+.pdg-nitem-noicon{
+	padding: 1px 0 1px 3px; /*T R B L*/
+	display: block;
+		font-size:11px;
+}
+
+.pdg-nitem-folder,
+.pdg-nitem-config,
+.pdg-nitem-design,
+.pdg-nitem-discounts,
+.pdg-nitem-certificates,
+.pdg-nitem-customers,
+.pdg-nitem-iplist,
+.pdg-nitem-orders,
+.pdg-nitem-products,
+.pdg-nitem-qb,
+.pdg-nitem-search,
+.pdg-nitem-support,
+.pdg-nitem-ups,
+.pdg-nitem-users,
+.pdg-nitem-appoptions,/*Commerce Options*/
+.pdg-nitem-company,
+.pdg-nitem-db,
+.pdg-nitem-email,
+.pdg-nitem-encryption,
+.pdg-nitem-gcheckout,
+.pdg-nitem-international,
+.pdg-nitem-maintenance,
+.pdg-nitem-payment,
+.pdg-nitem-tax,
+.pdg-nitem-secure,
+.pdg-nitem-shipping,
+.pdg-nitem-sitedesign,
+.pdg-nitem-zones,
+.pdg-nitem-dashboard{
+	padding: 1px 0 1px 20px; display: block;
+	line-height:16px;
+}
+.pdg-nitem-folder{  
+	background: url(./../../images/famicons/folder.png) 0 0 no-repeat;
+	color:#333333;
+}
+.pdg-nitem-config{  background: url(./../../images/famicons/folder_wrench.png) 0 0 no-repeat;}
+.pdg-nitem-design{  background: url(./../../images/famicons/paintbrush.png) 0 0 no-repeat;}
+.pdg-nitem-discounts{  background: url(./../../images/icons/discounticon.gif) 0 0 no-repeat;}
+.pdg-nitem-certificates{  background: url(./../../images/famicons/page_white_medal.png) 0 0 no-repeat;}
+.pdg-nitem-customers{  background: url(./../../images/famicons/group.png) 0 0 no-repeat;}
+.pdg-nitem-iplist{  background: url(./../../images/famicons/chart_organisation.png) 0 0 no-repeat;}
+.pdg-nitem-orders{  background: url(./../../images/famicons/application_form.png) 0 0 no-repeat;}
+.pdg-nitem-products{  background: url(./../../images/famicons/bricks.png) 0 0 no-repeat;}
+.pdg-nitem-qb{  background: url(./../../images/icons/quickbooks.gif) 0 0 no-repeat;}
+.pdg-nitem-search{  background: url(./../../images/famicons/zoom.png) 0 0 no-repeat;}
+.pdg-nitem-support{  background: url(./../../images/famicons/help.png) 0 0 no-repeat;}
+.pdg-nitem-ups{  background: url(./../../images/icons/upsicon.png) 0 0 no-repeat;}
+.pdg-nitem-users{  background: url(./../../images/icons/users.gif) 0 0 no-repeat;}
+.pdg-nitem-appoptions{  background: url(./../../images/famicons/cog.png) 0 0 no-repeat;}/*Commerce Options*/
+.pdg-nitem-company{  background: url(./../../images/famicons/vcard.png) 0 0 no-repeat;}
+.pdg-nitem-db{  background: url(./../../images/famicons/database_gear.png) 0 0 no-repeat;}
+.pdg-nitem-email{  background: url(./../../images/famicons/email.png) 0 0 no-repeat;}
+.pdg-nitem-encryption{  background: url(./../../images/famicons/lock.png) 0 0 no-repeat;}
+.pdg-nitem-gcheckout{  background: url(./../../images/famicons/cart_go.png) 0 0 no-repeat;}
+.pdg-nitem-international{  background: url(./../../images/famicons/world.png) 0 0 no-repeat;}
+.pdg-nitem-maintenance{  background: url(./../../images/famicons/wrench.png) 0 0 no-repeat;}
+.pdg-nitem-payment{  background: url(./../../images/famicons/creditcards.png) 0 0 no-repeat;}
+.pdg-nitem-tax{  background: url(./../../images/famicons/money.png) 0 0 no-repeat;}
+.pdg-nitem-secure{  background: url(./../../images/famicons/shield.png) 0 0 no-repeat;}
+.pdg-nitem-shipping{  background: url(./../../images/famicons/lorry.png) 0 0 no-repeat;}
+.pdg-nitem-sitedesign{  background: url(./../../images/famicons/layout_content.png) 0 0 no-repeat;}
+.pdg-nitem-zones{  background: url(./../../images/famicons/map.png) 0 0 no-repeat;}
+.pdg-nitem-dashboard{  background: url(./../../images/famicons/chart_bar.png) 0 0 no-repeat;}
+
+
+.pdg-subitem
+{
+
+}
+/* jquery tree view included*/
+.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.treeview ul {
+	background-color: white;
+	margin-top: 4px;
+}
+
+.treeview .hitarea {
+	background: url(images/treeview-default.gif) -64px -25px no-repeat;
+	height: 16px;
+	width: 16px;
+	margin-left: -16px;
+	float: left;
+	cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+
+/*First child level indent*/
+.treeview li ul{margin-left:16px;}
+/*second child level indent*/
+.treeview li ul li ul{margin-left:3px;}
+
+.treeview li { 
+	margin: 0;
+	padding: 3px 0pt 3px 16px;
+}
+
+.treeview a.selected {
+	background-color: #eee;
+}
+
+#treecontrol { margin: 1em 0; display: none; }
+
+
+
+.treeview li { background: url(images/treeview-default-line.gif) 0 0 no-repeat; }
+.treeview li.collapsable, .treeview li.expandable { background-position: 0 -176px; }
+
+.treeview .expandable-hitarea { background-position: -80px -3px; }
+
+.treeview li.last { background-position: 0 -1766px }
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(images/treeview-default.gif); }  
+.treeview li.lastCollapsable { background-position: 0 -111px }
+.treeview li.lastExpandable { background-position: -32px -67px }
+
+.treeview div.lastCollapsable-hitarea, .treeview div.lastExpandable-hitarea { background-position: 0; }
+
+.treeview-red li { background-image: url(images/treeview-red-line.gif); }
+.treeview-red .hitarea, .treeview-red li.lastCollapsable, .treeview-red li.lastExpandable { background-image: url(images/treeview-red.gif); } 
+
+.treeview-black li { background-image: url(images/treeview-black-line.gif); }
+.treeview-black .hitarea, .treeview-black li.lastCollapsable, .treeview-black li.lastExpandable { background-image: url(images/treeview-black.gif); }  
+
+.treeview-gray li { background-image: url(images/treeview-gray-line.gif); }
+.treeview-gray .hitarea, .treeview-gray li.lastCollapsable, .treeview-gray li.lastExpandable { background-image: url(images/treeview-gray.gif); } 
+
+.treeview-famfamfam li { background-image: url(images/treeview-famfamfam-line.gif); }
+.treeview-famfamfam .hitarea, .treeview-famfamfam li.lastCollapsable, .treeview-famfamfam li.lastExpandable { background-image: url(images/treeview-famfamfam.gif); } 
+
+
+.filetree li { padding: 3px 0 2px 16px; }
+.filetree span.folder, .filetree span.file { padding: 1px 0 1px 16px; display: block; }
+.filetree span.folder { background: url(images/folder.gif) 0 0 no-repeat; }
+.filetree li.expandable span.folder { background: url(images/folder-closed.gif) 0 0 no-repeat; }
+.filetree span.file { background: url(images/file.gif) 0 0 no-repeat; }

@@ -1,0 +1,63 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1136993-->                                    
+<!--shippingwttable.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Weight Shipping Table Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Weight Shipping Table Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" name="shiprules">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=6 class="pdgheader"><b>Shipping Charges by Weight</b> </td>
+		</tr>
+		<tr>
+			<td width=10% align=left><b>Rule #</b></td>
+			<td width="20%" align="left"><b>Min Weight</b></td>
+			<td width="20%" align="left"><b>Max Weight</b></td>
+			<td width="20%" align="left"><b>Shipping Cost</b></td>
+			<td width="20%" align="left"><b>Country/Zone</b></td>
+			<td width="10%" align="left">&nbsp;</td>
+		</tr>
+		<!---SHIP_WEIGHT_CHARGES--->
+		<tr>
+			<td colspan="6">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=6 class="pdgheader"><b>Add A New Shipping Weight Rule</b> </td>
+		</tr>
+		<tr>
+			<td width=10% align=left><b>Rule #</b></td>
+			<td width="20%" align="left"><b>Min Weight</b></td>
+			<td width="20%" align="left"><b>Max Weight</b></td>
+			<td width="20%" align="left"><b>Shipping Cost</b></td>
+			<td width="20%" align="left">&nbsp;</td>
+			<td width="10%" align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="10%" align="left"><input type="text" name="shippingweightruleno" size="2">
+			</td>
+			<td width="20%" align="left"><input type="text" name="shippingweightmin" size="10">
+			</td>
+			<td width="20%" align="left"><input type="text" name="shippingweightmax" size="10">
+			</td>
+			<td width="20%" align="left"><input type="text" name="shippingweightamount" size="10">
+			</td>
+			<td width="20%" align="left">&nbsp;</td>
+			<td width="10%" align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=left colspan=5><b>Country/Zone:</b>
+				<select name="shippingweightcountry">
+					<!---COUNTRY_OR_ZONE_LIST--->
+				</select>
+			</td>
+			<td><input type="submit" class="pdgbutton" name="addshippingweight" value="Add">
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

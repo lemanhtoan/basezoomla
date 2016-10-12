@@ -1,0 +1,172 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3792627-->                                    
+<!--3776725-->                                    
+<!--custcatpricingform.htm-->
+<title>Customer Category Pricing</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Customer Category Pricing</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+
+
+<table width=100% border=0 align=left class="pdgbody" cellpadding=5 cellspacing=0>
+	<tr>
+	<td class="pdgheader" colspan=2><b>Across the Board Customer Category Discount</b></td>
+	</tr>
+	
+	<tr>
+	<td>
+		<form method=post action="!---MODULE_NAME---">
+		<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+		<input type=hidden name=ccatid value="!---CURRENT_CUST_CAT_ID---">
+		<br>
+		Across the Board Discount for the <b><!---CURRENT_CUST_CAT_NAME---></b> Customer Category.
+		
+		<br>
+	        Discount Amount: <input type=text name=ccacrosstheboard value="!---CURRENT_CUST_CAT_ACROSS_BOARD_DISC---"> <input type="submit" class="pdgbutton" name=applycustcatacrossboarddisc value="Set Across the Board Discount">
+		<br>
+		<br>
+	</form>
+	</td>
+	<td>
+		<div class=pdgnote> This setting does NOT affect products that have a customer category price set in the product details 
+		or the product category customer pricing settings (pricing table below).  This customer category discount only 
+		applies to products that do not have any other customer category pricing set.  Please note this setting does not apply to 
+		shipping cost.  Customer category pricing changes for shipping costs can only be applied at the bottom of this page. (it 
+		is the last entry in the table below)</div>	
+	</td>
+	</tr>
+</table>
+<table width=100% border=0 align=left class="pdgbody" cellpadding=0 cellspacing=0>
+	<tr>
+		<td><form method=post action="!---MODULE_NAME---">
+				<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<input type=hidden name=ccatid value="!---CURRENT_CUST_CAT_ID---">
+				<table width=100% border=0 align=left class="pdgbody" cellpadding=0 cellspacing=0>
+					<tr>
+						<td class="pdgheader"><b>Customer Category Pricing</b></td>
+					</tr>
+					<tr>
+						<td><table width=100% border=0 align=left class="pdgbody" cellpadding=5 cellspacing=0>
+								<tr>
+									<td width=50% valign=top class="pdgdata2"> Reset Pricing for <b>ALL</b> Product Categories for the <b>
+										<!---CURRENT_CUST_CAT_NAME--->
+										</b> Customer Category. <br>
+										<br>
+										Discount Amount:
+										<input type=text name=ccatdefunitprice>
+										<br>
+										<br>
+										<br>
+										<input type=checkbox name=setshipcustcatdisc value=yes>
+										Apply Customer Category Discount to Shipping Cost <br>
+										<br>
+										<br>
+										<div class=pdgnote> This section allows you to set discounts for existing product categories. When you click the <b>"Set Discounts for !---CURRENT_CUST_CAT_NAME---"</b> button below, PDG Commerce will set a product category discount for all existing product categories.  If any new product categories are added at a later date they will not have the product category discount you are setting right now.  </div></td>
+									<td align=right width=50% class="pdgdata2"><table border=0 align=right class="pdgbody">
+											<tr>
+												<td class=pdgdata2><input type=radio name=taxdefault value=unit checked>
+													Apply the Discount Amount to both the Unit Price and Taxable Price for all Product Categories.</td>
+											</tr>
+											<tr>
+												<td class=pdgdata1><input type=radio name=taxdefault value=exempt>
+													Apply the Discount Amount to the Unit Price and set the Taxable Price to Tax Exempt for all Product Categories.</td>
+											</tr>
+											<tr>
+												<td class=pdgdata2><input type=radio name=taxdefault value=nochange>
+													Apply the Discount Amount to the Unit Price and do not change the Taxable Price for all Product Categories.</td>
+											</tr>
+											<tr>
+												<td class=pdgdata1><input type=radio name=taxdefault value=manual>
+													Apply the Discount Amount to the Unit Price and set the Taxable Price to the value entered below for all Product Categories.<br>
+													<input type=text name=ccatdeftaxprice >
+												</td>
+											</tr>
+										</table></td>
+								</tr>
+								<tr>
+									<td class="pdgbody" colspan=2 align=center><input type="submit" class="pdgbutton" name=resetccatdefpricing value="Set Discounts for !---CURRENT_CUST_CAT_NAME---">
+										<br>
+										<br>
+									</td>
+								</tr>
+							</table></td>
+					</tr>
+				</table>
+			</form></td>
+	</tr>
+	<tr>
+		<td class="pdgheader"><b>Customer Category:
+			<!---CURRENT_CUST_CAT_NAME--->
+			</b></td>
+	</tr>
+	<tr>
+		<td><form method=post action="!---MODULE_NAME---">
+				<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<input type=hidden name=ccatid value="!---CURRENT_CUST_CAT_ID---">
+				<table border=1 align=center width=100% class="pdgbody">
+					<tr>
+						<td width=33%><b>Product&nbsp;Category&nbsp;Code</b><br>
+							<span style="smaller">(Unit Price Discount:Tax Price Discount)</span></td>
+						<td width=33%><b>Customer&nbsp;Category Unit&nbsp;Price&nbsp;Discount</b><br>
+							<span style="smaller">($ or % off unit price)</span></td>
+						<td width=33%><b>Customer&nbsp;Category&nbsp;Taxable Price&nbsp;Discount</b><br>
+							<span style="smaller">($ or % off unit price)</span></td>
+					</tr>
+					<!---CCAT_PRICING_ROWS--->
+					<tr>
+						<td colspan=3 align=center><input type="submit" class="pdgbutton" name=updateccatpricetbl value="Update Customer Category Pricing">
+						</td>
+					</tr>
+				</table>
+			</form></td>
+	</tr>
+	<tr>
+		<td class="pdgheader"><b>Shipping Discounts for Customer Category:
+			<!---CURRENT_CUST_CAT_NAME--->
+			</b></td>
+	</tr>
+	<tr>
+		<td><form method=post action="!---MODULE_NAME---">
+				<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<input type=hidden name=ccatid value="!---CURRENT_CUST_CAT_ID---">
+				<table border=1 align=center width=100% class="pdgbody">
+					<tr>
+						<td width=33%><b>Shipping</b><br>
+							<span style="smaller">(Unit Price Discount:Tax Price Discount)</span></td>
+						<td width=33%><b>Shipping&nbsp;Discount</b><br>
+							<span style="smaller">($ or % off unit price)</span></td>
+						<td width=33%><b>Shipping&nbsp;Taxable Price&nbsp;Discount</b><br>
+							<span style="smaller">($ or % off unit price)</span></td>
+					</tr>
+					<tr>
+						<td width=33%><!---SHIPPING_COST---></td>
+						<td width=33%><input type=text name="unitpriceshipping" value="!---SHIPPING_DISCOUNT---" size=8></td>
+						<td width=33%><table>
+								<tr>
+									<td><div style="smaller">
+											<input type=radio name=taxshipping !---CHK_SHIP_TAX_UNIT--- value=unit>
+											Set Taxable Shipping Price to Discounted Shipping Price</div></td>
+								</tr>
+								<tr>
+									<td><div style="smaller">
+											<input type=radio name=taxshipping  !---CHK_SHIP_TAX_EXEMPT--- value=exempt >
+											Set Shipping as Tax Exempt</div></td>
+								</tr>
+								<tr>
+									<td><span style="smaller">
+										<input type=radio name=taxshipping  !---CHK_SHIP_TAX_MANUAL--- value=manual >
+										Set Taxable Shipping Price Manually</span>
+										<input type=text name="taxpriceshipping" value="!---SHIP_TAX_MANUAL_AMT---" size=8></td>
+								</tr>
+							</table></td>
+					</tr>
+					<tr>
+						<td colspan=3 align=center><input type="submit" class="pdgbutton" name=updateccatshiptbl value="Update Shipping Prices for this Customer Category">
+						</td>
+					</tr>
+				</table>
+			</form></td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

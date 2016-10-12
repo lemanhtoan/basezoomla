@@ -1,0 +1,215 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3148596-->                                    
+<!--  editzones.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Zone Configuration</title>
+<script LANGUAGE="JavaScript" SRC="!---CONFIGROOT---_resources/compat/js/DynamicOptionList.js"></script>
+<script type="text/javascript">
+	var listB = new DynamicOptionList("addzoneruledata1","addzonerule1");
+	function init() 
+	{
+		var theform = document.zoneform1;
+		listB.init(theform);
+			
+		listB.addOptions("1"
+		,"Make a Selection","" <!---DYNAMIC_JAVA_STATE--->
+		);
+		listB.addOptions("5"
+		,"Make a Selection","" <!---DYNAMIC_JAVA_COUNTRY--->
+		);
+		listB.addOptions("7"
+		,"Make a Selection","" <!---DYNAMIC_JAVA_STATE--->
+		);
+		listB.addOptions("11"
+		,"Make a Selection","" <!---DYNAMIC_JAVA_COUNTRY--->
+		);
+		listB.setDefaultOption("1","");
+		listB.setDefaultOption("5","");
+		listB.setDefaultOption("7","");
+		listB.setDefaultOption("11","");
+	}
+	
+	PDG.callOnPageLoad(init);	
+	
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Zone Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table class="pdgbody" width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td width="100%"><table width="100%" border=0 cellspacing="0" cellpadding="0">
+				<tr>
+					<td colspan=3 class="pdgheader"><b>Editing Criteria for Zone
+						<!---CURRENT_ZONE--->
+						</b> </td>
+				</tr>
+			</table>
+			<table width="100%" border=1 cellspacing="0" cellpadding="5">
+				<tr>
+					<td width="33%" align="center"><b>Must Have</b></td>
+					<td width="33%" align="center"><b>Including</b></td>
+					<td width="33%" align="center"><b>Excluding</b></td>
+				</tr>
+				<tr>
+					<td><!-- Must Have Table -->
+						<!---ZONE_MUST_LIST--->
+					</td>
+					<td><!-- Including Table -->
+						<!---ZONE_INC_LIST--->
+					</td>
+					<td><!-- Excluding Table -->
+						<!---ZONE_EXC_LIST--->
+					</td>
+				</tr>
+			</table>
+			<!--existing_rules-->
+		</td>
+	</tr>
+	<tr>
+		<td width="100%"><br>
+			<br>
+			<form name=zoneform1 method="post" action="!---MODULE_NAME---">
+				<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<input TYPE=hidden name=ZoneName value="!---CURRENT_ZONE---">
+				<table width="100%" align=left border=0 cellspacing="0" cellpadding="5">
+					<tr>
+						<td colspan=3 class="pdgheader"><b>Add Zone Rule for Predefined Selections Below:</b> </td>
+					</tr>
+					<tr>
+						<td align=left width="33%" class="pdgdata1"> Select the Customer Criteria: </td>
+						<td width="33%" class="pdgdata1"><select name="addzonerule1" onChange="listB.populate();">
+								<option value="1">Billing State
+								<!--bstate-->
+								</option>
+								<option value="5">Billing Country
+								<!--bcountry-->
+								</option>
+								<option value="7">Shipping State
+								<!--sstate-->
+								</option>
+								<option value="11">Shipping Country
+								<!--scountry-->
+								</option>
+							</select>
+						</td>
+						<td width="33%" class="pdgdata1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align=left class="pdgdata2"> Select Value: </td>
+						<td class="pdgdata2"><select NAME="addzoneruledata1" onload="listB.printOptions();">
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection</option>
+								<option value="">Make a Selection____________________________________________________</option>
+							</select>
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td align=center class=pdgdata1> Must Have<br>
+							<input type="radio" value="0" name="addcontrol">
+							<!--must-->
+						</td>
+						<td align=center class=pdgdata1> Including<br>
+							<input type="radio" value="1" name="addcontrol">
+							<!--inc-->
+						</td>
+						<td align=center class=pdgdata1> Excluding<br>
+							<input type="radio" value="2" name="addcontrol">
+							<!--exc-->
+						</td>
+					</tr>
+					<tr>
+						<td colspan=3 align=center><input type="submit" class="pdgbutton" name="changezones" value="Submit changes">
+						</td>
+					</tr>
+				</table>
+			</form>
+			<!--zoneform1-->
+		</td>
+	</tr>
+	<tr>
+		<td width="100%"><br>
+			<br>
+			<form name=zoneform2 method="post" action="!---MODULE_NAME---">
+				<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<input TYPE=hidden name=ZoneName value="!---CURRENT_ZONE---">
+				<table width="100%" align=left border=0 cellspacing="0" cellpadding="5">
+					<tr>
+						<td colspan=3 class="pdgheader"><b>Add Zone Rule from Text Entry Below:</b></td>
+					</tr>
+					<tr>
+						<td width="33%" class="pdgdata1"> Select the Customer Criteria: </td>
+						<td width="33%" class="pdgdata1"><select name="addzonerule">
+								<option value="0">Billing Postal Code
+								<!--bpc-->
+								</option>
+								<option value="1">Billing Province
+								<!--bstate-->
+								</option>
+								<option value="2">Billing Text
+								<!--bet-->
+								</option>
+								<option value="3">Billing City
+								<!--bcity-->
+								</option>
+								<option value="6">Shipping Postal Code
+								<!--spc-->
+								</option>
+								<option value="7">Shipping Province
+								<!--sstate-->
+								</option>
+								<option value="8">Shipping Text
+								<!--set-->
+								</option>
+								<option value="9">Shipping City
+								<!--scity-->
+								</option>
+							</select>
+						</td>
+						<td width="33%" class="pdgdata1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="pdgdata2"> Enter Value: </td>
+						<td class="pdgdata2"><input type="text" name="addzoneruledata" size="40">
+							<br>
+						</td>
+						<td class="pdgdata2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align=center class="pdgdata1">Must Have</td>
+						<td align=center class="pdgdata1">Including</td>
+						<td align=center class="pdgdata1">Excluding</td>
+					</tr>
+					<tr>
+						<td align=center class="pdgdata1"><input type="radio" value="0" name="addcontrol">
+							<!--must--></td>
+						<td align=center class="pdgdata1"><input type="radio" value="1" name="addcontrol">
+							<!--inc--></td>
+						<td align=center class="pdgdata1"><input type="radio" value="2" name="addcontrol">
+							<!--exc--></td>
+					</tr>
+					<tr>
+						<td colspan=3 align=center><input type="submit" class="pdgbutton" name="changezones" value="Submit changes">
+							<br>
+							<br>
+						</td>
+					</tr>
+				</table>
+				<!--edit_text-->
+			</form>
+			<!--zoneform2-->
+		</td>
+	</tr>
+</table>
+<!--edit_outer-->
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

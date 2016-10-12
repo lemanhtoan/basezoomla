@@ -1,0 +1,422 @@
+#0 Not Available
+#1 WARNING!
+#2 NOTE: 
+#3 valid
+#4 invalid
+#5 Address
+#6 Zip
+#7 Bank name
+#8 Check number
+#9 Checking account
+#10 Routing number
+#11 NBDS Merchant ID
+#12 Affiliate information
+#13 Offline
+#14 Ship/Deliver To
+#15 Bill To
+#16 Congratulations
+#17 Continue
+#18 Sorry
+#19 Invalid Input
+#20 System Unavailable
+#21 Version
+#22 User Defined
+#23 Return to product categories listing
+#24 Product Definition
+#25 of
+#26 is
+#27 each
+#28 Pages
+#29 Invalid Selections for
+#30 Weight
+#31 Remove
+#32 Empty the cart
+#33 Shop some more
+#34 Check-out
+#35 Secure Check-out
+#36 Qty
+#37 Description
+#38 Unit
+#39 Amount
+#40 Pricing Category
+#41 Quantity Modifier
+#42 Option
+#43 Subtotal
+#44 Total Shipment Weight
+#45 Order Discount
+#46 Sales Tax
+#47 Total
+#48 "(with %.2f%% conversion rate)"
+#49 Order placed at
+#50 Time & Date
+#51 Optional Text for
+#52 E-mail
+#53 Remote IP Address
+#54 Invoice
+#55 Your order number is %s.
+#56 Customer Information
+#57 Billing To
+#58 Shipping To
+#59 Deliver via
+#60 In Total Cost
+#61 Items
+#62 Weight Units
+#63 Search for
+#64 Did Not Locate Any Products
+#65 No items found
+#66 Display Inventory Status
+#67 An internal error has occurred within the inventory module.  Please contact the webmaster about this error.
+#68 You have requested %.2f units of %s.  There are not enough units in stock to complete your order.   These units cannot be backordered.
+#69 There is not enough product in stock to place in your cart, and this product cannot be backordered.
+#70 There is not enough product in stock to place in your cart.
+#71 Available
+#72 On backorder - you may still order this product
+#73 Out of Stock - do not order this <br>product at this time
+#74 units available
+#75 Your order cannot be filled.
+#76 Shipping Method
+#77 Additional Shipping
+#78 The shipping cost could not be determined at this time.
+#79 Additional shipping fees may be necessary.
+#80 Reason
+#81 These fees do not necessarily represent rates charged by UPS and may include handling charges levied by this web site.
+#82 Payment Information
+#83 Card Type
+#84 Card Number
+#85 Card Expire
+#86 Credit Card
+#87 AVS code
+#88 Authorization code
+#89 Response code
+#90 No payment method form input was specified in the previous document, and so your order cannot be processed.  Please email this error to the webmaster.
+#91 An error occurred while processing your order, and so your order could not be processed.
+#92 The expiration date could not be parsed for the month and year of your credit card.
+#93 You did not fill in all of the required data fields.
+#94 Address Verification System Failure.
+#95 AN ATTEMPT TO VOID THE TRANSACTION FOR THE FOLLOWING ORDER WAS UNSUCCESSFULL. \nYOU WILL HAVE TO VOID THIS TRANSACTION MANUALLY.\n
+#96 THE PAYMENT WAS UNABLE TO BE AUTHORIZED FOR THIS ORDER
+#97 No reason supplied by merchant bank.
+#98 The credit card number is invalid.  Make sure you have entered all the digits correctly.
+#99 The check's routing number is invalid.  Make sure you have entered all the digits correctly.
+#100 An error occurred at the CyberCash payment server
+#101 An error occurred at the gateway
+#102 An error occurred at the financial institution processing this transaction
+#103 An internal error occurred
+#104 CyberCash transaction ID
+#105 Authorized amount from CyberCash
+#106 Authorize.Net transaction ID
+#107 VeriSign reference code
+#108 Please wait while we transfer you to the WorldPay server
+#109 WorldPay transaction ID
+#110 Equifax Transaction Approval Number
+#111 Your PayNet Secure Authenticate Approval Number is
+#112 You have been certified by PayNet Secure
+#113 You have not been certified by PayNet Secure
+#114 To finish your order, Please press the continue button below
+#115 The Response Message from PayNet Secure States
+#116 Equifax Certification Approved, Transaction ID
+#117 Authentication Failed
+#118 Unable to Authenticate
+#119 Failed to Meet Merchant Minimum Score
+#120 Failed to Meet Equifax Minimum Score
+#121 Transaction ID Invalid or Missing
+#122 Merchant Identification Invalid or Missing
+#123 Transaction Cancelled or Aborted
+#124 No Authentication Code Number
+#125 Authorization & Capture (SALE)
+#126 Authorization Only (AUTH)
+#127 A problem has occurred while PDG Commerce was processing your request.
+#128 Unknown Error Code
+#129 WARNING! THIS MESSAGE COULD NOT BE ENCRYPTED.  PLEASE VERIFY ALL ENCRYPTION SETTINGS AND KEYS
+#130 Your requested product could not be found in the web site's product database.  Please email the webmaster concerning this error.  Include the URL to the catalog page and product information.
+#131 Your shopping basket has become corrupted.  Please clear out your cookie information for your browser, and try again.
+#132 For Netscape Navigator, this can be found in the cookies.txt file found in your Netscape Navigator folder.
+#133 The previous form attempted to use an undefined action.  Please notify the webmaster of this problem and the URL which brought you here.
+#134 The previous form attempted to add an internally undefined product into the shopping basket.  Please notify the webmaster of this problem and the URL which brought you here.
+#135 The previous form either specified an HTML template that does not exist, or did not specify an HTML template to use.  Please notify the webmaster of this problem and the URL which brought you here.
+#136 Shopping Basket was unable to determine where to return.  Please use your browser's back arrow to return to shopping.
+#137 An unspecified problem was encountered.
+#138 generated error code
+#139 did not return an error code
+#140 HTML Template Error
+#141 PDG Commerce could not process your request, because it could not open the template.
+#142 This template is required for the cart to operate properly.
+#143 The system returned this error code
+#144 Current system time
+#145 Return to Previous Page
+#146 Tag not found
+#147 Option Selections Must Have SKU’s For Inventory Tracking By Option
+#148 More customer information is required.
+#149 Use your browser's back arrow, supply all the information, and resubmit your order.
+#150 You must supply a contact name.
+#151 You must supply a valid e-mail address.
+#152 You must supply a first name for the billing information.
+#153 You must supply a last name for the billing information.
+#154 You must supply a street address for the billing information.
+#155 You must supply a city for the billing information.
+#156 You must supply a state for the billing information.
+#157 You must supply a country for the billing information.
+#158 You must supply a ZIP code for the billing information.
+#159 You must supply a name for the shipping information.
+#160 You must supply a street address for the shipping information.
+#161 You must supply a city for the shipping information.
+#162 You must supply a state for the shipping information.
+#163 You must supply a country for the shipping information.
+#164 You must supply a ZIP code for the shipping information.
+#165 Please check your permissions. The program is unable to open this web store's license. Please notify the webmaster of this problem.
+#166 This web store has an incorrect license for this version. Please notify the webmaster of this problem.
+#167 This web store has a license for the wrong platform. Please notify the webmaster of this problem.
+#168 This web store's license has expired. Please notify the webmaster of this problem.
+#169 There is a problem with this web store's license. Please notify the webmaster of this problem.
+#170 This web store is not licensed to use an SSL connection.  Please notify the webmaster of this problem.
+#171 Unable to resolve IP address embedded in the license.  This Web store needs a new license.
+#172 Unable to resolve IP address of this Web server.  This can be caused different issues - please contact your software vendor for assistance.
+#173 This web store's license is not for the wrong product. Please obtain a license from your software vendor.
+#174 This web store is not licensed to operate on this web server.  Please obtain a new license from your software vendor.
+#175 This license does not apply to the specified pathname. Please obtain a separate license for each binary that resides in a separate path.
+#176 An internal error has occurred, the environment has not been set properly.  Please resubmit your data.  If this error occurs repeatedly, please email the webmaster.
+#177 An internal error has occurred, the environment has not been set properly. Specifically, a GET form call was made, but there was no form data to process.  Please resubmit your data.  If this error occurs repeatedly, please email the webmaster.
+#178 Note that this error appears if you try to call PDG Commerce directly, instead of embedding the call to PDG Commerce in an HTML file with appropriate data.  Refer to the PDG Commerce Reference Manual for information on usage.
+#179 An internal error has occurred, the environment has not been set properly. Specifically, a POST form call was made, but there was no form data to process.  Please resubmit your data.  If this error occurs repeatedly, please email the webmaster.
+#180 An internal error has occurred, the environment has not been set properly.  Specifically, a POST form call was made, but the form did not tell the server how much data to read.  Please resubmit your data.  If this error occurs repeatedly, please email the webmaster.
+#181 An internal error has occurred, the environment has not been set properly.  Specifically, a POST form call was made, but the received data was not url-encoded.
+#182 PDG Commerce is a CGI program, and should be called using either with the POST or GET method.
+#183 The product data file is either corrupt, or could not be found.  Please notify the Web store's webmaster.
+#184 The inventory data file is either corrupt, or could not be found.  Please notify the Web store's webmaster.
+#185 The product category index file is either corrupt, or could not be found.  Please notify the Web store's webmaster.
+#186 For support information, PDG Commerce reported an internal product lookup error
+#187 Your order is not large enough to process.  It needs to be at least
+#188 Your order is not large enough to process.  It needs to be at least %.2f %s.
+#189 The specified softgoods could not be delivered.
+#190 No invoice number, product code, or quantity were supplied.
+#191 The real-time delivery lockfile could not be generated.   
+#192 The real-time delivery datafile could not be opened.   
+#193 The supplied invoice number and product code are no longer in the softgood delivery database. 
+#194 Your allotted download time for this softgood has run out.  
+#195 The file could not be located for downloading.
+#196 Unable to add the item.  The cart's cookie string is not long enough.
+#197 already exists in the Product Data Base.  Enter a new SKU in the Product Code field below
+#198 Please notify the webmaster of this problem if you feel you have reached this in error.
+#199 You have requested a non-positive quantity.  Please use your browser's back arrow, correct the problem, and try again.
+#200 Illegal Characters in SKU
+#201 Illegal Characters in Keywords
+#202 Illegal Characters in One-Line Description
+#203 SKU Already Exists in Data Base
+#204 Product Error Page
+#205 has bad characters.  Enter a new SKU in the Product Code field below
+#206 THERE HAS BEEN A ZONE ERROR WHILE TRYING TO SET UP ONE OF YOUR ZONES
+#207 Use your back arrow to go to the previous page and correct this error as needed.
+#208 The zone name you have chosen is already in use by another zone.  Please chose a different name.
+#209 A memory error has occurred it may be that Your system does not have enough memory to create the zone.
+#210 An undefined zone error has occurred.
+#211 Next Search Page
+#212 Previous Search Page
+#213 Price:
+#214 Availability Status:
+#215 Quantity desired
+#216 Adjusted unit price<br>based on options chosen
+#217 Add To Shopping Cart
+#218 This license is for a different version.  Please obtain a new license from PDG Software.
+#219 This license is for a different Store ID.  Please obtain a new license from PDG Software.
+#220 Next Day Delivery
+#221 2 to 3 Day Delivery
+#222 Standard Mail Delivery
+#223 Volume Shipping for Bound Printed Matter
+#224 Volume Shipping for Library Materials
+#225 Volume Shipping for Media Packages
+#226 The shipping method selected is not available for this order.  Please return to the previous page and select a new shipping method.
+#227 Phone 1
+#228 Phone 2
+#229 Bill Text
+#230 Ship Text
+#231 Some of the items you ordered are no longer available.  These items have been removed from your shopping basket.  The totals below reflect the new contents of your shopping basket.  At this time you may continue with the checking out process or shop some more.
+#232 System is out of Memory
+#233 You must have a quantity greater than zero.
+#234 This CGI script should be referenced with a METHOD of POST.
+#235 Original Price:
+#236 Discount of:
+#237 Reset
+#238 Add To Cart
+#239 Submit
+#240 MALLOC ERROR READING OPTIONS
+#241 low system memory could complete action
+#242 The Search Returned too Many Products<br>Please Try to Make Your Search More Specific<br>
+#243 Could not find redirect host information for the shopper.
+#244 You have completed payment for this order.  This page should reload in a few seconds and display your receipt. If it does not please click on the [Receipt] button.
+#245 The cart encountered a problem, When trying to display the receipt.  Your order has been completed and logged on the web store.  If you want your receipt please contact the web store
+#246 A WorldPay order has been completed, but the shopping cart encountered a data mismatch error when trying to send emails.
+#247 The WorldPay callback did not match configuration settings
+#248 Recalculate the total
+#249 To order this product you must meet the minimum quantity requirement. Please use your back arrow and enter a valid quantity for the product.
+#250 The minimum quantity for product %s is
+#251 To order this product you can not exceed the maximum quantity requirement.  Please use your back arrow and enter a valid quantity for the product.
+#252 The maximum quantity for product %s is 
+#253 Maximum per order: 
+#254 Minimum per order: 
+#255 Processing your current request will make the product have a quantity of 
+#256 Approval Number
+#257 Reference Number
+#258 Next
+#259 Previous
+#260 Error Creating a New Babble ID
+#261 Error Trying to Set Babble Values
+#262 Error Trying to Set the Working Babble ID
+#263 The user name exceeded 50 characters
+#264 The second password was not provided for the password check
+#265 The passwords did not match
+#266 The email exceeded 120 characters
+#267 The email address format is invalid
+#268 This user has already registered
+#269 The user name is not available
+#270 An error occurred when trying to add the new customer's contact information
+#271 An error occurred when trying to add the new customer's billing information
+#272 An error occurred when trying to add the new customer's shipping information
+#273 bill first name missing
+#274 bill last name missing
+#275 bill street 1 missing
+#276 bill city missing
+#277 bill state or province missing
+#278 bill country missing
+#279 bill zip missing
+#280 ship first name missing
+#281 ship last name missing
+#282 ship street 1 missing
+#283 ship city missing
+#284 ship state or province missing
+#285 ship country missing
+#286 ship zip missing
+#287 undetermined error occurred while trying to add new customer
+#288 the password exceeded 25 characters
+#289 No User ID was found.  Could not add customer.
+#290 No Password was found.  Could not add customer.
+#291 No Customer Category was found.  Could not add customer.
+#292 No Customer Email was found.  Could not add customer.
+#293 Database Update error.  Could not add customer.
+#294 Undetermined error.  Could not add customer.
+#295 Guest
+#296 None Located
+#297 <b>Billing&nbsp;Information</b>
+#298 <b>Shipping&nbsp;Information</b>
+#299 <b>The Billing and Shipping Information are the Same. If You Update Either Record, You Will Change Both.</b>
+#300 Separate Contact
+#301 Use Billing
+#302 Use Shipping
+#303 <font size=-1>Click above to have the Billing and Shipping Contact Information separated.</font>
+#304 Could not locate Billing Information
+#305 Could not locate Shipping Information
+#306 <b>The Billing and Shipping Information are NOT the Same.  Updating One Will NOT Change the Other Address.</b>
+#307 <font size=-1>To combine them into one record, click on the button for the address you would like to use for both billing and shipping.  The other address will become a 'Friendly/Multiple Ship Name'.</font>
+#308 <font size=-1>Click 'Use Shipping' to Use the Primary Shipping Information for your Primary Contact.</font>
+#309 <b>Friendly/Multiple Ship Names</b>
+#310 Remove Contact
+#311 first name missing
+#312 last name missing
+#313 street 1 missing
+#314 city missing
+#315 state or province missing
+#316 country missing
+#317 zip missing
+#318 Could not locate the contact ID
+#319 Cannot remove Primary contact information
+#320 Database Error.  The update was not completed
+#321 No Primary contacts were found
+#322 The contact ID was invalid
+#323 No customer ID was found. The update was not completed
+#324 An error was encountered! The update was not completed.  Error Code:
+#325 Set My Basket
+#326 Add Contact
+#327 Update Contact
+#328 Update Customer
+#329 Register
+#330 define ADD_WHOLE_PAGE
+#331 Login
+#332  the billing address
+#333 New Address
+#334 Products From
+#335 Discount for Ordering
+#336 Minimum
+#337 Maximum
+#338 Price Change
+#339 Subtotal Discount
+#340 &nbsp;Last&nbsp;Order
+#341 &nbsp;From&nbsp;Cookie
+#342 &nbsp;From&nbsp;Database
+#343 Empty&nbsp;Basket
+#344 Your order has been RECEIVED and ACCEPTED, but there was an error displaying your receipt.  Please contact the Webmaster for this site to get your receipt and inform them of the error.
+#345 Add New Contact
+#346 <center><font size=\"1\"><a href=\"http://www.pdgsoft.com\" target=\"_blank\">Shopping Cart Software</a> by PDG Software</font></center>
+#347 One or more of the items in this order are no longer in stock. The item(s) were available before redirecting to the payment processor.  Please check your inventory and notify the customer if necessary.
+#348 The account information was not located
+#349 You Must supply an email address or username (login name) in order to locate your account
+#350 We recomend that you change your password after you login.
+#351 Recommended Accessories
+#352 Similar Products
+#353 You are not authorized to access the Shopping Cart!
+#354 No Name
+#355 One of the destinations generated shipping errors.  There may be additional shipping charges for this order
+#356 Save/Update this Address
+#357 New Recipient
+#358 Gift Certificate Key
+#359 Gift Certificate
+#360 The payment service you have selected cannot be used with gift certificates.
+#361 One of the gift certificates you are using is no longer available.
+#362 One of the gift certificates you are using has been used for a different order.  The amount remaining has changed.
+#363 Please use the back button on your browser to return to the checkout page.  So you can start the checkout process again.
+#364 Could not connect to the real time shipping server.
+#365 Bank name and/or check number is a required element for check payment.
+#366 Bank routing number is a required element for check payment.
+#367 Bank account number is a required element for check payment.
+#368 Driver license number is a required element for check payment.
+#369 Driver license state is a required element for check payment.
+#370 Banking state is a required element for check payment.
+#371 Bank account is a required element for check payment.
+#372 -
+#373 View Cart
+#374 Track Order
+#375 Search
+#376 Clear
+#377 Home
+#378 Continue with current address (bypass validation)
+#379 Products
+#380 Contact
+#381 About Us
+#382 User 1
+#383 User 2
+#384 User 3
+#385 The maximum number of search results was reached.  Some of the items have been omitted from the search result list.  If you cannot locate an item please refine your search criteria.
+#386 +
+#387 Shipping E-mail
+#388 Saturday Delivery
+#389 Commercial Address
+#390 You must supply a phone number for the billing information.
+#391 You must supply a phone number for the shipping information.
+#392 Internet
+#393 Sale: 
+#394 The options you have selected for this product are not available at this time
+#395 PayPal - Express Checkout
+#396 The totals above show your charges with the default shipping method.  If you would like to choose a different shipping method please select one from the list below.<br>
+#397 Shipping Method: 
+#398 PayPal does not provide billing information.
+#399 Your order has a zero weight.  You must have weight for a realtime shipping quote!
+#400 Ship Selection Pending
+#401 Please choose your method of payment below.  Choose either PayPal Express Checkout (no additonal information required), or select a payment method from the drop-down below.
+#402 You are using PayPal Express Checkout. No additional information is required. Please submit the page to authorize payment.
+#403 Thank you for your order. It has been approved and accepted.
+#404 Thank you for your order. It is being reviewed.
+#405 No Items were added.  There is an indexing error between the msku and mqty entries.
+#406 Sorry, the web store is closed.  Please try again later.
+#407 Driver license DOB is a required element for check payment.
+#408 Tax ID is a required element for check payment.
+#409 Company is a required element for check payment.
+#410 US Postal Service domestic rates only available for the United States.
+#411 Map Our Location
+#412 Product View Disabled
+#413 An error was encountered - The Friendly Name is missing.  Please enter a friendly name for this contact.
+#414 You must login to view orders.
+#415 The order requested is for another user.
+#416 Reorder
+#417 You can purchase ONLY one recurring billing item at a time!
+#418 Your shipping country is the US and you have selected an international shipping quote.  Please choose another shipping method.
+#419 You have an international shipping address and you have selected an domestic shipping quote.  Please choose another shipping method."
+#420 Estimate Shipping
+#421 Top

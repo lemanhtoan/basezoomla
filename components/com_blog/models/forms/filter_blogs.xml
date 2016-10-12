@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" hint="COM_BLOG_SEARCH_FILTER_SUBMIT"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        
+		<field name="categories" type="category" label="" extension="com_blog" show_root="1" onchange="this.form.submit();" /> 
+
+ 
+		<field name="mode" type="list" onchange="this.form.submit();">
+		<option value="">COM_BLOG_BLOGS_MODE_FILTER</option>
+		<option value="1">COM_BLOG_BLOGS_MODE_OPTION_1</option>
+		<option value="2">COM_BLOG_BLOGS_MODE_OPTION_2</option>
+		</field>
+
+    </fields>
+</form>

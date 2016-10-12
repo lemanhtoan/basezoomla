@@ -1,0 +1,147 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2472761-->                                    
+<!--customerdataform.htm-->
+<title>Customer Data Management</title>
+<!---CONTACT_JAVASCRIPT--->
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span><!---USERNAME---> details</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method=post action="!---MODULE_NAME---" name=pdgcontact>
+	<input type=hidden name=enable_contact_email value=yes>
+	<input type=hidden name="customerID" value="!---USERID---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table width=100% border=0 cellpadding=5 cellspacing=0 class="pdgbody">
+		<tr>
+			<td class="pdgheader" colspan=2><b>Customer Details for
+				<!---USERNAME--->
+				</b></td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1">Username:</td>
+			<td width=50% class="pdgdata1"><!---USERNAME---></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">RESET Password: </td>
+			<td class="pdgdata2"><input type="password" name=contactpass size=25></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Retype NEW Password: </td>
+			<td class="pdgdata1"><input type="password" name=contactpass2 size=25></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Email:</td>
+			<td class="pdgdata2"><input name=contactemail size=35 value="!---CUST_EMAIL---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Category</td>
+			<td class="pdgdata1"><select size="1" name="custcat">
+					<!---CUST_CAT_SELECT_LIST--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Company Name:</td>
+			<td class="pdgdata2"><input name=generalcompanyname size=35 value="!---CUST_COMPANY---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Frequent Shopper Points:</td>
+			<td class="pdgdata1"><input name=freqshopperpoints size=35 value="!---SHOPPER_POINTS---"></td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata2">Comments:<br>
+				<textarea rows="3" name=contactcomments cols="70"><!---CUST_COMMENT--->
+</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center valign=middle><input type="submit" class="pdgbutton" name=updatecustdetails value="Update Customer Details">
+			</td>
+		</tr>
+	</table>
+	<table width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=2><b>Contact Information for
+				<!---USERNAME--->
+				</b></td>
+		</tr>
+	</table>
+	<table cellpadding=5 cellspacing=0 border=1 width=100%>
+		<tr>
+			<td width="30%" valign=top><table cellpadding=0 cellspacing=0 border=0>
+					<!---DISPLAY_CONTACT_LIST--->
+				</table></td>
+			<td width="70%" valign=top><table valign=top cellpadding=0 cellspacing=0>
+					<tr>
+						<td class="pdgdata1">First Name:</td>
+						<td class="pdgdata1"><input name=Confirstname value="" size=40></td>
+					</tr>
+					<tr>
+						<td class="pdgdata2">Last Name:</td>
+						<td class="pdgdata2"><input name=Conlastname value="" size=40></td>
+					</tr>
+					<tr>
+						<td class="pdgdata1">Street Address 1: </td>
+						<td class="pdgdata1"><input name=Constreet1 value="" size=40></td>
+					</tr>
+					<tr>
+						<td class="pdgdata2">Street Address 2: </td>
+						<td class="pdgdata2"><input name=Constreet2 value="" size=40></td>
+					</tr>
+					<tr>
+						<td class="pdgdata1">City: </td>
+						<td class="pdgdata1"><input name=Concity value="" size=40></td>
+					</tr>
+					<tr>
+						<td class="pdgdata2">State/Province (US and Canada only):</td>
+						<td class="pdgdata2"><select name="Constate">
+								<option value="ZZ">Please Select
+								<!---STATE_LIST--->
+							</select></td>
+					</tr>
+					<tr>
+						<td class="pdgdata1">Other (for international use only):</td>
+						<td class="pdgdata1"><input name=Conprovince size=40></td>
+					</tr>
+					<tr>
+						<td class="pdgdata2">Postal Code: </td>
+						<td class="pdgdata2"><input name=Conzip value="" size=10></td>
+					</tr>
+					<tr>
+						<td class="pdgdata1">Country: </td>
+						<td class="pdgdata1"><select name="Concountry">
+								<!---COUNTRY_LIST--->
+							</select></td>
+					</tr>
+					<tr>
+						<td class="pdgdata2">Phone 1: </td>
+						<td class="pdgdata2"><input name=Conphone1 value="" size=16></td>
+					</tr>
+					<tr>
+						<td class="pdgdata1">Phone 2: </td>
+						<td class="pdgdata1"><input name=Conphone2 value="" size=16></td>
+					</tr>
+					<tr>
+						<td class="pdgdata1">Ship Email: </td>
+						<td class="pdgdata1"><input name=Conemail value="" size=40></td>
+					</tr>
+					<tr>
+						<td class="pdgdata2">Special Text: </td>
+						<td class="pdgdata2"><input name=Context value="" size=40></td>
+					</tr>
+					<tr>
+						<td class="pdgdata1">Friendly Name: </td>
+						<td class="pdgdata1"><input name=Confriendlyname value="" size=20></td>
+					</tr>
+					<tr>
+						<td colspan=2><hr width=60% align=center>
+							<input type=hidden name=targetcontact value=""></td>
+					</tr>
+					<tr>
+						<td align=center><input type="submit" class="pdgbutton" name=updatecontact value="Update Contact"></td>
+						<td align=center><input type="submit" class="pdgbutton" name=addnewcontact value="Add New Contact"></td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

@@ -1,0 +1,93 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1725367-->                                    
+<!--  internationalform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+International Settings</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>International Settings</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td width="100%" class="pdgheader" colspan=2><b>Currency Settings</b> </td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata1">Currency Accepted:</td>
+			<td width="50%" class="pdgdata1"><select name="currency1">
+					<!---CURRENCY_LIST_1--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Secondary Currency:</td>
+			<td class="pdgdata2"><select name="currency2">
+					<!---CURRENCY_LIST_2--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Secondary Currency Conversion Factor:</td>
+			<td class="pdgdata1"><input type=text name="euroconversion" value="!---EURO_CONVERSION---" size=12></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Percentage of final total added to order to cover currency fluctuations (0 indicates no flux):</td>
+			<td class="pdgdata2"><input type=text name="curencyflux" value="!---CURENCY_FLUX---" size=12></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Default Country selected when entering customer information:</td>
+			<td class="pdgdata1"><select name="defaultcountry">
+					<!---COUNTRY_LIST_NUMBERED--->
+				</select></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><br>
+&nbsp;
+				<input type="submit" class="pdgbutton" name="changeinternational" value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td width="100%" class="pdgheader" colspan=2><b>Countries Selection Configuration</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><table border=1>
+					<tr>
+						<td>Select U.S.P.S. Countries:</td>
+						<td><input type=checkbox name="uspscountries" !---USPS_CT_CHECK--- ></td>
+						<td rowspan=3 align=center style="vertical-align:middle"><input type="submit" class="pdgbutton" name="setcountriesbyservice" value="Set Country List Based on Service">
+						</td>
+					</tr>
+					<tr>
+						<td width=230>Select UPS Countries:</td>
+						<td><input type=checkbox name="upscountries" !---UPS_CT_CHECK--- ></td>
+					</tr>
+					<!--
+			<tr>
+			<td width=230>Select Fedral Express Countries:</td>
+			<td><input type=checkbox name="fedexcountries" !---FEDEX_CT_CHECK--- ></td>
+			</tr>
+			-->
+				</table>
+				<br>
+				<br>
+			</td>
+		</tr>
+		<!--
+		<tr>
+			<td width="50%" class="pdgdata1">Modify Displayed Countries:</td>
+			<td width="50%" class="pdgdata1"><input type="submit" class="pdgbutton" name="displaycountries" value="Edit Country List"></td>
+		</tr>
+		-->
+		<tr>
+			<td class="pdgdata2">Reset Defaults for Displayed Countries:</td>
+			<td class="pdgdata2"><input type="submit" class="pdgbutton" name="resetcountries" value="Set Country List Defaults"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Clear Displayed Countries:</td>
+			<td class="pdgdata1"><input type="submit" class="pdgbutton" name="clearcountries" value="Clear (Erase) Country List"></td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

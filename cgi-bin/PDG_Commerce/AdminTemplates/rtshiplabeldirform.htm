@@ -1,0 +1,43 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--993875-->                                     
+<!--rtshiplabeldirform.htm-->
+<title>Contents of Shipment Label Directory</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Contents of Shipment Label Directory</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td width="100%"><br>
+			<a href="!---MODULE_NAME---?showalllabels=action" target="_blank"><b>Show Labels for Printing All</b></a> <br>
+			<br>
+		</td>
+	</tr>
+</table>
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td colspan=4 class="pdgheader"><b>View, Delete and Print Shipping Labels</b> </td>
+	</tr>
+	<tr>
+		<td colspan=4> Below is a listing of all the labels currently stored in your shiplabel directory. If you would like to view a label click the 'Display' link next to the order. This will open a new window with printing instructions and the label. If you would like to delete a label click the 'Delete' link next to the order you would like to delete. This will <b>permanently</b> delete the shipping label. If you would like to delete all your labels (this will permanently remove all your shipping labels) click the following link: <a href="!---MODULE_NAME---?deleteshiplabel=action&file=all"> <span class="errortxt"><b>Remove All Shipping Labels</b></span></a><br>
+		</td>
+	</tr>
+	<tr>
+		<td align=left colspan=4 ><!---CHECK_FAILED_ORDERS--->
+		</td>
+	</tr>
+	<tr>
+		<td colspan=4 >&nbsp;</td>
+	</tr>
+	<tr>
+		<td align=left width="40%" ><b>Date</b> </td>
+		<td align=left  width=30%><b>Invoice</b> </td>
+		<td align=left  width=15%>&nbsp;</td>
+		<td align=left  width=15%>&nbsp;</td>
+	</tr>
+	<!---SHIP_LABEL_DIR_CONTENTS--->
+	<tr>
+		<td colspan=4 >&nbsp;</td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

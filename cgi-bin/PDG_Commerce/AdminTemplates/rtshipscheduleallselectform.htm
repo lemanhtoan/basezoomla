@@ -1,0 +1,65 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1144944-->                                    
+<!--rtshipscheduleallselectform.htm-->
+<title>Schedule Shipment</title>
+<script language=JavaScript>
+function validaterequest()
+{
+	if (confirm ('Requesting this action will remove all orders not yet scheduled for delivery.\n'+
+			 'You will not be able to retrieve these orders for shipping once they have\n'+
+			 'been removed.  If you want to continue click [OK], otherwise click [Cancel].')){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Schedule Shipment</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---">
+	<table class="pdgbody" id="edit_outer" width=100% cellpadding=5 cellspacing=0 border=0 >
+		<tr>
+			<td colspan=1 class="pdgheader"><b>Select Default Shipping Method (used for orders that did not use UPS for shipping charges)</b> </td>
+		</tr>
+		<tr>
+			<td colspan=1 valign=top> UPS Service:
+				<select name=defservice>
+					<option value=XX>Please Choose</option>
+					<!---RTSHIP_ALL_UPS_SERVICE_SEL--->
+				</select>
+				Packaging:
+				<select name=defpackage>
+					<option value=XX>Please Choose</option>
+					<!---RTSHIP_ALL_UPS_PACKAGE_SEL--->
+				</select>
+				<br>
+				<input type=checkbox name=setdefaultsforshipall value=yes>
+				Set the above UPS Shipping Values as defaults <br>
+				<b>NOTE:</b> The UPS pickup type is determined by the primary shipper number. All shipments will be billed to the primary UPS shipper number. 
+				</td>
+		</tr>
+		<tr>
+			<td colspan=1 class="pdgheader"><b>Select Shipments to Schedule</b> </td>
+		</tr>
+		<tr>
+			<td colspan=1 valign=top><table>
+					<!---SCHEDULE_ALL_CHECK--->
+				</table></td>
+		</tr>
+		<tr>
+			<td colspan=1 valign=top>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=1 valign=top align=center><input type="submit" class="pdgbutton" name=scheduleneworders value="Process Selected Orders">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=1 valign=top align=right> ** indicates failed orders.<br>
+				* indicates partial orders. </td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

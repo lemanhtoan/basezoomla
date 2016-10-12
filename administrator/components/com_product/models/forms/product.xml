@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_PRODUCT_FORM_LBL_PRODUCT_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="name" type="text"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_NAME"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_NAME" 
+                
+                
+                 required="true"  /> 
+
+       <field name="image" type="media"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_IMAGE"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_IMAGE" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            directory="/images/product/"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="image_hover" type="media"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_IMAGE_HOVER"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_IMAGE_HOVER" 
+                
+                
+                 required="true"
+            directory="/images/product/" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes"
+            /> 
+
+       <field name="category_id" type="category"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_CATEGORY_ID"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_CATEGORY_ID" 
+                
+                
+                 required="true" 
+            extension="com_product" /> 
+
+ 
+		<field name="filter_category_id" type="category"
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_CATEGORY_ID"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_CATEGORY_ID"  extension="com_product" show_root="1" onchange="this.form.submit();" /> 
+
+       <field name="frame_width" type="text"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_FRAME_WIDTH"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_FRAME_WIDTH" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="frame_height" type="text"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_FRAME_HEIGHT"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_FRAME_HEIGHT" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="lens_width" type="text"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_LENS_WIDTH"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_LENS_WIDTH" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="temple_arms" type="text"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_TEMPLE_ARMS"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_TEMPLE_ARMS" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="bridge" type="text"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_BRIDGE"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_BRIDGE" 
+                
+                
+                 /> 
+
+ <field name="colours" type="foreignkey" class="inputbox"
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_COLOURS"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_COLOURS" input_type="list" table="#__product_colours" key_field="id" value_field="name"  required="true"  multiple="multiple"/> 
+
+       <field name="filter_colours" type="sql" class="inputbox"
+            onchange="this.form.submit();" translate="true"
+            query="SELECT 0 AS `id`, 'COM_PRODUCT_PRODUCTS_COLOURS_FILTER_DEFAULT_OPTION' AS `val` UNION SELECT `id`, `name` AS val FROM `#__product`" key_field="id" value_field="val"
+             /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_CREATED_BY"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_CREATED_BY"  /> 
+
+       <field name="language" type="language"
+                
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_LANGUAGE"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_LANGUAGE" 
+                
+                
+                
+            client="administrator" /> 
+
+       <field name="updated_date" type="timeupdated" default="" 
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_UPDATED_DATE"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_UPDATED_DATE"  hidden="true" /> 
+
+       <field name="created_date" type="timecreated" default="" 
+            label="COM_PRODUCT_FORM_LBL_PRODUCT_CREATED_DATE"
+            description="COM_PRODUCT_FORM_DESC_PRODUCT_CREATED_DATE"  hidden="true" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

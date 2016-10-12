@@ -1,0 +1,72 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1280111-->                                    
+<!--dbform_win.htm-->
+<title>PDG Commerce Database Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Database Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<table border=0 cellpadding=5 cellspacing=0 width=100%>
+		<tr>
+			<td colspan=2 class="nopdgheader"><b>Database Options</b></td>
+		</tr>
+	</table>
+	<table border=0 cellpadding=5 cellspacing=0 width=100% class="pdgbody">
+		<tr>
+			<td colspan=2> These options define the database connectivity configuration of PDG Commerce. These configurations are vital to the operation of PDG Commerce. When finished, press the <b>Submit Changes</b> button, then immediately return to the <a href="!---MODULE_NAME---?displayinframes=a" target="_top">Main Page</a> and <b>'Make Changes Live'.</b><br>
+				<br></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><b>
+				<!---DB_CONFIG_INFO--->
+				</b><br>
+				<br></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Database Driver Type:</td>
+			<td class="pdgdata1"><select name=dbdriver>
+					<!---WIN_DB_DRIVER_SELECT--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2" width=40%>DSN (optional):</td>
+			<td class="pdgdata2" width=60%><input type=text maxlength=50 name="dsn" value="!---DSN---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">SQL Server:</td>
+			<td class="pdgdata1"><input type=text maxlength=50 name="sqlsrvr" value="!---SQL_SERVER---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">SQL Server Database:</td>
+			<td class="pdgdata2"><input type=text  maxlength=50 name="dbname" value="!---DB_NAME---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">MS Access database file name:</td>
+			<td class="pdgdata1"><input type=text size=50 maxlength=255 name="dbfile" value="!---DB_FILE---">
+				<!--commerce.mdb--></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Login Name:</td>
+			<td class="pdgdata2"><input type=text  maxlength=50 name="dblogin" value="!---DB_LOGIN---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Password:</td>
+			<td class="pdgdata1"><input type=password  maxlength=50 name="dbpw" value="!---DB_PW---"></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><br>
+				<br>
+&nbsp;
+				<input type="submit" class="pdgbutton" name="changedboptions" value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>
+	<!---CONNECT_STATUS--->
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

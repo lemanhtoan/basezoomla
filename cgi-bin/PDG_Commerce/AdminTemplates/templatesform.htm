@@ -1,0 +1,278 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--6352849-->                                    
+<!--templatesform.htm-->
+<title>PDG Commerce Template Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Template Configurations</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody"  width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=2><b>Template Directory Location </b> </td>
+		</tr>
+		<tr>
+			<td align=left colspan=2> The selected button will tell PDG Commerce where to find the templates listed below.</td>
+		</tr>
+		<tr>
+			<td align=left colspan=2><input type=radio name=templatelocation  !---TEMPLATES_IN_PDG_DIR--- value=pdgdir>
+				My <b>Templates</b> Directory is in my <b>PDG_Commerce</b> Directory </td>
+		</tr>
+		<tr>
+			<td align=left colspan=2><input type=radio name=templatelocation  !---TEMPLATES_IN_DOC_ROOT--- value=docrootdir>
+				My <b>Templates</b> Directory is in my <b>Document Root</b> Directory (top level of my web site) </td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=2><b>Template Header and Footer Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2> The contents of these s replace &lt;&#33;---HEADER---&gt; and &lt;&#33;---FOOTER---&gt; tags that can be placed anywhere on your customizable templates. PDG has included default s for you to edit. If you do not want to use this feature you can just delete the names above. </td>
+		</tr>
+		<tr>
+			<td> Header: </td>
+			<td><input type="text" name="headerfile" value="!---HEADER_FILE---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td> Footer: </td>
+			<td><input type="text" name="footerfile" value="!---FOOTER_FILE---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><br>
+				<input type="submit" class="pdgbutton" name="changehtml"  value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=2><b>Row Color Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2  class="pdgdata1">Alternating colors are applied to the default basket display, and custom search and or basket display using the !---ROW_COLOR--- tag. <br>
+				<span class=pdgnote>Note: You must use valid html color values.(eg. #ffffff, red, #000000, blue)</span></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Enable Row Coloring: </td>
+			<td class="pdgdata2"><input type="checkbox" name="rowcolor" value="yes" !---ENABLE_ROW_COLOR--- >
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> Odd Row Color: </td>
+			<td class="pdgdata1"><input type="text" name="oddcolor" value="!---ODD_COLOR---" size="12">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Even Row Color: </td>
+			<td class="pdgdata2"><input type="text" name="evencolor" value="!---EVEN_COLOR---" size="12">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=2><b>General Templates</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Basket Template:</td>
+			<td class="pdgdata1"><input type="text" name="baskettemplatefile" value="!---BASKET_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Basket Empty Template:</td>
+			<td class="pdgdata2"><input type="text" name="basketemptytemplatefile" value="!---BASKET_EMPTY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Item Template:</td>
+			<td class="pdgdata1"><input type="text" name="itemtemplatefile" value="!---ITEM_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Add Item Template:</td>
+			<td class="pdgdata2"><input type="text" name="additemtemplatefile" value="!---ADD_ITEM_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Multiple Add Template:</td>
+			<td class="pdgdata1"><input type="text" name="multiaddtemplatefile" value="!---MULTI_ADD_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Check-out Template:</td>
+			<td class="pdgdata2"><input type="text" name="checkouttemplatefile" value="!---CHECKOUT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Verify Template:</td>
+			<td class="pdgdata1"><input type="text" name="verifytemplatefile" value="!---VERIFY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Thank You Template:</td>
+			<td class="pdgdata2"><input type="text" name="thankyoutemplatefile" value="!---THANKYOU_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Credit Authorization Failure Template:</td>
+			<td class="pdgdata1"><input type="text" name="ccdenytemplatefile" value="!---CCDENY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Credit Authorization Success Template:<br>
+				<span class="pdgnote">(used in place of the ThankYou Template)</span></td>
+			<td class="pdgdata2"><input type="text" name="ccaccepttemplatefile" value="!---CCACCEPT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Option Inventory Template:</td>
+			<td class="pdgdata1"><input type="text" name="optioninvtemplatefile" value="!---OPTION_INVENTORY_TEMPLATE---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgheader"  colspan=2><b>SSL Templates</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Alternate SSL Check-out Template:</td>
+			<td class="pdgdata1"><input type="text" name="sslcheckouttemplatefile" value="!---SSL_CHECKOUT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Alternate SSL Verify Template:</td>
+			<td class="pdgdata2"><input type="text" name="sslverifytemplatefile" value="!---SSL_VERIFY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">SSL Thank You Template:</td>
+			<td class="pdgdata1"><input type="text" name="sslthankyoutemplatefile" value="!---SSL_THAKYOU_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgheader"  colspan=2><b>Error Templates</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Error Template:</td>
+			<td class="pdgdata1"><input type="text" name="errortemplatefile" value="!---ERROR_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Verify Inventory Error Template:</td>
+			<td class="pdgdata2"><input type="text" name="verifyinverrortemplatefile" value="!---VERIFY_INV_ERROR_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgheader"  colspan=2><b>Search Templates</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Search Results Template:</td>
+			<td class="pdgdata1"><input type="text" name="searchresulttemplatefile" value="!---SEARCH_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Advanced Search Template:</td>
+			<td class="pdgdata2"><input type="text" name="searchrequesttemplatefile" value="!---SEARCH_REQUEST_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Search Results Empty Template:</td>
+			<td class="pdgdata1"><input type="text" name="searchresultemptytemplatefile" value="!---SEARCH_EMPTY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Category Template:</td>
+			<td class="pdgdata2"><input type="text" name="categorytemplatefile" value="!---CATEGORY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Gift Certificate Template:</td>
+			<td class="pdgdata1"><input type="text" name="giftcerttemplatefile" value="!---GIFTCERT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">QuickBooks POS Style Template:</td>
+			<td class="pdgdata2"><input type="text" name="qbstyletemplatefile" value="!---QBSTYLE_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=2><b>Commerce User Templates</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">User Login Template:</td>
+			<td class="pdgdata1"><input type="text" name="logintemplatefile" value="!---LOGIN_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Successful Login Template:</td>
+			<td class="pdgdata2"><input type="text" name="loginsuccesstemplatefile" value="!---LOGIN_SUCCESS_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Login Failed Template:</td>
+			<td class="pdgdata1"><input type="text" name="loginfailtemplatefile" value="!---LOGIN_FAIL_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Guest Template:</td>
+			<td class="pdgdata2"><input type="text" name="guesttemplatefile" value="!---GUEST_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Register New User Template:</td>
+			<td class="pdgdata1"><input type="text" name="registertemplatefile" value="!---REGISTER_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Registration Successful Template:</td>
+			<td class="pdgdata2"><input type="text" name="registersuccesstemplatefile" value="!---REGISTER_SUCCESS_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Check-out Select Template:</td>
+			<td class="pdgdata1"><input type="text" name="checkoutselecttemplatefile" value="!---CHECKOUT_SELECT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">User Update Template:</td>
+			<td class="pdgdata2"><input type="text" name="userupdatetemplatefile" value="!---USER_UPDATE_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Unauthorized Action Template:</td>
+			<td class="pdgdata1"><input type="text" name="unauthorizedtemplatefile" value="!---UNAUTHORIZED_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Order History Template:</td>
+			<td class="pdgdata2"><input type="text" name="orderhistorytemplatefile" value="!---ORDER_HISTORY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Order Detail Template:</td>
+			<td class="pdgdata1"><input type="text" name="orderdetailtemplatefile" value="!---ORDER_DETAIL_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgheader"  colspan=2><b>Shipping Templates</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Shipping Rate Compare Template:</td>
+			<td class="pdgdata1"><input type="text" name="shipcomparetemplatefile" value="!---SHIP_COMPARE_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">UPS Tracking Result Template:</td>
+			<td class="pdgdata2"><input type="text" name="upstracktemplatefile" value="!---UPS_TRACK_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">UPS Tracking Request Template:</td>
+			<td class="pdgdata1"><input type="text" name="requesttracktemplatefile" value="!---REQUEST_TRACK_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">UPS Address Validation Template:</td>
+			<td class="pdgdata2"><input type="text" name="validateaddrfile" value="!---VALIDATE_ADDRESS_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=2><b>Commerce Multiple Shipment Templates</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Multiple Shipment Check-out Template:</td>
+			<td class="pdgdata1"><input type="text" name="mshipcheckouttemplatefile" value="!---MSHIP_CHECKOUT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Multiple Shipment SSL Check-out Template:</td>
+			<td class="pdgdata2"><input type="text" name="mshipsslcheckouttemplatefile" value="!---MSHIP_SSL_CHECKOUT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Multiple Shipment Verify Template:</td>
+			<td class="pdgdata1"><input type="text" name="mshipveriytemplatefile" value="!---MSHIP_VERIFY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Multiple Shipment SSL Verify Template:</td>
+			<td class="pdgdata2"><input type="text" name="mshipsslverifytemplatefile" value="!---MSHIP_SSL_VERIFY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Multiple Shipment Thank You Template:</td>
+			<td class="pdgdata1"><input type="text" name="mshipthankyoutemplatefile" value="!---MSHIP_THANKYOU_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Multiple Shipment SSL Thank You Template:</td>
+			<td class="pdgdata2"><input type="text" name="mshipsslthankyoutemplatefile" value="!---MSHIP_SSL_THANKYOU_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Multiple Shipment Credit Accept Template:</td>
+			<td class="pdgdata1"><input type="text" name="mshipccaccepttemplatefile" value="!---MSHIP_CC_ACCEPT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><br>
+				<input type="submit" class="pdgbutton" name="changehtml"  value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

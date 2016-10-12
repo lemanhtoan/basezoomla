@@ -1,0 +1,17 @@
+name: Zfg-web
+machine_name: zfg-web
+description: 'Qsoft-theme. A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+version: 1.0
+# Stylesheets
+css:
+  all:
+    - css/bootstrap.min.css
+    - css/font-awesome.min.css
+    - css/site.css
+#  print:
+#    - css/print.css
+js:
+  - js/jquery-1.9.1.min.js
+  - js/jquery.carouFredSel-6.2.1-packed.js
+  - js/main.js
+  - js/jquery.touchSwipe.min.js

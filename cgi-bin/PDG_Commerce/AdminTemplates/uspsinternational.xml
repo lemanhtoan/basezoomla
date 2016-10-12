@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<IntlRateRequest USERID="X">
+  <Package ID="-1">
+     <Pounds/>
+     <Ounces/>
+     <MailType/>
+     <Country/>
+  </Package>
+</IntlRateRequest>

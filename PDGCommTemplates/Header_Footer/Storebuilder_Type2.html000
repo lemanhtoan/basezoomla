@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<!---PDG_HEAD_INSERT--->
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+<!--  Inserted from document Templates/Top_Nav.html BEGIN-->
+<!---TOP_NAV--->
+<!--  Inserted from document templates/Top_Nav.html END-->
+
+<div class="form">
+<form method="post" action="!---SCRIPT_NAME---">
+  <table style="width:100%">
+    <tr>
+      <td>
+        <h3><!---CAT_DESC---></h3>
+        <br />
+        <!---SEARCH_MAX_MSG--->
+        <br />
+     </td>
+    </tr>
+  </table>
+  <table style="width:100%;padding:5px;">
+    <!---BEGIN_SEARCH_ROW--->
+    <tr> 
+      <!---BEGIN_REPEAT--->
+      <td style="text-align:center;"> 
+	<a href="!---SCRIPT_NAME---?preadd=action&amp;key=!---SKU---"> 
+        <img src="!---IMAGE---" alt="!---DESC---" /><br />
+        <!---DESC---></a><br />
+        (!---SKU---) <!---PRICE---><br /> 
+        Quantity: <input type="edit" size="5" name="!---QTY_BUTTON---" value="0" /><br /> 
+        <!---ITEMOPT--->
+      </td>
+      <!---END_REPEAT--->
+    </tr>
+    <!---END_SEARCH_ROW--->
+  </table>
+  <table style="width:100%;">
+    <tr> 
+      <td style="text-align:center;"> 
+        <!---ADD_WHOLE_PAGE_LINK--->
+      </td>
+    </tr>
+    <tr> 
+      <td style="text-align:center;"> 
+        <!---PREVIOUS_SEARCH--->&nbsp;&nbsp;<!---NEXT_SEARCH--->
+      </td>
+    </tr>
+    <tr> 
+      <td style="text-align:center;">
+	<!---ADD_WHOLE_PAGE_LINK--->
+	<br />
+        <!---SHOPSOMEMORE_LINK--->
+        <input type="hidden" name="reference" value="!---SCRIPT_NAME---?listcategories=action" />
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+
+<!--  Inserted from document Templates/Bottom_Nav.html BEGIN-->
+<!---BOTTOM_NAV--->
+<!--  Inserted from document templates/Bottom_Nav.html END-->
+</body>
+</html>

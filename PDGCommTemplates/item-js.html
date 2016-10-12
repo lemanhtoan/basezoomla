@@ -1,0 +1,38 @@
+
+function FormatCurrency (value) {
+        var Precision = 2;
+
+        var valStr = "" + value;
+        var valInt = Math.floor(value);
+        var valFrac = value - valInt;
+        var multiplier = " 1000000000000000000".substring(1,Precision+2);
+        var valRoundedFrac = Math.floor (valFrac*multiplier + 0.5);
+        valInt = Math.floor (Math.floor (value*multiplier + 0.5) / multiplier);
+        var valFracStr = "000000000000000000" + valRoundedFrac;
+        valFracStr = valFracStr.substring (valFracStr.length-Precision, valFracStr.length);
+
+        valStr = "$" + valInt + "." + valFracStr;
+        return valStr;
+}
+
+function FormatEuro (value) {
+        var Precision = 2;
+
+        var valStr = "" + value;
+        var valInt = Math.floor(value);
+        var valFrac = value - valInt;
+        var multiplier = " 1000000000000000000".substring(1,Precision+2);
+        var valRoundedFrac = Math.floor (valFrac*multiplier + 0.5);
+        valInt = Math.floor (Math.floor (value*multiplier + 0.5) / multiplier);
+        var valFracStr = "000000000000000000" + valRoundedFrac;
+        valFracStr = valFracStr.substring (valFracStr.length-Precision, valFracStr.length);
+
+        valStr = "" + valInt + "." + valFracStr + " EU";
+        return valStr;
+}
+
+function openWindow(url, name) {
+  popupWin = window.open(url,name,'width=300,height=360,left=25,top=25');
+}
+
+<!---OPTIONPRICECALCSCRIPT--->

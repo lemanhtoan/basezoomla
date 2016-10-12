@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<RateV4Request USERID="X">
+     <Package ID="-1">
+          <Service/>
+          <FirstClassMailType/>
+          <ZipOrigination/>
+          <ZipDestination/>
+          <Pounds/>
+          <Ounces/>
+          <Container/>
+          <Size/>
+     </Package>
+</RateV4Request>

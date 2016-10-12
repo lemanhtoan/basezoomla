@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="/PDGEditorTemplates/css/forms.css" type="text/css" />
+<link rel="stylesheet" href="/PDGEditorTemplates/css/treeview.css" />
+<script src="/PDGEditorTemplates/scripts/jquery.js" type="text/javascript"></script>
+<script src="/PDGEditorTemplates/scripts/jquery.cookie.js" type="text/javascript"></script>
+<script src="/PDGEditorTemplates/scripts/treeview.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/PDGEditorTemplates/css/styles.css" type="text/css" />
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+<table style="width:100%;">
+  <tr> 
+    <td style="text-align:center" class="pdgmain" colspan="4"> You have the option of logging 
+      in, registering or proceeding to checkout (without logging in or registering). 
+      Please select one of the actions listed below, then fill in the necessary 
+      information to continue with the checkout process. </td>
+  </tr>
+  <tr> 
+    <td style="text-align:center" class="pdgmain" colspan="4"> <hr /> </td>
+  </tr>
+  <tr>
+    <td style="text-align:right;" colspan="4">
+      <form method="post" action="!---SCRIPT_NAME---" style="text-align:right;float:right;">
+      <div class="pdg-no-display">
+      <!---FORCE_COOKIE_BABBLE--->
+      <!---BABBLE_EXPIRE_DATA--->
+      <input type="hidden" name="bypasscheckoutselect" value="yes" />
+      </div>
+      <table style="text-align:right;float:right;">
+        <tr> 
+          <td style="text-align:right;float:right;">
+            <table style="text-align:right;float:right;">
+              <tr> 
+                <td style="text-align:right;vertical-align:middle;">User Name:<br /> </td>
+                <td style="text-align:left;vertcal-align:middle"><input type="text" name="username" style="width:200px;" /><br /></td>
+              </tr>
+              <tr> 
+                <td style="text-align:left;vertcal-align:middle">Password:<br /> </td>
+                <td style="text-align:left;vertcal-align:middle"><input type="password" name="password" style="width:200px;"  /><br /></td>
+              </tr>
+            </table> 
+          </td>
+          <td style="text-align:left;vertcal-align:middle"><!---LOGIN_LINK---></td>
+        </tr>
+      </table>
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td><br /><br /><br /></td>
+  </tr>
+  <tr>
+    <td style="text-align:right" colspan="4">
+      <form method="post" action="!---SCRIPT_NAME---" style="text-align:right;float:right;">
+      <div class="pdg-no-display">
+      <input type="hidden" name="gotocheckout" value="yes" />
+      <!---FORCE_COOKIE_BABBLE--->
+      </div>
+      <table style="text-align:right;float:right;">
+        <tr> 
+          <td style="text-align:right;vertical-align:middle;">Customer Category Registration Code:<br /></td>
+          <td style="text-align:left;vertical-align:middle;"><input type="text" name="custcatregcode" style="width:200px" /><br /></td>
+          <td style="text-align:left;vertcal-align:middle;"><!---START_REGISTER_LINK---></td>
+        </tr>
+      </table>
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td><br /><br /><br /></td>
+  </tr>
+  <tr> 
+    <td style="text-align:right" colspan="4"> 
+      <form method="post" action="!---SCRIPT_NAME---" style="text-align:right;float:right;">
+      <div class="pdg-no-display">
+      <!---FORCE_COOKIE_BABBLE--->
+      <input type="hidden" name="normalcheckout" value="yes" />
+      </div>
+      <table style="text-align:right;float:right;">
+        <tr> 
+          <td style="text-align:right;vertical-align:middle;">   
+            I do not want to register or login. I just want to checkout!
+          </td>
+          <td style="text-align:left;vertcal-align:middle;"><!---CHECKOUT_LINK---></td>
+        </tr>
+      </table>   
+      </form>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

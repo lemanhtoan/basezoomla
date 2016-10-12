@@ -1,0 +1,48 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1256258-->                                    
+<!--qbform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+QuickBooks Settings</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>QuickBooks Settings</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="nopdgheader"><b>QuickBooks Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata1"><!---IS_CSV_QuickBooks_READY--->
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> As each order is placed, the software saves the order data in the CSV file. When the order is imported to QuickBooks, it is either imported as an invoice or a sales receipt. When set to 'Automatic,' the method of payment determines how the orders are imported. If the payment method uses an online payment gateway, then the order is imported as a sales receipt. If the payment method does not use a gateway (such as a 'mail check' option), then the order is imported as an invoice. If you prefer that all orders are imported as either invoices or sales receipts, choose 'Save as Invoices' or 'Save as Sales Receipts' accordingly. </td>
+			<td width=50% class="pdgdata2" style="vertical-align:top;"><input type=radio value="auto" !---QB_AUTO--- name=qbimport>
+				Automatic (based on payment method)<br>
+				<input type=radio value="invoices" !---QB_INVOICES--- name=qbimport>
+				Save as Invoices<br>
+				<input type=radio value="sales" !---QB_SALES--- name=qbimport>
+				Save as Sales Receipts<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Is the one-line product description saved in CSV file for import? </td>
+			<td width=50% class="pdgdata1"> !---PROD_ONE_LINE_DESC_IN_CSV--- </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Is the Product Category Code prefix being removed from the CSV file? </td>
+			<td width=50% class="pdgdata2"> !---OMIT_PROD_CAT_CODE_FROM_CSV--- </td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type=submit class=pdgbutton value="Submit Changes" name=changeQuickBooks>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

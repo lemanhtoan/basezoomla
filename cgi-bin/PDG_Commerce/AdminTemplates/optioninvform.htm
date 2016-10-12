@@ -1,0 +1,35 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--628129-->                                     
+<!--optioninvform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Current Inventory</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Current Inventory</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<input type=hidden name="key" value="!---INV_SKU---">
+	<input type=hidden name="invbyoption" value="!---INV_SKU---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=4 class="pdgheader"><b>Option Inventory</b> </td>
+		</tr>
+		<tr>
+			<td width="25%"><b>Product Code</b></td>
+			<td width="25%"><b>Track Inventory</b></td>
+			<td width="25%"><b>In Stock</b></td>
+			<td width="25%"><b>Do Not Allow Backordering?</b></td>
+		</tr>
+		<!---OPTION_INV--->
+		<tr>
+			<td colspan=4 align=center><hr>
+				<input type="submit" class="pdgbutton" name="changefullinventory" value="Submit All Changes">
+				<hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

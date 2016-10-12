@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<!---CONTACT_JAVASCRIPT--->
+<!---PDG_HEAD_INSERT--->
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+
+<div class="form">
+  <form action="!---SRCIPT_NAME---" method="post" id="pdgcontact">
+<div> 
+  <!---USERMSG Hello [USER] Please update your account information--->
+  <br />
+  
+  <!---ERROR---><br />
+ You currently have 
+  <!---SHOPPER_POINTS--->
+  Shopping Points.<br />
+    <input type="hidden" name="customerID" value="!---USERID---" />
+    <b>Customer Details for 
+    <!---USERNAME--->
+    </b> <br />
+    <table>
+      <tr> 
+        <td>
+	  <table>
+            <tr> 
+              <td> Email: </td>
+              <td> <input name="contactemail" size="35" value="!---CUST_EMAIL---" />              </td>
+            </tr>
+            <tr> 
+              <td> Company Name: </td>
+              <td> <input name="generalcompanyname" size="35" value="!---CUST_COMPANY---" />              </td>
+            </tr>
+            <tr> 
+              <td colspan="2" > Current Customer Category: 
+                <!---CUSTOMER_CAT_NAME--->
+                <br />
+                Enter New Customer Category Code, If Available: 
+                <input name="custcatregcode" size="35" value="" /> </td>
+            </tr>
+          </table></td>
+        <td> <table  >
+            <tr> 
+              <td colspan="2" > <b>Reset Password</b> <br />
+                type new password below<br /> </td>
+            </tr>
+            <tr> 
+              <td> Password: </td>
+              <td> <input type="password" name="contactpass" size="25" />              </td>
+            </tr>
+            <tr> 
+              <td> Retype Password: </td>
+              <td> <input type="password" name="contactpass2" size="25" />              </td>
+            </tr>
+          </table></td>
+      </tr>
+      <tr> 
+        <td colspan="2"> 
+          <!---UPDATE_CUSTOMER_LINK--->
+          <br /> </td>
+      </tr>
+    </table>
+    <table style="border:2px;">
+      <tr> 
+        <td colspan="4" style="text-align:center;"> You must select a contact 
+          before clicking on the 'Remove Contact' or 'Update Contact' buttons 
+          in this section of the page. Theses buttons will perform the requested 
+          action on the selected contact. <br />
+          When you select a contact, the contact's data will be displayed in the 
+          fields provided below. </td>
+      </tr>
+      <tr> 
+        <td> <table>
+            <!---DISPLAY_CONTACT_LIST--->
+          </table></td>
+        <td> <table >
+            <tr> 
+              <td> First Name: </td>
+              <td> <input name="Confirstname" value="" size="40" />              </td>
+            </tr>
+            <tr> 
+              <td> Last Name: </td>
+              <td> <input name="Conlastname" value="" size="40" /> </td>
+            </tr>
+            <tr> 
+              <td> Address line 1: </td>
+              <td> <input name="Constreet1" value="" size="40" /> </td>
+            </tr>
+            <tr> 
+              <td> Address line 2: </td>
+              <td> <input name="Constreet2" value="" size="40" /> </td>
+            </tr>
+            <tr> 
+              <td> City: </td>
+              <td> <input name="Concity" value="" size="25" /> </td>
+            </tr>
+            <tr> 
+              <td> State/Province (US and Canada only): </td>
+              <td> <select name="Constate">
+                  <!---STATE_LIST--->
+                </option>
+              </select> </td>
+            </tr>
+            <tr> 
+              <td> Other (for international use only): </td>
+              <td> <input name="Conprovince" /> </td>
+            </tr>
+            <tr> 
+              <td> Postal Code: </td>
+              <td> <input name="Conzip" value="" size="10" /> </td>
+            </tr>
+            <tr> 
+              <td colspan="2" > Country: </td>
+            </tr>
+            <tr> 
+              <td colspan="2" > <select name="Concountry">
+                  <!---COUNTRY_LIST--->
+                </select> </td>
+            </tr>
+            <tr> 
+              <td> Phone 1: </td>
+              <td> <input name="Conphone1" value="" size="16" /> </td>
+            </tr>
+            <tr> 
+              <td> Phone 2: </td>
+              <td> <input name="Conphone2" value="" size="16" /> </td>
+            </tr>
+            <tr> 
+              <td> Special Text: </td>
+              <td> <input name="Context" value="" size="35" /> </td>
+            </tr>
+            <tr> 
+              <td> Friendly Name: </td>
+              <td> <input name="Confriendlyname" value="" size="20" />              </td>
+            </tr>
+            <tr> 
+              <td colspan="2" > <hr /> <input type="hidden" name="targetcontact" value="" />              </td>
+            </tr>
+            <tr> 
+              <td> 
+                <!---UPDATE_CONTACT_LINK--->              </td>
+              <td> 
+                <!---ADD_CONTACT_LINK--->              </td>
+            </tr>
+          </table></td>
+      </tr>
+    </table>
+</div>
+</form>
+</div>
+
+
+</body>
+</html>

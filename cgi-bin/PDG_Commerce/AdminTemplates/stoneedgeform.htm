@@ -1,0 +1,59 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1208552-->                                    
+<!--stoneedgeform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Stone Edge Settings</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Stone Edge Settings</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+<!--		<tr>
+			<td colspan=2 class="pdgheader"><b>Stone Edge Settings</b> </td>
+		</tr>-->
+		<tr>
+			<td width=50% class="pdgdata1"> Stone Edge User: </td>
+			<td width=50% class="pdgdata1"><input type=text name=stoneedgeuid value="!---STONE_EDGE_USER---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Stone Edge Password: </td>
+			<td width=50% class="pdgdata2"><input type=text name=stoneedgepw value="!---STONE_EDGE_PASSWORD---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Stone Edge Code: </td>
+			<td width=50% class="pdgdata1"><input type=text name=stoneedgecode value="!---STONE_EDGE_CODE---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Order Instructions:<br>
+				<span class=pdgnote>*please enter the input field name used to collect this data from the checkout or verify template.</span> </td>
+			<td width=50% class="pdgdata2"><input type=text name=stoneedgeorder value="!---STONE_EDGE_ORDER_INSTRUCT---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Comment:<br>
+				<span class=pdgnote>*please enter the input field name used to collect this data from the checkout or verify template.</span> </td>
+			<td width=50% class="pdgdata1"><input type=text name=stoneedgecomment value="!---STONE_EDGE_COMMENT---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Stone Edge Log File: </td>
+			<td width=50% class="pdgdata2"><input type=text name=stoneedgelog value="!---STONE_EDGE_LOG_FILE---">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata1"><input type=checkbox  !---STONE_EDGE_DEBUG--- name=stoneedgedebug value=yes>
+				Enable Debug </td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type=submit class=pdgbutton value="Submit Changes" name=changestoneedgesettings>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

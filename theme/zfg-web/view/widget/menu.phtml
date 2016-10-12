@@ -1,0 +1,15 @@
+<ul id="main-menu">
+    <?php foreach ($navigation as $page) : ?>
+        <li class="<?php if ($page->getPages()) echo 'parent';?> <?php if ($page->isActive(true)) echo 'active'; ?>">
+            <a href="<?php echo $page->getHref() ?>"><?php echo $page->getLabel() ?></a>
+            <?php if ($page->getPages()) : ?>
+                <ul class="sub-menu">
+                    <?php foreach ($page as $level2Page) : ?>
+                        <li><a href="<?php echo $level2Page->getHref() ?>"><?php echo $level2Page->getLabel() ?></a></li>
+                    <?php endforeach ?>
+                </ul>
+            <?php endif ?>
+        </li>
+    <?php endforeach ?>
+
+</ul>

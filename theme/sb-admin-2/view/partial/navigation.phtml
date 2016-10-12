@@ -1,0 +1,44 @@
+<?php
+/* @var $container Zend\Navigation\Navigation */
+$container = $this->container;
+?>
+<ul class="<?php echo $this->navigation()->menu()->getUlClass();?>">
+    <?php foreach ($container as $page): ?>
+        <?php if (!$page->isVisible()) { continue; } ?>
+        <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
+        <?php $hasChildren = $page->hasPages() ?>        
+        <li<?php if ($page->isActive(true)) echo ' class="active"' ?>>
+            <a href="<?php echo $page->getHref() ?>"
+                <?php if ($page->getTarget() != ""): ?>
+                    target="<?php echo $page->getTarget(); ?>"
+                <?php endif; ?>
+                <?php if ($page->isActive(true)) echo ' class="active"' ?>
+                >
+                    <?php if ($page->get("icon") !== ""): ?>
+                    <i class="fa fa-fw fa-lg <?php echo $page->get("icon"); ?>"></i>
+                <?php endif; ?>
+                <?php echo $page->getLabel() ?>
+                <?php if ($hasChildren): ?><i class="fa fa-fw fa-lg <?php if ($page->isActive(true)):?>fa-angle-down<?php else:?>fa-angle-right<?php endif;?>"></i><?php endif;?>
+            </a>                        
+        </li>  
+        <?php if ($hasChildren): ?>            
+            <?php foreach ($page->getPages() as $child): ?>
+            <?php if (!$child->isVisible()) { continue; } ?>
+        <li class="<?php if ($page->isActive()):?>show<?php else:?>hide<?php endif;?> submenu<?php if ($child->isActive(true)) echo ' active' ?>">
+                    <a 
+                        href="<?php echo $child->getHref() ?>"
+                        <?php if ($child->getTarget() != ""): ?>
+                            target="<?php echo $child->getTarget(); ?>"
+                        <?php endif; ?>
+                            <?php if ($child->isActive(true)) echo ' class="active"' ?>
+                        >
+                            <?php if ($child->get("icon") !== ""): ?>
+                            <i class="fa fa-fw fa-lg <?php echo $child->get("icon"); ?>"></i>
+                        <?php endif; ?>
+                        <?php echo $child->getLabel() ?>
+                    </a>
+                </li>
+            <?php endforeach ?>            
+        <?php endif;?>
+    <?php endforeach ?>
+</ul>

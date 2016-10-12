@@ -1,0 +1,63 @@
+<style type="text/css">
+.pdgmainhdr {
+font-family:sans-serif;
+font-size:14px;
+font-weight:bold;
+font-style:normal;
+text-decoration:none;
+color:#000000;
+}
+.pdgoutertablehdr {
+font-family:sans-serif;
+font-size:14px;
+font-weight:bold;
+font-style:normal;
+text-decoration:none;
+color:#000000;
+}
+.pdgmain {
+font-family:sans-serif;
+}
+.pdglink {
+font-family:sans-serif;
+font-size:10px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+color:#000000;
+background-color:#FFFFFF;
+}
+a.pdglink:link {
+font-family:sans-serif;
+font-size:10px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+color:#000000;
+background-color:#FFFFFF;
+}
+a.pdglink:visited {
+font-family:sans-serif;
+font-size:10px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+color:#000000;
+background-color:#FFFFFF;
+}
+a.pdglink:hover {
+font-family:sans-serif;
+font-size:10px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+color:#000000;
+background-color:#FFFFFF;
+}
+table {
+background-color:#FFFFFF;
+}
+td {
+font-size:10px;
+}
+</style>

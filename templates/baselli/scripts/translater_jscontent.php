@@ -1,0 +1,12 @@
+	var readmore = '<?php echo JText::_('READ_MORE'); ?>';
+	var collapse = '<?php echo JText::_('COLLAPSE'); ?>';
+	var not_fill_email = '<?php echo JText::_('FILL_EMAIL'); ?>';
+	var success_email = 'You have been successfully added to our subscription';
+	var email_exist = '<?php echo JText::_('EXIST_EMAIL'); ?>';
+	var invalid_email = '<?php echo JText::_('INVALID_EMAIL'); ?>';
+	var LANGUAGE_LABEL = '<?php echo JText::_("LANGUAGES"); ?>';
+	var THANK_YOU = '<?php echo JText::_('THANK_YOU') ?>';
+	var PHONE_NUMBER = '<?php echo JText::_('PHONE_NUMBER') ?>';
+	var MECHANICAL_ISSUE = "<?php echo JText::_('MECHANICAL_ISSUE') ?>";
+	var COLOR_ISSUE = "<?php echo JText::_('COLOR_ISSUE') ?>";
+	var MESSAGE_BEFORE_SUBMIT = "<?php echo JText::_('MESSAGE_BEFORE_SUBMIT') ?>";

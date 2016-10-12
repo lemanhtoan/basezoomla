@@ -1,0 +1,142 @@
+<?php
+
+$this->inlineScript()->prependFile($this->basePath() . '/app.js');
+
+$this->headLink()
+    ->appendStylesheet($this->basePath() . '/plugins/jquery-ui-1.11.2/jquery-ui.min.css')
+    ->appendStylesheet($this->basePath() . '/plugins/remodal/jquery.remodal.css')
+    ->appendStylesheet($this->basePath() . '/plugins/chosen_v1.3.0/chosen.min.css')
+    ->appendStylesheet($this->basePath() . '/assets/elfinder/css/elfinder.min.css')
+    ->appendStylesheet($this->basePath() . '/assets/elfinder/css/theme.css')
+    ->appendStylesheet($this->themePath('css/extends.css', true));
+
+$this->inlineScript()
+    ->appendFile($this->basePath() . '/plugins/jquery-ui-1.11.2/jquery-ui.min.js')
+    ->appendFile($this->basePath() . '/plugins/remodal/jquery.remodal.min.js')
+    ->appendFile($this->basePath() . '/plugins/tinymce/tinymce.min.js')
+    ->appendFile($this->basePath() . '/plugins/chosen_v1.3.0/chosen.jquery.min.js')
+    ->appendFile($this->basePath() . '/assets/elfinder/js/elfinder.min.js')
+    ->appendFile($this->basePath() . '/plugins/jquery.shiftclick/jquery.shiftclick-0.2.0.min.js');
+
+?>
+
+<?php $this->inlineScript()->captureStart() ?>
+    $(function() {
+        QWeb.basePath = '<?php echo $this->basePath() ?>';
+        QWeb.baseUrl = '<?php echo $this->url('admin') ?>';
+    });
+<?php $this->inlineScript()->captureEnd() ?>
+
+<?php echo $this->doctype(); ?>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle()->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->themePath('favicon.ico')))?>
+
+    <!-- Scripts -->
+    <?php echo $this->headScript() ?>
+
+</head>
+<body>
+<div id="wrapper">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<?php echo $this->url('admin');?>">
+            <?php echo $this->translate('QWF Admin');?>
+        </a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+            <li>
+                <a href="<?php echo $this->url('admin/logout') ?>">
+                    <i class="fa fa-sign-out fa-fw"></i> <?php echo $this->translate('Logout') ?>
+                </a>
+            </li>
+        </ul>
+        <!-- /.dropdown-user -->
+    </li>
+    <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav">
+                <li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                    </div>
+                    <!-- /input-group -->
+                </li>
+            </ul>
+
+            <?php echo $this->navigation()
+                ->menu()
+                ->setUlClass('nav')
+                ->setPartial('navigation/main-menu')
+                ->render('Admin\Navigation\Main')
+            ?>
+        </div> <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    <?php echo $this->pageTitle();?>
+                    <?php echo $this->placeholder('title') ?>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <?php
+                    $flash = $this->flashMessenger();
+                    $flash->setMessageOpenFormat('<div%s><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>')
+                        ->setMessageCloseString('</div>')
+                        ->setMessageSeparatorString('</div><div%s><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>');
+
+                    echo $flash->render('error',   array('alert', 'alert-dismissable', 'alert-danger'));
+                    echo $flash->render('info',    array('alert', 'alert-dismissable', 'alert-info'));
+                    echo $flash->render('default', array('alert', 'alert-dismissable', 'alert-warning'));
+                    echo $flash->render('success', array('alert', 'alert-dismissable', 'alert-success'));
+                ?>
+                <?php echo $this->content ?>
+            </div>
+        </div>
+    </div>
+<!-- /#page-wrapper -->
+</div>
+
+<div class="remodal" data-remodal-id="file-manager-modal" id="file-manager-modal">
+    <h1><?php echo $this->translate('File manager') ?></h1>
+    <div id="elfinder"></div>
+</div>
+
+<!-- /#wrapper -->
+<?php echo $this->inlineScript() ?>
+</body>
+</html>

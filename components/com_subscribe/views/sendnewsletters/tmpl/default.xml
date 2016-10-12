@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SUBSCRIBE_TITLE_LIST_VIEW_SENDNEWSLETTERS" option="View">
+        <message>
+                        <![CDATA[COM_SUBSCRIBE_TITLE_LIST_VIEW_SENDNEWSLETTERS_DESC]]>
+        </message>
+	</layout>
+</metadata>

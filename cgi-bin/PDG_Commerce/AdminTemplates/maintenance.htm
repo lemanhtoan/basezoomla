@@ -1,0 +1,60 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1431180-->                                    
+<!--maintenance.htm-->
+<title>PDG Commerce - Merchant Administrator</title>
+<script LANGUAGE="JavaScript">
+<!-- Begin
+				function RestoreConfirm(){
+						 if(confirm('Are you sure you want to restore your master data?\n\n'+
+								'By choosing to "OK", you will permanently overwrite any changes you have made\n'+
+								'to your web site since the last time you replicated your master data. If you wish to\n'+
+								'continue and revert to the stored configuration of your shopping cart, please click "OK" below.\n'+
+								'By selecting "Cancel", your web site will remain intact and you can then return to the main menu.\n')){
+								self.location='!---MODULE_NAME---?restore=action&configroot=!---CONFIGROOT---';        }
+						else{
+								self.location="!---MODULE_NAME---?display=action";
+						}
+				}
+function RemProductConfirm(){
+if(confirm('You are about to permanently delete all your products from the database!\n Are you sure you want to continue?')){
+	self.location="!---MODULE_NAME---?removeallproducts=action";
+}
+}
+function RemProdCatConfirm(){
+if(confirm('You are about to permanently delete all your product categories from the database!\n Are you sure you want to continue?')){
+	self.location="!---MODULE_NAME---?removeallprodcats=action";
+}
+}
+//  End -->
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Maintenance</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table width=100% border=0 cellpadding=5 cellspacing=0>
+	<tr>
+		<td colspan=2 class="nopdgheader"><b>Maintenance</b> </td>
+	</tr>
+</table>
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td colspan=2>&nbsp;</td>
+	</tr>
+	<tr>
+		<td align=center><a href="!---MODULE_NAME---?replicate=action&configroot=!---CONFIGROOT---"> <span class="larger" style="color:#003366">Replicate Master Data</span></a> </td>
+		<td align=center><a href="!---MODULE_NAME---?restore=action&configroot=!---CONFIGROOT---" onClick="RestoreConfirm();return false;"><span class="larger" style="color:#003366">Restore Master Data</span></a></td>
+	</tr>
+	<tr>
+		<td colspan=2>&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan=2 align=center><a href="#" onClick="RemProductConfirm();"><span class="larger" style="color:#ff0000">Permanently Delete All Products from the Database</span></a> </td>
+	</tr>
+	<tr>
+		<td colspan=2 align=center><a href="#" onClick="RemProdCatConfirm();"><span class="larger" style="color:#ff0000">Permanently Delete All Product Categories from the Database</span></a> </td>
+	</tr>
+	<tr>
+		<td colspan=2>&nbsp;</td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

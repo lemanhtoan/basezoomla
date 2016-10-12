@@ -1,0 +1,1 @@
+FrontPage users can utilize this template set and add existing FrontPage borders directly to the storefront pages.  Uses HTML documents located in [docroot]/PDGEditorTemplates/.

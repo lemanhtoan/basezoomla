@@ -1,0 +1,1 @@
+Microsoft Expressions Web users can utilize this template set and add existing Expressions Web elements directly to the storefront pages.  Uses HTML documents located in [docroot]/PDGEditorTemplates/.

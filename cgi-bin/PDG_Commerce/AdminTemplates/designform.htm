@@ -1,0 +1,54 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1009777-->                                    
+<!--  designform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Web Site Design</title>
+<!---STORE_STYLES--->
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Skin &amp; Themes</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader"><b>Load New Skin Configuration</b> </td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td width=100% align=center><table border=1 width=75% align=center>
+					<!---AVAILABLE_PACKAGES--->
+				</table>
+				<br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=100% align=center><input type=hidden name=templates value=yes>
+				<input type=hidden name=buttons value=yes>
+				<input type=hidden name=style value=yes>
+				<input type="submit" class="pdgbutton" name=chooseskin value="Load Layout Configuration" OnClick="return (confirm('Loading a new layout will change all your current template and button settings!  Click [OK] to load the new layout or [Cancel] to keep your current layout settings.'));">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pdgheader"><b>Save Current Skin Configuration</b> </td>
+		</tr>
+		<tr>
+			<td width=100% align=center><input type=text name=packagename value="Enter Layout Name" OnFocus="javascript:this.value='';">
+				<input type="submit" class="pdgbutton" name=savecurrentpackage value="Save Current Configuration">
+				<br>
+				<span class="pdgnote">This <b>only</b> saves the current settings for your skin. It does <b>not</b> save the templates or images that are used to create the skin.</span> </td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

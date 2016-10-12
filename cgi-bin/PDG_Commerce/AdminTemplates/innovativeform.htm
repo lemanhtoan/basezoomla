@@ -1,0 +1,70 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1391425-->                                    
+<!-- innovativeform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Innovative Gateway Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Innovative Gateway Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Innovative Gateway Settings</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">User:</td>
+			<td class="pdgdata2"><input type="text" name="innovativeuser" value="!---INNOVATIVE_USER---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata1">Password:</td>
+			<td width="50%" class="pdgdata1"><input type="text" name="innovativepw" value="!---INNOVATIVE_PW---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Gateway:<br>
+				<span class=pdgnote>transactions.innovativegateway.com/servlet/com.gateway.aai.Aai (do not include https://)</span></td>
+			<td class="pdgdata2"><input type="text" name="innovativeurl" value="!---INNOVATIVE_SERVER---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Authorization Type: </td>
+			<td class="pdgdata1"><select name="innovativeauth">
+					<!---INNOVATIVE_AUTH--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">File to which Innovative Gateway transactions are logged: </td>
+			<td class="pdgdata2"><input type="text" name="innovativelogfile" value="!---INNOVATIVE_LOG---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Confirmation Email Address:<br>
+				<span class=pdgnote>Enter an email address to send a payment confirmation email from Innovative Gateway.</span> </td>
+			<td class="pdgdata1"><input type="text" name="innovativeemailconf" value="!---INNOVATIVE_EMAIL_CONF---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Send a Purchase Receipt Email:<br>
+				<span class=pdgnote>Checking the box will send an email receipt to the purchaser from Innovative Gateway.</span> </td>
+			<td class="pdgdata2"><input type="checkbox" name="innovativemailreceipt" !---INNOVATIVE_EMAIL_RECEIPT---  value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Test mode: </td>
+			<td class="pdgdata1"><input type="checkbox" name="innovativetest" !---INNOVATIVE_TEST---  value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><hr>
+				<input type="submit" class="pdgbutton" name="changeinnovative" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

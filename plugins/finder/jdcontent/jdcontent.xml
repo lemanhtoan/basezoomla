@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="finder" method="upgrade">
+	<name>plg_finder_jdcontent</name>
+	<author>ITronic Harald Leithner</author>
+	<creationDate>August 2012</creationDate>
+	<copyright>(C) 2012 Harald Leithner All rights reserved.</copyright>
+	<authorEmail>joomla@itronic.at</authorEmail>
+	<authorUrl>www.itronic.at</authorUrl>
+	<version>1.4.2</version>
+	<description>Provides Content plugin for finder</description>
+	<files folder="plugins/finder/jdcontent">
+		<file plugin="jdcontent">jdcontent.php</file>
+    <folder>language</folder>
+   	<filename>index.html</filename>
+	</files>
+</extension>

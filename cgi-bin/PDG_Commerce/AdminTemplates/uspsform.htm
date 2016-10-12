@@ -1,0 +1,158 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2528418-->                                    
+<!--uspsform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+U.S.P.S. Registration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>United States Postal Service Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" >
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>USPS User ID and Password</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2><p>In Order to use U.S. Postal Service on-line tools, you need to register at <a href="http://www.uspswebtools.com" target="_blank" >www.uspswebtools.com</a>. If you have already registered, you still need to call USPS and make your account live. Once your USPS account is made live, you can type in your user ID and password in the space provided below and click on 'Save USPS User Information'. After your USPS information is saved, you can set up shipping methods using USPS Services. </p></td>
+		</tr>
+		<tr>
+			<td> User ID:
+				<input type=text name="uspsuid" value="!---USPS_ID---" >
+			</td>
+			<td> Password:
+				<input type=text name="uspspw" value="!---USPS_PW---" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name=uspsregister value="Save USPS User Information">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>&nbsp;
+				<!---NEW_SHIP_METHOD_ENTRIES--->
+			</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>USPS Rate Compare Setup</b> </td>
+		</tr>
+		<tr>
+			<td valign=top><table border=0 valign=center>
+					<tr>
+						<td colspan=2 valign=top><span class="underlined"><b>Domestic Selections</b></span><br></td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Express"  !---COMPARE_EXPRESS--- value="Yes">
+						</td>
+						<td> Express Mail<br>
+							<span class="pdgnote">Next Day Delivery</span> </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Parcel" !---COMPARE_PARCEL---  value="Yes" >
+						</td>
+						<td> Parcel Post<br>
+							<span class="pdgnote">Standard Mail Delivery</span> </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Priority"  !---COMPARE_PRIORITY--- value="Yes" >
+						</td>
+						<td> Priority Mail<br>
+							<span class="pdgnote">2 to 3 Day Delivery</span> </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="BPM"  !---COMPARE_BPM--- value="Yes" >
+						</td>
+						<td> Bound Printed Matter<br>
+							<span class="pdgnote">Volume Shipping for Bound Printed Matter</span> </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Library" !---COMPARE_LIBRARY--- value="Yes" >
+						</td>
+						<td> Library Mail<br>
+							<span class="pdgnote">Volume Shipping for Library Materials</span> </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Media" !---COMPARE_MEDIA--- value="Yes"  >
+						</td>
+						<td> Media Mail<br>
+							<span class="pdgnote">Volume Shipping for Media Packages</span> </td>
+					</tr>
+				</table></td>
+			<td><table border=0>
+					<tr>
+						<td colspan=2 valign=top><span class="underlined"><b>International Selection Filters</b></span><br>
+						</td>
+					</tr>
+					<tr>
+						<td colspan=2 valign=top><span class="underlined">Mail Type Filters</span><br>
+						</td>
+					</tr>
+					<tr>
+						<td><input type=checkbox  !---USPS_COMPARE_ENVELOPE--- name=uspsenvelope  >
+						</td>
+						<td> Envelope </td>
+					</tr>
+					<tr>
+						<td><input type=checkbox !---USPS_COMPARE_LETTER---  name=uspsletter>
+						</td>
+						<td> Letter </td>
+					</tr>
+					<tr>
+						<td><input type=checkbox  !---USPS_COMPARE_DOC--- name=uspsdoc>
+						</td>
+						<td> Document </td>
+					</tr>
+					<tr>
+						<td><input type=checkbox  !---USPS_COMPARE_NON_DOC--- name=uspsnondoc>
+						</td>
+						<td> Non-Document </td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan=2 valign=top><span class="underlined">Service Type Filters</span><br>
+						</td>
+					</tr>
+					<tr>
+						<td><input type=checkbox  !---USPS_COMPARE_EXPRESS--- name=uspsexpress>
+						</td>
+						<td> Express </td>
+					</tr>
+					<tr>
+						<td><input type=checkbox  !---USPS_COMPARE_PRIORITY--- name=uspspriority>
+						</td>
+						<td> Priority </td>
+					</tr>
+					<tr>
+						<td><input type=checkbox  !---USPS_COMPARE_PARCEL--- name=uspsparcel>
+						</td>
+						<td> Parcel </td>
+					</tr>
+					<tr>
+						<td><input type=checkbox  !---USPS_COMPARE_ECONOMY--- name=uspseconomy>
+						</td>
+						<td> Economy </td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2 valign=bottom><input type="submit" class="pdgbutton" name=uspsregister value="Submit All Rate Compare Selections">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

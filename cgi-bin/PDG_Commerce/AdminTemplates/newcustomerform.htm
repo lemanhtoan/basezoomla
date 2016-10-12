@@ -1,0 +1,185 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3045233-->                                    
+<!--newcustomerform.htm-->
+<title>New Commerce Customer</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>New Commerce Customer</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<!---REG_ERROR--->
+	<table width=100% border=0 cellspacing=0 cellpadding=5 align=left class="pdgbody">
+		<tr>
+			<td class="pdgheader" colspan=2><b>Enter Customer Information</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Username: </td>
+			<td class="pdgdata2"><!---REG_USERNAME---></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Password: </td>
+			<td class="pdgdata1"><input type="password" name=contactpass size=40></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Re-enter Password: </td>
+			<td class="pdgdata2"><input type="password" name=contactpass2 size=40></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Email: </td>
+			<td class="pdgdata1"><input name=contactemail size=40 value="!---REG_EMAIL---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Category </td>
+			<td class="pdgdata2"><select size="1" name="custcat">
+					<!---CUST_CAT_SELECT_LIST--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Company Name: </td>
+			<td class="pdgdata1"><input name=generalcompanyname size=40  value="!---REG_COMPANY---"></td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata2">Comments:<br>
+				<textarea rows="3" name=contactcomments cols="70"><!---REG_COMMENT--->
+</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=2><b>Billing Information</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">First Name:</td>
+			<td class="pdgdata1"><input name=billfirstname size=40 value="!---REG_BILL_FIRST_NAME---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Last Name:</td>
+			<td class="pdgdata2"><input name=billlastname size=40 value="!---REG_BILL_LAST_NAME---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Street Address 1: </td>
+			<td class="pdgdata1"><input name=billstreet1 size=40 value="!---REG_BILL_STREET1---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Street Address 2: </td>
+			<td class="pdgdata2"><input name=billstreet2 size=40 value="!---REG_BILL_STREET2---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">City: </td>
+			<td class="pdgdata1"><input name=billcity size=25 value="!---REG_BILL_CITY---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">State/Province (US and Canada only):</td>
+			<td class="pdgdata2"><select name="billstate">
+					<!---REG_BILL_STATE_LIST--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Other (for international use only):</td>
+			<td class="pdgdata1"><input name=billprovince value="!---REG_BILL_PROVINCE---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Postal Code: </td>
+			<td class="pdgdata2"><input name=billzip size=10 value="!---REG_BILL_ZIP---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Country: </td>
+			<td class="pdgdata1"><select name="billcountry">
+					<!---REG_BILL_COUNTRY_LIST--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Bill Phone 1: </td>
+			<td class="pdgdata2"><input name=billphone1 size=16 value="!---REG_BILL_PHONE1---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Bill Phone 2: </td>
+			<td class="pdgdata1"><input name=billphone2 size=16 value="!---REG_BILL_PHONE2---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Special Bill Text: </td>
+			<td class="pdgdata2"><input name=billtext size=40 value="!---REG_BILL_TEXT---"></td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colSpan=2><b>Shipping Information:</b></td>
+		</tr>
+		<tr>
+			<td colSpan=2  class="pdgdata1"><input name=shiptobilladdr type=checkbox  !---REG_BILL_SHIP_TO_BILL--- value=yes>
+				Same as Billing Address </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">First Name:</td>
+			<td class="pdgdata2"><input name=shipfirstname size=40 value="!---REG_SHIP_FIRST_NAME---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Last Name:</td>
+			<td class="pdgdata1"><input name=shiplastname size=40 value="!---REG_SHIP_LAST_NAME---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Street Address 1: </td>
+			<td class="pdgdata2"><input name=shipstreet1 size=40  value="!---REG_SHIP_STREET1---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Street Address 2: </td>
+			<td class="pdgdata1"><input name=shipstreet2 size=40 value="!---REG_SHIP_STREET2---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">City: </td>
+			<td class="pdgdata2"><input name=shipcity size=25 value="!---REG_SHIP_CITY---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">State/Province (US and Canada only):</td>
+			<td class="pdgdata1"><select name="shipstate">
+					<!---REG_SHIP_STATE_LIST--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Other (for international use only): </td>
+			<td class="pdgdata2"><input name=shipprovince value="!---REG_SHIP_PROVINCE---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Postal Code: </td>
+			<td class="pdgdata1"><input name=shipzip size=10 value="!---REG_SHIP_ZIP---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Country: </td>
+			<td class="pdgdata2"><select name="shipcountry">
+					<!---REG_SHIP_COUNTRY_LIST--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Phone 1: </td>
+			<td class="pdgdata1"><input name=shipphone1 size=16 value="!---REG_SHIP_PHONE1---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Phone 2: </td>
+			<td class="pdgdata2"><input name=shipphone2 size=16 value="!---REG_SHIP_PHONE2---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Ship Email: </td>
+			<td class="pdgdata2"><input name=shipemail size=40 value="!---REG_SHIP_EMAIL---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Special Ship Text: </td>
+			<td class="pdgdata1"><input name=shiptext size=40 value="!---REG_SHIP_TEXT---"></td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name=addnewcustomer value=Add></td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2 class="pdgcopy">&copy;1997-
+				<!---CURRENT_YEAR--->
+				PDG Software, Inc.</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

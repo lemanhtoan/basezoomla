@@ -1,0 +1,380 @@
+<html topmargin="0" leftmargin="0" MARGINWIDTH="0" MARGINHEIGHT="0">
+<head>
+<title>PDG Commerce Integration</title>
+<link rel="stylesheet" href="!---CONFIG_ROOT---pdgcomintro.css" type="text/css"> 
+</head>
+
+<body bgcolor="#ffffff" topmargin="0" leftmargin="0" rightmargin="0" MARGINWIDTH="0" MARGINHEIGHT="0">
+<table width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="2">
+      <table width="100%" height="81" align="left" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="100%" valign="middle" align="right" class="head" background="!---CONFIG_ROOT---pdg_logo.gif">	
+            PDG Commerce Integration&nbsp;&nbsp;
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" width="100%" valign="middle">
+      <br><br>
+    </td>
+  </tr>
+  <tr>
+    <td width="20%" valign="top" align="center">
+      <table width="95%" cellpadding="1">
+        <tr>
+          <td bgcolor="#0982C4" align="center" valign="middle">
+            <h1 class="lefthead">PDG Commerce Introduction</h1>
+            <table border="0" cellpadding="10" cellspacing="0" width="100%" class="dots">
+              <tr>
+                <td bgcolor="#eeeeee" width="100%" align="left">
+                  &#149;&nbsp;<a href="!---SCRIPT_NAME---?display=intro&template=Intro/commerce.html">Welcome</a><br>
+                  &#149;&nbsp;<a href="!---SCRIPT_NAME---?display=intro&template=Intro/admin.html">Administration</a><br>
+                  &#149;&nbsp;<a href="!---SCRIPT_NAME---?display=intro&template=Intro/functions.html">Basic Functions</a><br>
+                  &#149;&nbsp;<a href="!---SCRIPT_NAME---?display=intro&template=Intro/integration.html">Integration</a><br>
+                  &#149;&nbsp;<a href="!---SCRIPT_NAME---?display=intro&template=Intro/links.html">Links</a><br>
+                  &#149;&nbsp;<a href="!---SCRIPT_NAME---?version">View License</a><br>
+                </td> 
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td width="80%" valign="top">
+      <table border="0" cellpadding="10" cellspacing="0" width="100%">
+        <tr>
+          <td width="10%">
+            &nbsp;
+          </td>
+          <td width="80%" valign="top">
+      <center><font class="mainhead">Integrating PDG Commerce</font></center><br><br>      
+      Now that PDG Commerce is configured and your products are defined, you should link your
+      site to PDG Commerce so that customers can begin shopping.  This is also
+      referred to as &quot;integrating&quot; or &quot;embedding&quot; Commerce into your Web
+      store.  First, it is important to note that your Web store pages and PDG Commerce
+      are actually two separate, or independent, entities.  Therefore, integrating Commerce
+      into your store is really the act of creating links that &quot;call&quot; PDG Commerce
+      into action.  These links are words or images (buttons) that add products to
+      the user's cart, display their cart's contents, let customers proceed to checkout, perform a
+      hard or soft search, etc.
+      <br><br>The following are basic links to get you started.  You should also consult the
+      <a href="http://www.pdgsoft.com/ecommerce.htm#Doc">product documentation</a>
+      for more information on additional links.<br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Begin Shopping' or 'Enter Store' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      <br><br><strong>To add a link to your "home page" using text (such as the phrase &quot;Enter Store&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?display=home"&gt;Enter Store&lt;/a&gt;
+      <br><br>Use your Web store's domain and specify the appropriate CGI directory and extension for the
+      &quot;commerce&quot; executable file (typically either .exe for Windows and .cgi for UNIX).
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>Most HTML editors have a tool that allows you to create a &quot;hot spot&quot;
+      over an image.  This hot spot is the link.  Once the hot spot is &quot;drawn&quot; over the
+      image, a dialog box should appear asking you to enter the URL for the hot spot link.  You
+      should enter the following:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?display=home
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?display=home"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Show Products' & 'List Categories' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      PDG Commerce provides users with the option of utilizing PDG Commerce software to 
+      dynamically generate an online catalog, or to add &quot;add to cart&quot; links to existing
+      site pages.  If you are working with an extremely large database, or if you would like to 
+      go live with your site in a very short period of time, using Commerce's StoreBuilder function
+      can save you a tremendous amount of time.  When a user clicks on a StoreBuilder link, Commerce
+      will then generate a list of all of the product categories that you have defined within the 
+      administration panel.  When a user selects a category on the resulting page, Commerce then 
+      generates a list of products within that specific category.
+      <br><br><strong>To add a StoreBuilder link using text (such as the phrase &quot;Enter Store&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?search"&gt;Enter Store&lt;/a&gt;
+      <br><br>Use your Web store's domain and specify the appropriate CGI directory and extension for the
+      &quot;commerce&quot; executable file (typically either .exe for Windows and .cgi for UNIX).
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>Most HTML editors have a tool that allows you to create a &quot;hot spot&quot;
+      over an image.  This hot spot is the link.  Once the hot spot is &quot;drawn&quot; over the
+      image, a dialog box should appear asking you to enter the URL for the hot spot link.  You
+      should enter the following:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?search
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?search"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Order' or 'More Info' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      This is usually the initial link which calls PDG Commerce into action from an existing
+      product page on your website.  It displays the chosen product on Commerce's &quot;item&quot; page and 
+      allows the customer to specify the quantity and options for the product.  Usually this link is 
+      placed somewhere adjacent to the product description or image on your static pages that you
+      have created yourself.  Note: in the examples below, you would replace XXX with your product's item/sku
+      number that you assigned within Commerce's administration panel.
+      <br><br><strong>To add this link using text (such as the word &quot;Order&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?preadd=action&key=XXX"&gt;Order&lt;/a&gt;
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>For those using an HTML editor, you should enter the following as your hyperlink:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?preadd=action&key=XXX
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?preadd=action&key=XXX"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Add to Cart' or 'Buy Now' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      If your products do not have option attributes and the typical order is for a quantity of one,
+      you may choose to skip Commerce's &quot;preadd&quot; step by using Commerce's add action.  Note: although
+      Commerce's add action will always add a quantity of one by default, the user will be presented with the option
+      of recalculating the number when they view the contents of their cart.  In the examples below, you would 
+      replace XXX with your product's item/sku number that you assigned within Commerce's administration panel.
+      <br><br><strong>To add this link using text (such as the word &quot;Buy Now&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?add=action&key=XXX"&gt;Order&lt;/a&gt;
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>For those using an HTML editor, you should enter the following as your hyperlink:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?add=action&key=XXX
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?add=action&key=XXX"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Search' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      If you would like to allow your customer to search for specific products, the search action will generate
+      a page allowing the customer to search for products based on keywords, sku numbers, product descriptions,
+      price range, and product category.  Note that you may also embed a search form directly into any of your 
+      HTML pages.  For information on adding a search form, please refer to the PDG Commerce User Manual.
+      <br><br><strong>To add this link using text (such as the word &quot;Search&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?display=search"&gt;Search&lt;/a&gt;
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>For those using an HTML editor, you should enter the following as your hyperlink:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?display=search
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?display=search"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;<br><br><br>
+      To add a search form to any page of your website, insert the following code.  Note that you can have a 
+      standard form submit "button", or you can specify your own custom graphic for the search submit button.<br><br><br>
+                              &lt;form method=&quot;post&quot; action=&quot;!---SCRIPT_NAME---&quot;&gt;<br>
+                              &lt;input type=&quot;hidden&quot; name=&quot;defaction&quot; value=&quot;search&quot;&gt;<br>
+                              &lt;input type=&quot;text&quot; name=&quot;keywords&quot; size=&quot;15&quot;&gt;<br>
+                              &lt;input type=&quot;image&quot; src=&quot;!---CONFIG_ROOT---submit.gif&quot; name=&quot;search&quot; value=&quot;action&quot;&gt;<br>
+                              &lt;/form&gt;<br><br>
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'View Cart' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      This type of link allows customers to view the contents of their cart at anytime, from
+      any place in your Web store that you place the link.
+      <br><br><strong>To add this link using text (such as the word &quot;View Cart&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?display"&gt;View
+      Cart&lt;/a&gt;
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>For those using an HTML editor, you should enter the following hyperlink:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?display
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?display"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Checkout' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      This type of link allows customers to proceed to checkout at anytime, from any
+      place in your Web store that you place the link.  Note: if your site is SSL enabled and you are
+      utilizing your own SSL certificate, you should direct these links for https://www.your_domain.com.  If
+      you are using a shared certificate offered by your hosting provider, you will need to use the 
+      &quot;view cart&quot; links above for your checkout links.  Doing so will allow Commerce to create the
+      secure checkout link that will forward the user, along with their basket contents that are stored within 
+      a cookie, to the correct secure address.
+      <br><br><strong>To add this link using text (such as the word &quot;Checkout&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?checkout"&gt;Checkout&lt;/a&gt;
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>For those developers using an HTML editor, you should enter the following hyperlink:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?checkout
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?checkout"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Register' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      <br><br><strong>To add this link using text (such as the word &quot;Register&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?register"&gt;Register&lt;/a&gt;
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>For those developers using an HTML editor, you should enter the following hyperlink:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?register
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?register"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Log In' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      Note that you may also embed a log in form directly into any of your 
+      HTML pages.  For information on adding a log in form, please refer to the PDG Commerce User Manual.
+      <br><br><strong>To add this link using text (such as the word &quot;Log In&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?login"&gt;Register&lt;/a&gt;
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>For those developers using an HTML editor, you should enter the following hyperlink:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?login
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?login"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">'Log Out' Link</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      <br><br><strong>To add this link using text (such as the word &quot;Log Out&quot;):</strong>
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?logout"&gt;Register&lt;/a&gt;
+      <br><br><strong>To add this link using an image:</strong>
+      <br><br>For those developers using an HTML editor, you should enter the following hyperlink:
+      <br><br>!---FULL_URL---!---SCRIPT_NAME---?logout
+      <br><br>If you are not using an HTML editor, then you should code the HTML like
+      this:
+      <br><br>&lt;a href="!---FULL_URL---!---SCRIPT_NAME---?logout"&gt;<br>&lt;img
+      src="location_of_image" border=0&gt;&lt;/a&gt;
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <table width="100%" cellpadding="1">
+              <tr>
+                <td bgcolor="#0982C4" align="center" valign="middle">
+                  <h1 class="lefthead">Additional Information</h1>
+                  <table border="0" cellpadding="15" cellspacing="0" width="100%">
+                    <tr>
+                      <td bgcolor="#ffffff" width="100%" align="left">
+      For additional information regarding these, and other links and actions for PDG Commerce,
+      please refer to the <a href="http://www.pdgsoft.com/ecommerce.htm#Doc">PDG Commerce documentation</a>.
+                      </td> 
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+          </td>
+          <td width="10%">
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" width="100%" height=100 valign="middle" align="center" class="copy">
+      <hr>
+      &copy;1997-2009 PDG Software, Inc.    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,57 @@
+    .yui-editor-container {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        z-index: 401;
+    }
+   #editor {
+        border: 0;
+        margin: 0;
+        padding: 0;
+		display:none;
+		overflow:auto;
+		width:350px;
+		height: 300px;
+    }
+
+    .editable {
+        border: 1px solid black;
+        margin: .25em;
+        width: 350px;
+        height: 100px;
+        overflow: auto;
+    }
+    .yui-skin-sam .yui-toolbar-container .yui-toolbar-editcode span.yui-toolbar-icon {
+        background-image: url( icons/html_editor.gif );
+        background-position: 0 1px;
+        left: 5px;
+    }
+    .yui-skin-sam .yui-toolbar-container .yui-button-editcode-selected span.yui-toolbar-icon {
+        background-image: url( icons/html_editor.gif );
+        background-position: 0 1px;
+        left: 5px;
+    }
+    .yui-skin-sam .yui-toolbar-container .yui-toolbar-togglefullscreen span.yui-toolbar-icon {
+        background-image: url( icons/toggle_fullscreen.png );
+        background-position: 0 1px;
+        left: 5px;
+    }
+    .yui-skin-sam .yui-toolbar-container .yui-button-togglefullscreen-selected span.yui-toolbar-icon {
+        background-image: url( icons/toggle_fullscreen.png );
+        background-position: 0 1px;
+        left: 5px;
+    }	
+/* Set the image for the collapse button on the toolbar */ 
+.yui-skin-sam .yui-toolbar-container .collapse { 
+	    background: url(icons/editor_close.gif) no-repeat 0 0px; 
+}
+
+.pdg_htmedit{
+	background:url('./../../images/famicons/application_edit.png');
+	width:16px;
+	height:16px;
+	display:block;
+	border:0px;
+	cursor:pointer;
+	overflow:hidden;
+}

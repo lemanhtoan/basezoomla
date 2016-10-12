@@ -1,0 +1,98 @@
+﻿.comboboxPreTitle
+{
+	color:#666666;
+	font-size:10px;
+	cursor:pointer;
+}
+.comboboxSearchTitle
+{
+	color:#5985E0;
+	cursor:pointer;
+}
+.comboboxContainer
+{
+	border-top:1PX SOLID #525B5C;
+	border-bottom:1PX SOLID #525B5C;
+	border-right:1PX SOLID #525B5C;
+	background-color:#F9F9F9;
+	cursor:pointer;
+}
+
+.comboboxValueContainer
+{
+	width:300px;
+	background-color:#F9F9F9;
+	cursor:pointer;
+	
+}
+
+.comboboxValueContent
+{
+	padding-left: 3px;
+	color: #7E9FE3;
+	max-height: 18px;
+	cursor:pointer;
+}
+
+.comboboxDropDownContainer
+{
+	width:300px;
+	border-right: solid 2px #000;
+	border-bottom: solid 2px #000;
+	border-left: solid 2px #aaa;
+	border-top: solid 2px #aaa;
+	overflow: hidden;
+	padding-left: 0px;
+	cursor: default;
+	background-color:#FFFFFF;
+	margin-top:3px;
+	outline: none;
+}
+
+.comboboxDropDownButton
+{
+	width: 17px;
+	height: 23px;
+	background-image: url(trigger.gif);
+	border-left:1PX SOLID #8E9D9F;
+}
+
+.comboboxGroupItemHeader
+{
+	display: block;
+	background: #5C99AB;
+	color: #fff;
+	padding-left: 5px;
+	font-style: italic;
+	font-weight: bolder;
+	font-size:10px;
+}
+
+.comboboxGroupItemContainer
+{
+	padding-left: 0px;
+	margin: 0;
+}
+
+.comboboxItem
+{
+	color: #000;
+	border-top: 1px SOLID #E1E1E1;
+	margin-top:2px;
+	margin-bottom:2px;
+	font-weight: normal;
+	font-style: normal;
+	cursor:pointer;
+}
+
+.comboboxItemHover
+{
+	color: #327FCF;
+	background-color:#F2F2F2;
+}
+
+.comboboxGroupItemContainer .comboboxItem
+{
+	padding-left: 20px;
+	margin-left: 0px;
+}

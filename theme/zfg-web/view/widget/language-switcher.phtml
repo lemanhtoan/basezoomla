@@ -1,0 +1,13 @@
+<div id="language" style="color: <?php echo $this->config('core.menuColorInActive');?>">
+    <span class="current-language"><?php echo $this->languages()->getCurrentLanguage()->getName() ?> <i class="fa fa-angle-down"></i></span>
+    <ul class="language">
+        <?php foreach ($this->languages() as $language) : ?>
+            <?php if ($language === $this->languages()->getCurrentLanguage()) continue; ?>
+            <li>
+                <a href="<?php echo $this->url('web', array('lang' => $language->getCode())) ?>">
+                    <?php echo $language->getName() ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</div>

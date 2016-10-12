@@ -1,0 +1,50 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1144944-->                                    
+<!-- cybercashform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+CyberCash Configuration for CyberCash v3.2</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>CyberCash v3.2 Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=2 ><b>CyberCash Settings</b> </td>
+		</tr>
+		<tr>
+			<td width="50%" align="left" class="pdgdata1">CyberCash Merchant ID <span class="pdgnote">(CYBERCASH_ID)</span>:</td>
+			<td class="pdgdata1"><input type="text" name="ccmerchantid" value="!---CYBERCASH_MERCHANT_ID---" size="50"></td>
+		</tr>
+		<tr>
+			<td align="left" class="pdgdata2">URL (http:...) of CyberCash CashRegister <span class="pdgnote">(CCPS_HOST)</span>:</td>
+			<td class="pdgdata2"><input type="text" name="ccserver" value="!---CYBERCASH_SERVER---" size="50"></td>
+		</tr>
+		<tr>
+			<td align="left" class="pdgdata1">SSL URL (https:...) of CyberCash CashRegister <span class="pdgnote">(CCPS_SSL_HOST)</span>:</td>
+			<td class="pdgdata1"><input type="text" name="ccsslserver" value="!---CYBERCASH_SSL_SERVER---" size="50"></td>
+		</tr>
+		<tr>
+			<td align="left" class="pdgdata2">CyberCash Merchant Key <span class="pdgnote">(MERCHANT_KEY)</span>:</td>
+			<td class="pdgdata2"><input type="text" name="ccmerchantkey" value="!---CYBERCASH_MERCHANT_KEY---" size="50"></td>
+		</tr>
+		<tr>
+			<td align="left" class="pdgdata1">Merchant's Authorization Type:</td>
+			<td class="pdgdata1"><select name="ccaction">
+					<!---CYBERCASH_ACTION_LIST--->
+				</select></td>
+		</tr>
+		<tr>
+			<td align="left" class="pdgdata2">File to which CyberCash transactions are logged: </td>
+			<td class="pdgdata2"><input type="text" name="cclogfile" value="!---CYBERCASH_LOGFILE---" size="50"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><br>
+				<input type="submit" class="pdgbutton" name="changecybercash" value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

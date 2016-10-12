@@ -1,0 +1,54 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--954120-->                                     
+<!--  epayform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+USA ePay Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>USA ePay Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>USA ePay Settings</b> </td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata2">USA ePay Source Key:</td>
+			<td width="50%" class="pdgdata2"><input type=text name="epaykey" value="!---EPAY_KEY---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">USA ePay Server Name:<br></td>
+			<td class="pdgdata1"><input type=text name="epayserver" value="!---EPAY_SERVER---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">USA ePay authorization type:</td>
+			<td class="pdgdata2"><select name="epayauthtype">
+					<!---EPAY_AUTHTYPE--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">USA ePay Operating Mode: </td>
+			<td class="pdgdata1"><!---EPAY_MODE---></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">File to which USA ePay transactions are logged: </td>
+			<td class="pdgdata2"><input type=text name="epaylogfile" value="!---EPAY_LOGFILE---" size=50></td>
+		</tr>
+		<tr>
+			<td align=center colspan=2><br>
+				<input type="submit" class="pdgbutton" name="changeepay" value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td align=center class="pdgcopy">&copy;1997-
+				<!---CURRENT_YEAR--->
+				PDG Software, Inc. </td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

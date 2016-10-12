@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<RatingServiceSelectionRequest>
+	<Request>
+		<TransactionReference>
+			<CustomerContext>Rate Service Request</CustomerContext>
+			<XpciVersion>1.0001</XpciVersion>
+		</TransactionReference>
+		<RequestAction>Rate</RequestAction>
+		<RequestOption>rate</RequestOption>
+	</Request>
+	<PickupType>
+		<Code>03</Code>
+	</PickupType>
+	<Shipment>
+		<Shipper>
+			<Address>
+				<CountryCode>US</CountryCode>
+			</Address>
+		</Shipper>
+		<ShipTo>
+			<Address>
+				<CountryCode>XX</CountryCode>
+				<ResidentialAddress/>
+			</Address>
+		</ShipTo>
+		<Package>
+			<PackagingType>
+				<Code>00</Code>
+			</PackagingType>
+		</Package>
+		<ShipmentWeight>
+			<Weight>0.1</Weight>
+		</ShipmentWeight>
+	</Shipment>
+</RatingServiceSelectionRequest>

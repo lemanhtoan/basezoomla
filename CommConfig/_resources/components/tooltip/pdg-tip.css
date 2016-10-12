@@ -1,0 +1,71 @@
+/* pdg-tips-container : container for all tips
+//////////////////////////////////////////////////////////////////////*/
+.pdg-tips-container
+{
+	display:none;
+}
+.pdgtiphelp
+{
+	cursor:help;
+}
+/* The tooltip
+//////////////////////////////////////////////////////////////////////*/
+#pdg-tip
+{
+	width: 266px; 
+	text-align:left;
+	position: absolute;
+	z-index: 3000;	
+}
+.pdg-tooltip,.pdg-tooltip-right{
+
+	position: absolute;
+	width: 266px; 
+	color:#505050;
+	font:lighter 11px/1.3 Arial,sans-serif;
+	text-decoration:none;
+	text-align:left;
+	font-size:12px;
+	font-weight:normal;	
+	z-index: 3000;
+	overflow:hidden;
+}
+/* Left oriented tooltip (default*/
+DIV.pdg-tooltip-top{
+	padding: 30px 15px 0px 15px; /* t r b l */
+    background: url(tooltip2.png) no-repeat top;
+	overflow:visible;
+}
+DIV.pdg-tooltip-bottom{
+	padding:0px;
+	height:16px;
+	overflow:hidden;
+	overflow:visible;
+	color: #548912;
+	background: url(tooltip2.png) no-repeat bottom;
+}
+/* Right oriented tooltip */
+.pdg-tooltip-right{margin-left:209px;}
+.pdg-tooltip-right DIV.pdg-tooltip-top{
+	padding: 30px 8px 0;
+    background: url(tooltipr.png) no-repeat top}
+
+.pdg-tooltip-right DIV.pdg-tooltip-bottom{
+	padding:3px 8px 15px;color: #548912;
+    background: url(tooltipr.png) no-repeat bottom}
+	
+/*Styling the tip content*/
+.pdg-tooltip H1,
+.pdg-tooltip-right H1{
+	margin-top:0px;
+	margin-bottom:4px;
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+}
+.pdg-tooltip p,.pdg-tooltip-right p{
+	margin:0px;
+	font-size:12px;
+	font-weight:normal;
+	color:#505050;
+}

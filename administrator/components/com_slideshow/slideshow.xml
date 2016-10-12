@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_slideshow</name>
+    <creationDate>2015-05-13</creationDate>
+    <copyright>Copyright (C) 2015. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>SD3 - JAV</author>
+    <authorEmail>sd3@qsoftvietnam.com</authorEmail>
+    <authorUrl>http://www.qsoftvietnam.com</authorUrl>
+    <version>1.0.0</version>
+    <description></description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>slideshow.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_slideshow.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_slideshow.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_slideshow.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_slideshow.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_slideshow/assets/images/s_com_slideshow.png" >COM_SLIDESHOW</menu>
+        <submenu>
+            
+			<menu link="option=com_slideshow&amp;view=slideshows" view="slideshows" img="components/com_slideshow/assets/images/s_slideshows.png" alt="Slideshow/Slideshows">COM_SLIDESHOW_TITLE_SLIDESHOWS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>slideshow.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_slideshow.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_slideshow.sys.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_slideshow.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_slideshow.sys.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_slideshow.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_slideshow.sys.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_slideshow.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_slideshow.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="slideshow"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

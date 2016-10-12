@@ -1,0 +1,52 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--914365-->                                     
+<!--rtshippackageform.htm-->
+<title>Schedule Shipment</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Schedule Shipment</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---">
+	<!---HIDDEN_PARTIAL_FLAG--->
+	<input type="hidden" name="scheduleorder.!---ORDER_NO---" value="go">
+	<!---ORDER_OFFSET--->
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=3 class="pdgheader"><b>
+				<!---ORDER_INVOICE_NUMBER--->
+				Package Details</b> </td>
+		</tr>
+		<tr>
+			<td colspan=3 align=left> Enter the weights and dimensions of your packages below. Height, length and width are only used if &quot;Package&quot; or &quot;Shipper Supplied Packaging&quot; is selected for &quot;Package Type&quot;. (All the other &quot;Package Type&quot; selections have known sizes.) </td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=left width=10%><b>Number</b> </td>
+			<td align=center  width=75%><b>Dimensions (
+				<!---LINEAR_MEASURE_UNIT--->
+				)</b> </td>
+			<td align=left  width=15%><b>Weight (
+				<!---WEIGHT_MEASURE_UNIT--->
+				)</b> </td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<!---GET_PACKAGE_DATA--->
+		<tr>
+			<td colspan=3 align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=3 align=center><input type="submit" class="pdgbutton" name="firststep"  value="Back">
+				<input type="submit" class="pdgbutton" name="step2"  value="Next">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3 align=left> * only used if package or shipper supplied packaging is selected for Package Type </td>
+		</tr>
+	</table>
+	<!---HIDDEN_ITEM_DATA--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

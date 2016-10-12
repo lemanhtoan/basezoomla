@@ -1,0 +1,6 @@
+          <!--- Since this file gets embedded in an HTML page, you can
+	include HTML properties in here --->
+
+<b>This is a large widget.</b> This widget is meant to cover your car or
+serve dinner for 12.  Since it is so large, we must charge an
+additional shipping fee.<p>

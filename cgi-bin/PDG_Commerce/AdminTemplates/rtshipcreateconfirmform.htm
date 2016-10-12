@@ -1,0 +1,52 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--763296-->                                     
+<!--rtshipcreateconfirmform.htm-->
+<title>Create Shipment</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Create Shipment</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---">
+	<input type="hidden" name="createneworder" value="go">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>
+				<!---INVOICE_NUMBER--->
+				Shipment Cost</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2><!---DISPLAY_ALL_ADDRS--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2><!---SHIP_CONFIRM_RESULTS--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2><br>
+				<!---ONE_TIME_MSG--->
+				<br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2><input type="submit" class="pdgbutton" name="scheduleshipment"  value="Cancel">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="submit" class="pdgbutton" name="step2"  value="Back">
+&nbsp;
+				<!---SHIP_ACCEPT_BUTTON--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><img src="!---CONFIGROOT---UPS_LOGO_S.gif" border=0></td>
+			<td><h5 align=left>UPS<sup>&reg;</sup>,&nbsp;UPS&nbsp;&amp;&nbsp;Shield&nbsp;Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup> are registered trademarks of United Parcel Service of America, Inc.</h5></td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

@@ -1,0 +1,51 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--906414-->                                     
+<!--  frameform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Multi-Framed Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Multi-Framed Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Frame Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan="2" class="pdgdata1"><input type="checkbox" name="enableframes" !---ENABLE_FRAMES--- >
+				Enable multi-framed HTML support</td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata2">Name of frame containing cart contents:</td>
+			<td width="50%" class="pdgdata2"><input type="text" name="carttarget" value="!---CART_TARGET_FRAME---" size="20"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Name of main window frame:</td>
+			<td class="pdgdata1"><input type="text" name="maintarget" value="!---MAIN_TARGET_FRAME---" size="20"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Name of Check-out window frame:</td>
+			<td class="pdgdata2"><input type="text" name="checkouttarget" value="!---CHECKOUT_TARGET_FRAME---" size="20"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><br>
+				<br>
+&nbsp;
+				<input type="submit" class="pdgbutton" name="changeframes" value="Submit Changes">
+				<br>
+				<br>
+&nbsp;</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td align=center class="pdgcopy">&copy;1997-
+				<!---CURRENT_YEAR--->
+				PDG Software, Inc. </td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

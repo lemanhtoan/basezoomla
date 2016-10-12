@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Create An Account</title>
+<!---PDG_HEAD_INSERT--->
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+<!--  Inserted from document Templates/Top_Nav.html BEGIN-->
+!---TOP_NAV---
+<!--  Inserted from document templates/Top_Nav.html END-->
+
+	<h1>Customer Registration</h1>
+	<!---REG_ERROR---> 
+	<div class="form">
+        <form method="post" action="!---SCRIPT_NAME---">
+        <!---REGISTER_CODE--->
+        <!---FORCE_COOKIE_BABBLE--->
+        <!---REGISTER_TO_CHECKOUT_ENTRY--->
+        <table>
+         <tr>
+          <td colspan="2" style="text-align:left;">
+        Register
+        <p>Please provide the information below to register for your account.</p>
+        <h3>Customer Information</h3>
+          </td>
+         </tr>
+         <tr>
+          <td style="text-align:left;">
+        username:</td>
+          <td style="text-align:left;">
+          <input type="text" name="contactname" tabindex="1" id="contactname" />
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        password:</td>
+          <td style="text-align:left;">
+          <input type="password" name="contactpass" tabindex="2" id="contactpass" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        verify password:</td>
+          <td style="text-align:left;">
+          <input type="password" name="contactpass2" tabindex="3" id="contactpass2" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        email:</td>
+          <td style="text-align:left;">
+          <input type="text" name="contactemail" tabindex="4" id="email" value="!---REG_EMAIL---" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        company:</td>
+          <td style="text-align:left;">
+          <input type="text" name="generalcompanyname" tabindex="5" id="company" value="!---REG_COMPANY---" />
+                    </td>
+         </tr>
+         <tr>
+          <td colspan="2" style="text-align:left;">
+        <h3>Billing Information</h3>
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        first name:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billfirstname" tabindex="6" id="billfirstname" value="!---REG_BILL_FIRST_NAME---" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        last name:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billlastname" tabindex="7" id="billlastname" value="!---REG_BILL_LAST_NAME---" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        address line 1:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billstreet1" tabindex="8" id="billstreet1" value="!---REG_BILL_STREET1---" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        address line 2:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billstreet2" tabindex="9" id="billstreet2" value="!---REG_BILL_STREET2---" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        city:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billcity" tabindex="10" id="billcity" value="!---REG_BILL_CITY---" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        state (US/Canada):</td>
+          <td style="text-align:left;">
+          <select name="billstate" tabindex="11" id="billstate"><!---REG_BILL_STATE_LIST---></select>
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        other (international):</td>
+          <td style="text-align:left;">
+          <input type="text" name="billprovince" tabindex="12" id="billprovince" value="!---REG_BILL_PROVINCE---" />          </td>
+         </tr>
+          <td style="text-align:left;">
+        zip code:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billzip" tabindex="13" id="billzip" value="!---REG_BILL_ZIP---" />          </td>
+         </tr>
+          <td style="text-align:left;">
+        Country:</td>
+          <td style="text-align:left;">
+          <select name="billcountry" tabindex="14" id="billcountry"><!---REG_BILL_COUNTRY_LIST---></select>          </td>
+         </tr>
+          <td style="text-align:left;">
+        phone:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billphone1" tabindex="15" id="billphone1" value="!---REG_BILL_PHONE1---" />          </td>
+         </tr>
+          <td style="text-align:left;">
+        fax:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billphone2" tabindex="16" id="billphone2" value="!---REG_BILL_PHONE2---" />          </td>
+         </tr>
+          <td style="text-align:left;">
+        comment:</td>
+          <td style="text-align:left;">
+          <input type="text" name="billtext" tabindex="17" id="billtext" value="!---REG_BILL_TEXT---" />          </td>
+         </tr>
+          <td colspan="2" style="text-align:left;">
+        <h3>Shipping Information</h3>
+        same as billing:<input name="shiptobilladdr" tabindex="18" id="shiptobilladdr" type="checkbox" !---REG_BILL_SHIP_TO_BILL--- value="yes" />          </td>
+         </tr>
+         </td>
+        </tr>
+          <td style="text-align:left;">
+        first name:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shipfirstname" tabindex="19" id="shipfirstname" value="!---REG_SHIP_FIRST_NAME---" />          </td>
+         </tr>
+          <td style="text-align:left;">
+        last name:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shiplastname" tabindex="20" id="shiplastname" value="!---REG_SHIP_LAST_NAME---" />          </td>
+         </tr>
+          <td style="text-align:left;">
+        address line 1:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shipstreet1" tabindex="21" id="shipstreet1" value="!---REG_SHIP_STREET1---" />
+                    </td>
+         </tr>
+          <td style="text-align:left;">
+        address line 2:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shipstreet2" tabindex="22" id="shipstreet2" value="!---REG_SHIP_STREET2---" />          </td>
+         </tr>
+          <td style="text-align:left;">
+        city:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shipcity" tabindex="23" id="shipcity" value="!---REG_SHIP_CITY---" />
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        state (US/Canada):</td>
+          <td style="text-align:left;">
+          <select name="shipstate" tabindex="24" id="shipstate"><!---REG_SHIP_STATE_LIST---></select>
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        other (international):</td>
+          <td style="text-align:left;">
+          <input type="text" name="shipprovince" tabindex="25" id="shipprovince" value="!---REG_SHIP_PROVINCE---" />
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        zip code:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shipzip" tabindex="26" id="shipzip" value="!---REG_SHIP_ZIP---" />
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        country:</td>
+          <td style="text-align:left;">
+          <select name="shipcountry" tabindex="27" id="shipcountry"><!---REG_SHIP_COUNTRY_LIST---></select>
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        phone:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shipphone1" tabindex="28" id="shipphone1" value="!---REG_SHIP_PHONE1---" />
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        fax:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shipphone2" tabindex="29" id="shipphone2" value="!---REG_SHIP_PHONE2---" />
+          </td>
+         </tr>
+          <td style="text-align:left;">
+        comment:</td>
+          <td style="text-align:left;">
+          <input type="text" name="shiptext" tabindex="30" id="shiptext" value="!---REG_SHIP_TEXT---" />
+          </td>
+         </tr>
+</table>
+        <p>&nbsp;</p>
+        <div id="inputsubmit"><!---REGISTER_LINK---></div>
+        </form>
+	</div>
+
+<!--  Inserted from document Templates/Bottom_Nav.html BEGIN-->
+!---BOTTOM_NAV---
+<!--  Inserted from document templates/Bottom_Nav.html END-->
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--993875-->                                     
+<!--rtshipcreatepackageform.htm-->
+<title>Create Shipment</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>pagetitle</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---">
+	<input type=hidden name=createneworder value=go>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=3 class="pdgheader"><b>
+				<!---INVOICE_NUMBER--->
+				Package Details</b> </td>
+		</tr>
+		<tr>
+			<td colspan=3 align=left> Enter the weights and dimensions of your packages below. Height, length and width are only used if &quot;Package&quot; or &quot;Shipper Supplied Packaging&quot; is selected for &quot;Package Type&quot;. (All the other &quot;Package Type&quot; selections have known sizes.) </td>
+		</tr>
+		<tr>
+			<td align=left width=10%><b>Number</b> </td>
+			<td align=center  width=75%><b>Dimensions (
+				<!---LINEAR_MEASURE_UNIT--->
+				)</b> </td>
+			<td align=left  width=15%><b>Weight (
+				<!---WEIGHT_MEASURE_UNIT--->
+				)</b> </td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<!---GET_PACKAGE_DATA--->
+		<tr>
+			<td colspan=3 align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan=2 align=left> Invoice Total:
+				<input type=text name="invoicetotal" size=8>
+				<br>
+				<span class=pdgnote>*An amount is required if shipping from the US to Canada or Puerto Rico</span> </td>
+		</tr>
+		<tr>
+			<td colspan=3 align=center><input type="submit" class="pdgbutton" name="firststep"  value="Back">
+				<input type="submit" class="pdgbutton" name="step2"  value="Next">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3 align=left> * only used if package or shipper supplied packaging is selected for Package Type </td>
+		</tr>
+	</table>
+	<!---HIDDEN_PACKAGE_TOTAL--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

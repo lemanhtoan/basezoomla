@@ -1,0 +1,32 @@
+<?php $this->headTitle($category->name) ?>
+
+<div class="blog-views accordion-views">
+    <div class="views-content">
+        <?php foreach ($paginator as $i => $item) : ?>
+            <article>
+                <img src="<?php if(isset($item->image) && $item->image != '')echo $item->image->getImageUrl(1170,400);?>">
+                <div class="post-time col-md-1 col-md-push-2">
+                    <p>
+                        <?php echo $item->updatedAt->format('M'); ?><br />
+                        <?php echo $item->updatedAt->format('d'); ?>
+                    </p>
+                </div>
+                <div class="col-md-7 col-md-push-2">
+                    <h2 class="article-title"><?php echo $item->name; ?></h2>
+                    <?php if($item->mode == "short" && $i != 0):?>
+                        <div class="teaser"><?php echo $item->description; ?></div>
+                    <?php endif; ?>
+                    <div class="article-body <?php if($item->mode == "full" || $i == 0) echo "full-node";?>">
+                        <?php echo $item->content; ?>
+                    </div>
+                    <?php if($item->mode == "short" && $i != 0):?><a href="javascript:void(0)" class="read-more"><?php echo $this->translate('Read more'); ?></a><?php endif; ?>
+                </div>
+            </article>
+        <?php endforeach ?>
+    </div>
+
+    <?php echo $this->partial('pagination/search', array(
+        'paginator' => $paginator,
+        'useQuery' => true,
+    )) ?>
+</div>

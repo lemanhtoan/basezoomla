@@ -1,0 +1,329 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--5207905-->                                    
+<!--rtshipaddrform.htm-->
+<title>Schedule Shipment</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Schedule Shipment</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---">
+	<!---HIDDEN_PARTIAL_FLAG--->
+	<input type="hidden" name="scheduleorder.!---ORDER_NO---" value="go">
+	<!---ORDER_OFFSET--->
+	<input type=hidden name="ordernumber.!---ORDER_NO---" value="ordernumber">
+	<table  class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=4 ><b>
+				<!---ORDER_INVOICE_NUMBER--->
+				Shipment Addresses</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4><!---RTSHIP_ERROR_MSG--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4> The &quot;Ship From&quot; and &quot;Ship To&quot; address information shown below will be used to schedule this shipment. The &quot;Shipper&quot; information for this shipment is based on the information you provided in the UPS Details section. <br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=4 ><b>Ship From Address (Shipment Origin)</b> </td>
+		</tr>
+		<tr>
+			<td> Name: </td>
+			<td><input type=text name="originname" value="!---SHIPPER_ATTENTION_NAME---" size=25 tabindex=1>
+			</td>
+			<td> Company: </td>
+			<td><input type=text name="origincompany" value="!---SHIPPER_COMPANY_NAME---" size=25 tabindex=9>
+			</td>
+		</tr>
+		<tr>
+			<td valign=top> Address: </td>
+			<td><input type=text name="originstr1" value="!---SHIPPER_STREET1---" size=25  tabindex=2>
+			</td>
+			<td> Phone: </td>
+			<td><input type=text name="originphone" value="!---SHIPPER_PHONE---" size=25  tabindex=10>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type=text name="originstr2" value="!---SHIPPER_STREET2---" size=25  tabindex=3>
+			</td>
+			<td> Fax:* </td>
+			<td><input type=text name="originfax" value="!---SHIPPER_FAX---" size=25  tabindex=11>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type=text name="originst3" value="!---SHIPPER_STREET3---" size=25  tabindex=4>
+			</td>
+			<td> Email:* </td>
+			<td><input type=text name="originemail" value="!---SHIPPER_EMAIL---" size=25  tabindex=12>
+			</td>
+		</tr>
+		<tr>
+			<td> City: </td>
+			<td><input type=text name="origincity" value="!---SHIPPER_CITY---" size=25  tabindex=5>
+			</td>
+			<td> Tax ID:* </td>
+			<td><input type=text name="origintaxid" value="!---SHIPPER_TAX_ID---" size=25  tabindex=13>
+			</td>
+		</tr>
+		<tr>
+			<td> State: </td>
+			<td><select name="originstate">
+					<!---UPS_SHIPPER_STATE_DD_LIST--->
+				</select>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td> Province: </td>
+			<td><input type=text name="originprov" value="!---SHIPPER_PROV---" size=25  tabindex=6>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td> Postal&nbsp;Code: </td>
+			<td><input type=text name="originzip" value="!---SHIPPER_ZIP---" size=25  tabindex=7>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td> Country: </td>
+			<td colspan=3><select name="origincountry" tabindex=8>
+					<!---SHIPPER_COUNTRY--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4> *Indicates that the value is not required &nbsp; </td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=4 ><b>Ship To Address (Shipment Destination)</b> </td>
+		</tr>
+		<tr>
+			<td> Name: </td>
+			<td><input type=text name="destname" value="!---DEST_NAME---" size=25  tabindex=21>
+			</td>
+			<td> Company: </td>
+			<td><input type=text name="destcompany" value="!---DEST_COMPANY_NAME---" size=25  tabindex=29>
+			</td>
+		</tr>
+		<tr>
+			<td valign=top> Address: </td>
+			<td><input type=text name="deststr1" value="!---DEST_STREET1---" size=25  tabindex=22>
+			</td>
+			<td> Phone: </td>
+			<td><input type=text name="destphone" value="!---DEST_PHONE---" size=25  tabindex=30>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type=text name="deststr2" value="!---DEST_STREET2---" size=25  tabindex=23>
+			</td>
+			<td> Fax:* </td>
+			<td><input type=text name="destfax" value="" size=25  tabindex=31>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type=text name="deststr3" value="" size=25  tabindex=24>
+			</td>
+			<td> Email:* </td>
+			<td><input type=text name="destemail" value="!---DEST_EMAIL---" size=25  tabindex=32>
+			</td>
+		</tr>
+		<tr>
+			<td> City: </td>
+			<td><input type=text name="destcity" value="!---DEST_CITY---" size=25  tabindex=25>
+			</td>
+			<td> Tax ID:* </td>
+			<td><input type=text name="desttaxid" value="" size=25  tabindex=33>
+			</td>
+		</tr>
+		<tr>
+			<td> State: </td>
+			<td><select name="deststate" tabindex=26>
+					<!---UPS_DEST_STATE_DD_LIST--->
+				</select>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td> Province: </td>
+			<td><input type=text name="destprov" value="!---DEST_PROV---" size=25  tabindex=26>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td> Postal&nbsp;Code: </td>
+			<td><input type=text name="destzip" value="!---DEST_ZIP---" size=25  tabindex=27>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td> Country: </td>
+			<td colspan=3><select name="destcountry" tabindex=28>
+					<!---DEST_COUNTRY--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4 >&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=4 align=center><!---ADDRESS_VALIDATION_SELECT--->
+				<br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4 align=center><h5 align=left>Notice: The address validation functionality will validate P.O. Box addresses, however, UPS does not deliver to P.O. Boxes, attempts by customer to ship to a P.O. Box via UPS may result in additional charges. </h5></td>
+		</tr>
+		<tr>
+			<td colspan=1 align=center><img src="!---CONFIGROOT---UPS_LOGO_S.gif" border=0> </td>
+			<td colspan=3 align=center valign=bottom><h5 align=left>UPS<sup>&reg;</sup>, &nbsp;UPS&nbsp;&amp;&nbsp;Shield&nbsp;Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup> are registered trademarks of United Parcel Service of America, Inc.</h5></td>
+		</tr>
+		<tr>
+			<td colspan=4 > *Indicates that the value is not required &nbsp; </td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=4 ><b>On Call Information **</b> </td>
+		</tr>
+		<tr>
+			<td> Name: </td>
+			<td><input type=text name="pickupname" value="" size=25 maxlength=34  tabindex=40>
+			</td>
+			<td> Phone: </td>
+			<td><input type=text name="pickupphone" value="" size=16  maxlength=15  tabindex=44>
+			</td>
+		</tr>
+		<tr>
+			<td valign=top> Pick Up Date: </td>
+			<td><input type=text name="pickupdate" value="" size=9  maxlength=8  tabindex=41>
+				(YYYYMMDD) </td>
+			<td> Suite/Room: </td>
+			<td><input type=text name="pickuproom" value="" size=9  maxlength=8  tabindex=45>
+			</td>
+		</tr>
+		<tr>
+			<td> Earliest Time: </td>
+			<td><input type=text name="pickupstarttime" value="" size=5  maxlength=4  tabindex=42>
+				(HHMM) </td>
+			<td> Floor: </td>
+			<td><input type=text name="pickupfloor" value="" size=4  maxlength=3  tabindex=46>
+			</td>
+		</tr>
+		<tr>
+			<td> Latest Time: </td>
+			<td><input type=text name="pickupendtime" value="" size=5  maxlength=4  tabindex=43>
+				(HHMM) </td>
+			<td> Location: </td>
+			<td><input type=text name="pickuplocation" value="" size=12  maxlength=11  tabindex=47>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4 > **Used for On Call Pick Up Only &nbsp; </td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=4 ><b>Shipment Service Options</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4> UPS Account:
+				<select name="upsaccount">
+					<!---UPS_ACCOUNT--->
+				</select>
+&nbsp;&nbsp;(Shipping cost will be billed to your UPS Account) </td>
+		</tr>
+		<tr>
+			<td colspan=4 >&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=1><b>Shipment Description:</b> </td>
+			<td colspan=3><input type=text name=shipmentdesc value="!---SHIPMENT_DESCRIPTION---" size=32 maxlength=30>
+				**Required for international shipments </td>
+		</tr>
+		<tr>
+			<td colspan=4 >&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=4><input type=radio name=saturdaydelivery !---SATURDAY_DELIVERY_CHECK--- value=yes>
+				Yes &nbsp;&nbsp;
+				<input type=radio name=saturdaydelivery !---SATURDAY_DELIVERY_NOT_CHECK--- value=no>
+				No &nbsp;&nbsp; <b>Saturday Delivery:</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4><input type=radio name=saturdaypickup !---SAT_PICKUP_CHECK--- value=yes>
+				Yes &nbsp;&nbsp;
+				<input type=radio name=saturdaypickup !---NO_SAT_PICKUP_CHECK--- value=no>
+				No &nbsp;&nbsp; <b>Saturday Pick Up:</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4><input type=radio name=commercial !---COMMERCIAL_CHECK--- value=yes>
+				Yes &nbsp;&nbsp;
+				<input type=radio name=commercial !---COMMERCIAL_NOT_CHECK--- value=no>
+				No &nbsp;&nbsp; <b>Commercial Ship To Address:</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4 >&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=4 ><b>Shipment Pick Up Selection</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4><input type=radio name=pickuptype  !---DAILY_PICKUP_CHECK---  value=01>
+				UPS<sup>&reg;</sup> Daily Pick Up<br>
+				<input type=radio name=pickuptype !---ONE_TIME_PICKUP_CHECK---  value=06>
+				UPS<sup>&reg;</sup> One Time Pick Up<br>
+				<input type=radio name=pickuptype !---OCCASIONAL_PICKUP_CHECK---  value=03>
+				UPS<sup>&reg;</sup> Customer Counter/Occasional Pick Up<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4 >&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=4 ><b>Shipment Notification Options</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4><input type=checkbox  name="sendemails" value="yes" !---UPS_QUANT_EMAILS_CHECK--- >
+				Request UPS QVN Ship Email </td>
+		</tr>
+		<tr>
+			<td colspan=4><input type=checkbox  name="sendexceptemails" value="yes" !---UPS_QUANT_EXCEPT_EMAILS_CHECK--- >
+				Request UPS QVN Exception Email </td>
+		</tr>
+		<tr>
+			<td colspan=4><input type=checkbox  name="senddeliveremails" value="yes" !---UPS_QUANT_DELIVER_EMAILS_CHECK--- >
+				Request UPS QVN Delivery Email </td>
+		</tr>
+		<tr>
+			<td colspan=4><input type=checkbox  name="verbalconf" value="yes" !---UPS_VERBAL_CHECK--- >
+				Request Verbal Delivery Notification from UPS<sup>*</sup> </td>
+		</tr>
+		<tr>
+			<td colspan=4> *Verbal Delivery Notification only available with Next Day Air-Early AM. Appropriate UPS rates will apply. <br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=4><br>
+				<input type="submit" class="pdgbutton" name="step1" value="Back">
+				<input type="submit" class="pdgbutton" name="step4" value="Next">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4 >&nbsp;</td>
+		</tr>
+	</table>
+	<!---HIDDEN_ITEM_DATA--->
+	<!---HIDDEN_PACKAGE_DATA--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

@@ -1,0 +1,73 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1470935-->                                    
+<!--upsaddressvalidationform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+- UPS Address Validation</title>
+<script language="JavaScript">
+	function resetaddr(){
+	document.upsvaladdr.destcity.value="";
+	document.upsvaladdr.deststateprov.value="";
+	document.upsvaladdr.destzip.value="";
+	}
+	function setnewaddr(){
+	}
+	function selectnewradio(){
+	}
+	function setnewvalues(){
+	}
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>UPS Validate Address</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---" name="upsvaladdr" OnSubmit="setnewvalues();">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Enter new address</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2> City:
+				<input type="text" name="destcity" value="!---UPS_AV_CURRENT_CITY---" size=25>
+				State:
+				<input type="text" name="deststateprov" value="!---UPS_AV_CURRENT_STATE---" size=5>
+				Postal Code:
+				<input type="text" name="destzip" value="!---UPS_AV_CURRENT_ZIP---" size=10>
+				<br>
+				<br>
+				<div align=center>
+					<input type="submit" class="pdgbutton" name="displayupsaddressvalidation"  value="Submit Address Validation Request">
+				</div></td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Select Suggested City, State, Postal Code</b> </td>
+		</tr>
+		<!---UPS_ADDR_VALIDATION--->
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name="displayupsaddressvalidation"  value="Submit Address Validation Request">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2><h5 align=left><img src="!---CONFIGROOT---_resources/compat/images/UPS_LOGO_S.png" border=0>&nbsp; UPS<sup>&reg;</sup>,&nbsp;UPS&nbsp;&amp;&nbsp;Shield&nbsp;Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup> are registered trademarks of United Parcel Service of America, Inc. </h5></td>
+		</tr>
+		<tr>
+			<td colspan=2><h5 align=left> Notice: UPS assumes no liability for the information provided by the address validation functionality. The address validation functionality does not support the identification or verification of occupants at an address. </h5></td>
+		</tr>
+		<tr>
+			<td colspan=2><h5 align=left> Notice: The address validation functionality will validate P.O. Box addresses, however, UPS does not deliver to P.O. Boxes, attempts by customer to ship to a P.O. Box via UPS may result in additional charges. </h5></td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

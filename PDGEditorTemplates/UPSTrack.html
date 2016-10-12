@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="/PDGEditorTemplates/css/forms.css" type="text/css" />
+<link rel="stylesheet" href="/PDGEditorTemplates/css/treeview.css" />
+<script src="/PDGEditorTemplates/scripts/jquery.js" type="text/javascript"></script>
+<script src="/PDGEditorTemplates/scripts/jquery.cookie.js" type="text/javascript"></script>
+<script src="/PDGEditorTemplates/scripts/treeview.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/PDGEditorTemplates/css/styles.css" type="text/css" />
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+
+
+<div class="form">
+<form action="!---SCRIPT_NAME---" method="post">
+    <table style="width:100%;">
+    <tr> 
+      <td>UPS reference Number:</td>
+      <td><input name="trackno" style="width:100px;" /></td>
+    </tr>
+    <tr> 
+      <td>Track by:</td>
+      <td><select name="type">
+          <option value="trackno" selected="selected">Package Number</option>
+          <option value="shipno">Shipment Number</option>
+          <option value="refno">Reference Number</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td>Select type of response:</td>
+      <td><select name="rqstopt">
+          <option value="none" selected="selected">Last activity on the package</option>
+          <option value="activity">All activity on the package</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td>Destination Country:</td>
+      <td><select name="destcntry">
+          <!---COUNTRY_LIST--->
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2"> Optional data for UPS OnLine<sup>&reg;</sup> 
+        Tools XML tracking:
+      </td>
+    </tr>
+    <tr> 
+      <td>Destination Postal Code: </td>
+      <td><input name="destzip" style="width:60px;" /> </td>
+    </tr>
+    <tr> 
+      <td colspan="2"> <input type="checkbox" name="usedates" value="yes" />
+        Use date range to narrow search. </td>
+    </tr>
+    <tr> 
+      <td colspan="2"> <div> 
+        <table id="dates">
+          <tr> 
+            <td>Start of Date Range:</td>
+            <td><select name="beginmon">
+              <option value="01" selected="selected">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+              </select> <select name="beginday">
+              <option selected="selected">1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+              </select>
+              , 
+              <select name="beginyr">
+              <option>2005</option>
+              <option>2006</option>
+              <option>2007</option>
+              <option>2008</option>
+              <option selected="selected">2009</option>
+              <option>2010</option>
+              <option>2011</option>
+              <option>2012</option>
+              <option>2013</option>
+              <option>2014</option>
+              <option>2015</option>
+              <option>2016</option>
+              <option>2017</option>
+              <option>2018</option>
+              <option>2019</option>
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td>End of Date Range: </td>
+            <td><select name="stopmon">
+              <option value="01" selected="selected">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+              </select> <select name="stopday">
+              <option selected="selected">1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+              </select>
+              , 
+              <select name="stopyr">
+              <option>2005</option>
+              <option>2006</option>
+              <option>2007</option>
+              <option>2008</option>
+              <option selected="selected">2009</option>
+              <option>2010</option>
+              <option>2011</option>
+              <option>2012</option>
+              <option>2013</option>
+              <option>2014</option>
+              <option>2015</option>
+              <option>2016</option>
+              <option>2017</option>
+              <option>2018</option>
+              <option>2019</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" style="text-align:center;">
+        <input type="checkbox" name="terms" value="agree" />
+        I agree to the following:<br /> 
+        <!-- This is a REQUIRED entry -->
+        NOTICE: The UPS package tracking systems accessed via this service (the 
+        &quot;Tracking Systems&quot;) and tracking information obtained through this service 
+        (the &quot;Information&quot;) are the private property of UPS. UPS authorizes you 
+        to use the Tracking Systems solely to track shipments tendered by or for 
+        you to UPS for delivery and for no other purpose. Without limitation, 
+        you are not authorized to make the Information available on any web site 
+        or otherwise reproduce, distribute, copy, store, use or sell the Information 
+        for commercial gain without the express written consent of UPS. This is 
+        a personal service, thus you right to use the Tracking System or Information 
+        is non-assignable. Any access or use that is inconsistent with these terms 
+        is unauthorized and strictly prohibited.
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" style="text-align:center;"> <br /> <br /> 
+        <!---TRACK_ORDER_SUBMIT--->
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+
+
+</body>
+</html>

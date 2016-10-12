@@ -1,0 +1,9 @@
+USD|US Dollars|$%.2f|$%9.2f
+GBP|Pounds Sterling|£%.2f|£%9.2f
+CAD|Canadian Dollars|$%.2f|$%9.2f
+EUR|Euros|€%.2f|€%9.2f
+DEM|German Mark|DM%.2f|DM%9.2f
+NLG|Netherlands Guilder|fl%.2f|fl%9.2f
+MYR|Malaysian Ringitt|RM%.2f|RM%9.2f
+SGD|Singapore Dollar|S$%.2f|S$%9.2f
+CHF|Switzerland Franc|CHF%.2f|CHF%9.2f

@@ -1,0 +1,187 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3768774-->                                    
+<!--giftcertificateform.htm-->
+<title>PDG Commerce Gift Certificates</title>
+<script LANGUAGE="JavaScript" SRC="!---CONFIGROOT---_resources/compat/js/imageuploader.js"></script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Gift Certificates</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<li><a href="javascript:void(0)" tsid="createmodify-section">Create/Modify</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="otheroptions-section">Other Options</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="categorysettings-section">Category Settings</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-close.htm--->
+
+<!--cmt: createmodify-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<input type=hidden name=pdgimgdir value="!---IMG_DIRECTORY---" ID="imgdirpath">
+<div id="createmodify-section" class="page-section">
+<form method="post" action="!---MODULE_NAME---" name=pdggiftcertform>
+	<input type=hidden name=modiyfgiftcertcode value="!---GIFT_CERT_CODE---">
+	<table width=100% cellpadding=5 cellspacing=0 border=0 class="pdgbody">
+		<tr>
+			<td width="40%" class="pdgdata1">Code</td>
+			<td width="60%" class="pdgdata1"><input type=text name=giftcertcode maxlength=20 size=20 value="!---GIFT_CERT_CODE---">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Description</td>
+			<td class="pdgdata2"><input type=text name=giftcertdesc size=50 maxlength=254 value="!---GIFT_CERT_DESC---">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Amount</td>
+			<td class="pdgdata1"><input type=text name=giftcertvalue size=5 value="!---GIFT_CERT_AMT---">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Gift Certificate Text:</td>
+			<td class="pdgdata2"><textarea name=giftcerttext cols=50 rows=3><!---GIFT_CERT_TEXT---></textarea>
+				<br>
+			</td>
+		</tr>
+		<tr valign="middle">
+			<td class="pdgdata1">Gift Certificate Image:</td>
+			<td class="pdgdata1"><input type=text name=giftcertimage maxlength=254 size=50 value="!---GIFT_CERT_IMAGE---">
+			
+	<script language=javascript>
+	<!--
+	var pdgimg="!---IMG_UPLOADER---";
+	if(pdgimg.length>0)
+		document.write('<a class="pdg-imageupload" onclick="javascript:imageuploadprod(\'document.pdggiftcertform.giftcertimage\',\'document.pdggiftcertform.giftcertthumbimage\',\'!---IMG_UPLOADER---\');">upload&nbsp;image</a>');
+	-->
+	</script>
+			</td>
+		</tr>
+		<tr valign="middle">
+			<td class="pdgdata2">Gift Certificate Thumbnail Image:</td>
+			<td class="pdgdata2"><input type=text name=giftcertthumbimage maxlength=254 size=50 value="!---GIFT_CERT_THUMB_IMAGE---">
+	<script language=javascript>
+	<!--
+	var pdgimg="!---IMG_UPLOADER---";
+	if(pdgimg.length>0)
+		document.write('<a class="pdg-imageupload" onclick="javascript:imageuploadprod(\'document.pdggiftcertform.giftcertthumbimage\',\'\',\'!---IMG_UPLOADER---\');">upload&nbsp;image</a>');
+	-->
+	</script>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name=addgiftcert value="Add/Update Gift Certificate">
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+	<table width=100% cellpadding=5 cellspacing=0 border=0 class="pdgbody">
+		<tr>
+			<td colspan=4 class="pdgheader"><b>Available Gift Certificates</b><br>
+			</td>
+		</tr>
+		<!---AVAILABLE_GCERTS--->
+		<tr>
+			<td colspan=4>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=4 class="pdgheader"><b>Issue Gift Certificates</b><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4> Number to Issue:
+				<input type=text name=certqty size=4>
+				Certificate Code:
+				<input type=text name=certcode size=20>
+				Display as List:
+				<input type=checkbox name=certlist value=yes checked>
+				<input type=submit name=issuegiftcert class="pdgbutton" value="Issue Gift Certificates">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4>&nbsp;</td>
+		</tr>
+	</table>
+</form>		
+</div>
+<!--cmt: otheroptions-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="otheroptions-section" class="page-section">
+<form method="post" action="!---MODULE_NAME---" >
+	<table width=100% cellpadding=5 cellspacing=0 border=0 class="pdgbody">
+<!--		<tr>
+			<td colspan=4 class="pdgheader"><b>Other Gift Certificate Options</b><br>
+			</td>
+		</tr>-->
+		<tr>
+			<td colspan=4 align=center><input type="submit" class="pdgoitab pdgbutton" name=outstandinggcerts value="View Outstanding Certificates">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=4 align=center> Certificate ID:&nbsp;
+				<input type=text name=gcertsusagecode size=24>
+&nbsp;&nbsp;
+				<input type="submit" class="pdgoitab pdgbutton" name=gcertsusage value="View Gift Certificate Usage">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=4 align=center><input type="submit" class="pdgbutton" name=purgeusedgcerts value="Remove Used Certificates from Database" OnClick="return(confirm('Are you sure you want to purge used gift certificates (ones with 0.00 amount remaining). If you want to continue click on [OK], otherwise click on [Cancel]'));">
+			</td>
+		</tr>
+	</table>
+</form>
+</div>
+<!--cmt: categorysettings-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="categorysettings-section" class="page-section">
+<form method="post" action="!---MODULE_NAME---" name=giftcertcatform>
+	<table width=100% cellpadding=5 cellspacing=0 border=0 class="pdgbody">
+<!--		<tr>
+			<td colspan=2 class="pdgheader"><b>Gift Certificate Category Settings</b><br>
+			</td>
+		</tr>-->
+		<tr>
+			<td class=pdgdata1 valign=top>Do not display Gift Certificate Category:</td>
+			<td class=pdgdata1><input type=checkbox name=catenabled !---GIFT_CATEGORY_ENABLED--- value="yes"  ></td>
+		</tr>
+		<tr>
+			<td class=pdgdata2 valign=top>Category Name/Description:</td>
+			<td class=pdgdata2><input type=text name=catlabel value="!---GIFT_CATEGORY_LABEL---" size=60></td>
+		</tr>
+		<tr>
+			<td class=pdgdata1 valign=top>Category Image:</td>
+			<td class=pdgdata1><input type=text name=catimage value="!---GIFT_CATEGORY_IMAGE---" size=60>
+	<script language=javascript>
+	<!--
+	var pdgimg="!---IMG_UPLOADER---";
+	if(pdgimg.length>0)
+		document.write('<a class="pdg-imageupload" onclick="javascript:imageuploadprod(\'document.giftcertcatform.catimage\',\'\',\'!---IMG_UPLOADER---\');">upload&nbsp;image</a>');
+	-->
+	</script>
+
+			</td>
+		</tr>
+		<tr>
+			<td class=pdgdata2 valign=top>Category Template:</td>
+			<td class=pdgdata2><input type=text name=cattemplate value="!---GIFT_CATEGORY_TEMPLATE---" size=60></td>
+		</tr>
+		<tr>
+			<td class=pdgdata1 valign=top>Category Text:</td>
+			<td class=pdgdata1><textarea name=cattext cols=60 rows=5><!---GIFT_CATEGORY_TEXT--->
+</textarea></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name=updategiftcertcategory value="Update Gift Certificate Category">
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-ftr.htm--->

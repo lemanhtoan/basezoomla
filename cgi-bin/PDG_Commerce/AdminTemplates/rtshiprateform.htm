@@ -1,0 +1,72 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1121091-->                                    
+<!--rtshiprateform.htm-->
+<title>Schedule Shipment</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Schedule Shipment</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---">
+	<!---HIDDEN_PARTIAL_FLAG--->
+	<input type="hidden" name="scheduleorder.!---ORDER_NO---" value="go">
+	<!---ORDER_OFFSET--->
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=3 class="pdgheader"><b>
+				<!---ORDER_INVOICE_NUMBER--->
+				Service Selection</b> </td>
+		</tr>
+		<tr>
+			<td colspan=3> This customer was charged
+				<!---SHIP_TOTAL--->
+				for
+				<!---SHIP_SELECTION--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><b>UPS Method</b> </td>
+			<td><b>Estimated Additional Cost*<br>
+				(customer was charged
+				<!---SHIP_TOTAL--->
+				)</b> </td>
+			<td><b>UPS Cost**</b> </td>
+		</tr>
+		<!---UPS_RATE_COMPARE--->
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=3 align=center><input type="submit" class="pdgbutton" name="step2"  value="Back">
+				<input type="submit" class="pdgbutton" name="step5"  value="Next">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=3> *The additional cost calculated by
+				<!---ADMIN_HEADER_LABEL--->
+				is based on the difference between the amount the customer was charged and the shipping cost as determined by UPS at this time. </td>
+		</tr>
+		<tr>
+			<td colspan=3> **The UPS cost does not include service charges like insurance and email Quantum View Notification </td>
+		</tr>
+		<tr>
+			<td colspan=3><h5 align=left><img src="!---CONFIGROOT---UPS_LOGO_S.gif" border=0>&nbsp;UPS<sup>&reg;</sup>,&nbsp;UPS&nbsp;&amp;&nbsp;Shield&nbsp;Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup> are registered trademarks of United Parcel Service of America, Inc.</h5></td>
+		</tr>
+	</table>
+	<table width=100%>
+		<tr>
+			<td align=center class="pdgcopy">&copy;1997-
+				<!---CURRENT_YEAR--->
+				PDG Software, Inc. </td>
+		</tr>
+	</table>
+	<!---HIDDEN_ITEM_DATA--->
+	<!---HIDDEN_PACKAGE_DATA--->
+	<!---HIDDEN_SHIP_DATA--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

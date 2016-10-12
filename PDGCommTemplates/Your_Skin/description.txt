@@ -1,0 +1,1 @@
+Your Custom Template Set - uses templates located in the Header_Footer folder to control storefront content layout of pages.

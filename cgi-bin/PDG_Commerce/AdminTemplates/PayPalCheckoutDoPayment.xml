@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+   <SOAP-ENV:Header>
+      <RequesterCredentials xmlns="urn:ebay:api:PayPalAPI" SOAP-ENV:mustUnderstand="1">
+         <Credentials xmlns="urn:ebay:apis:eBLBaseComponents">
+            <Username></Username>
+            <Password></Password>
+            <Subject/>
+         </Credentials>
+      </RequesterCredentials>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      <DoExpressCheckoutPaymentReq xmlns="urn:ebay:api:PayPalAPI">
+         <DoExpressCheckoutPaymentRequest>
+            <Version xmlns="urn:ebay:apis:eBLBaseComponents">1.0</Version>
+            <DoExpressCheckoutPaymentRequestDetails xmlns="urn:ebay:apis:eBLBaseComponents">
+               <Token></Token>
+               <PaymentAction></PaymentAction>
+               <PayerID></PayerID>
+               <PaymentDetails>
+                  <OrderTotal xmlns="urn:ebay:apis:eBLBaseComponents" currencyID="USD">0.00</OrderTotal>
+               </PaymentDetails>
+            </DoExpressCheckoutPaymentRequestDetails>
+         </DoExpressCheckoutPaymentRequest>
+      </DoExpressCheckoutPaymentReq>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

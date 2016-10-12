@@ -1,0 +1,64 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1391425-->                                    
+<!--paypalwebprosform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+PayPal Website Pro Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>PayPal Website Pro Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" id=form1 name=form1>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>PayPal Settings</b> </td>
+		</tr>
+		<tr>
+			<td> PayPal Website Pro User Name: </td>
+			<td><input name="paypalwebproacct" value="!---PAYPAL_WEBPRO_ACCT---" size=50></td>
+		</tr>
+		<tr>
+			<td> PayPal Website Pro Password: </td>
+			<td><input type=password name="paypalwebpropw" value="!---PAYPAL_WEBPRO_PASSWORD---" size=50></td>
+		</tr>
+		<tr>
+			<td> PayPal Website Pro URL: <span class="fntsmaller">(including http[s]://)</span></td>
+			<td><input name="paypalwebprourl" value="!---PAYPAL_WEBPRO_URL---" size=50></td>
+		</tr>
+		<tr>
+			<td> After PayPal Website Pro Login/Authorization/Verification:<br>
+				<span class=pdgnote>*only used for PayPal Express Checkout</span></td>
+			<td><input type=radio selected name="paypalwebproreturn" !---PAYPAL_WEBPRO_CHECKOUT_SELECT--- value="checkoutaction" size=50>
+				Return to Checkout Page<br>
+				<input type=radio selected name="paypalwebproreturn" !---PAYPAL_WEBPRO_SHIP_SELECT--- value="selectshippingaction" size=50>
+				Return to Shipping Selection Page
+				<input name="paypalshiptemplate" value="!---PAYPAL_WEBPRO_SHIP_TEMPLATE---" size=50>
+				<br>
+				<input type=radio selected name="paypalwebproreturn" !---PAYPAL_WEBPRO_VERIFY_SELECT--- value="verifyaction" size=50>
+				Return to Verify Page<br>
+			</td>
+		</tr>
+		<tr>
+			<td>File to which PayPal transactions are logged: </td>
+			<td><input name="paypallogfile" value="!---PAYPAL_WEBPRO_LOGFILE---" size=50></td>
+		</tr>
+		<tr>
+			<td>Log Pending PayPal transactions: </td>
+			<td><input type=checkbox name="paypallogpending" value="Yes" !---PAYPAL_WEBPRO_LOG_PENDING--- ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Send items ordered to PayPal:<br>
+			</td>
+			<td class="pdgdata2"><input type=checkbox name="paypalsenditemdata" value="Yes" !---PAYPAL_WEBPRO_SEND_ITEM_DATA--- >
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2><br>
+				<input type="submit" class="pdgbutton" name="changepaypalwebpros" value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

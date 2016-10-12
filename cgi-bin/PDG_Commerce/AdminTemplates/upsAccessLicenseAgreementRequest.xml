@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding = "ISO-8859-1"?>
+<AccessLicenseAgreementRequest>
+	<Request>
+		<TransactionReference>
+			<CustomerContext>License Agreement Query</CustomerContext>
+			<XpciVersion>1.0001</XpciVersion>
+		</TransactionReference>
+		<RequestAction>AccessLicense</RequestAction>
+		<RequestOption>AllTools</RequestOption>
+	</Request>
+	<DeveloperLicenseNumber>BR-549</DeveloperLicenseNumber>
+	<AccessLicenseProfile>
+		<CountryCode>US</CountryCode>
+		<LanguageCode>EN</LanguageCode>
+	</AccessLicenseProfile>
+</AccessLicenseAgreementRequest>

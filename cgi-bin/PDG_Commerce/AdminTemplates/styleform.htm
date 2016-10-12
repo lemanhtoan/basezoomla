@@ -1,0 +1,355 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--13643916-->                                   
+<!--styleform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Colors and Fonts</title>
+<script language=JavaScript>
+function colorselector(i,childwindow){
+	switch(i){
+	  case 0:
+		childwindow.document.write('00');
+		break;
+	  case 1:
+		childwindow.document.write('33');
+		break;
+	  case 2:
+		childwindow.document.write('66');
+		break;
+	  case 3:
+		childwindow.document.write('99');
+		break;
+	  case 4:
+		childwindow.document.write('CC');
+		break;
+	  case 5:
+		childwindow.document.write('FF');
+		break;
+	}
+}
+
+function displaycolorcell(f,m,l,childwindow,name){
+	childwindow.document.write('<TD width=20 height=20 ALIGN=left VALIGN=top BGCOLOR="#');
+	colorselector(f,childwindow);
+	colorselector(m,childwindow);
+	colorselector(l,childwindow);
+	childwindow.document.write('"><a href="javascript:opener.document.pdgstyle.'+name+'.value=\'#');
+	colorselector(f,childwindow);
+	colorselector(m,childwindow);
+	colorselector(l,childwindow);
+	childwindow.document.write('\';self.close();"><font color=#FFFFF><b>#');
+	colorselector(f,childwindow);
+	colorselector(m,childwindow);
+	colorselector(l,childwindow);
+	childwindow.document.write('</b></font></a></TD>\n');
+}
+
+function colordisplay(name){
+  var h=600
+  var w=800
+  var winl = (screen.width - w) / 2;
+  var wint = (screen.height - h) / 2;
+     childwindow=window.open('','popuppage','scrollbars=yes,'+'width='+w+',height='+h+',top='+wint+',left='+winl);
+     if (childwindow.opener == null) childWindow.opener = self;
+     childwindow.document.write("<html>");
+     childwindow.document.write("<head>");
+     childwindow.document.write("<title>PDG Color Page</title>");
+     childwindow.document.write("</head>");
+     childwindow.document.write("<body>");
+     childwindow.document.write("<center>Click on the Desired Color (may take time to load page)</center>");
+     childwindow.document.write("<form>");
+    
+
+     childwindow.document.write('<TABLE WIDTH="100%" BORDER="0" BGCOLOR="#000000">');
+
+     for(f=0;f<6;f++){	
+      for(m=0;m<6;m++){	
+       childwindow.document.write('<TR>');
+       for(l=0;l<6;l++){	
+	 displaycolorcell(f,m,l,childwindow,name);
+       }
+       childwindow.document.write('</TR>');
+      }	
+     }
+     childwindow.document.write('</table>');
+
+     childwindow.document.write("<center><input type=button value='Close' OnClick='window.close();'> </center>");
+     childwindow.document.write("</form>");
+     childwindow.document.write("</body>");
+     childwindow.document.write("</html>");
+}
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Colors and Fonts</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" name=pdgstyle>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="styletype" value="!---WORKING_CLASS---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=3><b>Select Fonts and Colors for
+				<!---WORKING_CLASS--->
+				</b> </td>
+		</tr>
+		<tr>
+			<td align=right width=55% class="pdgdata1"> font-family:&nbsp;
+				<select name=fonttypeselect>
+					<option value="userinput">Select or Enter Value &gt;&gt;&gt;</option>
+					<option value="Arial">Arial</option>
+					<option value="Courier">Courier</option>
+					<option value="Helvetica">Helvetica</option>
+					<option value="Sans-Serif">sans-serif</option>
+				</select>
+			</td>
+			<td align=left width=25% class="pdgdata1"><input type=text size=20 name=fonttype value="!---FONT_TYPE---">
+			</td>
+			<td align=left width=20% class="pdgdata1">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata2"> font-size:&nbsp;
+				<select name=fontsizeselect>
+					<option value="userinput">Select or Enter Value &gt;&gt;&gt;</option>
+					<option value="10 px">10 px</option>
+					<option value="12 px">12 px</option>
+					<option value="14 px">14 px</option>
+					<option value="18 px">18 px</option>
+				</select>
+			</td>
+			<td align=left class="pdgdata2"><input type=text size=20 name=fontsize value="!---FONT_SIZE---">
+			</td>
+			<td align=left class="pdgdata2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata1"> font-weight:&nbsp;
+				<select name=fontweightselect>
+					<option value="userinput">Select or Enter Value &gt;&gt;&gt;</option>
+					<option value="normal">normal</option>
+					<option value="bold">bold</option>
+					<option value="bolder">bolder</option>
+					<option value="lighter">lighter</option>
+				</select>
+			</td>
+			<td align=left class="pdgdata1"><input type=text size=20 name=fontweight value="!---FONT_WEIGHT---">
+			</td>
+			<td align=left class="pdgdata1">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata2"> font-style:&nbsp;
+				<select name=fontstyleselect>
+					<option value="userinput">Select or Enter Value &gt;&gt;&gt;</option>
+					<option value="normal">normal</option>
+					<option value="italic">italic</option>
+					<option value="oblique">oblique</option>
+				</select>
+			</td>
+			<td align=left class="pdgdata2"><input type=text size=20 name=fontstyle value="!---FONT_STYLE---">
+			</td>
+			<td align=left class="pdgdata2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata1"> text-decoration:&nbsp;
+				<select name=textdecorationselect>
+					<option value="userinput">Select or Enter Value &gt;&gt;&gt;</option>
+					<option value="none">none</option>
+					<option value="underline">underline</option>
+					<option value="overline">overline</option>
+					<option value="line-thorugh">line-through</option>
+				</select>
+			</td>
+			<td align=left class="pdgdata1"><input type=text size=20 name=textdecoration value="!---TEXT_DECORATION---">
+			</td>
+			<td align=left class="pdgdata1">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata1"> color:
+				<input type=text size=20 name=color value="!---COLOR---">
+				<table>
+					<tr>
+						<td height=10>Current Color:</td>
+						<td height=10 width=10 bgcolor="!---COLOR---"><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata1"><table border=1>
+					<tr>
+						<td height=10 width=10 bgcolor=#000000><a href="#" OnClick="javascript:document.pdgstyle.color.value='#000000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FFFFFF><a href="#" OnClick="javascript:document.pdgstyle.color.value='#FFFFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008000><a href="#" OnClick="javascript:document.pdgstyle.color.value='#008000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800000><a href="#" OnClick="javascript:document.pdgstyle.color.value='#800000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808000><a href="#" OnClick="javascript:document.pdgstyle.color.value='#808000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#000080><a href="#" OnClick="javascript:document.pdgstyle.color.value='#000080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800080><a href="#" OnClick="javascript:document.pdgstyle.color.value='#800080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808080><a href="#" OnClick="javascript:document.pdgstyle.color.value='#808080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+					<tr>
+						<td height=10 width=10 bgcolor=#FFFF00><a href="#" OnClick="javascript:document.pdgstyle.color.value='#FFFF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FF00><a href="#" OnClick="javascript:document.pdgstyle.color.value='#00FF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FFFF><a href="#" OnClick="javascript:document.pdgstyle.color.value='#00FFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF00FF><a href="#" OnClick="javascript:document.pdgstyle.color.value='#FF00FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#C0C0C0><a href="#" OnClick="javascript:document.pdgstyle.color.value='#C0C0C0'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF0000><a href="#" OnClick="javascript:document.pdgstyle.color.value='#FF0000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#0000FF><a href="#" OnClick="javascript:document.pdgstyle.color.value='#0000FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008080><a href="#" OnClick="javascript:document.pdgstyle.color.value='#008080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata1"><a href="Javascript:colordisplay('color');">more colors</a> </td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata2"> background-color:
+				<input type=text size=20 name=bgcolor value="!---BGCOLOR---">
+				<table>
+					<tr>
+						<td height=10>Current Color:</td>
+						<td height=10 width=10 bgcolor="!---BGCOLOR---"><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata2"><table border=1>
+					<tr>
+						<td height=10 width=10 bgcolor=#000000><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#000000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FFFFFF><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#FFFFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008000><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#008000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800000><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#800000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808000><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#808000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#000080><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#000080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800080><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#800080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808080><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#808080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+					<tr>
+						<td height=10 width=10 bgcolor=#FFFF00><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#FFFF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FF00><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#00FF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FFFF><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#00FFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF00FF><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#FF00FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#C0C0C0><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#C0C0C0'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF0000><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#FF0000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#0000FF><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#0000FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008080><a href="#" OnClick="javascript:document.pdgstyle.bgcolor.value='#008080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata2"><a href="Javascript:colordisplay('bgcolor');">more colors</a> </td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pdgheader" colspan=3><b>Select Hyperlink Colors
+				<!---LINK_WORKING_CLASS--->
+				</b> </td>
+		</tr>
+		<tr>
+			<td  colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata1"> :link
+				<input type=text size=20 name=linkcolor value="!---LINK_COLOR---">
+				<table>
+					<tr>
+						<td height=10>Current Color:</td>
+						<td height=10 width=10 bgcolor="!---LINK_COLOR---"><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata1"><table border=1>
+					<tr>
+						<td height=10 width=10 bgcolor=#000000><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#000000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FFFFFF><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#FFFFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008000><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#008000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800000><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#800000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808000><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#808000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#000080><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#000080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800080><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#800080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808080><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#808080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+					<tr>
+						<td height=10 width=10 bgcolor=#FFFF00><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#FFFF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FF00><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#00FF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FFFF><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#00FFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF00FF><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#FF00FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#C0C0C0><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#C0C0C0'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF0000><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#FF0000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#0000FF><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#0000FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008080><a href="#" OnClick="javascript:document.pdgstyle.linkcolor.value='#008080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata1"><a href="Javascript:colordisplay('linkcolor');">more colors</a> </td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata2"> :visited
+				<input type=text size=20 name=visitedcolor value="!---VISITED_COLOR---">
+				<table>
+					<tr>
+						<td height=10>Current Color:</td>
+						<td height=10 width=10 bgcolor="!---VISITED_COLOR---"><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata2"><table border=1>
+					<tr>
+						<td height=10 width=10 bgcolor=#000000><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#000000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FFFFFF><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#FFFFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008000><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#008000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800000><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#800000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808000><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#808000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#000080><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#000080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800080><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#800080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808080><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#808080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+					<tr>
+						<td height=10 width=10 bgcolor=#FFFF00><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#FFFF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FF00><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#00FF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FFFF><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#00FFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF00FF><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#FF00FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#C0C0C0><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#C0C0C0'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF0000><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#FF0000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#0000FF><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#0000FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008080><a href="#" OnClick="javascript:document.pdgstyle.visitedcolor.value='#008080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata2"><a href="Javascript:colordisplay('visitedcolor');">more colors</a> </td>
+		</tr>
+		<tr>
+			<td align=right class="pdgdata1"> :hover
+				<input type=text size=20 name=hovercolor value="!---HOVER_COLOR---">
+				<table>
+					<tr>
+						<td height=10>Current Color:</td>
+						<td height=10 width=10 bgcolor="!---HOVER_COLOR---"><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata1"><table border=1>
+					<tr>
+						<td height=10 width=10 bgcolor=#000000><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#000000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FFFFFF><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#FFFFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008000><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#008000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800000><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#800000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808000><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#808000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#000080><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#000080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#800080><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#800080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#808080><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#808080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+					<tr>
+						<td height=10 width=10 bgcolor=#FFFF00><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#FFFF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FF00><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#00FF00'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#00FFFF><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#00FFFF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF00FF><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#FF00FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#C0C0C0><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#C0C0C0'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#FF0000><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#FF0000'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#0000FF><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#0000FF'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+						<td height=10 width=10 bgcolor=#008080><a href="#" OnClick="javascript:document.pdgstyle.hovercolor.value='#008080'; return false;" ><img border=0 height=10 width=10 src="!---CONFIGROOT---transparent.gif"></a></td>
+					</tr>
+				</table></td>
+			<td align=left class="pdgdata1"><a href="Javascript:colordisplay('hovercolor');">more colors</a> </td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=3 align=center><br>
+				<input type="submit" class="pdgbutton" name=changestyle value="Submit Changes">
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

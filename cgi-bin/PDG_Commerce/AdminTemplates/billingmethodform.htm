@@ -1,0 +1,119 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2027505-->                                    
+<!-- billingmethodform.htm -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Payment Method Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Payment Method Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=4 width=100%><b>Add a Payment Method</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4><strong>
+				<!---BILLING_MODIFY--->
+				</strong><br>
+				<!---BILLING_INSTRUCTION--->
+			</td>
+		</tr>
+		<tr>
+			<td width="10%"><b>Rule #</b></td>
+			<td width="40%"><b>Method Description</b></td>
+			<td width="40%"><b>Specifiers</b></td>
+			<td width="10%">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td ><input type="text" name="billingmethodnumber" value="!---BILL_METHOD_NUM---" maxsize="2" size="2"></td>
+			<td ><input type="text" name="billingmethoddesc" value="!---BILL_METHOD_DESC---" maxsize="79" size="35"></td>
+			<td ><select name="billingmethodtype">
+					<!---BILLING_TYPE_LIST--->
+				</select>
+				<br>
+				<select name="billingmethodservice">
+					<!---BILLING_SERVICE_LIST--->
+				</select>
+				<br>
+				<select name="billingmethodconx">
+					<!---BILLING_CONX_LIST--->
+				</select></td>
+			<td ><input type="submit" class="pdgbutton" name="addbillmethod" value="Add">
+				<br>
+				<br></td>
+		</tr>
+		<tr>
+			<td colspan=4><br>
+				<br>
+			</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=5 ><b>Payment Methods</b> </td>
+		</tr>
+		<tr>
+			<td><b>Rule</b></td>
+			<td><b>Name</b></td>
+			<td><b>Description</b></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<!---DISPLAY_BILLING--->
+		<tr>
+			<td colspan="5">&nbsp;</td>
+		</tr>
+	</table>
+	<!--
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=3 ><b>Authorization Services</b> </td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+		<tr>
+			<td width=33%><a href="!---MODULE_NAME---?displayepay=action">USA ePay</a></td>
+			<td width=33%><a href="!---MODULE_NAME---?displaypaymentnet=action">Payflow</a></td>
+			<td width=33%><a href="!---MODULE_NAME---?displaycybersource=action">CyberSource</a></td>
+		</tr>
+		<tr>
+			<td><a href="!---MODULE_NAME---?displaylinkpoint=action">LinkPoint</a></td>
+			<td><a href="!---MODULE_NAME---?displayworldpay=action">WorldPay</a></td>
+			<td><a href="!---MODULE_NAME---?displayaim=action">Authorize.Net (AIM)</a></td>
+		</tr>
+		<tr>
+			<td><a href="!---MODULE_NAME---?displaypaypal=action">PayPal Payments Standard (IPN)</a></td>
+			<td><a href="!---MODULE_NAME---?displayeftsecure=action">Sage Payment Solutions</a></td>
+			<td><a href="!---MODULE_NAME---?displaycybercash=action">CyberCash</a></td>
+		</tr>
+		<tr>
+			<td><a href="!---MODULE_NAME---?displaypaypalwebpro=action">PayPal Payments Pro</a></td>
+			<td><a href="!---MODULE_NAME---?displaymetacharge=action">metacharge</a></td>
+			<td><a href="!---MODULE_NAME---?displaytcommerce=action">TrustCommerce</a></td>
+		</tr>
+		<tr>
+			<td><a href="!---MODULE_NAME---?displaymoneris=action">Moneris</a></td>
+			<td><a href="!---MODULE_NAME---?displayskipjack=action">SkipJack</a></td>
+			<td><a href="!---MODULE_NAME---?displayinnovative=action">Innovative Gateway</a></td>
+		</tr>
+		<tr>
+			<td><a href="!---MODULE_NAME---?displayipay=action">PayByTouch</a></td>
+			<td><a href="!---MODULE_NAME---?displayqbms=action">QuickBooks Merchant Services</a></td>
+			<td><a href="!---MODULE_NAME---?displayviaklix=action">NOVA (Virtual Merchant/viaKlix)</a></td>
+		</tr>
+		<tr>
+			<td><a href="!---MODULE_NAME---?displaypsigate=action">PSiGate</a></td>
+			<td><a href="!---MODULE_NAME---?displayxcharge=action">X-Charge</a></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=3>&nbsp;</td>
+		</tr>
+	</table>
+	-->
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

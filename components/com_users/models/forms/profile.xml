@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="core" label="COM_USERS_PROFILE_DEFAULT_LABEL">
+		<field
+			name="id"
+			type="hidden"
+			filter="integer"
+		/>
+
+		<field
+			name="name"
+			type="text"
+			description="COM_USERS_PROFILE_NAME_DESC"
+			filter="string"
+			label="COM_USERS_PROFILE_NAME_LABEL"
+			required="true"
+			size="30"
+		/>
+
+		<field 
+			name="image" 
+			type="file"
+          	label="Change avatar"
+          	directory="images/user/"
+          	accept="image/*"
+        />
+
+		<field name="phone" 
+			type="text"
+			filter="string"
+			label="Mobile"
+			required="true"
+			size="30"
+        />
+        
+        <field name="phone1" 
+			type="text"
+			filter="string"
+			label="Mobile"
+			size="30"
+        />
+
+        <field name="contact" 
+			type="text"
+			filter="string"
+			label="Contact"
+			size="30"
+        />
+
+        <!-- street, city, zipcode, country, street_delevery, 
+        street_delevery, street_delevery, street_delevery,
+        additonal, phone1 -->
+		<field name="street" 
+			type="text"
+			filter="string"
+			label="street"
+			required="true"
+			size="30"
+        />
+
+		<field name="city" 
+			type="text"
+			filter="string"
+			label="city"
+			required="true"
+			size="30"
+        />
+
+        <field name="zipcode" 
+			type="text"
+			filter="string"
+			label="zipcode"
+			required="true"
+			size="30"
+        />
+
+        <field name="country" 
+			type="text"
+			filter="string"
+			label="country"
+			required="true"
+			size="30"
+        />
+
+        <field name="street_delevery" 
+			type="text"
+			filter="string"
+			label="street_delevery"
+			size="30"
+        />
+
+		<field name="city_delevery" 
+			type="text"
+			filter="string"
+			label="city_delevery"
+			size="30"
+        />
+
+        <field name="zipcode_delevery" 
+			type="text"
+			filter="string"
+			label="zipcode_delevery"
+			size="30"
+        />
+
+        <field name="country_delevery" 
+			type="text"
+			filter="string"
+			label="country_delevery"
+			size="30"
+        />
+
+        <field name="additonal" 
+			type="text"
+			filter="string"
+			label="additonal"
+			size="30"
+        />
+
+		<field
+			name="password1"
+			type="password"
+			autocomplete="off"
+			class="validate-password"
+			description="COM_USERS_DESIRED_PASSWORD"
+			filter="raw"
+			label="COM_USERS_PROFILE_PASSWORD1_LABEL"
+			size="30"
+			validate="password"
+		/>
+
+		<field
+			name="password2"
+			type="password"
+			autocomplete="off"
+			class="validate-password"
+			description="COM_USERS_PROFILE_PASSWORD2_DESC"
+			field="password1"
+			filter="raw"
+			label="COM_USERS_PROFILE_PASSWORD2_LABEL"
+			message="COM_USERS_PROFILE_PASSWORD1_MESSAGE"
+			size="30"
+			validate="equals"
+		/>
+
+		<field
+			name="email1"
+			type="email"
+			description="COM_USERS_PROFILE_EMAIL1_DESC"
+			filter="string"
+			label="COM_USERS_PROFILE_EMAIL1_LABEL"
+			message="COM_USERS_PROFILE_EMAIL1_MESSAGE"
+			required="true"
+			size="30"
+			unique="true"
+			validate="email"
+			readonly="true"
+		/>
+
+		<field
+			name="add_more_description"
+			type="text"
+			label="add_more_description"
+		/>
+
+
+
+	</fieldset>
+	
+	<!-- Used to get the two factor authentication configuration -->
+	<field
+		name="twofactor"
+		type="hidden"
+	/>
+</form>

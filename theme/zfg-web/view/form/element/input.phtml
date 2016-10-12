@@ -1,0 +1,6 @@
+<?php if (! $element->getAttribute('type')) $element->setAttribute('type', 'text') ?>
+
+<input
+    <?php echo $this->form()->htmlAttributes($element->getAttributes()); ?>
+    value="<?php echo $element->getValue() ?>"
+    />

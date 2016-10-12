@@ -1,0 +1,19 @@
+.icon-48-subscribes {
+      background-image: url(../images/l_subscribes.png);
+      padding-left:60px!important;
+}
+
+.icon-48-subscribe {
+      background-image: url(../images/l_subscribes.png);
+      padding-left:60px!important;
+}
+
+
+
+.other-filters{
+    padding: 0 14px;
+}
+.view-subscribes #toolbar-share .btn span::before {
+	font-size: 13px;
+	color: #51A351;
+}

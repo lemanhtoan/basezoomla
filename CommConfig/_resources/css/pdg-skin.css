@@ -1,0 +1,175 @@
+/* Dialog default YUI Button style */
+.yui-skin-sam .yui-dialog .ft span.default {
+    border-color: #304369;
+    background: url('./../images/skin/defbutton.gif') repeat-x 0 0px; 
+	font-weight:bold;   
+}
+.yui-skin-sam .container-close {
+
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    width: 25px;
+    height: 15px;
+    background: url('./../images/skin/close.gif') no-repeat 0 0;
+    cursor:pointer;
+}
+.yui-skin-sam .yui-panel .hd {
+
+    padding: 0 10px;
+    font-size: 93%;  /* 12px */
+    line-height: 2;  /* ~24px */
+    *line-height: 1.9; /* For IE */
+    font-weight: bold;
+    color: white;
+    background: url('./../images/skin/header.gif') repeat-x 0 0px;    
+}
+.yui-skin-sam .yui-panel {
+
+	position: relative;
+	*zoom: 1;
+	left: 0;
+	top: 0;
+	border-left:0px;
+	border-right:0px;
+	border-top: 2PX SOLID #C1CCD9;
+	border-bottom: 2PX SOLID #000000;
+	z-index: 410;
+}
+.yui-skin-sam .yui-panel .hd, 
+.yui-skin-sam .yui-panel .bd, 
+.yui-skin-sam .yui-panel .ft {
+
+    /*
+        Use of "zoom: 1" is to trigger "haslayout" for IE to get 
+        negative margins working.
+    */
+    
+    *zoom: 1;
+
+    /*
+        Use of "position: relative" is necessary to get negative margins 
+        working in IE.
+    */
+
+    *position: relative; 
+
+	border-top:0px;
+	border-bottom:0px;
+	border-left: 2PX SOLID #C1CCD9;
+	border-right: 2PX SOLID #4F657D;
+    margin: 0 -1px;
+}
+.yui-skin-sam .yui-panel .bd,
+.yui-skin-sam .yui-panel .ft {
+
+    background-color: #E5EBEF;
+
+}
+/*Editor things */
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-titlebar {
+    background: url('./../images/skin/header.gif') repeat-x 0 0px;    
+    position: relative;
+}
+/* Place the border around the editor */
+.yui-skin-sam .yui-editor-container {
+    border: 1px solid #808080;
+	border-left: 2PX SOLID #C1CCD9;
+	border-right: 2PX SOLID #4F657D;
+	border-top: 2PX SOLID #4F657D;
+	border-bottom: 2PX SOLID #000000;	
+}
+/* Give the titlebar some color and padding */
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-titlebar h2 a{
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-size: 10px !important;
+    text-align: left;
+}
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-titlebar h2 {
+    color: #000000;
+    font-weight: bold;
+    margin: 0;
+    height:14px;
+    font-size: 100%;
+    text-align: left;
+}
+/* Background color of the toolbar */
+.yui-skin-sam .yui-toolbar-container {
+    background-color: #E5EBEF;
+}
+/* Set the image for the collapse button on the toolbar */
+.yui-skin-sam .yui-toolbar-container .collapse {
+    background: url('./../images/skin/close.gif') no-repeat 0 0;
+}
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-titlebar span.collapse {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    display: block;
+    overflow: hidden;
+    height: 14px;
+    width: 23px;
+    text-indent: 9999px;
+}
+/* Set the color and the border of the dompath container at the bottom of the editor */
+.yui-skin-sam .yui-editor-container .dompath {
+    background-color: #E5EBEF;
+}
+/* Setup the background image on the title bar
+    We are styling the h3 instead if the div so we can make room
+    for the "knob" that floats on the top of the window.
+*/
+.yui-skin-sam .yui-editor-panel .hd h3 {
+    color: #FFFFFF;
+    border: 2px solid #808080;
+   	background: url('./../images/skin/header.gif') repeat-x 0 0px; 
+    width: 99%;
+    position: relative;
+    margin: 0;
+    padding: 3px 0 0 0;
+    font-size: 93%;
+    text-indent: 5px;
+    height: 20px;
+}
+.yui-editor-panel
+{
+	z-index:410 !important;
+}
+/* Style the body of the Property Editor */
+.yui-skin-sam .yui-editor-panel .bd {
+    background-color: #E5EBEF;
+	border-left: 2PX SOLID #C1CCD9;
+	border-right: 2PX SOLID #4F657D;
+    width: 99%;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+/* Style the close button in the Property Editor */
+.yui-skin-sam .yui-editor-panel .hd span.close {
+    background: url('./../images/skin/close.gif') no-repeat 0 0;
+    cursor:pointer;
+    display:block;
+    height:16px;
+    overflow:hidden;
+    position:absolute;
+    right:5px;
+    text-indent:500px;
+    top:2px;
+    width:26px;
+}
+.yui-skin-sam .yui-editor-panel .hd span.knob {
+    background: url(./../images/skin/editor-knob.gif ) no-repeat 0 0;
+}
+/* Give the footer som color and a border */
+.yui-skin-sam .yui-editor-panel .ft {
+    background-color: #E5EBEF;
+    border: 2px solid #808080;
+    border-top: none;
+    padding: 0;
+    margin: 0 0 2px 0;
+}

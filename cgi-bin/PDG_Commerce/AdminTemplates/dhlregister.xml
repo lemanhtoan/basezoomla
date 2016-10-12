@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<eCommerce action="request" version="1.1">
+<Requestor>
+<ID/>
+<Password/>
+</Requestor>
+<Register action="ShippingKey" version="1.0">
+<AccountNbr/>
+<PostalCode/>
+</Register>
+</eCommerce>

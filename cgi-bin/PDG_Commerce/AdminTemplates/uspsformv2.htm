@@ -1,0 +1,184 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3410979-->                                    
+<!--uspsformv2.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+U.S.P.S. Registration</title>
+<script language="javaScript">
+function uspswarning(){
+var uspsv1="!---USPS_ID---";
+var uspsv2="!---USPS_ID_V2---";
+  if((uspsv1.length>0) && (uspsv2.length==0)){
+	alert('You will need to upgrade to US Postal Service Version 2.The current rate quoting service\n'+
+	'will be disabled by September 30th, 2006. Your previous settings will be erased once you click\n'+
+	'on \'Submit Changes\' below.  Please don\'t forget to update your domestic and international\nrate compare settings. ');
+  }
+  else if((uspsv1.length==0) && (uspsv2.length==0)){
+	alert('You are not registered to use US Postal Service real time rate quotes.  Please register with\n'+
+	'the  US Postal Service and fill in your User ID and the Postal Code for your shipping location.');
+  }
+}
+PDG.callOnPageLoad(uspswarning);
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>United States Postal Service Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" >
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>USPS User ID and Origin Postal Code</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2><p>In Order to use U.S. Postal Service on-line tools, you need to register at <a href="http://www.usps.com/webtools" target="_blank" >http://www.usps.com/webtools</a>. Once you have registered, enter your information below and click the submit button. Then, for the final step, you will need to call the USPS number (from the registration email) and make your account live.</p></td>
+		</tr>
+		<tr>
+			<td> User ID: </td>
+			<td><input type=text name="uspsv2uid" value="!---USPS_ID_V2---" >
+			</td>
+		</tr>
+		<tr>
+			<td> Shipping Postal Code: </td>
+			<td><input type=text name="uspszipcode" value="!---USPS_POSTAL_CODE_V2---" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name=uspsregister value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>&nbsp;
+				<!---NEW_SHIP_METHOD_ENTRIES--->
+			</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>USPS Rate Compare Setup</b> </td>
+		</tr>
+		<tr>
+			<td valign=top><table border=0 valign=center>
+					<tr>
+						<td colspan=2 valign=top><span class="underlined"><b>Domestic Services </b></span><br>
+							<span class=pdgnote>Please check off the methods you want to include.</span> </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Express"  !---COMPARE_EXPRESS_V2--- value="Yes">
+						</td>
+						<td> Express Mail </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Express_envelope"  !---COMPARE_EXPRESS_ENV_V2--- value="Yes">
+						</td>
+						<td> Express Mail - Flat Rate Envelope </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="FirstClass"  !---COMPARE_FIRSTCLASS_V2--- value="Yes">
+						</td>
+						<td> First Class </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Priority"  !---COMPARE_PRIORITY_V2--- value="Yes" >
+						</td>
+						<td> Priority Mail </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Priority_envelope"  !---COMPARE_PRIORITY_ENV_V2--- value="Yes" >
+						</td>
+						<td> Priority Mail - Flat Rate Envelope </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Priority_box"  !---COMPARE_PRIORITY_BOX_V2--- value="Yes" >
+						</td>
+						<td> Priority Mail - Flat Rate Box (11.25&quot; x 8.75&quot; x 6&quot;) </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Priority_box2"  !---COMPARE_PRIORITY_BOX2_V2--- value="Yes" >
+						</td>
+						<td> Priority Mail - Flat Rate Box (14&quot; x 12&quot; x 3.5&quot;) </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Parcel" !---COMPARE_PARCEL_V2---  value="Yes" >
+						</td>
+						<td> Parcel Post </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="BPM"  !---COMPARE_BPM_V2--- value="Yes" >
+						</td>
+						<td> Bound Printed Matter </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Library" !---COMPARE_LIBRARY_V2--- value="Yes" >
+						</td>
+						<td> Library Mail </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="Media" !---COMPARE_MEDIA_V2--- value="Yes"  >
+						</td>
+						<td> Media Mail </td>
+					</tr>
+				</table></td>
+			<td><table border=0>
+					<tr>
+						<td colspan=2 valign=top><span class="underlined"><b>International Services</b></span><br>
+							<span class=pdgnote>Please check off the methods you want to include.</span> </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="GXG"  !---COMPARE_GXG_V2--- value="Yes">
+						</td>
+						<td> Global Express Guaranteed </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="GXGND"  !---COMPARE_GXG_ND_V2--- value="Yes">
+						</td>
+						<td> Global Express Guaranteed Non-Document Rectangular </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="GEM"  !---COMPARE_GEM_V2--- value="Yes">
+						</td>
+						<td> Express Mail International (EMS) </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="GPM_ENV_SM"  !---COMPARE_GPM_ENV_SM_V2--- value="Yes">
+						</td>
+						<td> Priority Mail International Flat Rate Envelope </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="GPM_ENV_LG"  !---COMPARE_GPM_ENV_LG_V2--- value="Yes">
+						</td>
+						<td> Priority Mail International Flat Rate Box </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="GPM"  !---COMPARE_GPM_V2--- value="Yes">
+						</td>
+						<td> Priority Mail International </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="airmail_letter"  !---COMPARE_AIRMAIL_LETTER_V2--- value="Yes">
+						</td>
+						<td> First-Class Mail International Envelope </td>
+					</tr>
+					<tr>
+						<td width=10 valign=top><input type=checkbox name="airmail_package"  !---COMPARE_AIRMAIL_PACK_V2--- value="Yes">
+						</td>
+						<td> First-Class Mail International Package </td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2 valign=bottom><input type="submit" class="pdgbutton" name=uspsregister value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

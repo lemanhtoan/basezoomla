@@ -1,0 +1,59 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1009777-->                                    
+<!--  mainzone.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Zones Selection</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Zones Selection</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" name="zonemain">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Zone Options</b> </td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata1">Zones File:</td>
+			<td width="50%" class="pdgdata1"><input type="text" name="zonefile" value="!---ZONE_FILE---"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Use zones for tax rules:</td>
+			<td class="pdgdata2"><input type="checkbox" name="zonefortax" value="yes" !---ZONE_FOR_TAX--- ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Use zones for shipping rules:</td>
+			<td class="pdgdata1"><input type="checkbox" name="zoneforship" value="yes" !---ZONE_FOR_SHIP--- ></td>
+		</tr>
+		<tr>
+			<td colspan="2" align=center><input type="submit" class="pdgbutton" name="changezoneops" value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Zone Actions</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center class="pdgdata1"> Select a zone<br>
+				<!---ZONE_LIST--->
+&nbsp;&nbsp;
+				<input type="submit" class="pdgbutton" name="editzone" value=" Edit ">
+&nbsp;
+				<input type="submit" class="pdgbutton" name="deletezone" value="Delete">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center class="pdgdata2"> Add a zone<br>
+				<input name="newzonename" type="text" size="25" 
+	maxlength="255">
+&nbsp;&nbsp;
+				<input type="submit" class="pdgbutton" name="addzone" value=" Add ">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+	</table>
+	<!--mainzone-->
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

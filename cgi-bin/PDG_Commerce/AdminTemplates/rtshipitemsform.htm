@@ -1,0 +1,50 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--882561-->                                     
+<!--rtshipitemsform.htm-->
+<title>Schedule Shipment</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Schedule Shipment</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---">
+	<!---HIDDEN_PARTIAL_FLAG--->
+	<input type="hidden" name="scheduleorder.!---ORDER_NO---" value="go">
+	<!---ORDER_OFFSET--->
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=4 class="pdgheader"><b>
+				<!---ORDER_INVOICE_NUMBER--->
+				Shipment Items</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4 align=left> Below are the items the customer ordered. Update the quantity for items that are not available for this shipment. The unavailable items will be stored in your order csv file for scheduling at a later time. </td>
+		</tr>
+		<tr>
+			<td colspan=4 align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=left width="30%" ><b>Quantity</b> </td>
+			<td align=left  width=50%><b>Full SKU</b> </td>
+			<td align=left  width=10%><b>Unit Price</b> </td>
+			<td align=left  width=10%><b>Extended Price</b> </td>
+		</tr>
+		<!---SHIPPING_ITEMS--->
+		<tr>
+			<td colspan=4 align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=5 align=center> Enter the Total Number of Packages for this Shipment
+				<input type=text name=totalpackages value=1 size=3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4 align=center><br>
+				<input type="submit" class="pdgbutton" name="scheduleshipment"  value="Back">
+				<input type="submit" class="pdgbutton" name="step1"  value="Next">
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

@@ -1,0 +1,88 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1558396-->                                    
+<!-- cybersourceform.htm -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+CyberSource Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>CyberSource Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" id=form1 name=form1>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>CyberSource Settings</b> </td>
+		</tr>
+		<tr>
+			<td COLSPAN=2 class="pdgdata1"><!---CYBERSOURCE_MESSAGE--->
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2">Merchant ID:</td>
+			<td width=50% class="pdgdata2"><input type=text name="icsmerchantid" value="!---CYBERSOURCE_ID---" size=50 maxlength=20>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">CyberSource Host:</td>
+			<td class="pdgdata1"><input type=text name="icshost" value="!---CYBERSOURCE_HOST---" size=50 maxlength=20>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">CyberSource Port:</td>
+			<td valign=top class="pdgdata2"><input type=text name="icsport" value="!---CYBERSOURCE_PORT---" size=50 maxlength=50>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">CyberSource Authorization Type: </td>
+			<td valign=top class="pdgdata1"><select name="icsauth">
+					<!---CYBERSOURCE_AUTHTYPE--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">CyberSource Log File:</td>
+			<td class="pdgdata2"><input type=text name="icslogfile" value="!---CYBERSOURCE_LOGFILE---" size=50>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Send product information:</td>
+			<td class="pdgdata1"><input type=checkbox name="icssenditems" value="yes" !---CYBERSOURCE_SEND_ITEMS--- >
+			</td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2"> Log orders that are flagged for review by SMART Authorization:<br>
+			</td>
+			<td class="pdgdata2"><input type=checkbox name="icslogsmartauth"  !---CYBERSOURCE_LOG_SMART_AUTH--- value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=left class="pdgdata1"> Message for SMART Authorization review:<br>
+				<div class="pdgnote">used in customer emails, payment result templates and order log</div>
+				<textarea name="icsfraudtxt" cols=70 rows=4><!---CYBERSOURCE_FRAUD_MSG--->
+</textarea>
+				<br>
+&nbsp; </td>
+		</tr>
+		<script language=javascript>
+	if(document.form1.icsmerchantid.value.length>0){
+	 document.write('<tr><td class="pdgdata2" colspan=2 align=center>\n');
+	 document.write('<input type=submit class="pdgbutton" name="creaticskeys" value="Create ICS Keys" size=50></td></tr>\n');
+	}
+</script>
+		<tr>
+			<td colspan=2><hr>
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2><input type="submit" class="pdgbutton" name="changecybersource" value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2><hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

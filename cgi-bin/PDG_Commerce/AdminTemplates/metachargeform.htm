@@ -1,0 +1,59 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1049532-->                                    
+<!-- metachargeform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+metacharge Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>PayPoint Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>PayPoint (corporate) Settings</b> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Installation ID:</td>
+			<td class="pdgdata2"><input type="text" name="mcinstid" value="!---METACHARGE_INST---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata1">Account ID:<br>
+				<span class=pdgnote>optional - if blank, then the account is determined by the transaction currency.</span> </td>
+			<td width="50%" class="pdgdata1"><input type="text" name="mcacctid" value="!---METACHARGE_ACCT---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Gateway:<br>
+				<span class=pdgnote>(do not include https://)</span></td>
+			<td class="pdgdata2"><input type="text" name="mcserver" value="!---METACHARGE_SERVER---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Authorization Type: </td>
+			<td class="pdgdata1"><select name="mcauthtype">
+					<!---METACHARGE_AUTHTYPE--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">File to which PayPoint transactions are logged: </td>
+			<td class="pdgdata2"><input type="text" name="mclogfile" value="!---METACHARGE_LOGFILE---" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Test mode: </td>
+			<td class="pdgdata1"><input type="checkbox" name="mctestmode" !---METACHARGE_TESTMODE---  value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><hr>
+				<input type="submit" class="pdgbutton" name="changemetacharge" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

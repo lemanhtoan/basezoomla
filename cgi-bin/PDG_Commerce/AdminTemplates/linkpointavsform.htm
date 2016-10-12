@@ -1,0 +1,143 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3371224-->                                    
+<!--  linkpointavsform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+LinkPoint AVS Configuration</title>
+<!---LINKPOINT_AVS_JAVASCRIPT--->
+<script type="text/javascript">
+PDG.callOnPageLoad(setlinkpointavs);
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>LinkPoint AVS Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" name=linkpointavs>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader"><b>LinkPoint AVS Settings</b> </td>
+		</tr>
+		<tr>
+			<td  class="pdgdata1">Automatically Void Transactions if they do not match allowed AVS codes:
+				<input type=checkbox name=linkpointautovoid !---LINKPOINT_AUTO_VOID--- value=yes  OnChange="if(this.checked==false){this.checked=!(confirm('Warning!\nYou must check the \'Automatically Void Transactions\' box in order for your AVS codes to be applied.  Unchecking the box will remove all existing AVS settings.  Click [OK] to keep your setting or [Cancel] cancel to check the box. (Make sure to click [Submit Changes] to store your new AVS settings)'));};"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2" align=center><b>Allowed AVS Codes</b> <br>
+				<table border=1 class="pdgdata1">
+					<tr>
+						<td>&nbsp;</td>
+						<td> M <br>
+							<span class=pdgnote>Card Code Match</span> </td>
+						<td> N <br>
+							<span class=pdgnote>Card code does not match</span> </td>
+						<td> P <br>
+							<span class=pdgnote>Not processed</span> </td>
+						<td> S <br>
+							<span class=pdgnote>Merchant has indicated that the card code is not present on the card</span> </td>
+						<td> U <br>
+							<span class=pdgnote>Issuer is not certified and/or has not provided encryption keys</span> </td>
+						<td><br>
+							<span class=pdgnote>A blank response should indicate that no code was sent and that there was no indication that the code was not present on the card.</span> </td>
+					</tr>
+					<tr>
+						<td> YY<br>
+							<span class=pdgnote>Address matches, zip code matches</span> </td>
+						<td><input type=checkbox name=YYM value=yes></td>
+						<td><input type=checkbox name=YYN value=yes></td>
+						<td><input type=checkbox name=YYP value=yes></td>
+						<td><input type=checkbox name=YYS value=yes></td>
+						<td><input type=checkbox name=YYU value=yes></td>
+						<td><input type=checkbox name=YY_ value=yes></td>
+					</tr>
+					<tr>
+						<td> YN<br>
+							<span class=pdgnote>Address matches, zip code does not match</span> </td>
+						<td><input type=checkbox name=YNM value=yes></td>
+						<td><input type=checkbox name=YNN value=yes></td>
+						<td><input type=checkbox name=YNP value=yes></td>
+						<td><input type=checkbox name=YNS value=yes></td>
+						<td><input type=checkbox name=YNU value=yes></td>
+						<td><input type=checkbox name=YN_ value=yes></td>
+					</tr>
+					<tr>
+						<td> YX<br>
+							<span class=pdgnote>Address matches, zip code comparison not available</span> </td>
+						<td><input type=checkbox name=YXM value=yes></td>
+						<td><input type=checkbox name=YXN value=yes></td>
+						<td><input type=checkbox name=YXP value=yes></td>
+						<td><input type=checkbox name=YXS value=yes></td>
+						<td><input type=checkbox name=YXU value=yes></td>
+						<td><input type=checkbox name=YX_ value=yes></td>
+					</tr>
+					<tr>
+						<td> NY<br>
+							<span class=pdgnote>Address does not match, zip code matches</span> </td>
+						<td><input type=checkbox name=NYM value=yes></td>
+						<td><input type=checkbox name=NYN value=yes></td>
+						<td><input type=checkbox name=NYP value=yes></td>
+						<td><input type=checkbox name=NYS value=yes></td>
+						<td><input type=checkbox name=NYU value=yes></td>
+						<td><input type=checkbox name=NY_ value=yes></td>
+					</tr>
+					<tr>
+						<td> XY<br>
+							<span class=pdgnote>Address comparison not available, zip code matches</span> </td>
+						<td><input type=checkbox name=XYM value=yes></td>
+						<td><input type=checkbox name=XYN value=yes></td>
+						<td><input type=checkbox name=XYP value=yes></td>
+						<td><input type=checkbox name=XYS value=yes></td>
+						<td><input type=checkbox name=XYU value=yes></td>
+						<td><input type=checkbox name=XY_ value=yes></td>
+					</tr>
+					<tr>
+						<td> NN<br>
+							<span class=pdgnote>Address comparison does not match, zip code does not match</span> </td>
+						<td><input type=checkbox name=NNM value=yes></td>
+						<td><input type=checkbox name=NNN value=yes></td>
+						<td><input type=checkbox name=NNP value=yes></td>
+						<td><input type=checkbox name=NNS value=yes></td>
+						<td><input type=checkbox name=NNU value=yes></td>
+						<td><input type=checkbox name=NN_ value=yes></td>
+					</tr>
+					<tr>
+						<td> NX<br>
+							<span class=pdgnote>Address does not match, zip code comparison not available</span> </td>
+						<td><input type=checkbox name=NXM value=yes></td>
+						<td><input type=checkbox name=NXN value=yes></td>
+						<td><input type=checkbox name=NXP value=yes></td>
+						<td><input type=checkbox name=NXS value=yes></td>
+						<td><input type=checkbox name=NXU value=yes></td>
+						<td><input type=checkbox name=NX_ value=yes></td>
+					</tr>
+					<tr>
+						<td> XN<br>
+							<span class=pdgnote>Address comparison not available, zip code does not match</span> </td>
+						<td><input type=checkbox name=XNM value=yes></td>
+						<td><input type=checkbox name=XNN value=yes></td>
+						<td><input type=checkbox name=XNP value=yes></td>
+						<td><input type=checkbox name=XNS value=yes></td>
+						<td><input type=checkbox name=XNU value=yes></td>
+						<td><input type=checkbox name=XN_ value=yes></td>
+					</tr>
+					<tr>
+						<td> XX<br>
+							<span class=pdgnote>Address comparisons not available, zip code comparison not available</span> </td>
+						<td><input type=checkbox name=XXM value=yes></td>
+						<td><input type=checkbox name=XXN value=yes></td>
+						<td><input type=checkbox name=XXP value=yes></td>
+						<td><input type=checkbox name=XXS value=yes></td>
+						<td><input type=checkbox name=XXU value=yes></td>
+						<td><input type=checkbox name=XX_ value=yes></td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td colspan="1" align="center"><hr>
+				<input type="submit" class="pdgbutton" name="changelinkpointavs" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

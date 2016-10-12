@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding = 'ISO-8859-1'?>
+<AccessLicenseRequest xml:lang="en-US">
+	<Request>
+		<TransactionReference>
+			<CustomerContext>Access Key Request</CustomerContext>
+			<XpciVersion>1.0001</XpciVersion>
+		</TransactionReference>
+		<RequestAction>AccessLicense</RequestAction>
+		<RequestOption>AllTools</RequestOption>
+	</Request>
+	<CompanyName>Brick and Morter, Inc.</CompanyName>
+	<Address>
+		<AddressLine1>123 Testing Place</AddressLine1>
+		<City>Anytown</City>
+		<CountryCode>US</CountryCode>
+	</Address>
+	<PrimaryContact>
+		<Name>Lara Croft</Name>
+		<Title>Freelancer</Title>
+		<EMailAddress>lcroft@tombraider.edu</EMailAddress>
+		<PhoneNumber>7705551212</PhoneNumber>
+	</PrimaryContact>
+	<CompanyURL>www.tombraider.edu</CompanyURL>
+	<DeveloperLicenseNumber>BR-549</DeveloperLicenseNumber>
+	<AccessLicenseProfile>
+		<CountryCode>US</CountryCode>
+		<LanguageCode>EN</LanguageCode>
+		<AccessLicenseText>Data</AccessLicenseText>
+	</AccessLicenseProfile>
+	<ClientSoftwareProfile>
+		<SoftwareInstaller>UPS Sales Rep Contact Status</SoftwareInstaller>
+		<SoftwareProductName>PDG</SoftwareProductName>
+		<SoftwareProvider>PDG Software, Inc.</SoftwareProvider>
+		<SoftwareVersionNumber>1.0</SoftwareVersionNumber>
+	</ClientSoftwareProfile>
+</AccessLicenseAgreementRequest>

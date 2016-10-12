@@ -1,0 +1,109 @@
+<!--1653808-->                                    
+<!--loginform.htm-->                                    
+<html topmargin="0" leftmargin="0" MARGINWIDTH="0" MARGINHEIGHT="0">
+<head>
+<title><!---ADMIN_HEADER_LABEL---> Merchant Login</title>
+<link rel="stylesheet" href="!---CONFIGROOT---pdgadminNN4.css" type="text/css"> 
+<style type="text/css"> 
+@import url(!---CONFIGROOT---pdgadmin.css); /*IE and NN6x styles*/
+</style>
+<style type="text/css">
+.pdghead {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 22px;
+font-weight: bold;
+color: #ffffff;
+background-color:#0982C4;
+}
+
+.pdghead2 {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 22px;
+font-weight: bold;
+color: #ffffff;
+background-color:#0982C4;
+}
+
+.pdgcopy {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 9px;
+color: #000000;
+background-color:#ffffff;
+}
+</style>
+</head>
+
+<body bgcolor="#ffffff" topmargin="0" leftmargin="0" MARGINWIDTH="0" MARGINHEIGHT="0">
+<table width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      <table width="100%" height="81" align=left border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="100%" valign="middle" align="right" class="pdghead2" background="!---CONFIGROOT---pdg_logo.gif">	
+            <!---ADMIN_HEADER_LABEL--->&nbsp;&nbsp;
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" align="center" >
+       <hr>
+       <p>To access the Merchant Administrator, enter your login and password then click <b>Log in</b>.&nbsp;</p>
+       <form method="post" action="!---MODULE_NAME---" name=loginform OnSubmit="javascript: if(document.loginform.loginsecurely.checked){this.action=document.loginform.securemodulename.value;}">
+	<input type=hidden name=modulename value="!---MODULE_NAME---">
+	<input type=hidden name=securemodulename value="!---SECURE_MODULE_NAME---">
+       <!---TIME_VAL--->
+    </td>
+  </tr>
+  <tr>
+    <td align=center>
+      <table bgcolor=#eeeeee> 	
+        <tr>
+          <td width="50%" valign="middle" align="right" >
+            <b>Login:</b>
+          </td>
+          <td width="50%" align=left valign=middle>
+            <input type="text" size="20" name="user">
+          </td>
+        </tr>
+        <tr>
+          <td width="50%" valign="middle" align="right" >
+	    <b>Password:</b>
+          </td>
+          <td width="50%" valign="middle" align="left">
+            <input type="password" size="20" name="pw">
+          </td>
+	</tr>
+        <tr>
+          <td colspan=2 align=center valign=middle> 
+            <input type="submit" class="pdgbutton" name="pass" value="Log in">
+	    <br>
+            Show Navigation Bar in Administrator: <input type=checkbox checked name=displayinframes value=action><br>
+<script language=JavaScript>
+if(document.loginform.securemodulename.value==document.loginform.modulename.value){
+    document.write('Login in Securely: <input type=checkbox checked name=loginsecurely value=yes  onClick="window.focus;return false">');
+}
+else{
+    document.write('Login in Securely: <input type=checkbox checked name=loginsecurely value=yes>');
+}
+</script>
+
+          </td>
+        </tr>
+      </table>
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height=200 valign="middle" align="center" class="pdgcopy">
+	<hr>
+       &copy;1997-<!---CURRENT_YEAR---> PDG Software, Inc.
+    </td>
+  </tr>
+</table>
+<div>Test piece123</div>
+<!---#INCLUDE _testing2.htm--->
+
+</body>
+</html>

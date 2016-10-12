@@ -1,0 +1,109 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1900289-->                                    
+<!--productsform.htm-->
+<title>PDG Commerce Available Products</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Available Products</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td><table width="100%">
+				<tr>
+					<td width="33%"><form method="post" action="!---MODULE_NAME---">
+							<input type="submit" class="pdgbutton" name="!---INV_TYPE---" value="Inventory">
+						</form></td>
+					<td width="33%"><form method="post" action="!---MODULE_NAME---">
+							<input type="submit" class="pdgbutton" name="displaydataxfer" value="Data Import/Export">
+						</form></td>
+					<td width="34%"><form method="post" action="!---MODULE_NAME---">
+							<input type="submit" class="pdgbutton" name="displayuserdef" value="Edit User Defined Field Names">
+						</form></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+<table  class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td class="pdgheader"><b>
+			<!---PROD_CAT_CODE--->
+			has
+			<!---NUMBER_IN_CATEGORY--->
+			products.</b> </td>
+	</tr>
+	<tr>
+		<td> Commerce will only display 50 products at a time (the list is sorted by product code). To move forward or back in the list use the selections below and click 'Position in List'.
+			<form method="post" action="!---MODULE_NAME---">
+				Currently viewing products starting at position <b>
+				<!---PROD_START_ENTRY--->
+				</b>.<br>
+				<input type="hidden" name="productcategory" value="!---PROD_CAT_CODE---">
+				<input type="hidden" name="displayallproducts" value="action">
+				<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<select name="startatnumber" >
+					<!---SELECT_PAGEING_OPTIONS--->
+				</select>
+				<input type="submit" class="pdgbutton" name="displayallproducts" value="Position Product List" >
+			</form></td>
+	</tr>
+</table>
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="productcategory" value="!---PROD_CAT_CODE---">
+	<table  class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader" colspan=7><b>Add A Product</b> </td>
+		</tr>
+		<tr>
+			<td colspan=7><!---ADD_PRODUCT_ERROR_MSG--->
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center"><b>Product Code</b></td>
+			<td align="center"><b>Description</b></td>
+			<td><b>Price</b></td>
+			<td><b>Options From</b></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center" ><span class="fntsmall">Maximum of 20 characters<br>
+				(restricted to A-Z and 0-9)</span></td>
+			<td align="center" ><span class="fntsmall">Maximum of 255 characters</span></td>
+			<td>&nbsp;</td>
+			<td  align="center"><span class="fntsmall">Share From<br>
+				Product Code</span></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center"><br>
+&nbsp; </td>
+			<td align="center"><input type="text" size="20" maxlength="20" name="addproductkey">
+			</td>
+			<td><input type="text" size="30" name="addproductdescription"></td>
+			<td><input type="text" size="8" name="addproductprice"></td>
+			<td><input type="text" size="8" name="addproductcopyopt"></td>
+			<td><input type="submit" class="pdgbutton" name="addproduct" value="Add">
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan=7>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<table  class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td class="pdgheader" colspan=9><b>
+			<!---PROD_CAT_CODE--->
+			Products</b> </td>
+	</tr>
+	<!---DISPLAY_PRODUCTS--->
+	<tr>
+		<td colspan=9>&nbsp;</td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

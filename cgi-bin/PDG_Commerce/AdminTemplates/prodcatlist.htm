@@ -1,0 +1,75 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1248307-->                                    
+<!--prodcatlist.admin-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Product Categories</title>
+<link rel="stylesheet" href="!---CONFIGROOT---_resources/compat/css/prodcatlist.css" type="text/css">
+<link rel="stylesheet" href="!---CONFIGROOT---_resources/components/treectrl/pdg-treectrl.css" type="text/css">
+<script src="!---CONFIGROOT---_resources/libs/jquery/jquery.treeview.js" type="text/javascript"></script>
+<script language="javaScript">
+function RemoveConfirm(categoryaction){
+	if(confirm('Are you sure you want to permanently remove this product category,\n all its sub-categories and all the related products?')){
+		document.location='!---MODULE_NAME---?'+categoryaction;
+	}
+}
+
+(function() {
+	YAHOO.util.Event.addListener(window, 'load',function(ev){$("#menu").treeview();}); 
+})();
+
+</script>
+
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Product Categories</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<!---PROD_CAT_NAME--->
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=4 class="pdgheader"><b>Add A New Product Category</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4><!---ERROR_MSG--->
+			</td>
+		</tr>
+		<tr>
+			<td align="left">Category Code</td>
+			<td align="left">Category Description</td>
+			<td align="left">Parent Category</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="left">&nbsp;
+				<input type="text" size="5" maxlength="4" name="addproductcatcode">
+			</td>
+			<td align="left"><input type="text" size="35" name="addproductcatdescription">
+			</td>
+			<td align="left"><select name="parentcategory">
+					<!---PRODCAT_SELECTIONS--->
+				</select>
+			</td>
+			<td align="left"><input type="submit" class="pdgbutton" name="addproductcategory" value="Add">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<table class="pdgbody" align=center width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td class="pdgheader"><b>Product Categories</b> </td>
+	</tr>
+	<tr>
+		<td width=100% style="background:#fafafa;"><div id="cattree-wrapper" class="pdg-sunken pdg-edge1">
+				<div id="navigation">
+					<div id="menu">
+						<!---PROD_CATEGORIES--->
+					</div>
+				</div>
+			</div></td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

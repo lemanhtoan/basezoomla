@@ -1,0 +1,42 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--818953-->                                     
+<!--resetpwform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+- Admin Users</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Admin Users</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table width="100%" cellspacing="0" cellpadding="5" border="0">
+	<tr>
+		<td class="pdgheader"> Please change your Admin password </td>
+	</tr>
+	<tr>
+		<td><form method=post action="!---MODULE_NAME---">
+				<input type="hidden" name="username" value="Admin">
+				<div class="divborder" align="center">
+					<table width="100%" cellspacing="0" cellpadding="5" border="0">
+						<tr>
+							<td colspan="2" class="pdgdata2"> You are using the default PDG Administrator password. You will need to change the password in order to continue. Please note that the password must be 8 characters long and it must contain at least one number or special character. </td>
+						</tr>
+						<tr>
+							<td colspan="2" class="pdgheader"> User: Admin </td>
+						</tr>
+						<tr>
+							<td width=80% class="pdgdata2"> Password:
+								<input type="password" name="password" size="15" value="">
+&nbsp;&nbsp;&nbsp; Confirm Password:
+								<input type="password" name="password2" size="15" value="">
+&nbsp;&nbsp;&nbsp;
+								<input type=hidden name=changedefaultpw value=now>
+							</td>
+							<td width=20% class="pdgdata2"><input class=pdgbutton type="submit" name="displaymain" value="Update Password">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form></td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

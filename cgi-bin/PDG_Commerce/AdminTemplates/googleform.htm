@@ -1,0 +1,108 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2425055-->                                    
+<!--googleform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Google Checkout Settings</title>
+<script type="text/javascript">
+PDG.callOnPageLoad(gcheckout);
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Google Checkout Settings</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" name=googlecheckout >
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---" >
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0 >
+		<tr>
+			<td colspan=2 class="pdgheader"><b> Google Checkout Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Merchant ID: </td>
+			<td width=50% class="pdgdata2"><input type=text name=GOOGLE_MID value="!---GOOGLE_MID---" OnFocus()="if(!---IS_SECURE---){}else{this.blur(); alert('You must login securely to change this setting');}">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Merchant Key: </td>
+			<td width=50% class="pdgdata1"><input type=text name=GOOGLE_MKEY value="!---GOOGLE_MKEY---" OnFocus()="if(!---IS_SECURE---){}else{this.blur(); alert('You must login securely to change this setting');}">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Payment Method Label: </td>
+			<td width=50% class="pdgdata2"><input type=text name=GOOGLE_LABEL value="!---GOOGLE_LABEL---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Log File: </td>
+			<td width=50% class="pdgdata1"><input type=text name=GOOGLE_LOGFILE value="!---GOOGLE_LOGFILE---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> SandBox Mode (testing only): </td>
+			<td width=50% class="pdgdata2"><input type=checkbox name=GOOGLE_SANDBOX value="yes" !---GOOGLE_SANDBOX--- >
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b> Google Checkout Shipping Options</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata2"> You have 3 options for shipping. You must choose one of the three settings below. </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"><input type=radio name=googleshiptype value="1" !---GOOGLE_SHIP_PER_WT_UNIT--- >
+				Shipping Charge per pound or kilogram:<br>
+				<span class=pdgnote>this value will be multiplied by the order weight to determine the shipping cost.</span> </td>
+			<td width=50% class="pdgdata1"><input type=text name=GOOGLE_SHIP_WT_MULTIPLIER value="!---GOOGLE_SHIP_WT_MULTIPLIER---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"><input type=radio name=googleshiptype value="2" !---GOOGLE_SHIP_FLAT_RATE--- >
+				Flat Rate Shipping: </td>
+			<td width=50% class="pdgdata2"> Flat rate for zero weight orders:
+				<input type=text name=GOOGLE_ZERO_WEIGHT_ORDER_SHIP value="!---GOOGLE_ZERO_WEIGHT_ORDER_SHIP---">
+				<br>
+				Flat rate for orders that have weight:
+				<input type=text name=GOOGLE_HAVE_WEIGHT_ORDER_SHIP value="!---GOOGLE_HAVE_WEIGHT_ORDER_SHIP---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"><input type=radio name=googleshiptype value="3" !---GOOGLE_SHIP_RULE_BASED--- >
+				Use Rule Based Shipping Methods:<br>
+				<span class=pdgnote>the list to the right shows the valid shipping methods from your shipping settings.</span> </td>
+			<td width=50% class="pdgdata1"><!---GOOGLE_LIST_VALID_SHIP_METHODS--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b> Google Checkout Web Site Navigation</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Continue Shopping URL: </td>
+			<td width=50% class="pdgdata1"><input type=text name=GOOGLE_CONTINUE_SHOP_URL value="!---GOOGLE_CONTINUE_SHOP_URL---" >
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Edit Shopping Cart URL: </td>
+			<td width=50% class="pdgdata2"><input type=text name=GOOGLE_EDIT_CART_URL value="!---GOOGLE_EDIT_CART_URL---" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type=submit class=pdgbutton value="Submit Changes" name=changegooglesettings>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=left><br>
+				<br>
+				* Merchant should abide by the <a href="https://checkout.google.com/seller/policies.html" target=blank>Google Checkout Program Policies</a>.<br>
+				<br>
+				** If you sell items that can not be purchased using Google Checkout, according to <a href="https://checkout.google.com/termsOfService?type=Seller"  target=blank>Google Checkout's Terms of Service</a>, the first data in User defined field 0 must be &quot;&lt;!--NOT-FOR-GOOGLE-CHECKOUT--&gt;&quot; for those items. </td>
+		</tr>
+	</table>
+</form>
+<table width=100%>
+	<tr>
+		<td align=center class="pdgnote">&copy;1997-
+			<!---CURRENT_YEAR--->
+			PDG Software, Inc. </td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

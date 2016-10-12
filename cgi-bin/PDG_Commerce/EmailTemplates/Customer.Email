@@ -1,0 +1,22 @@
+Order <invoicenumber> with <sitename>
+Dear <contactname>,
+
+Thank you for your order from <sitename>.
+
+Your invoice number for this order is <invoicenumber>.
+Please retain this invoice number for reference information.
+
+You have ordered the following:
+
+<!---ORDER--->
+
+
+We will ship to:
+<!---SHIPTO--->
+
+
+We will bill to:
+<!---BILLTO--->
+
+Thank you again for your order.
+

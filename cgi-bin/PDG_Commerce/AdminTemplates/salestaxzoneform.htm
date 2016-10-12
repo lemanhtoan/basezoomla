@@ -1,0 +1,57 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--850757-->                                     
+<!--salestaxzoneform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Sales Tax Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Sales Tax Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=5 class="pdgheader"><b>Add A New Sales Tax Rule</b> </td>
+		</tr>
+		<tr>
+			<td colspan=5>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center"><b>Zone Name</b></td>
+			<td><b>Tax Percent</b></td>
+			<td><b>Sales Tax Label</b></td>
+			<td><b>Tax Shipping?</b></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><!---ZONE_LIST---></td>
+			<td><input type="text" name="salestaxpercent" size="6" maxlength="6">
+				%</td>
+			<td><input type="text" name="salestaxlabel" size="15"></td>
+			<td align="center"><input type="checkbox" name="shippingmethodtaxable" value="yes" !---SHIP_RULE_TAX--- ></td>
+			<td><input type="submit" class="pdgbutton" name="addsalestax" value="Add"></td>
+		</tr>
+		<tr>
+			<td colspan=5>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=5 class="pdgheader"><b>Current Sales Tax Rules</b> </td>
+		</tr>
+		<tr>
+			<td colspan=5>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center"><b>Zone Name</b></td>
+			<td><b>Tax Percent</b></td>
+			<td><b>Sales Tax Label</b></td>
+			<td><b>Tax Shipping?</b></td>
+			<td>&nbsp;</td>
+		</tr>
+		<!---SALES_TAX_RULES--->
+		<tr>
+			<td colspan=5>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

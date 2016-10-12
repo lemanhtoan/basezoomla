@@ -1,0 +1,231 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<!---PDG_HEAD_INSERT--->
+<meta name="robots" content="index, follow" />
+<SCRIPT language="Javascript">
+
+/* ======== CONFIGURATION VARIABLES ======== */
+
+/* numberPageLinks is the maximum number of page numbers to display in the Search Page bar. */
+var numberPageLinks = 5;
+
+/* prevText and nextText are the HTML code to display for the 'previous results' and 'next results'   */
+/*    links.  This HTML code will go inside the anchor-href tags.                                     */
+var prevText = "&lt;";
+var nextText = "&gt;";
+
+
+/* ===== MAIN CODE ==== */
+/* You should not need to change any of the coded logic below here.  However, certain pieces of the   */
+/*   code print items like the '...' and the space between the page numbers.  You may want to review  */
+/*   this and change to match your web page's theme.                                                  */
+
+/* Variable Initialization */
+var pageInfo = "!---PAGE_INFO---";
+var currentPage, maxPage;
+var arrayPageInfo = pageInfo.split(" ");
+currentPage = Number(arrayPageInfo[0]);
+maxPage = Number(arrayPageInfo[2]);
+
+var nextSearchURL = "!---NEXT_SEARCH_URL---";
+var prevSearchURL = "!---PREVIOUS_SEARCH_URL---";
+var resultsPerPage = !---RESULTS_PER_PAGE---;
+
+
+/* A function to perform integer division.  Javascript normally performs floating-point division. */
+
+function integerDivide (dividend, divisor)
+{
+	var Modulus = dividend % divisor;
+	var newDividend = dividend - Modulus;
+	return (newDividend / divisor);
+}
+
+/* This function reconstructs the PDG Shopping Cart next or previous search result URL, without   */
+/*    the searchstart data.  This data is later dynamically added for each search page link.      */
+
+function reconstructSearchURL (oldURL)
+{
+	var arrayURL = oldURL.split("&");
+	var newURL = "";
+
+	for (var i=0; i < arrayURL.length; i++)
+	{
+		if (arrayURL[i].indexOf("searchstart") == -1)
+		{
+			newURL += arrayURL[i];
+			if (i != (arrayURL.length - 1))
+				newURL += "&";
+		}
+	}
+	if(i>2) 
+		newURL += "&";
+
+	return newURL;
+}
+
+
+/* This function parses data returned from the PDG Shopping Cart search and writes in the Search   */
+/*    Result link bar.  You may wish to change some of the "document.write" statements so that the */
+/*    Search Result bar better matches your web site's and templates layout and theme.             */
+
+function WritePageBar ()
+{
+	var startPage, endPage;
+	var barSearchURL;
+	var startIndexNumber;
+
+	/* If there's only one page of results, then you don't need a Search Result bar. */
+	if (maxPage <= 1)
+		return;
+
+	/* If there are less result pages than your 'maximum number of page links', then */
+	/*    you can only display the number of result page links.                      */
+	if (maxPage < numberPageLinks)
+		numberPageLinks = maxPage;
+
+	/* Calculate the start and end result page numbers for the bar. */
+
+	startPage = currentPage - (integerDivide (numberPageLinks, 2));
+	endPage   = currentPage + (integerDivide (numberPageLinks, 2));
+
+	if (numberPageLinks % 2 == 0)
+		startPage++;
+
+	if (startPage <= 0)
+	{
+		endPage += (1 - startPage);
+		startPage = 1;
+	}
+
+	if (endPage > maxPage)
+	{
+		startPage -= (endPage - maxPage);
+		endPage = maxPage;
+	}
+
+
+	/* Reconstruct the PDG Cart created 'next page' or 'previous page' link for our bar. */
+	if (nextSearchURL != "")
+		barSearchURL = reconstructSearchURL (nextSearchURL);
+	else if (prevSearchURL != "")
+		barSearchURL = reconstructSearchURL (prevSearchURL);
+
+	/* BAR OUTPUT BEGINS HERE. */
+
+	/* Display the 'previous result page' link. */
+	if (currentPage > 1)
+	{
+		document.write ("<a href='" + prevSearchURL + "'>");
+		document.write (prevText + "</a>&nbsp;");
+	}
+
+	/* Display this if there are more previous pages then can be displayed on the bar. */
+	if (startPage > 1)
+		document.write ("...&nbsp;");
+
+	/* Create the list of page links. */
+	for (var i=0; i < numberPageLinks ; i++)
+	{
+		if ((startPage + i) == currentPage)
+		{
+			/* Display this if its the current page (and doesn't need a link). */
+
+			document.write ("<b>[" + (startPage + i) + "]</b>&nbsp;");
+		}
+		else
+		{
+			/* Display this if it isn't the current and does need a link. */
+
+			document.write ("<a href='" + barSearchURL);
+			document.write ("searchstart=" + ((startPage + i - 1) * resultsPerPage) + "'>");
+			document.write ("" + (startPage + i) + "</a>&nbsp;");
+		}
+	}
+
+
+	/* Display this if there are more next pages then can be displayed on the bar. */
+	if (endPage < maxPage)
+		document.write ("...&nbsp;");
+
+	/* Display the 'next result page' link. */
+	if (currentPage < maxPage)
+	{
+		document.write ("<a href='" + nextSearchURL + "'>");
+		document.write (nextText + "</a>&nbsp;");
+	}
+
+}
+
+</SCRIPT>
+</head>
+<body>
+<!--  Inserted from document Templates/Top_Nav.html BEGIN-->
+<!---TOP_NAV--->
+<!--  Inserted from document templates/Top_Nav.html END-->
+
+<div class="form">
+<form method="post" action="!---SCRIPT_NAME---">
+  <table style="width:100%">
+    <tr>
+      <td>
+        <h3><!---CAT_DESC---></h3>
+        <br />
+        <!---SEARCH_MAX_MSG--->
+        <br />
+     </td>
+    </tr>
+  </table>
+  <table style="width:100%;padding:15px;border:1px;">
+    <!---BEGIN_SEARCH_ROW--->
+    <tr> 
+      <!---BEGIN_REPEAT--->
+      <td style="text-align:center;border:1px;"> 
+	
+        <img src="!---THUMB---" alt="!---DESC---" style="max-height:100px;max-width:175px;"/><br />
+        <!---DESC---><br />
+        Price: <!---PRICE---><br /> 
+	SKU: <!---SKU---><br /> 
+        Qty: <input type="edit" size="3" name="!---QTY_BUTTON---" value="0" /><br /> 
+        <!---ITEMOPT--->
+                 <input type="hidden" name="!---QTY_BUTTON---" value="0">
+      </td>
+      <!---END_REPEAT--->
+    </tr>
+    <!---END_SEARCH_ROW--->
+  </table>
+  <table style="width:100%;">
+
+   <tr>
+<td style="text-align:center;" colspan="4"><!---PAGE_INFO--->
+
+ <!---PAGE_INFO--->
+<br />
+<SCRIPT>
+WritePageBar();
+</SCRIPT>
+</td>
+</tr>
+ <tr> 
+      <td style="text-align:center;"> 
+        <!---ADD_WHOLE_PAGE_LINK--->
+      </td>
+    </tr>
+    <tr> 
+      <td style="text-align:center;"> 
+        <!---SHOPSOMEMORE_LINK--->
+        <input type="hidden" name="reference" value="!---SCRIPT_NAME---?listcategories=action" />
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+
+<!--  Inserted from document Templates/Bottom_Nav.html BEGIN-->
+<!---BOTTOM_NAV--->
+<!--  Inserted from document templates/Bottom_Nav.html END-->
+</body>
+</html>

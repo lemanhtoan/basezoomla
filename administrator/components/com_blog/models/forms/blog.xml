@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_BLOG_FORM_LBL_BLOG_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="categories" type="category"
+                
+            label="COM_BLOG_FORM_LBL_BLOG_CATEGORIES"
+            description="COM_BLOG_FORM_DESC_BLOG_CATEGORIES" 
+                
+                
+                 required="true" 
+            extension="com_blog" /> 
+
+ 
+		<field name="filter_categories" type="category"
+            label="COM_BLOG_FORM_LBL_BLOG_CATEGORIES"
+            description="COM_BLOG_FORM_DESC_BLOG_CATEGORIES"  extension="com_blog" show_root="1" onchange="this.form.submit();" /> 
+
+       <field name="mode" type="list"
+                
+            label="COM_BLOG_FORM_LBL_BLOG_MODE"
+            description="COM_BLOG_FORM_DESC_BLOG_MODE" 
+                 default="1" 
+                
+                 required="true" 
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Short mode</option>
+                <option value="2">Full mode </option>
+        </field> 
+
+ 
+		<field name="filter_mode" type="list" onchange="this.form.submit();">
+			<option value="">COM_BLOG_BLOGS_MODE_FILTER</option>
+			<option value="1">Short mode</option>
+			<option value="2">Full mode </option>
+		</field> 
+
+       <field name="name" type="text"
+                
+            label="COM_BLOG_FORM_LBL_BLOG_NAME"
+            description="COM_BLOG_FORM_DESC_BLOG_NAME" 
+                /> 
+
+       <field name="image" type="media"
+                
+            label="image (appropriate size: 1170*400)"
+            description="COM_BLOG_FORM_DESC_BLOG_IMAGE" 
+                
+            menu_published="0"
+            filter="raw"
+            directory="/images/blog/"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="description" type="editor"
+                
+            label="Short description"
+            description="COM_BLOG_FORM_DESC_BLOG_DESCRIPTION" 
+            option_on="Yes"
+            option_off="Yes"
+            height="100px" class="description_short"   filter="safehtml" /> 
+
+       <field name="content" type="editor"
+                
+            label="COM_BLOG_FORM_LBL_BLOG_CONTENT"
+            description="COM_BLOG_FORM_DESC_BLOG_CONTENT" 
+                
+                filter="safehtml"
+                 /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_BLOG_FORM_LBL_BLOG_CREATED_BY"
+            description="COM_BLOG_FORM_DESC_BLOG_CREATED_BY"  /> 
+
+       <field name="language" type="language"
+                
+            label="COM_BLOG_FORM_LBL_BLOG_LANGUAGE"
+            description="COM_BLOG_FORM_DESC_BLOG_LANGUAGE" 
+            client="administrator" /> 
+            
+       <!-- type="calendar" default="NOW" format="%d-%m-%Y"   type="timecreated" -->
+       <field name="created_date" 
+            size="22"  
+            type="calendar"
+            default="NOW"
+			format="%Y-%m-%d %H:%M:%S"
+            label="COM_BLOG_FORM_LBL_BLOG_CREATED_DATE"
+            description="COM_BLOG_FORM_DESC_BLOG_CREATED_DATE"  
+       /> 
+
+       <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

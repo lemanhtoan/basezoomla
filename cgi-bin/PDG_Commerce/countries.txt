@@ -1,0 +1,405 @@
+0,All Countries
+1,Abu Dhabi 
+2,Admiralty Islands 
+4,Aitutaki (Cook Islands)
+5,Ajman 
+6,Aland Island 
+7,Albania
+8,Alderney, Channel Islands
+9,Algeria
+10,Alhucemas (Spain)
+11,Alofi Island 
+12,Andaman Islands (India)
+14,Andorra
+16,Anguilla
+18,Annobon Island 
+19,Antigua and Barbuda
+20,Argentina
+22,Aruba
+24,Astypalaia (Greece)
+25,Atafu (Western Samoa)
+26,Australia
+27,Austria
+28,Avarua (New Zealand)
+30,Azores
+31,Bahamas
+32,Bahrain
+33,Balearic Islands (Spain)
+34,Baluchistan (Pakistan)
+35,Bangladesh
+36,Banks Island (Vanuatu)
+37,Barbados
+38,Barbuda (Antigua and Barbuda)
+39,Barthelemy (Guadeloupe)
+40,Belarus
+41,Belgium
+42,Belize
+43,Benin
+44,Bermuda
+46,Bismark Archipelago 
+47,Bolivia
+48,Bonaire (Netherlands Antilles)
+49,Borabora (French Polynesia)
+50,Borneo (Kalimantan) (Indonesia)
+51,Borneo (North) (Malaysia)
+53,Botswana
+54,Bougainville 
+55,Bourbon (Reunion)
+56,Brazil
+57,British Guiana (Guyana)
+58,British Honduras (Belize)
+59,British Virgin Islands
+60,Brunei Darussalam
+61,Buka (Papua New Guinea)
+62,Bulgaria
+63,Burkina Faso
+65,Burundi
+66,Caicos Islands
+67,Cambodia
+68,Cameroon
+69,Canada
+70,Canary Islands (Spain)
+71,Canton Island (Kiribati)
+72,Cape Verde
+73,Cayman Islands
+74,Central African Republic
+75,Ceuta (Spain)
+76,Ceylon (Sri Lanka)
+77,Chad
+78,Chaferinas Islands (Spain)
+79,Chalki (Greece)
+82,China
+83,Christmas Island (Australia)
+84,Christmas Island (Kiribati)
+85,Cocos Island (Australia)
+86,Colombia
+89,Congo, Democratic Republic of the
+90,Cook Islands (New Zealand)
+91,Corisco Island (Equatorial Guinea)
+92,Corsica (France)
+93,Costa Rica
+95,Crete (Greece)
+96,Croatia
+98,Cumino Island (Malta)
+99,Curacao (Netherlands Antilles)
+101,Cyprus
+102,Czech Republic
+103,Dahomey (Benin)
+104,Damao (India)
+105,Danger Islands (New Zealand)
+106,Denmark
+107,Desirade Island (Guadeloupe)
+108,Diu (India)
+109,Djibouti
+110,Dodecanese Islands (Greece)
+111,Doha (Qatar)
+113,Dominican Republic
+114,Dubai (United Arab Emirates)
+115,East Timor (Indonesia)
+116,Ecuador
+117,Egypt
+118,Eire (Ireland)
+119,El Salvador
+120,Ellice Islands (Tuvalu)
+121,Elobey Islands (Equatorial Guinea)
+122,Enderbury Island (Kiribati)
+123,England 
+124,Equatorial Guinea
+125,Eritrea
+126,Estonia
+127,Ethiopia
+128,Fakaofo (Western Samoa)
+130,Fanning Island (Kiribati)
+131,Faroe Islands
+132,Fernando Po (Equatorial Guinea)
+135,Fiji
+136,Finland
+137,Formosa (Taiwan)
+138,France
+139,French Guiana
+140,French Oceania (French Polynesia)
+141,French Polynesia
+142,French Somaliland (Djibouti)
+143,French Territory of the Afars and Issas
+144,French West Indies 
+145,Friendly Islands (Tonga)
+146,Fujairah (United Arab Emirates)
+147,Futuna (Wallis and Futuna Islands)
+148,Gabon
+149,Gambia
+150,Gambier (French Polynesia)
+151,Georgia, Republic of
+152,Germany
+153,Ghana
+154,Gibraltar
+155,Gilbert Islands (Kiribati)
+156,Goa (India)
+157,Gozo Island (Malta)
+159,Great Britain and Northern Ireland
+160,Greece
+161,Greenland
+162,Grenada
+163,Gernadines (St. Vincent &amp
+164,Guadeloupe
+166,Guatemala
+167,Guernsey, Channel Islands 
+168,Guinea
+169,Guinea-Bissau
+170,Guyana
+171,Hainan Island (China)
+172,Haiti
+173,Hashemite Kingdom (Jordan)
+174,Hervey (Cook Islands) (New Zealand)
+175,Hivaoa (French Polynesia)
+176,Holland (Netherlands)
+177,Honduras
+178,Hong Kong
+179,Huahine (French Polynesia)
+180,Huan Island (New Caledonia)
+181,Hungary
+182,Iceland
+183,India
+184,Indonesia
+187,Ireland
+188,Irian Barat (Indonesia)
+189,Isle of Man (Great Britain)
+190,Isle of Pines (New Caledonia)
+192,Israel
+193,Italy
+194,Jamaica
+195,Japan
+196,Jersey (Channel Islands) 
+197,Johore (Malaysia)
+198,Jordan
+199,Kalymnos (Greece)
+200,Kampuchea (Cambodia)
+201,Karpathos (Greece)
+202,Kassos (Greece)
+203,Kastellorizon (Greece)
+204,Kazakhstan
+205,Kedah (Malaysia)
+206,Keeling Islands (Australia)
+207,Kelantan (Malaysia)
+208,Kenya
+209,Kiribati
+211,Korea, Republic of (South Korea)
+212,Kos (Greece)
+214,Kowloon (Hong Kong)
+215,Kuwait
+216,Kyrgyzstan
+217,Labrador (Canada)
+218,Labuan (Malaysia)
+219,Laos
+220,Latvia
+221,Lebanon
+222,Leipsos (Greece)
+223,Leros (Greece)
+224,Les Saints Island (Guadeloupe)
+225,Lesotho
+226,Liberia
+228,Liechtenstein
+229,Lithuania
+230,Lord Howe Island (Australia)
+231,Loyalty Islands (New Caledonia)
+232,Luxembourg
+233,Macao
+234,Macau (Macao)
+235,Macedonia, Republic of
+236,Madagascar
+239,Malacca (Malaysia)
+240,Malagasy Republic (Madagascar)
+241,Malawi
+242,Malaya (Malaysia)
+243,Malaysia
+244,Maldives
+245,Mali
+246,Malta
+247,Manahiki (New Zealand)
+248,Manchuria (China)
+249,Mangaia (Cook Islands) (New Zealand)
+250,Manuai (Cook Islands) (New Zealand)
+251,Marie Galante (Guadeloupe)
+252,Marquesas Islands (French Polynesia)
+254,Martinique
+255,Mauke (Cook Islands) (New Zealand)
+256,Mauritania
+257,Mauritius
+258,Mayotte (France)
+259,Melilla (Spain)
+260,Mexico
+262,Mitiaro (Cook Islands) (New Zealand)
+264,Moldova
+265,Monaco (France)
+267,Montserrat
+268,Moorea (French Polynesia)
+269,Morocco
+270,Mozambique
+271,Muscat (Oman)
+273,Namibia
+274,Nansil Islands (Japan)
+276,Negri Sembilan (Malaysia)
+277,Nepal
+278,Netherlands
+279,Netherlands Antilles
+280,Netherlands West Indies
+281,Nevis (St. Christopher and Nevis)
+282,New Britain (Papua New Guinea)
+283,New Caledonia
+284,New Hanover (Papua New Guinea)
+285,New Hebrides (Vanuatu)
+286,New Ireland (Papua New Guinea)
+287,New South Wales (Australia)
+288,New Zealand
+289,Newfoundland (Canada)
+290,Nicaragua
+291,Niger
+292,Nigeria
+293,Nissiros (Greece)
+294,Niue (New Zealand)
+295,Norfolk Island (Australia)
+296,North Borneo (Malaysia)
+298,Northern Ireland 
+300,Norway
+301,Nukahiva (French Polynesia)
+302,Nukunonu (Western Samoa)
+303,Nyasaland (Malawi)
+304,Ocean Island (Kiribati)
+305,Okinawa (Ryukyu Islands) (Japan)
+306,Oman
+307,Pahang (Malaysia)
+308,Pakistan
+309,Palmerston (Avarua) (New Zealand)
+311,Panama
+312,Papua New Guinea
+313,Paraguay
+314,Parry (Cook Islands) (New Zealand)
+315,Patmos (Greece)
+316,Pemba (Tanzania)
+317,Penang (Malaysia)
+318,Penghu Islands (Taiwan)
+319,Penon de Velez de la Gomera 
+320,Penrhyn (Tongareva) (New Zealand)
+321,Perak (Malaysia)
+322,Perlis (Malaysia)
+324,Peru
+325,Pescadores Islands (Taiwan)
+326,Petite Terre (Guadeloupe)
+327,Philippines
+329,Poland
+331,Portugal
+332,Province Wellesley (Malaysia)
+333,Pukapuka (New Zealand)
+335,Qatar
+336,Queensland (Australia)
+337,Quemoy (Taiwan)
+338,Raiatea (French Polynesia)
+339,Rakaanga (New Zealand)
+340,Rapa (French Polynesia)
+341,Rarotonga (Cook Islands) 
+342,Ras al Kaimah 
+343,Redonda (Antigua and Barbuda)
+344,Reunion
+345,Rhodesia (Zimbabwe)
+346,Rio Muni (Equatorial Guinea)
+347,Rodos (Greece)
+348,Rodrigues (Mauritius)
+349,Romania
+351,Russia
+352,Rwanda
+353,Saba (Netherlands Antilles)
+354,Sabah (Malaysia)
+356,Saint Bartholomew 
+357,Saint Christopher 
+362,Saint Kitts 
+363,Saint Lucia
+364,Saint Maarten 
+369,Saint Vincent and the Grenadines
+371,Salvador (El Salvador)
+373,Santa Cruz Islands 
+375,Sarawak (Malaysia)
+376,Sark, Channel Islands 
+377,Saudi Arabia
+378,Savage Island (Niue) (New Zealand)
+379,Savaii Island (British) 
+380,Scotland 
+381,Selangor (Malaysia)
+382,Senegal
+384,Seychelles
+385,Sharja (United Arab Emirates)
+386,Shikoku (Japan)
+387,Siam (Thailand)
+388,Sierra Leone
+389,Sikkim (India)
+390,Singapore
+391,Slovak Republic
+392,Slovenia
+393,Society Islands 
+399,South Australia (Australia)
+401,South Korea 
+402,South-West Africa
+403,Spain
+404,Spitzbergen (Norway)
+405,Sri Lanka
+406,Ste. Marie de Madagascar 
+407,Sudan
+408,Suriname
+409,Suwarrow Islands (New Zealand)
+410,Swan Islands (Honduras)
+411,Swaziland
+412,Sweden
+413,Switzerland
+414,Symi (Greece)
+415,Syrian Arab Republic
+416,Tahaa (French Polynesia)
+417,Tahiti (French Polynesia)
+418,Taiwan
+419,Tajikistan
+420,Tanzania
+421,Tasmania (Australia)
+422,Tchad (Chad)
+423,Thailand
+424,Thursday Island (Australia)
+425,Tibet (China)
+426,Tilos (Greece)
+427,Timor (Indonesia)
+429,Tobago (Trinidad and Tobago)
+430,Togo
+431,Tokelau (Union) Group 
+432,Tonga
+433,Tongareva (New Zealand)
+434,Tori Shima (Japan)
+435,Torres Island (Vanuatu)
+438,Transkei (South Africa)
+439,Trengganu (Malaysia)
+440,Trinidad and Tobago
+443,Trucial States 
+445,Tuamotou (French Polynesia)
+446,Tubuai (French Polynesia)
+447,Tunisia
+448,Turkey
+450,Turks and Caicos Islands
+451,Tuvalu
+452,Uganda
+453,Ukraine
+454,Umm al Quaiwain 
+455,Umm Said (Qatar)
+456,Union Group (Western Samoa)
+458,United Arab Emirates
+459,Upolu Island (Western Samoa)
+461,United States of America
+462,Uruguay
+464,Uzbekistan
+465,Vanuatu
+467,Venezuela
+468,Victoria (Australia)
+469,Vietnam
+472,Wales 
+473,Wallis and Futuna Islands
+474,Wellesley, Province (Malaysia)
+475,West New Guinea (Indonesia)
+476,Western Australia (Australia)
+477,Western Samoa
+479,Yemen
+480,Zafarani Islands (Spain)
+482,Zambia
+483,Zanzibar (Tanzania)

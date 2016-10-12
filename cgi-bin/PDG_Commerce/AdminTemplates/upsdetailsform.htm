@@ -1,0 +1,367 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--5995054-->                                    
+<!--upsdetailsform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+UPS&reg;Details</title>
+<style>
+#upsregister{
+	background-color:#FFFFFF;
+	border:1PX SOLID #c1c1c1;
+	padding:2px;
+}
+#upsregister .reghdr{
+	background-color:#5F6D80;
+	padding:8px !Important;
+	color:#FFFFFF;
+}
+</style>
+<script Language="JavaScript">
+	<!--	// hide from old browsers
+	function ChildPopup (url)  {
+	var h=375;
+	var w=625;
+	var winl = (screen.width - w) / 2;
+	var wint = (screen.height - h) / 2;
+    	child = window.open (url, 'childwin', 'width='+w+',height='+h+',top='+wint+',left='+winl);
+	}
+	function HasAgreed ()  {
+	if (document.trackform.terms.checked)
+	return true;
+	return false;
+	}
+	function SubmitForm ()  {
+	if (!HasAgreed ())	{
+	alert ("You need to accept the UPS Terms to proceed.");
+	return;
+	}
+	document.trackform.upstrack.value = "submit";
+	document.trackform.submit ();
+	}
+	function ValidateForm (theform)  {
+	if (thform.upstrack.value == "bogus")  {
+	alert ("You need to submit this form using the 'Track' button!");
+	return false;
+	}
+	if (!HasAgreed ())  {
+	alert ("You need to accept the UPS Terms to proceed.");
+	return false;
+	}
+	return true;
+	}
+	function VerifyDetails (theform)	{
+	if ((theform.upsorigincntry.value == "US")||(theform.upsorigincntry.value == "CN"))	{
+	if (theform.upsoriginstate.value == "")	{
+	alert ("Please select the appropriate state/province from the drop down box.");
+	theform.upsoriginstate.focus ();
+	return false;
+	}
+	} else	{
+	if ((theform.upsoriginzip.value == "") && (theform.upsorigincity.value == ""))	{
+	alert ("Please enter either a postal code or city.");
+	theform.upsoriginzip.focus ();
+	return false;
+	}
+	}
+	return true;
+	}
+	// -->
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>UPS<sup>&reg;</sup> Details</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<!--cmt: li menu and seperators go here--->
+<li><A href="javascript:void(0)" tsid="details-section">Details</A></li>
+<li class="seperator"></li>
+<li><A href="javascript:void(0)" tsid="options-section">Options</A></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-close.htm--->
+<!--cmt: details-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="details-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td colspan=2 class="nopdgheader"><b> UPS<sup>&reg;</sup> Details</b> </td>
+	</tr>
+	<tr>
+		<td colspan=2><div class="centered">
+				<table border=0 cellpadding="5" id=notice>
+					<tr>
+						<td valign="top"><img src="!---CONFIGROOT---_resources/compat/images/UPS_LOGO_S.png" height="50" width="45"> </td>
+						<td><p><b>UPS<sup>&reg;</sup> Details</b></p></td>
+					</tr>
+				</table>
+			</div></td>
+	</tr>
+	<!---UPS_REGISTER--->
+</table>
+<form method=post action="!---MODULE_NAME---" id="upsdetail" name="upsdetail" onSubmit="return VerifyDetails(this);">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center>
+<script language="Javascript">
+if(!---UPS_REGISTERED---){
+	document.write("<div id=\"ups-reg-disp\" style=\"visibility:visible;display:block;\">");
+}
+else{
+	document.write("<div id=\"ups-reg-disp\" style=\"visibility:hidden;display:none;\">");
+}
+</script>			
+			<table width=90% cellpadding=0 cellspacing=0 border=0 id="upsregister" border="1">
+					<tr>
+						<td valign=top align=right width=50%>
+						<table>
+								<tr>
+									<td colspan=2><b>UPS Shipper Information:</b>**</td>
+								</tr>
+								<tr>
+									<td>Shipper Number:</td>
+									<td><b>
+										<!---ACCT_NO--->
+										</b></td>
+								</tr>
+								<tr>
+									<td>Company:</td>
+									<td><input type=text name="upsorigincompany" value="!---UPS_ORIGIN_COMPANY---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Tax ID:*</td>
+									<td><input type=text name="upsorigintaxid" value="!---UPS_ORIGIN_TAXID---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Name:</td>
+									<td><input type=text name="upsoriginname" value="!---UPS_ORIGIN_NAME---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Email:</td>
+									<td><input type=text name="upsoriginemail" value="!---UPS_ORIGIN_EMAIL---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Phone:</td>
+									<td><input type=text name="upsoriginphone" value="!---UPS_ORIGIN_PHONE---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Fax:*</td>
+									<td><input type=text name="upsoriginfax" value="!---UPS_ORIGIN_FAX---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td valign=top>Address: </td>
+									<td><input type="text" name="upsoriginaddr" value="!---UPS_ORIGIN_ADDR---" size="20" maxlength="34">
+										<br>
+										<input type="text" name="upsoriginaddr2" value="!---UPS_ORIGIN_ADDR2---" size="20" maxlength="34">
+										<br>
+										<input type="text" name="upsoriginaddr3" value="!---UPS_ORIGIN_ADDR3---" size="20" maxlength="34">
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td>City:</td>
+									<td><input type="text" name="upsorigincity" value="!---UPS_ORIGIN_CITY---" size="20" maxlength="20"></td>
+								</tr>
+								<tr>
+									<td valign="top">State:</td>
+									<td><select name="upsoriginstate">
+											<!---STATES_DDBOX--->
+										</select>
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top">Province:</td>
+									<td><input type="text" name="upsoriginprov" value="!---UPS_ORIGIN_PROV---" size="20" maxlength="20">
+									</td>
+								</tr>
+								<tr>
+									<td>Postal Code:</td>
+									<td><input type="text" name="upsoriginzip" value="!---UPS_ORIGIN_ZIP---" size="20" maxlength="20"></td>
+								</tr>
+								<tr>
+									<td>Country:</td>
+									<td><select name="upsorigincntry">
+											<!---UPS_ORIGIN_CNTRY--->
+										</select></td>
+								</tr>
+							</table></td>
+						<td valign=top align=left width=50%><table>
+								<tr>
+									<td colspan=2><b>UPS Ship From Information:</b>**</td>
+								</tr>
+								<tr>
+									<td>Company:</td>
+									<td><input type=text name="upsfromcompany" value="!---UPS_FROM_COMPANY---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Name:</td>
+									<td><input type=text name="upsfromname" value="!---UPS_FROM_NAME---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Email:</td>
+									<td><input type=text name="upsfromemail" value="!---UPS_FROM_EMAIL---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Phone:</td>
+									<td><input type=text name="upsfromphone" value="!---UPS_FROM_PHONE---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td>Fax:*</td>
+									<td><input type=text name="upsfromfax" value="!---UPS_FROM_FAX---" size="20" maxlength="34"></td>
+								</tr>
+								<tr>
+									<td valign=top>Address: </td>
+									<td><input type="text" name="upsfromaddr" value="!---UPS_FROM_ADDR---" size="20" maxlength="34">
+										<br>
+										<input type="text" name="upsfromaddr2" value="!---UPS_FROM_ADDR2---" size="20" maxlength="34">
+										<br>
+										<input type="text" name="upsfromaddr3" value="!---UPS_FROM_ADDR3---" size="20" maxlength="34">
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td>City:</td>
+									<td><input type="text" name="upsfromcity" value="!---UPS_FROM_CITY---" size="20" maxlength="20"></td>
+								</tr>
+								<tr>
+									<td valign="top">State:</td>
+									<td><select name="upsfromstate">
+											<!---STATES_FROM_DDBOX--->
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top">Province:</td>
+									<td><input type="text" name="upsfromprov" value="!---UPS_FROM_PROV---" size="20" maxlength="20">
+									</td>
+								</tr>
+								<tr>
+									<td>Postal Code:</td>
+									<td><input type="text" name="upsfromzip" value="!---UPS_FROM_ZIP---" size="20" maxlength="20"></td>
+								</tr>
+								<tr>
+									<td>Country:</td>
+									<td><select name="upsfromcntry">
+											<!---UPS_FROM_CNTRY--->
+										</select></td>
+								</tr>
+								<tr>
+									<td colspan=2> The 'Shipper' information will be used for any required 'Ship From' fields that are left blank. </td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan=2>&nbsp;</td>
+					</tr>
+					<tr>
+						<td align=center colspan=2><input type="submit" class="pdgbutton" name=updateups value="Submit"></td>
+					</tr>		
+					<tr>
+						<td colspan=2>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan=2><span class="pdgnote">
+							** Only required for real time shipping&nbsp;<br>
+							* Optional values&nbsp;</span></td>
+					</tr>
+				</table>
+
+   			   </div>
+			</td>
+
+		</tr>
+	</table>
+</form>
+</div>
+<!--cmt: options-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="options-section">
+<form method=post action="!---MODULE_NAME---" id="upsdetail" name="upsdetail" onSubmit="return VerifyDetails(this);">
+<input type=hidden name=upsv5settings value=v5>
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b> Pick Up Selections</b> </td>
+		</tr>
+		<tr>
+			<td><input type=radio name="upsscheduledpickuptype" value="regpickup" !---REG_PICKUP_TYPE_CHECK--- >
+				I have regular Daily Pickup Scheduled with UPS<sup>&reg;</sup><br>
+				<input type=radio name="upsscheduledpickuptype" value="onetimepickup" !---ONE_TIME_PICKUP_TYPE_CHECK--- >
+				I want One Time Pick Up for UPS<sup>&reg;</sup><br>
+				<input type=radio name="upsscheduledpickuptype" value="occasionalpickup" !---OCCASIONAL_PICKUP_TYPE_CHECK--- >
+				I want Customer Counter/Occasional Pick UP for UPS<sup>&reg;</sup><br>
+				<input type=checkbox  name="saturdaypickup" value="yes" !---UPS_SAT_PICK_UP--- >
+				I want UPS<sup>&reg;</sup> Saturday Pick Up </td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b> Notification Options</b> </td>
+		</tr>
+		<tr>
+			<td><input type=checkbox  name="sendemails" value="yes" !---UPS_QUANT_EMAILS_CHECK--- >
+				I want to send UPS<sup>&reg;</sup> QVN Ship Email </td>
+		</tr>
+		<tr>
+			<td><input type=checkbox  name="sendexceptemails" value="yes" !---UPS_QUANT_EXCEPT_EMAILS_CHECK--- >
+				I want to send UPS<sup>&reg;</sup> QVN Exception Email </td>
+		</tr>
+		<tr>
+			<td><input type=checkbox  name="senddeliveryemails" value="yes" !---UPS_QUANT_DELIVER_EMAILS_CHECK--- >
+				I want to send UPS<sup>&reg;</sup> QVN Delivery Email </td>
+		</tr>
+		<tr>
+			<td><input type=checkbox  name="verbalconf" value="yes" !---UPS_VERBAL_CONF--- >
+				I want UPS<sup>&reg;</sup> Verbal Delivery Notification<sup>*</sup> </td>
+		</tr>
+		<tr>
+			<td colspan=4><br>
+				*Verbal Delivery Notification only available with Next Day Air-Early AM. Appropriate UPS rates will apply. <br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Address Verification for Customer Checkout</b> </td>
+		</tr>
+		<tr>
+			<td><input type=checkbox  name="checkoutaddrval" value="yes" !---UPS_ADDR_VAL_ON_CHECKOUT--- >
+				I want UPS<sup>&reg;</sup> Address Validation When Customers Check Out </td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Shipping API Label Format</b> </td>
+		</tr>
+		<tr>
+			<td><input type=checkbox  name="upsepllabel" value="yes" !---UPS_EPL_LABEL--- >
+				I want to use the UPS<sup>&reg;</sup> Eltron printer (epl labels). </td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><b>NOTE:</b> All the options selected above, except for pick up type, will be used for &quot;Schedule All New Orders&quot;. &quot;Schedule All New Orders&quot; uses the primary Shipper Number which determines your pick up type. </td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center><input type="submit" class="pdgbutton" name=updateups value="Submit"></td>
+		</tr>
+		<tr>
+			<td> </td>
+		</tr>
+		<tr>
+			<td align=center><h5>UPS<sup>&reg;</sup>, UPS &amp; Shield Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup><br>
+					are registered trademarks of United Parcel Service of America, Inc.</h5></td>
+		</tr>
+	</table>
+	</form>
+</div>
+
+
+<!---INCLUDE AdminTemplates/_includes/section-ftr.htm--->

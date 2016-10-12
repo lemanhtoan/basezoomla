@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jdiction>
+  <component>com_blog</component>
+  <sections>
+    <section>
+      <tables>
+        <table>
+          <name>#__blog</name>
+          <key>id</key>
+          <exportfilter/>
+          <cache fullfetch="0"/>
+        </table>
+      </tables>
+      <views>
+        <view name="blog" list="blogs" layout="edit" default="true">
+          <form import="blog.xml">
+            <fieldset name="main" label="COM_JDICTION_TRANSLATION_FIELDSET_MAIN">
+              <field type="text" name="name" />              
+              <field type="text" name="description" />
+              <field type="editor" name="content" filter="safehtml"/>             
+            </fieldset>
+          </form>
+        </view>
+      </views>
+    </section>
+  </sections>
+</jdiction>

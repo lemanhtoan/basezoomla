@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TrackRequest>
+	<Request>
+		<TransactionReference>
+			<CustomerContext>customer IP data</CustomerContext>
+			<XpciVersion>1.0001</XpciVersion>
+		</TransactionReference>
+		<RequestAction>Track</RequestAction>
+		<RequestOption>activity</RequestOption>
+	</Request>
+</TrackRequest>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--3760823-->                                    
+<!--THIS HAS TO COME AFTER DOC-TYPE!-->        
+<!--  dramframesform.htm  -->
+<html>
+<head>
+<title>
+<!---ADMIN_HEADER_LABEL---> Administrator
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!---INCLUDE AdminTemplates/_includes/mainframe/mainframe-hdr.htm--->
+</head>
+<body class="yui-skin-sam" style="min-width:940px;">
+<div id="pdg-status"><!---STATUS_INFO---></div>
+<div id="pdg-stage"><!---STAGE---></div>
+<div id="pdg-scriptname"><!---SCRIPT_NAME---></div>
+<!--cmt: main action forms
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<form id="pdgfrm-makelive" name="pdgfrm-makelive" action="!---SCRIPT_NAME---" method="post" target="main-content" class="hiddenform">
+<input type="hidden" name="makelive" value="action">
+</form>
+<form id="pdgfrm-discard" name="pdgfrm-discard" action="!---SCRIPT_NAME---" method="post" target="main-content" class="hiddenform">
+<input type="hidden" name="discardstage" value="action">
+</form>
+<form id="pdgfrm-logout" name="pdgfrm-logout" action="!---SCRIPT_NAME---" method="post" class="hiddenform">
+<input type="hidden" name="logout" value="action">
+</form>
+<!--cmt: qsearch forms
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<form method=post action="!---MODULE_NAME---" target="main-content" name="qsearch_products" id="qsearch_products">
+	<input type="hidden" name="navbaraction" value="Go">
+	<input type="hidden" name="productdescription" id="pqs-productdescription" value="">
+	<input type="hidden" name="productsku" id="pqs-productsku" value="">
+	<input type="hidden" name="productcategory" id="pqs-productcategory" value="">
+	<input type="hidden" name="productskuinv" id="pqs-productskuinv" value="">
+	<input type="hidden" name="productcategoryinv" id="pqs-productcategoryinv" value="">
+</form>
+<form method=post action="!---MODULE_NAME---" target="main-content" name="qsearch_orders" id="qsearch_orders">
+	<input type="hidden" name="orderaction" id="oqs-orderaction" value="">
+	<input type="hidden" name="tmInvoiceNum" id="oqs-tmInvoiceNum" value="">
+	<input type="hidden" name="username" id="oqs-username" value="" >
+	<input type="hidden" name="orderreport" value="Display Order Report" >
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+</form>
+
+<textarea id="editor"></textarea>
+<!--cmt: main display
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="main-view-overlay"><img src="!---CONFIGROOT---_resources/images/clearpixel.gif" border="0"></div>
+<div id="main-editor-overlay"><img src="!---CONFIGROOT---_resources/images/clearpixel.gif" border="0"></div>
+<table id="outerwrapper" border="0"  width="100%" cellpadding="0" cellspacing="0"><tr valign="top"><td>
+<div id="pdg-top-box">
+	<div id="pdg-top-box-right"></div>
+	<div id="pdg-top-box-content">
+	<table cellpadding="0" cellspacing="0" width="100%" style="margin-top:6px;margin-bottom:6px; ">
+		<tr valign="top">
+			<td align="left">
+				<div id="pdg-top-box-info">
+					<div><span class="pdgtip1 pdgtiphelp" tipsrc="ttip-pdg">PDG Commerce 5.0</span></div>
+					<div style="font-size:12px"><!---SITE_NAME---></div>
+					<div style="height:8px;overflow:hidden"></div>
+				</div>
+				<div id="pdg-top-box-live"><span class="pdgtip1 pdgtiphelp" tipsrc="ttip-live">Current settings are live</span></div>
+				<div id="pdg-top-box-notlive"><span  class="pdgtip1 pdgtiphelp" tipsrc="ttip-notlive">Current settings are <em>not</em> live</span></div>
+			</td>
+			<td align="right" nowrap>
+				<div>
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td><a href="http://video.pdgsoft.com" id="pdg-video-doc" title="Video Documentaion" target="_blank">Tutorials</a></td>
+							<td><a href="!---SCRIPT_NAME---?logout=action" id="pdg-logout" title="Log out of commerce">Logout</a></td>
+						</tr>
+						<tr>
+							<td><a href="javascript:void(0)" id="pdg-discardchanges">Discard Changes</a></td>
+							<td><a href="javascript:void(0)" id="pdg-makelive">Make Live</a></td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>	
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tr valign="top">	
+	<td width="1%">
+		<div id="left-view">
+				<div id="navpanel">
+					<table>
+						<tr>
+							<td id="navpanel-top" class="navpanel-content-col">
+								<div>
+									<div>Administration</div>
+								</div>
+							</td>
+							<td colspan="2" style="width:14px;overflow:hidden"><a href="#" class="pnl-expanded pdgtip0" id="nav-panel-hider" title="Toggle the navigation panel."></a></td>
+						</tr>
+						<tr>
+							<td class="navpanel-content-col" id="navpanel-content" bgcolor="#FFFFFF">
+								<div id="resize">
+									<div id="nav-tree-outer">
+										<div id="nav-tree-container">
+										
+										<!---INCLUDE AdminTemplates/_includes/mainframe/mainframe-navtree.htm--->
+										</div>
+									</div>
+									<!-- Start of QSearch Box -->
+									<div id="pdg-qsearch-container">
+										<div>
+											<!---INCLUDE AdminTemplates/_includes/mainframe/mainframe-qsearch.htm--->
+										</div>
+										<div id="pdg-qsearch-inputbx"> 
+											<form id="qsearch-form" name="qsearch-form" target="main-content">
+											<table cellpadding="0" cellspacing="0" width="100%">
+												<tr>
+													<td width="99%">
+														<label class="pre" for="pdg-qsearch-text">Enter your search text</label>
+														<input type="text" id="pdg-qsearch-text" maxlength="50" class="pdg-flat-input" value="">
+													</td>
+													<td>								
+														<input id="pdg-qsearch-submit" type=submit name=navbaraction value="" class="pdgtip0" title="Perform search.  You may also hit <em>Enter</em> while the search box has focus.">								
+													</td>
+												</tr>
+											</table>
+											</form>
+										</div>	
+									</div>
+									<!-- EO: QSearch Box -->								
+								</div>
+							</td>
+							<td id="navpanel-content-right" class="navpanel-rgt-col"><div></div></td>
+							<td id="navpanel-content-right-sdo" class="navpanel-sdo-col"></td>
+						</tr>
+						<tr>
+							<td id="navpanel-bottom" class="navpanel-content-col"><div></div></td>
+							<td class="navpanel-rgt-col"><div id="img-navpanel-bottom-right"></div></td>
+							<td class="navpanel-sdo-col"><div id="img-navpanel-bottom-right-sdo"></div></td>
+						</tr>
+						<tr>
+							<td id="navpanel-bshadow" class="navpanel-content-col"></td>
+							<td class="navpanel-rgt-col"><div id="img-navpanel-bshadow-right"></div></td>
+							<td class="navpanel-sdo-col"><div id="img-navpanel-bshadow-right-sdo"></div></td>
+						</tr>
+					</table>
+				</div><!--cmt: end of navpanel-->
+		</div><!--cmt: end of left-view-->
+	</td>
+	<td>
+		<div id="main-view">						
+			<div id="pdg-load-indicator"><img src="!---CONFIGROOT---_resources/images/loading_anim.gif" border="0"></div>
+			<iframe name="main-content" id="frame-main" src="!---MODULE_NAME---?displaymain&configroot=!---CONFIGROOT---" frameborder="0" allowtransparency="yes" scrolling="no" style="width:100%;height:100px;"></iframe>
+			<iframe name="pdggarbageframe" id="pdggarbageframe" style="width:100%;height:1px;visibility:hidden" allowtransparency="yes" scrolling="no" frameborder="0"></iframe>		
+		</div>
+	</td>
+</tr>
+</table>
+</td></tr></table>
+<!---INCLUDE AdminTemplates/_includes/mainframe/mainframe-tips.htm--->
+</body>
+</html>

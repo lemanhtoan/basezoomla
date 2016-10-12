@@ -1,0 +1,215 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3538195-->                                    
+<!--upshostagreementform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+UPS OnLine Tools Downstream ASP Licensing&amp;Registration</title>
+<script Language="JavaScript">
+	<!-- //Hide from ancient browsers
+	function SetAgreement()	{
+	if (window.frames.length)	{
+	// update from IFrame's document
+	if (window.frames["agreement"].document.lic_win.accept.checked)
+	document.data_win.agree.value = "yes";
+	else
+	document.data_win.agree.value = "";
+	if (window.frames["agreement"].document.lic_win.decline.checked)
+	document.data_win.decline.value = "yes";
+	else
+	document.data_win.decline.value = "";
+	} else	{
+	// update from default table
+	if (document.data_win.upsaccept.checked)
+	document.data_win.agree.value = document.data_win.upsaccept.value;
+	else
+	document.data_win.agree.value = "";
+	if (document.data_win.upsdecline)
+	document.data_win.decline.value = document.data_win.upsdecline.value;
+	else
+	document.data_win.decline.value = "";
+	}
+	}
+	function CheckEmail (email)	{
+	var Pattern=/^(.+)@(.+)$/;
+	var matchArray = email.match (Pattern); 
+	if (matchArray == null)
+	return false; 
+	var name = matchArray[1]; 
+	var domain = matchArray[2];
+	var str = "name: " + name + "\ndomain: " + domain;
+	alert (str); 
+	for (i = 0; i < name.length; i++) { 
+	if (name.charCodeAt (i) > 127)
+	return false; 
+	} 
+	for (i = 0; i < domain.length; i++) { 
+	if (domain.charCodeAt (i) > 127)
+	return false; 
+	}
+	return true;
+	}
+	function isValidEmail (field)	{
+	var FirstPass = field.value.match (/\b(^(\S+@).+(\..{2,4})$)\b/gi);
+    	if (FirstPass)	{
+	var Pattern=/^(.+)@(.+)$/;
+	var name, domain;
+	var mray = field.value.match (Pattern); 
+	if (mray == null)
+	return false; 
+	name = mray[1]; 
+	domain = mray[2];
+	for (i = 0; i < name.length; i++) { 
+	if (name.charCodeAt (i) > 127)
+	return false; 
+	} 
+	for (i = 0; i < domain.length; i++) { 
+	if (domain.charCodeAt (i) > 127)
+	return false; 
+	}
+	return true;
+	}
+	alert ('The email address that you have entered is not valid. Please re-enter this value and submit again.');
+	field.focus();
+	return false;
+	}
+	function ValidateForm ()	{
+	var mydoc = document;
+	var myform = document.data_win;
+	SetAgreement ();
+	if ((myform.decline.value == "yes") && (myform.agree.value == "yes"))	{
+	alert ("You can not both agree and decline this agreement!");
+	return false;
+	}
+	if (myform.decline.value == "yes")
+	return true;
+	if ((myform.agree.value == '') && (myform.decline.value ==''))	{
+	alert ("You must either agree or decline the agreement!");
+	if (window.frames.length)	{
+	window.frames["agreement"].scroll(0, 25000);
+	window.frames["agreement"].document.lic_win.accept.focus ();
+	} else	{
+	myform.upsaccept.focus();
+	}
+	return false;
+	}
+	if (myform.upshostcompany.value == "")	{
+	alert ("You need to specify your company name.");
+	return false;
+	}
+	if (myform.upshostaddr.value == "")	{
+	alert ("You need to provide your address information.");
+	return false;
+	}
+	if (myform.upshostphone.value == "")	{
+	alert ("You need to provide your phone number.");
+	return false;
+	}
+	if (myform.upshostzip.value == "")	{
+	alert ("You need to provide your postal code.");
+	return false;
+	}
+	return true;
+	}
+	// -->
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>UPS OnLine<sup>&reg;</sup> Downstream ASP Licensing &amp; Registration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" id=data_win name=data_win onSubmit="return ValidateForm();">
+	<!---PASS_VALUES--->
+	<input type=hidden name=agree value="">
+	<input type=hidden name=decline value="">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader"> UPS OnLine<sup>&reg;</sup> Tools Downstream ASP Licensing &amp; Registration </td>
+		</tr>
+		<tr>
+			<td><table border=1 width=620>
+					<tr>
+						<td width=60 rowspan=16 valign=top><img src="!---CONFIGROOT---UPS_LOGO_S.gif" width=45 height=50 border=0></td>
+						<td colspan=2><h3>UPS OnLine<sup>&reg;</sup> Tools Downstream ASP Licensing &amp; Registration</h3></td>
+					</tr>
+					<tr>
+						<td colspan=2><iframe src="!---MODULE_NAME---?upsagreement=action&upsuser=no" name=agreement frameborder=1
+			height=300 width=560 scrolling=auto>
+							<table width=560>
+								<tr>
+									<td colspan=2><h3 align=center>
+										UPS OnLine<sup>&reg;</sup> Tools Access User Terms Agreement
+										</h3>
+										<!---UPS_HOST_AGREEMENT--->
+&nbsp; </td>
+								</tr>
+								<tr>
+									<td colspan=2><b>DO YOU AGREE TO USE THE UPS MATERIALS AND ACCESS AND USE THE UPS SYSTEM IN ACCORDANCE WITH AND BE BOUND BY EACH OF THE TERMS AND CONDITIONS SET FORTH ABOVE?</b> </td>
+								</tr>
+								<tr>
+									<td align=center width=50%><input type=checkbox name=hostaccept value=yes>
+										Yes, I Agree</td>
+									<td align=center width=50%><input type=checkbox name=hostdecline value=no>
+										No, I Do Not Agree</td>
+								</tr>
+								<tr>
+									<script Language=JavaScript>
+                <!-- //Hide from ancient browsers
+                function DoPrintWindow ()	{
+                  var h = 600;
+                  var w = 800;
+                  var winl = (screen.width - w) / 2;
+                  var wint = (screen.height -h) / 2;
+
+                  childwindow=window.open('!---MODULE_NAME---?upsagreement=action&upsuser=no','agreement_form','scrollbars=yes,menubar=yes,resizable=yes'+',width='+w+',height='+h+',top='+wint+',left='+winl);
+                }
+                // -->
+                </script>
+									<td colspan=2 align=center><input type=button name=print value="Printer Friendly Version" onClick="DoPrintWindow();">
+									</td>
+								</tr>
+							</table>
+							</iframe>
+						</td>
+					</tr>
+					<tr>
+						<td align=right>Company Name: &nbsp;</td>
+						<td><input type=text name=upshostcompany size=50></td>
+					</tr>
+					<tr>
+						<td align=right>Street Address: &nbsp;</td>
+						<td><input type=text name=upshostaddr size=50></td>
+					</tr>
+					<tr>
+						<td align=right>Email: &nbsp;</td>
+						<td><input type=text name=upshostemail size=25 onBlur="isValidEmail(this);"></td>
+					</tr>
+					<tr>
+						<td align=right>Phone Number: &nbsp;</td>
+						<td><input type=text name=upshostphone size=25></td>
+					</tr>
+					<tr>
+						<td align=right>Country: &nbsp;</td>
+						<td><select name=upshostcntry>
+								<!---UPS_CNTRY_REGISTER--->
+							</select>
+&nbsp;</td>
+					</tr>
+					<tr>
+						<td align=right>Postal Code: &nbsp;</td>
+						<td><input type=text name=upshostzip size=15></td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td align=center><hr>
+				<input type="submit" class="pdgbutton" name="upsasp" value="Next">
+&nbsp;&nbsp;
+				<input type="submit" class="pdgbutton" name="cancel" value="Cancel">
+			</td>
+		</tr>
+		<tr>
+			<td align=center><h5>UPS<sup>&reg;</sup>, UPS &amp; Shield Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup><br>
+					are registered trademarks of United Parcel Service of America, Inc.</h5></td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

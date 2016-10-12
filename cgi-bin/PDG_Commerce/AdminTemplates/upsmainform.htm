@@ -1,0 +1,68 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1574298-->                                    
+<!--upsmainform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+UPS
+<sup>&reg;</sup> Options
+</title>
+<script LANGUAGE= "JavaScript">
+	function isNetscape() {
+	/*
+	** Check if the browser is Netscape compatible
+	**    v  version number
+	** returns  true if Netscape and version equals or greater
+	*/
+	return isBrowser("Netscape",1);
+	}
+	function isBrowser(b,v) {
+	/*
+	** Check if the current browser is compatible
+	**  b  browser name
+	**  v  version number (if 0 don't check version)
+	** returns true if browser equals and version equals or greater
+	*/
+	browserOk = false;
+	versionOk = false;
+	browserOk = (navigator.appName.indexOf(b) != -1);
+	if (v == 0) versionOk = true;
+	else  versionOk = (v <= parseInt(navigator.appVersion));
+	return browserOk && versionOk;
+	}
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>UPS<sup>&reg;</sup> Options</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td class="pdgheader"><b>UPS Settings, Services and Shipment Scheduling</b> </td>
+	</tr>
+	<tr>
+		<td><a href="!---MODULE_NAME---?displayups=action"><b>UPS<sup>&reg;</sup> Details</b></a></br>
+			<a href="!---MODULE_NAME---?displayupstracking=action"><b>UPS<sup>&reg;</sup> Tracking</b></a></br>
+			<a href="!---MODULE_NAME---?displayshipping=action"><b>Shipping Methods</b></a></br>
+			<br>
+			<a href="!---MODULE_NAME---?scheduleshipment=action"><b>Schedule Shipment</b></a></br>
+			<a href="!---MODULE_NAME---?displayupsaddressvalidation=action"><b>Validate an Address</b></a></br>
+			<a href="!---MODULE_NAME---?displayupsshippedorders=action"><b>View UPS<sup>&reg;</sup> 1Z (tracking) Numbers and Shipped Invoices</b></a></br>
+			<a href="!---MODULE_NAME---?displayupsvoid=action"><b>Void a Scheduled Shipment (within 24 hrs of scheduling)</b></a></br>
+			<br>
+			<a href="!---MODULE_NAME---?manageshiplabels=action"><b>Manage/View Ship Labels</b></a></br>
+			<a href="!---MODULE_NAME---?showalllabels=action" target="_blank"><b>Show Labels for Printing All</b></a></br>
+			<br>
+			<a href="#" OnClick="if(confirm('Note, this will delete all your ship labels from previously scheduled orders.  Click [OK] to continue!')){document.location='!---MODULE_NAME---?scheduleneworders=action';}"><b>Schedule All New Orders</b></a>*</br>
+			*Note, this will delete all your ship labels from previously scheduled orders<br>
+			<br>
+			<a href="!---MODULE_NAME---?createneworder=action"><b>Create A Shipment</b> (for a non
+			<!---ADMIN_HEADER_LABEL--->
+			Transaction)</a>**</br>
+			**Note, the order you create will not be validated against the order csv file. It is up to you to insure that <br>
+			the invoice you enter is not and will not be used for any shipments that may be scheduled through
+			<!---ADMIN_HEADER_LABEL--->
+			.<br>
+			<br>
+		</td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

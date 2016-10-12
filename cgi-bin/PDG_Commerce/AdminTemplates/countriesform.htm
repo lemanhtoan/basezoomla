@@ -1,0 +1,50 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--755345-->                                     
+<!--  countriesform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Countries Selection Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Countries Selection Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<div align="center">
+	<form method="post" action="!---MODULE_NAME---">
+		<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+		<input type=hidden name=countrystart value="!---COUNTRY_START---">
+		<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td class="pdgheader"><b>Country Groups</b> </td>
+			</tr>
+			<tr>
+				<td><!---COUNTRIES_TO_MODIFY--->
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader"><b>Country Listing </b> </td>
+			</tr>
+			<tr>
+				<td align="center"><table border=1 cellpadding=0 cellspacing=0>
+						<tr>
+							<td>&nbsp; U = UPS &nbsp;</td>
+							<!--
+			<td>&nbsp; F = Fedral Express &nbsp;</td>
+			-->
+							<td>&nbsp; P = U.S. Postal Service &nbsp;</td>
+						</tr>
+					</table></td>
+			</tr>
+			<tr>
+				<td align="left"><div class="pdg-sunken pdg-edge1" style="margin:8px;padding:2px;height:350px;overflow:auto;background-color:#c2c2c2; ">				
+				<!---DISPLAY_COUNTRIES--->
+				</div>
+				</td>
+			</tr>
+			<tr>
+				<td align=center><input type="submit" class="pdgbutton" name=changecountries value="Submit Changes">
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

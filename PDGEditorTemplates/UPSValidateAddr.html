@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+	function resetaddr(){
+		document.upsvaladdr.newshipcity.value="";
+		document.upsvaladdr.newshipzip.value="";
+	}
+	function setnewaddr(){
+		if(document.upsvaladdr.newshipcity.value!="")
+			document.upsvaladdr.shipcity.value=document.upsvaladdr.newshipcity.value;
+		if(document.upsvaladdr.newshipstate.value!="ZZ")
+			document.upsvaladdr.shipstate.value=document.upsvaladdr.newshipstate.value;
+		if(document.upsvaladdr.newshipzip.value!="")
+			document.upsvaladdr.shipzip.value=document.upsvaladdr.newshipzip.value;
+	}
+	function selectnewradio(){
+		document.upsvaladdr.addrvalselect[1].checked=true;
+	}
+	function setnewvalues(){
+		if(document.upsvaladdr.addrvalselect[1].checked==true){
+			setnewaddr();
+		}		
+	}
+	function bypassaddrval(){
+		document.upsvaladdr.bypassvalidation.value="yes";
+		document.upsvaladdr.addrvalselect[0].checked=true;
+	}
+	function resetaddrval(){
+		document.upsvaladdr.bypassvalidation.value="no";
+	}
+	</script>
+<link rel="stylesheet" href="/PDGEditorTemplates/css/forms.css" type="text/css" />
+<link rel="stylesheet" href="/PDGEditorTemplates/css/treeview.css" />
+<script src="/PDGEditorTemplates/scripts/jquery.js" type="text/javascript"></script>
+<script src="/PDGEditorTemplates/scripts/jquery.cookie.js" type="text/javascript"></script>
+<script src="/PDGEditorTemplates/scripts/treeview.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/PDGEditorTemplates/css/styles.css" type="text/css" />
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+
+
+<div class="form">
+<form method="POST" action="!---SCRIPT_NAME---" name="upsvaladdr" OnSubmit="setnewvalues();">
+  <!---PDGCARTFORMDATA--->
+  <input type="hidden" name="bypassvalidation" value="no">
+  <br>
+  <table style="text-align:center;">
+    <tr>
+      <td colspan="2" style="text-align:center;"> The city, state and postal code
+        for the 'Shipping' address could not be validated. Please select one of
+        the options below. If you choose to enter new 'Shipping' information rather
+        than choose from one of the suggestions, you have the new information
+        will be validated. </td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp; </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:left;" > <span style="font-weight:bold;">&nbsp;Either
+        - Select Current City, State and Postal Code</span> </td>
+    </tr>
+    <tr>
+      <td style="text-align:left;" >
+        <!---UPS_CURRENT_ADDR--->
+      </td>
+      <td style="text-align:left;">
+        <!---BYPASS_VAL_W_JAVA_SUBMIT--->
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"  >&nbsp; </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:left;"> <span style="font-weight:bold;">&nbsp;Or - Enter new
+        address</span> </td>
+    </tr>
+    <tr>
+                <td style="text-align:left;">
+                      <table>
+  	              <tr> 
+			<td style="text-align:right;"><input type=radio name="addrvalselect" value="0"></td>
+                        <td style="text-align:left;"> 
+				City:&nbsp;<input type="text" name="newshipcity" OnFocus="selectnewradio();">
+                          	<br />
+                          	State:&nbsp;<select name="newshipstate"  OnFocus="selectnewradio();">
+                    		<!---STATE_LIST--->
+                          	</select>
+                          	Postal&nbsp;Code:&nbsp;
+                          	<input type="text" name="newshipzip"  OnFocus="selectnewradio();">
+                        </td>
+                      </tr>
+                      </table>
+                 </td>
+              <td style="text-align:left;">
+	        <!---CLEAR_W_JAVA_SUBMIT--->
+        	<!---CONTINUE_W_JAVA_SUBMIT--->
+        </td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp; </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:left;"> <span style="font-weight:bold;">&nbsp;Or - Select
+        Suggested City, State, Postal Code</span> </td>
+    </tr>
+    <!---UPS_ADDR_SUGGEST--->
+    <tr>
+      <td colspan="2">&nbsp; </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center;">
+        <!---CONTINUE_W_JAVA_SUBMIT--->
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp; </td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>
+
+
+</body>
+</html>

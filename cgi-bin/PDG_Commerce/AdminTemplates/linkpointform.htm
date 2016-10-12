@@ -1,0 +1,64 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1224454-->                                    
+<!--  linkpointform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+LinkPoint Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>LinkPoint Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>LinkPoint Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata1"><a href="!---MODULE_NAME---?displaylinkptavs=action">LinkPoint AVS Settings</a> </td>
+		</tr>
+		<tr>
+			<td width="50%" class="pdgdata2">LinkPoint API Version:</td>
+			<td width="50%" class="pdgdata2"><input type="checkbox" name="lpversion3" value="yes" !---LINKPOINT_VERSION--- ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">LinkPoint Store Name:</td>
+			<td class="pdgdata1"><input type="text" name="lpstore" value="!---LINKPOINT_STORE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">PEM File Name:</td>
+			<td class="pdgdata2"><input type="text" name="lpcert" value="!---LINKPOINT_CERT---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">LinkPoint Server Name:<br>
+				<span class="pdgnote">Please do not include http:// or https://</span></td>
+			<td class="pdgdata1"><input type="text" name="lphost" value="!---LINKPOINT_HOST---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Port Number:</td>
+			<td class="pdgdata2"><input type="text" name="lpport" value="!---LINKPOINT_PORT---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Authorization Type:</td>
+			<td class="pdgdata1"><select name="lpauthtype">
+					<!---LINKPOINT_AUTHTYPE--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Authorization Mode:</td>
+			<td class="pdgdata2"><select name="lpresult">
+					<!---LINKPOINT_MODETYPE--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">File to which LinkPoint transactions are logged: </td>
+			<td class="pdgdata1"><input type="text" name="lplogfile" value="!---LINKPOINT_LOGFILE---" size="50"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><br>
+				<input type="submit" class="pdgbutton" name="changelinkpoint" value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

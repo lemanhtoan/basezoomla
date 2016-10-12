@@ -1,0 +1,556 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--6686791-->                                    
+<!--shippingform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Shipping Costs Configuration</title>
+<script type="text/javascript" SRC="!---CONFIGROOT---_resources/compat/js/DynamicOptionList.js" ></script>
+<script type="text/javascript">
+	var listB = new DynamicOptionList("shippingmethod","realtimeship");
+	var listC = new DynamicOptionList("shippingpackage","realtimeship","shippingmethod");
+	var listD = new DynamicOptionList("shippingrate","realtimeship");
+
+	function init() {
+		var theform = document.shiprules;
+		listB.init(theform);
+		listC.init(theform);
+		listD.init(theform);
+	};
+
+	listB.addOptions("none",
+		"None","none"
+	);
+
+	<!---UPS_SELECT_SERVICE_JAVA--->
+
+	listB.addOptions("usps",
+		"Express Mail","A",
+		"Priority Mail","B",
+		"Parcel Post","C",
+		"Bound Printed Matter","D",
+		"Library Mail","E",
+		"Media Mail","F",
+		"First Class","J",
+		"International Mail","G",
+		"Compare Rates","H"
+	);
+
+	listB.addOptions("fedex",
+		"Priority","D 01X",
+		"2day","D 03X",
+		"Standard Overnight","D 05X",
+		"First Overnight","D 06X",
+		"Extra Hours","D 07X",
+		"Express Saver","D 20X",
+		"2day Freight","D 80X",
+		"Express Saver Freight","D 83X",
+		"Home Delivery","D 90G",
+		"Ground Service","D 92G",
+		"International Priority","I 01X",
+		"International Economy","I 03X",
+		"International First","I 06X",
+		"International Extra Hours","I 07X",
+		"International Ground Service","I 92G"
+	);
+
+	listC.addOptions("none|none","None","none");
+
+	listC.addOptions("ups|14",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|01",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|13",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|59",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|02",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|12",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|03",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|54",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|07",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|08",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|11",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|65",
+		"Shipper Supplied Packaging","00",
+		"Package","02",
+		"UPS Letter Envelope","01",
+		"UPS Tube","03",
+		"UPS Pak","04",
+		"UPS Express Box","21",
+		"UPS 25 KG Box","24",
+		"UPS 10 KG Box","25"
+	);
+
+	listC.addOptions("ups|99",
+		"Shipper Supplied Packaging","00",
+		"Package", "02"
+	);
+
+	listC.addOptions("usps|A",
+		"Package","none",
+		"Flat Rate Evelope","fenv"
+	);
+
+	listC.addOptions("usps|B",
+		"Package","none",
+		"Flat Rate Evelope","fenv",
+		"Flat Rate Box","fbox"
+	);
+
+	listC.addOptions("usps|C",
+		"Package","none"
+	);
+
+	listC.addOptions("usps|D",
+		"Package","none"
+	);
+
+	listC.addOptions("usps|E",
+		"Package","none"
+	);
+
+	listC.addOptions("usps|F",
+		"Package","none"
+	);
+	listC.addOptions("usps|J",
+		"Package","none"
+	);
+
+	listC.addOptions("usps|G",
+		"Package","pack",
+		"Postcards or aerogrammes","post",
+		"Matter for the Blind","mbln",
+		"Envelope","envl"
+	);
+
+	listC.addOptions("usps|H",
+		"Shipper Supplied Packaging","none"
+	);
+
+	listC.addOptions("fedex|D 01X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 03X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 05X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 06X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 07X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 20X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 70X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 80X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 83X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06"
+	);
+
+	listC.addOptions("fedex|D 90G",
+		"Customer Packaging","01"
+	);
+
+	listC.addOptions("fedex|D 92G",
+		"Customer Packaging","01"
+	);
+
+	listC.addOptions("fedex|I 01X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06",
+		"FedEx 10kg Box","15",
+		"FedEx 25kg Box","25"
+	);
+
+	listC.addOptions("fedex|I 03X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06",
+		"FedEx 10kg Box","15",
+		"FedEx 25kg Box","25"
+	);
+
+	listC.addOptions("fedex|I 06X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06",
+		"FedEx 10kg Box","15",
+		"FedEx 25kg Box","25"
+	);
+
+	listC.addOptions("fedex|I 07X",
+		"Other Packaging","01",
+		"FedEx Pak","02",
+		"FedEx Box","03",
+		"FedEx Tube","04",
+		"FedEx Envelope","06",
+		"FedEx 10kg Box","15",
+		"FedEx 25kg Box","25"
+	);
+
+	listC.addOptions("fedex|I 92G",
+		"Customer Packaging","01"
+	);
+
+	listD.addOptions("none",
+		"Not Applicable","none"
+	);
+
+	listD.addOptions("ups",
+		"UPS Daily Pickup","01",
+		"UPS Occasional Pickup","03",
+		"UPS Suggested Retail Rates","11"
+	);
+
+	listD.addOptions("usps",
+		"Not Applicable","none"
+	);
+
+	listD.addOptions("fedex",
+		"Not Applicable","none"
+	);
+
+	<!---SHIP_METHOD_DEFAULT--->
+	
+	PDG.callOnPageLoad(init);
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Shipping Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" name="shiprules">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=3 class="pdgheader"><b>Add A New Shipping Method</b> </td>
+		</tr>
+		<tr>
+			<td colspan=3><input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<!---SHIP_MODIFY_MSG--->
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td width="50"><b>Rule #</b></td>
+			<td><b>Description</b></td>
+			<td><b>Additional Cost</b></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="shippingmethodruleno" value="!---SHIP_RULE_NUM---" size="2"></td>
+			<td><input type="text" name="shippingmethoddesc" value="!---SHIP_RULE_DISC---" size="40"></td>
+			<td><input type="text" name="shippingmethodprice" value="!---SHIP_RULE_PRICE_CHANGE---" size="10"></td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=2 id="ship_selections">
+		<tr>
+			<td align=right valign=top width=30%><table id="gen_settings" width=100%>
+					<tr>
+						<td align="center" COLSPAN=2><b><span class="underlined">General Shipping Settings</span></b></td>
+					</tr>
+					<tr>
+						<td align="center" width="25"><input type="checkbox" name="shippingmethodreqinfo" value="yes" !---SHIP_RULE_INFO--- ></td>
+						<td align="left">Requires Shipping Info</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="checkbox" name="shippingmethodaddsub" value="yes" !---SHIP_RULE_SUBTOTAL--- ></td>
+						<td align="left">Add Subtotal Rules?</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="checkbox" name="shippingmethodaddwt" value="yes" !---SHIP_RULE_WEIGHT--- ></td>
+						<td align="left">Add Weight Rules?</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="checkbox" name="shippingmethodaddqty" value="yes" !---SHIP_RULE_QTY--- ></td>
+						<td align="left">Add Quantity Rules?</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="checkbox" name="shippingmethodnodisplay" value="yes" !---SHIP_RULE_NO_DISPLAY--- ></td>
+						<td align="left">Do Not Display on Checkout Page?</td>
+					</tr>
+				</table>
+				<!--gen_settings"-->
+			</td>
+			<td align=left valign=top width=60%><table width=100% id="rt_settings">
+					<tr>
+						<td align=center colspan=2><b><span class="underlined">Real Time Shipping Settings</span></b></td>
+					</tr>
+					<tr>
+						<td align=left width=150>Real Time Carrier: </td>
+						<td><select NAME="realtimeship" onChange="listB.populate();listC.populate();listD.populate();">
+								<!---SHIP_CARRIER_SEL--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align=left width=150>Real Time Method: </td>
+						<td><select NAME="shippingmethod" onChange="listC.populate();" onload="listB.printOptions();">
+								<option value="none">None</option>
+								<option value="none">None</option>
+								<option value="none">None</option>
+								<option value="none">None</option>
+								<option value="none">None</option>
+								<option value="none">None________________________</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align=left width=150>Pickup:</td>
+						<td><select NAME="shippingrate" onload="listD.printOptions();">
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable___________</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align=left width=150>Packaging:</td>
+						<td><select NAME="shippingpackage" onload="listC.printOptions();">
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable</option>
+								<option value="none">Not Applicable________________</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align=left>Back Up Method:</td>
+						<td><input type="text" name="shippingmethodbackupno" value="!---SHIP_RULE_BACKUP_NUM---" size="2"></td>
+					</tr>
+				</table>
+				<!--rt_settings-->
+			</td>
+		</tr>
+	</table>
+	<!--ship_selections-->
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0 id="ship_selections" id="discount">
+	<tr>
+		<td align=left><b><i>* You Can Use a Combination of General and Real Time Shipping </i></b></td>
+	</tr>
+	<tr>
+		<td align=left><br>
+			Discount Shipping By&nbsp;
+			<input type="text" name="shippingmethoddisc" value="!---SHIP_RULE_FLOOR_DISC---" size="5">
+			For Orders That Are Over&nbsp;
+			<input type="text" name="shippingmethodfloor" value="!---SHIP_RULE_FLOOR_VALUE---" size="6">
+			<select name="shippingmethodfloortype">
+				<!---SHIP_RULE_FLOOR_TYPE_SEL--->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td align=center><br>
+			<input type="submit" class="pdgbutton" name="addshippingmethod" value="Add Shipping Method">
+			<!---SHIP_METHOD_TO_BE_REMOVED--->
+			<br>
+			<br>
+		</td>
+	</tr>
+	</table>
+	<!--discount-->
+</form>
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0 id="modify_configs">
+	<tr>
+		<td colspan=3 class="pdgheader"><b>Configure Shipping Carrier Options or Shipping Tables</b> </td>
+	</tr>
+	<tr>
+		<td colspan=3>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width=33%><form method="post" action="!---MODULE_NAME---" name="modify_ship_config">
+				<input type="submit" class="pdgbutton" name="displayusps" value="USPS Configuration">
+			</form></td>
+		<td width=33%><form method="post" action="!---MODULE_NAME---" name="modify_ship_config">
+				<input type="submit" class="pdgbutton" name="displayups" value="UPS Configuration">
+			</form></td>
+		<td width=33%><form method="post" action="!---MODULE_NAME---" name="modify_ship_config">
+				<input type="submit" class="pdgbutton" name="displayshiptables" value="Rules for Tables">
+			</form></td>
+		<!--td width=25>&nbsp;
+	<input type="submit" class="pdgbutton" name="displayfedex" value="FedEx Configuration">
+	</td-->
+	</tr>
+</table>
+<!--ship_configs-->
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td class="pdgheader"><b>Current Shipping Methods</b> </td>
+	</tr>
+	<tr>
+		<td><form method="post" action="!---MODULE_NAME---" name="modify_ship_config">
+				<!---SHIP_METHOD_INFO--->
+			</form></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

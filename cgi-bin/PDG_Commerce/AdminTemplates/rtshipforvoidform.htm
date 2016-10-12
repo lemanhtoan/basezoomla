@@ -1,0 +1,34 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--691737-->                                     
+<!--rtshipforvoidform.htm-->
+<title>Void Scheduled Shipment</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Void Scheduled Shipment</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td colspan=4 class="pdgheader"><b>Void a Shipment</b> </td>
+	</tr>
+	<tr>
+		<td colspan=4 align=left> Below are the invoices, associated UPS tracking numbers (1Z numbers) and the date the order was scheduled for shipping. Click on the 'Void' button to cancel a scheduled shipment. </td>
+	</tr>
+	<tr>
+		<td colspan=4 align=left><form method=post action="!---MODULE_NAME---">
+				Filter orders by invoice:
+				<input type=text name=invoicefilter size=15>
+				<input type="submit" class="pdgbutton" name=displayupsvoid value="Display Scheduled Shipments">
+			</form></td>
+	</tr>
+	<tr>
+		<td align=left width="35%" ><b>Date</b> </td>
+		<td align=left  width=25%><b>Invoice</b> </td>
+		<td align=left  width=25%><b>1Z/Tracking Number</b> </td>
+		<td align=left  width=15%>&nbsp;</td>
+	</tr>
+	<!---SHIPPED_ORDERS_FOR_VOID--->
+	<tr>
+		<td colspan=4>&nbsp;</td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

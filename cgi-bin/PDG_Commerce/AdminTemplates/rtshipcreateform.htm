@@ -1,0 +1,51 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--922316-->                                     
+<!--rtshipcreateform.htm-->
+<title>Create Shipment</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Create Shipment</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="POST" action="!---MODULE_NAME---">
+	<input type="hidden" name="createneworder" value="go">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader"><b>Create A New Shipment</b> </td>
+		</tr>
+		<tr>
+			<td >&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=left> Enter the Total Number of Packages for this Shipment
+				<input type=text name=totalpackages value=1 size=3>
+			</td>
+		</tr>
+		<tr>
+			<td align=left> Enter the Invoice Number for this Shipment:**
+				<input type=text name=newinvoice  size=10>
+				<br>
+				<br>
+				<table width=90% align=center>
+					<tr>
+						<td align=left bgcolor=#ffffff> **Note, the shipment you create will not be validated against the order csv file. It is up to you to insure that the invoice you enter is not and will not be used for any shipments that may be scheduled through
+							<!---ADMIN_HEADER_LABEL--->
+							. All scheduled shipments are tracked by order invoice number. If you create a new shipment for an invoice number that can be used by
+							<!---ADMIN_HEADER_LABEL--->
+							, then the new shipment will override any other shipment that may have the same invoice number even if the other order was placed through
+							<!---ADMIN_HEADER_LABEL--->
+							. </td>
+					</tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td align=center><br>
+				<input type="submit" class="pdgbutton" name="step1"  value="Next">
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

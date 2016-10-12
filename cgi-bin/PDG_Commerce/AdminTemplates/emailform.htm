@@ -1,0 +1,227 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--4261736-->                                    
+<!-- emailform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Email Notification Configuration</title>
+<script language="JavaScript">
+function togglediv(){
+	//clear visibility flags..
+	$('#emailsmtp').css("visibility", "");
+	$('#emailclient').css("visibility", "");
+
+	if(document.emailform.mailer.length==4){
+		if(document.emailform.mailer.selectedIndex!=3){
+			$('#emailsmtp').hide();
+			$('#emailclient').show();			
+		}
+		else{
+			$('#emailclient').hide();
+			$('#emailsmtp').show();
+		}
+	}
+	else{
+		if(document.emailform.mailer.selectedIndex!=1){
+			$('#emailsmtp').hide();
+			$('#emailclient').show();
+		}
+		else{
+			$('#emailclient').hide();
+			$('#emailsmtp').show();
+		}
+	}
+}
+
+	
+PDG.callOnPageLoad(togglediv);
+
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Email Notification Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<!--cmt: li menu and seperators go here--->
+<li><a href="javascript:void(0)" tsid="general-section">General</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="attachments-section">HTML Email Attachments</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="testing-section">Email Testing</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form.htm--->
+<form method="post" action="!---MODULE_NAME---" name=emailform class="pdg_sectionfrm" >
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form-close.htm--->
+<!--cmt: general-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="general-section">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader" colspan=2 ><b>General Email Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan="2" class="pdgdata1"><p>These settings allow you to specify who receives confirmation e-mails and how they look. All file locations are assumed to be relative to the PDG_Commerce, unless a full path from the root directory is specified. When you have finished setting options, press the <b>Submit Changes</b> button. </p><br><br></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Email Customer Notifications To:</td>
+			<td class="pdgdata2"><input type="text" name="emailcustomer" value="!---EMAIL_CUSTOMER---" size="40">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Template File for Customer Notifications:</td>
+			<td class="pdgdata1"><input type="text" name="emailcustomertemplatefile" value="!---EMAIL_CUSTOMER_TEMPLATE---" size="40">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Email Vendor Notifications To:</td>
+			<td class="pdgdata2"><input type="text" name="emailvendor" value="!---EMAIL_VENDOR---" size="40">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Template File for Vendor Notifications:</td>
+			<td class="pdgdata1"><input type="text" name="emailvendortemplatefile" value="!---EMAIL_VENDOR_TEMPLATE---" size="40">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Full name from which e-mails are sent:</td>
+			<td class="pdgdata2"><input type=text size=40 name="emailvendorname" value="!---EMAIL_SEND---">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">'From Address' for Sent E-mails:</td>
+			<td class="pdgdata1"><input type="text" name="emailvendoraddress" value="!---EMAIL_VENDOR_ADRESS---" size="40">
+			</td>
+		</tr>
+		<tr>
+			<td valign=top class="pdgdata2"> Send HTML Emails: </td>
+			<td valign=top class="pdgdata2"><input type="checkbox" name="htmlemail" !---HTML_EMAIL_CHECK--- value="yes" onClick="javascript:if(this.checked){alert('If you check this box, you must use email templates with a .html extension!');}" ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Email Type:</td>
+			<td class="pdgdata1"><select name="mailer" onchange="togglediv();">
+					<!---NT_EMAILER_LIST--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2><div id="emailclient" style="visibility:hidden;">
+					<table width=100% >
+						<tr>
+							<td class="nopdgheader" colspan=2 ><b> Sendmail/Windows Client Email Settings</b> </td>
+						</tr>
+						<tr>
+							<td width=50%  class="pdgdata2">Email Server Address:<br>
+								<span class=pdgnote>*required for windows email clients</span></td>
+							<td width=50%  class="pdgdata2"><input type="text" name="emailserver" value="!---EMAIL_SERVER---" size="40">
+							</td>
+						</tr>
+						<tr>
+							<td  valign=top width=50%  class="pdgdata1">Sendmail Client Program Location:<br></td>
+							<td valign=top width=50%  class="pdgdata1"><input type="text" name="emailprogram" value="!---EMAIL_PROGRAM---" size="40">
+								<br>
+								<span class="pdgnote">
+								<!---WHEREIS_SENDMAIL--->
+								</span> </td>
+						</tr>
+						<tr>
+							<td width=50% class="pdgdata2">QMAILUSER Environment Variable <br>
+								(for QMail users only):</td>
+							<td width=50% class="pdgdata2"><input type=text name="qmailuser" value="!---QMAIL_ENV---" size=40>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="emailsmtp" style="visibility:hidden;">
+					<table width=100% >
+						<tr>
+							<td class="nopdgheader" colspan=2 ><b> PDG Mailer/SMTP Email Settings</b> </td>
+						</tr>
+						<tr>
+							<td width=50%  class="pdgdata2">Email Server Address:<br></td>
+							<td width=50%  class="pdgdata2"><input type="text" name="emailserver2" value="!---EMAIL_SERVER---" size="40">
+							</td>
+						</tr>
+						<tr>
+							<td width=50%  class="pdgdata1">Enable SMTP AUTH:<br></td>
+							<td width=50%  class="pdgdata1"><input type="checkbox" name="smtpauth" value="PLAIN" !---SMTP_PLAIN_AUTH_CHECK--- >
+							</td>
+						</tr>
+						<tr>
+							<td width=50%  class="pdgdata2">SMTP AUTH User Name:<br></td>
+							<td width=50%  class="pdgdata2"><input type="text" name="smtpuser" value="!---SMTP_USER---" size="40">
+							</td>
+						</tr>
+						<tr>
+							<td width=50%  class="pdgdata1">SMTP AUTH Password:<br></td>
+							<td width=50%  class="pdgdata1"><input type="text" name="smtppasswd" value="!---SMTP_PASSWD---" size="40">
+							</td>
+						</tr>
+					</table>
+				</div></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" class="pdgbutton" name="changeemail" value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td valign=top colspan=2 >&nbsp;</td>
+		</tr>
+	</table>
+</div>
+<!--cmt: attachments-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="attachments-section">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<!--<td class="nopdgheader" colspan=2 ><b>HTML Email Attachments</b> &nbsp; &nbsp; (Only available for the PDG Mailer and Sendmail Client) </td>-->
+			<td class="pdgdata2"><span class="pdgnote">HTML attachments are only available for the PDG Mailer and Sendmail Client</span></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2" valign=top align=center><b>Vendor Attachments </b><br>
+				<!---VENDOR_ATTACH_SELECT--->
+				<br>
+			</td>
+			<td class="pdgdata2" valign=top align=center><b>Customer Attachments </b><br>
+				<!---CUST_ATTACH_SELECT--->
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1" align="center"> File:
+				<input type="text" name="newvendattach" value="" size="30">
+				<br>
+				Mime:
+				<input type="text" name="newvendmime" value="" size="30">
+				<br>
+				<input type="submit" class="pdgbutton" name="addvendattach" value="Add Vendor Attachment">
+				<br>
+				<br>
+			</td>
+			<td class="pdgdata1" align="center"> File:
+				<input type="text" name="newcustattach" value="" size="30">
+				<br>
+				Mime:
+				<input type="text" name="newcustmime" value="" size="30">
+				<br>
+				<input type="submit" class="pdgbutton" name="addcustattach" value="Add Customer Attachment">
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+</div>
+<!--cmt: testing-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="testing-section">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader" colspan=2 ><b>Email Testing</b></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2" colspan=2 valign=top align=center><!---DISPLAY_EMAIL_TEST--->
+			</td>
+		</tr>
+	</table>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-formftr1.htm--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/section-formftr2.htm--->

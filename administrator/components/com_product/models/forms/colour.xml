@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_PRODUCT_FORM_LBL_COLOUR_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="name" type="text"
+                
+            label="COM_PRODUCT_FORM_LBL_COLOUR_NAME"
+            description="COM_PRODUCT_FORM_DESC_COLOUR_NAME" 
+                
+                
+                 required="true"  /> 
+
+       <field name="image" type="media"
+                
+            label="COM_PRODUCT_FORM_LBL_COLOUR_IMAGE"
+            description="COM_PRODUCT_FORM_DESC_COLOUR_IMAGE" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            directory="/images/product/"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_PRODUCT_FORM_LBL_COLOUR_CREATED_BY"
+            description="COM_PRODUCT_FORM_DESC_COLOUR_CREATED_BY"  /> 
+
+       <field name="language" type="language"
+                
+            label="COM_PRODUCT_FORM_LBL_COLOUR_LANGUAGE"
+            description="COM_PRODUCT_FORM_DESC_COLOUR_LANGUAGE" 
+                
+                
+                
+            client="administrator" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

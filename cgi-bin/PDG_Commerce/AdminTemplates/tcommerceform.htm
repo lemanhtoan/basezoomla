@@ -1,0 +1,78 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1280111-->                                    
+<!-- tcommerceform.htm -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+TrustCommerce Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>TrustCommerce Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" id=form1 name=form1>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>TrustCommerce Settings</b> </td>
+		</tr>
+		<tr>
+			<td COLSPAN=2 class="pdgdata2"><!---TCOMMERCE_MESSAGE--->
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1">Use TCLink:</td>
+			<td width=50% class="pdgdata1"><input type=checkbox name="tcusetclink" !---USE_TCLINK--- value="yes" >
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2">User ID:</td>
+			<td width=50% class="pdgdata2"><input type=text name="tcmerchantid" value="!---TCOMMERCE_ID---" size=50 maxlength=20>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1">Password:</td>
+			<td width=50% class="pdgdata1"><input type=text name="tcpassword" value="!---TCOMMERCE_PW---" size=50 maxlength=20>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">TrustCommerce Host:</td>
+			<td class="pdgdata2"><input type=text name="tchost" value="!---TCOMMERCE_HOST---" size=50 maxlength=20>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">TrustCommerce Authorization Type: </td>
+			<td valign=top class="pdgdata1"><select name="tcauth">
+					<!---TCOMMERCE_AUTHTYPE--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Enable TrustCommerce Test Mode: </td>
+			<td valign=top class="pdgdata2"><input type=checkbox !---TCOMMERCE_DEMO--- name="tcdemo" value=yes>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">TrustCommerce Log File:</td>
+			<td class="pdgdata1"><input type=text name="tclogfile" value="!---TCOMMERCE_LOGFILE---" size=50>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Send product information:</td>
+			<td class="pdgdata2"><input type=checkbox name="tcsenditems" value="yes" !---TCOMMERCE_SEND_ITEMS--- >
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3><hr>
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=3><input type="submit" class="pdgbutton" name="changetcommerce" value="Submit Changes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3><hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

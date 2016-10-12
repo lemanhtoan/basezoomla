@@ -1,0 +1,6 @@
+A,"I00012","Mon Dec  9 15:33:55 2013",50.194.242.194,Shops,5.11,,pdg
+B,"I00012","PDG","Test","support@pdgsoft.com","1751 TEST Street",,"Tucker","GA","~US","30084","770-555-5555","THIS IS A TEST ACCOUNT - DO NOT SHIP!"
+P,"I00012","Purchase Order","Offline",
+S,"I00012",,,"PDG Test","1751 TEST Street",,"Tucker","GA","~US","30084",,,R,"PDG Testing"
+I,"I00012","30-12-1-4","30-12-1-4",10.000,0,0.00,0.00,0.00,CHF11.00,CHF110.00,,,,,,
+T,"I00012",CHF110.00,,,,,CHF110.00,,,

@@ -1,0 +1,72 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1359621-->                                    
+<!--dhl.admin-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+DHL Registration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>DHL Registration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" OnSubmit="if(this.dhlshippingkey.value.length>0){return (confirm('You already have a DHL Online shipping key.  Do you want to overwrite the existing key?'));}">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Register for DHL</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2><p>Please enter your DHL account number and shipping origin zip code. Then click on the &nbsp;Register for DHL&nbsp; button below.<br>
+				</p></td>
+		</tr>
+		<tr>
+			
+			<td class="pdgdata2">DHL Shipping Key: </td>
+				<td class="pdgdata2"><!---DHL_SHIPPING_KEY---></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">DHL Account Number: </td>
+			<td class="pdgdata1"><input type=text name="dhlaccount" value="!---DHL_ACCOUNT---" ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">DHL Origin Postal Code: </td>
+			<td class="pdgdata2"><input type=text name="dhlpostalcode" value="!---DHL_POSTAL_CODE---" ></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name=registerDHL value="Register for DHL">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<form method="post" action="!---MODULE_NAME---" >
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>DHL Settings</b> </td>
+		</tr>
+		<tr>
+			<td class=pdgdata2>Order processing time:<br>
+				<span class="pdgnote">(How many days does it take to ship once the order is placed)</span> </td>
+			<td class=pdgdata2><input type=text name="dhlshipdate" value="!---DHL_DAYS_TO_SHIP---" ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1" width=40%>Use DHL Asset Protection: </td>
+			<td class="pdgdata1"><input type=checkbox name="dhlassetprotection" !---DHL_ASSET_PROTECTION--- value="Yes" ></td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name=updateDHL value="Update DHL Setttings">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center>&nbsp;
+				<!---NEW_SHIP_METHOD_ENTRIES--->
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

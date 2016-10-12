@@ -1,0 +1,28 @@
+name: SB Admin 2
+machine_name: sb-admin-2
+description: 'SB Admin 2 Bootstrap admin theme, dashboard template, or webapp UI starter. The theme features a variety of custom jQuery plugins to add extended functionality past the built in Bootstrap UI features.'
+version: 2.0
+region:
+    top: Top region
+    header: Header region
+    sidebar: Sidebar region
+    featured: Featured region
+    footer: Footer region
+# Stylesheets
+css:
+  all:
+    - css/bootstrap.min.css
+    - plugins/font-awesome-4.2.0/css/font-awesome.min.css
+    - plugins/datetime-picker/css/bootstrap-datetimepicker.css
+    - css/sb-admin-2.css
+#  print:
+#    - css/print.css
+js:
+  - js/jquery-1.11.0.js
+  - js/bootstrap.min.js
+  - js/bootbox.min.js
+  - plugins/moment.js
+  - plugins/datetime-picker/js/bootstrap-datetimepicker.js
+  - js/plugins/metisMenu/metisMenu.min.js
+  - js/sb-admin-2.js
+  - js/app.js

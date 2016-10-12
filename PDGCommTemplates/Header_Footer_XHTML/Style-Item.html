@@ -1,0 +1,101 @@
+<!--name:Sample-Item.html;mofidied:11/03/05;version:Commerce_Header_Footer_4.05.50-->
+<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title><!---SITENAME---> - <!---DESC---> in <!---CURRENT_CAT_DESC---></title>
+<meta name="description" content="<!---DESC---> in <!---CURRENT_CAT_DESC---> - <!---TEXT--->">
+<meta name="keywords" content="<!---DESC--->, <!---KEYWORDS--->, <!---SKU--->, <!---CURRENT_CAT_DESC--->">
+<!---PDG_HEAD_INSERT--->
+<script type="text/javascript" src="!---SCRIPT_NAME---?preadd=action&amp;pdg-js-src=yes&amp;key=!---SKU---&amp;template=PDGCommTemplates/item-js.html"></script>
+</head>
+<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+<script language=javascript>
+var Images = new Array();
+Images[0] = "!---IMAGE---";
+<!---BEGIN_STYLE--->
+Images[!---INDEX---+1] = "!---IMAGE---";
+<!---END_STYLE--->
+
+function updateimage(pass){
+  if (pass != 0) {
+        document.my_form.my_image.src=Images[pass];
+  }
+}
+</script>
+<!--  Inserted from document Templates/Top_Nav.html BEGIN-->
+<!---TOP_NAV--->
+<!--  Inserted from document templates/Top_Nav.html END-->
+<form method=post action="!---SCRIPT_NAME---" name="my_form">
+<!---ITEMRETURNURL--->
+<table width="95%" cellpadding="0" cellspacing="0" align=center>
+  <tr>
+    <td class="pdgmain" width="100%" align=center>
+      <table class="pdgmain" cellpadding="5" cellspacing="2" width="100%">
+
+        <tr>
+          <td class="pdgmain" align=center width=50% valign="top">
+            <img src="!---IMAGE---" border=0 name="my_image" alt="!---DESC---" width="150"> <br>
+            <a href="javascript:openWindow(Images[document.my_form.key.selectedIndex], 'popup');">Enlarge Image</a>
+          </td>
+          <td class="pdgmain" align="left" width="50%" valign="top">
+          <h1 class="pdgmainhdr">&nbsp;<!---DESC---></h1>
+          &nbsp;for !---CURRENT_CAT_DESC---><br>
+          &nbsp;(Item no: <!---SKU--->)
+
+<table class="pdgmain" width="100%" cellpadding="5" cellspacing="0">
+        <tr>
+          <td class="pdgmain"><hr></td>
+        </tr>
+        <tr>
+          <td class="pdgmainhdr" width="50%" align="left">
+            <b>Price: <!---PRICE---></b>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" class="pdgmain">
+
+            Quantity: <input type=edit size=3 name=qty value=1>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" class="pdgmain">
+            <!---ITEMOPT--->
+<br>
+<select name=key onchange="updateimage(this.selectedIndex);">
+        <option value="">Select Color/Size</option>
+    !---BEGIN_STYLE---
+        <option value="!---SKU---"><!---DESC--->&nbsp;&nbsp;<!---PRICE--->&nbsp;&nbsp;(<!---INV--->)</option>
+    !---END_STYLE---
+        </select>
+          </td>
+        </tr>
+        <tr>
+          <td valign=top class="pdgmain">
+            <!---CROSS_SALE--->
+
+<br>
+            <!---UP_SALE--->
+          </td>
+        </tr>
+        <tr>
+          <td align=left class="pdgmain">
+            <!---ADD_LINK--->&nbsp;&nbsp;&nbsp;<!---SHOPSOMEMORE_LINK--->
+          </td>
+        </tr>
+      </table>
+
+        </td>
+        </tr>
+      </table><hr><br>
+<table><tr><td align=left>
+      <!---TEXT---></td></tr></table>
+    </td>
+  </tr>
+</table>
+</form>
+<!--  Inserted from document Templates/Bottom_Nav.html BEGIN-->
+<!---BOTTOM_NAV--->
+<!--  Inserted from document templates/Bottom_Nav.html END-->
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1176748-->                                    
+<!--  monerisform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Moneris Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Moneris Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td class="pdgheader"><b>Moneris Settings</b> </td>
+	</tr>
+</table>
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td width="50%" class="pdgdata2">Moneris Store ID:</td>
+			<td width="50%" class="pdgdata2"><input type=text name="monerispsstoreid" value="!---MONERIS_PS_STOREID---" size=50></td>
+		</tr>
+		<tr>
+			<td  class="pdgdata1">Moneris Token:</td>
+			<td  class="pdgdata1"><input type=text name="moneristoken" value="!---MONERIS_TOKEN---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Moneris Gateway<br>
+				<span class=pdgnote>(defaults&nbsp;to&nbsp;www3.moneris.com/HPPDP/verifyTXN.php)</span>:</td>
+			<td class="pdgdata2"><input type=text name="monerisserver" value="!---MONERIS_SERVER---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Moneris Test Mode: </td>
+			<td class="pdgdata1"><input type=checkbox !---MONERIS_TEST_MODE--- name=moneristestmode value=yes></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Include Items Ordered with Transaction Details: </td>
+			<td class="pdgdata2"><input type=checkbox !---MONERIS_INCLUDE_ITEMS--- name=monerisincludeitems value=yes></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">File to which Moneris transactions are logged: </td>
+			<td class="pdgdata1"><input type=text name="monerislogfile" value="!---MONERIS_LOG---" size=50></td>
+		</tr>
+		<tr>
+			<td align=center colspan=3><hr>
+				<input type="submit" class="pdgbutton" name="changemoneris" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2 class="pdgcopy">&copy;1997-
+				<!---CURRENT_YEAR--->
+				PDG Software, Inc. </td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

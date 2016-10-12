@@ -1,0 +1,85 @@
+<!---INCLUDE AdminTemplates/_includes/loginform-hdr.htm--->
+<!--1622004-->                                    
+<!--  loginform.htm  -->
+<script type="text/javascript">
+if (window != top) {
+top.location.href = location.href;
+}
+</script>
+<!--loginform.htm--> 
+
+<body class="yui-skin-sam">
+<div id="pdg-wallpaper">
+	<!-- a href="http://www.adobe.com/go/getflashplayer">
+		<img src="https://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+	</a -->
+</div>
+<div id="outer">
+	<div id="container" >
+	<iframe name="login_target" id="login_target" width="100" height="100" style="display:none"></iframe>
+		<div id="inner">		
+			<div id="inner2">			
+					<table cellpadding="0" cellspacing="0" id="pdg-lgntbl">
+						<tr>
+							<td colspan="3" id="lgntbl-top"><div></div></td>
+						</tr>
+						<tr valign="top">
+							<td id="lgntbl-left" align="left"></td>
+							<td id="lgntbl-content">
+								<div id="lgn-header">
+									<h1>Merchant Login</h1>
+									<p>Use a valid username and password to access the Merchant Administrator. <br /><span style="font-size:90%;">Forgot <a href="!---MODULE_NAME---?forgotpw">password</a>?</span></p>
+								</div>							
+								<div id="lgn-form">
+									<!-- Logged in form -->
+									<form method="post" action="" name=loggedinform id="loggedinform">
+										<input type=hidden name=modulename id="li-modulename" value="!---MODULE_NAME---">
+										<input type=hidden name=displayinframes value="action">	
+									</form>
+									<!-- Log in form -->									
+									<form method="post" action="!---MODULE_NAME---" name=loginform id="loginform" target="login_target">
+									<input type=hidden name=modulename id="modulename" value="!---MODULE_NAME---">
+									<input type=hidden name=securemodulename id="securemodulename" value="!---SECURE_MODULE_NAME---">		
+									<input type=hidden name=displayresponse value="yes">	
+									<input type=hidden name="pass" value="Log in">	
+									<!---TIME_VAL--->					
+										<table cellpadding="0" cellspacing="8" align="center">
+											<tr valign="middle">
+												<td><label for="user">Username</label></td>
+												<td><input type="text" size="20" name="user" id="user" class="pdg-flat-input"></td>
+											</tr>		
+											<tr valign="middle">									
+												<td><label for="pw">Password</label></td>
+												<td><input type="password" size="20" name="pw" id="pw" class="pdg-flat-input"></td>
+											</tr>											
+											<tr valign="middle">
+												<td><div id="lgn-secure-lbl"><label for="loginsecurely" class="pdgtip0" title="Check this box to log in using an encrypted connection.">Secure</label></div></td>
+												<td><div id="lgn-secure-input"><input type=checkbox checked name=loginsecurely id="loginsecurely" value=yes></div></td>
+											</tr>
+										</table>
+										<div id="lgn-submitbox">
+											<table cellpadding="0" cellspacing="0" width="100%">
+												<tr valign="middle">
+													<td align="left">Click the login button when complete.<br /></td>
+													<td align="right"><div id="ieflickerfix" class="pdg-login-btn-hover"></div><input type="submit" value="" class="pdg-login-btn-normal" id="pdg-login-btn"/></td>
+												</tr>
+												
+											</table>
+										</div>										
+									</form>									
+
+								</div>
+								<div id="lgn-footer">&copy;1997-<!---CURRENT_YEAR---> PDG Software, Inc. </div>
+							</td>
+							<td id="lgntbl-right"></td>
+						</tr>
+						<tr>
+							<td colspan="3" id="lgntbl-bottom"><div></div></td>
+						</tr>	
+					</table>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

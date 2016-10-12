@@ -1,0 +1,95 @@
+<style type="text/css">
+<!--
+.style4 {
+	color: #000000;
+	font-size: 24px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.style6 {color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; }
+.style8 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+-->
+</style>
+
+<!---BEGIN_GIFT_CERTIFICATE--->
+
+<script language=JavaScript>
+<!--
+function giftcertdisplay!---INDEX---(){
+  var h=500
+  var w=800
+  var winl = (screen.width - w) / 2;
+  var wint = (screen.height - h) / 2;
+     childwindow=window.open('','popuppage','scrollbars=yes,'+'width='+w+',height='+h+',top='+wint+',left='+winl);
+     if (childwindow.opener == null) childWindow.opener = self;
+     childwindow.document.write("<html>");
+     childwindow.document.write("<head>");
+     childwindow.document.write("<body>");
+     childwindow.document.write("<div style='top: 0pt; left: 0pt; position: absolute; z-index: 1;'>");
+     childwindow.document.write("<img src='/PDGImages/Gift Certificate.jpg' border='0'>");
+     childwindow.document.write("</div>");
+ 
+     childwindow.document.write("<div style='top: 0pt; left: 0pt; position: absolute; z-index: 2;'>");
+     childwindow.document.write("<table style='color: black; font-weight: bolder;' height='405' width='799'>");
+     childwindow.document.write("<tbody><tr valign='bottom'><td width='77' height='167'>&nbsp;</td><td width='483'>");
+     childwindow.document.write("<span class='style6'>!---STORE_COMPANY_NAME---<br />");
+     childwindow.document.write("  !---COMPANY_STREET1---<br />");
+     childwindow.document.write("  !---COMPANY_STREET2---<br />");
+     childwindow.document.write("  !---COMPANY_CITY---,&nbsp;!---COMPANY_STATE---&nbsp;!---COMPANY_ZIP---&nbsp;</span></td>");
+     childwindow.document.write("  <td width='223'><img src='!---SITE_LOGO---' border='0'></td>");
+     childwindow.document.write("</tr>");
+     childwindow.document.write("<tr><td height='172'>&nbsp;</td><td><p class='style4'>!---DESCRIPTION---<br>");
+     childwindow.document.write("    For:");
+     childwindow.document.write("          __________________<br />");
+     childwindow.document.write("          From: ");
+     childwindow.document.write("          _________________ <br />");
+     childwindow.document.write("      Number:");
+     childwindow.document.write("      !---GIFT_ID---");
+     childwindow.document.write("        <br />");
+     childwindow.document.write("      Amount: !---PRICE---");
+     childwindow.document.write("    </p>");
+     childwindow.document.write("    </td><td>&nbsp;</td></tr>");
+     childwindow.document.write("<tr><td>&nbsp;</td><td colspan='2'><span class='style8'>!---TEXT---</span></td></tr>");
+     childwindow.document.write("</tbody></table>");
+     childwindow.document.write("</div>");
+     childwindow.document.write("</body>");
+     childwindow.document.write("</html>");
+     childwindow.print();
+};
+-->
+</script>
+<div style="position:relative;height:500px">
+<div style="top: 0pt; left: 0pt; position: absolute; z-index: 1;">
+<img src="/PDGImages/Gift Certificate.jpg" border="0">
+</div>
+ 
+<div style="top: 0pt; left: 0pt; position: absolute; z-index: 2;">
+<table style="color: black; font-weight: bolder;" height="405" width="799">
+<tbody><tr valign="bottom"><td width="77" height="167">&nbsp;</td><td width="483">
+<span class="style6">!---STORE_COMPANY_NAME---<br />
+  !---COMPANY_STREET1---<br />
+  !---COMPANY_STREET2---<br />
+  !---COMPANY_CITY---,&nbsp;!---COMPANY_STATE---&nbsp;!---COMPANY_ZIP---&nbsp;</span></td>
+  <td width="223"><img src="!---SITE_LOGO---" border="0"></td>
+</tr>
+
+<tr><td height="172">&nbsp;</td><td><p class="style4">!---DESCRIPTION---<br>
+    For:
+          __________________<br />
+          From: 
+          _________________ <br />
+      Number:
+      !---GIFT_ID---
+        <br />
+      Amount: !---PRICE---
+    </p>
+    </td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td><td colspan="2"><span class="style8">!---TEXT---</span></td></tr>
+</tbody></table>
+</div>
+</div>
+<br><a href="javascript:giftcertdisplay!---INDEX---()">Click for printing</a><br>
+<!---END_GIFT_CERTIFICATE--->

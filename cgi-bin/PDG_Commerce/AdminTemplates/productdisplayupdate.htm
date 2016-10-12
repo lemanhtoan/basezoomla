@@ -1,0 +1,43 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--954120-->                                     
+<!--906414-->                                     
+<!--  productlistupdate.htm  -->
+<title>
+<!---PROD_DISP_LIST_DESC--->
+ Display List</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span><!---PROD_DISP_LIST_DESC---> Display List</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" >
+<table>
+<tr>
+<td>
+name: <input type="text" name="pdldesc" value="!---PROD_DISP_LIST_DESC---" size=55>
+<input type="hidden" name="pdltype" value="!---PROD_DISP_LIST_TYPE---">
+<input type="hidden" name="pdlid" value="!---PROD_DISP_LIST_ID---">
+<input type="hidden" name="listid" value="!---PROD_DISP_LIST_ID---">
+<br />
+<textarea name="pdllist" cols="60" rows="10"><!---PROD_DISP_LIST_LIST---></textarea>
+<br />
+<input type="submit" name="updateproddisplaylist" value="Save Product Display List">
+</td>
+<td>
+<span class="pdgnote">
+Please Note: Clicking the buttons below will reload the page and reset the product list. The textarea to the left will contain the new product list based on which button was clicked.  You will need examine and/or edit the product list and then save it once you are satisfied.  If you do not want to save the new product list then just close the tab.
+</span>
+<br> 
+<br />
+<input type="submit" name="showwhatsnewlist" value="Create New Items List">
+<br />
+<br />
+<input type="submit" name="showbestsellerslist" value="Create Best Sellers List">
+<br />
+<br />
+<input type="text" name="keywords" value="keyword search term" size=30 onfocus="javascript:this.value='';">&nbsp;<input type="submit" name="showkeywordlist" value="Create Keyword List">
+</td>
+</tr>
+</table>
+
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

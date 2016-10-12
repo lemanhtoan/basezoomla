@@ -1,0 +1,210 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3967549-->                                    
+<!--searchform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Search Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Search Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<!--cmt: li menu and seperators go here--->
+<li><a href="javascript:void(0)" tsid="general-section">General</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="displayoptions-section">Display Optimization</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="userdefined-section">User Defined</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-close.htm--->
+<!--cmt: general-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="general-section">
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="nopdgheader"><b>Search Options</b> </td>
+		</tr>
+		<tr>
+			<td colspan="2"><br>
+				These settings tell
+				<!---ADMIN_HEADER_LABEL--->
+				how to display output for product search queries. When you have finished setting options, press the <b>Submit Changes</b> button.<br><br><br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1" width=50%>Search Result Style:</td>
+			<td class="pdgdata1" width=50%><select name="searchoutputstyle">
+					<!---SEARCH_OUTPUT_STYLE_LIST--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Display Price for Thumbnail Searches:</td>
+			<td class="pdgdata2"><input type="checkbox" name="priceinthumbsearch" !---PRICE_IN_THUNB_SEARCH--- ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Search Product Description:</td>
+			<td class="pdgdata1"><input type="checkbox" name="searchproddescription" !---SEARCH_PROD_DESC--- ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Number of Results Per Page:</td>
+			<td class="pdgdata2"><input type="text" name="searchresultsperpage" value="!---SEARCH_RESULTS_PER_PAGE---" size="6"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Number of Results Per Row:</td>
+			<td class="pdgdata1"><input type="text" name="searchresultsperrow" value="!---SEARCH_RESULTS_PER_ROW---" size="6"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Order of Search Results:</td>
+			<td class="pdgdata2"><select name="searchresultsorder">
+					<!---SEARCH_RESULT_ORDER_LIST--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Maximum Number of Search Results:</td>
+			<td class="pdgdata1"><input type="text" name="searchresultsmax" value="!---SEARCH_RESULT_MAX---" size="6"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Use Product Category Templates for Category Search Results Display:</td>
+			<td class="pdgdata2"><input type="checkbox" name="useprodcattemplates" !---USE_PROD_CAT_TEMPLATES--- value="yes" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" class="pdgbutton" name="changesearchoptions" value="Submit Changes">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+	</table>
+</form>
+</div>
+<!--cmt: displayoptions-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="displayoptions-section">
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader" colspan=2><b>Search Display Optimization</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2><br>
+				This section allows you to configure how products are loaded for search display.<br><br><br> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"><input type="radio" name="loadminimum" value="yes" !---LOAD_MIN_CHECK--- >
+				Load Minimum Product Information </td>
+			<td class="pdgdata1"><input type="checkbox" name="incuserdef" !---LOAD_USERDEF_CHECK--- >
+				Include User Defined Information <br>
+				<input type="checkbox" name="incoptions" !---LOAD_OPTION_CHECK--- >
+				Include Option Information <br>
+				<input type="checkbox" name="inccrossupsale" !---LOAD_CROSS_UP_SALE_CHECK--- >
+				Include Cross/Up Sale Information </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"><input type="radio" name="loadminimum" value="no" !---DO_NOT_LOAD_MIN_CHECK--- >
+				Load ALL Product Information </td>
+			<td class="pdgdata2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" class="pdgbutton" name="changesearchoptimizations" value="Submit Changes">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2></td>
+		</tr>
+	</table>
+</form>
+</div>
+<!--cmt: userdefined-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="userdefined-section">
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader" colspan=2><b>User Defined Search Options</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2><br>
+				This section allows you to specify which User Defined fields are also included for keyword search matching.<br>
+				<span class=pdgnote>To prevent excessively long search times, PDG recommends that you do not enabled user defined searching if your database contains more than 1,000 products.</span><br>
+				<br><br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"><input type="checkbox" name="userdefcheck0" !---SEARCH_USER_DEF_0--- >
+				Allow searches on
+				<!---NAME_USER_DEF_0--->
+			</td>
+			<td class="pdgdata1"><input type="checkbox" name="userdefcheck5" !---SEARCH_USER_DEF_5--- >
+				Allow searches on
+				<!---NAME_USER_DEF_5--->
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"><input type="checkbox" name="userdefcheck1" !---SEARCH_USER_DEF_1--- >
+				Allow searches on
+				<!---NAME_USER_DEF_1--->
+			</td>
+			<td class="pdgdata2"><input type="checkbox" name="userdefcheck6" !---SEARCH_USER_DEF_6--- >
+				Allow searches on
+				<!---NAME_USER_DEF_6--->
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"><input type="checkbox" name="userdefcheck2" !---SEARCH_USER_DEF_2--- >
+				Allow searches on
+				<!---NAME_USER_DEF_2--->
+			</td>
+			<td class="pdgdata1"><input type="checkbox" name="userdefcheck7" !---SEARCH_USER_DEF_7--- >
+				Allow searches on
+				<!---NAME_USER_DEF_7--->
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"><input type="checkbox" name="userdefcheck3" !---SEARCH_USER_DEF_3--- >
+				Allow searches on
+				<!---NAME_USER_DEF_3--->
+			</td>
+			<td class="pdgdata2"><input type="checkbox" name="userdefcheck8" !---SEARCH_USER_DEF_8--- >
+				Allow searches on
+				<!---NAME_USER_DEF_8--->
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"><input type="checkbox" name="userdefcheck4" !---SEARCH_USER_DEF_4--- >
+				Allow searches on
+				<!---NAME_USER_DEF_4--->
+			</td>
+			<td class="pdgdata1"><input type="checkbox" name="userdefcheck9" !---SEARCH_USER_DEF_9--- >
+				Allow searches on
+				<!---NAME_USER_DEF_9--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" class="pdgbutton" name="changeuserdefsearch" value="Submit Changes">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2></td>
+		</tr>
+	</table>
+</form>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-ftr.htm--->

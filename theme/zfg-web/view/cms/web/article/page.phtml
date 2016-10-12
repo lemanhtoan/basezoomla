@@ -1,0 +1,7 @@
+<?php $this->headTitle($this->article->name); ?>
+<div class="content-details">
+    <img src="<?php echo $this->article->image->getImageUrl(1170,400);?>&zc=2" alt="about us">
+    <div class="col-md-8 col-md-push-2">
+        <?php echo $this->article->content ?>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<eCommerce action="request" version="1.1">
+	<Requestor>
+		<ID/>
+		<Password/>
+	</Requestor>
+	<Shipment action="RateEstimate" version="1.0">
+		<ShippingCredentials>
+			<ShippingKey/>
+			<AccountNbr/>
+		</ShippingCredentials>
+		<ShipmentDetail>
+			<ShipDate/>
+			<Service>
+				<Code/>
+			</Service>
+			<ShipmentType>
+				<Code/>
+			</ShipmentType>
+			<Weight/>
+			<AdditionalProtection>
+				<Code>NR</Code>
+			</AdditionalProtection>
+		</ShipmentDetail>
+		<Billing>
+			<Party>
+				<Code>S</Code>
+			</Party>
+		</Billing>
+		<Receiver>
+			<Address>
+				<City/>
+				<State/>
+				<Country>US</Country>
+				<PostalCode/>
+			</Address>
+		</Receiver>
+		
+	</Shipment>
+</eCommerce>

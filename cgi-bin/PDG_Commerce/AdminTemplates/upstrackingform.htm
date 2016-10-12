@@ -1,0 +1,309 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--4412805-->                                    
+<!--upstrackingform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+UPS&reg;Details</title>
+<script Language="JavaScript">
+	<!--	// hide from old browsers
+	function ChildPopup (url)  {
+	var h=375;
+	var w=625;
+	var winl = (screen.width - w) / 2;
+	var wint = (screen.height - h) / 2;
+	child = window.open (url, 'childwin', 'width='+w+',height='+h+',top='+wint+',left='+winl);
+	}
+	function HasAgreed ()  {
+	if (document.trackform.terms.checked)
+	return true;
+	return false;
+	}
+	function SubmitForm ()  {
+	if (!HasAgreed ())	{
+	alert ("You need to accept the UPS Terms to proceed.");
+	return;
+	}
+	document.trackform.upstrack.value = "submit";
+	document.trackform.submit ();
+	}
+	function ValidateForm (theform)  {
+	if (thform.upstrack.value == "bogus")  {
+	alert ("You need to submit this form using the 'Track' button!");
+	return false;
+	}
+	if (!HasAgreed ())  {
+	alert ("You need to accept the UPS Terms to proceed.");
+	return false;
+	}
+	return true;
+	}
+	function VerifyDetails (theform)	{
+	if (theform.upsorigincntry.value == "US")	{
+	if (theform.upsoriginstate.value == "")	{
+	alert ("Please select the appropriate state/province from the drop down box.");
+	theform.upsoriginstate.focus ();
+	return false;
+	}
+	} else	{
+	if ((theform.upsoriginzip.value == "") && (theform.upsorigincity.value == ""))	{
+	alert ("Please enter either a postal code or city.");
+	theform.upsoriginzip.focus ();
+	return false;
+	}
+	}
+	if (theform.upsacct.value == "")	{
+	alert ("Please enter your UPS account number.");
+	theform.upsacct.focus ();
+	return false;
+	}
+	return true;
+	}
+	// -->
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>UPS<sup>&reg;</sup> Details</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td colspan=2 class="nopdgheader"><b>UPS<sup>&reg;</sup> Tracking</b> </td>
+	</tr>
+	<tr>
+		<td colspan=2><div class="centered">
+				<table border=0 cellpadding="5" id=track_notice>
+					<tr>
+						<td valign="top"><img src="!---CONFIGROOT---_resources/compat/images/UPS_LOGO_S.png" height="50" width="45"></td>
+						<td><p><b>UPS<sup>&reg;</sup> Tracking</b></p></td>
+					</tr>
+				</table>
+			</div></td>
+	</tr>
+	<tr>
+		<td colspan=2><form method=post action="!---MODULE_NAME---" id="trackform" name="trackform" onSubmit="return ValidateForm(this);">
+				<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+				<input type=hidden name="configroot" value="!---CONFIGROOT---">
+				<input type=hidden name=upstrack value="bogus">
+				<div align="center">
+					<table border=0 width="80%" id=datatable>
+						<tr>
+							<td><input type=checkbox name=terms value=agree>
+								I agree to the following <a onclick="ChildPopup('!---CONFIGROOT---UPSTrackTerms.html');"
+            href="#terms">Tracking Terms and Conditions</a>.<br>
+								<br>
+								<div class="centered">
+									<input type=button name=tracking value="Track Package" onClick="SubmitForm();">
+								</div>
+								<br>
+								<br>
+							</td>
+						</tr>
+						<tr>
+							<td align=left><table cellpadding=5>
+									<tr>
+										<td>Select type of response:</td>
+										<td><select name="rqstopt">
+												<option value="none" selected>Last activity on the package</option>
+												<option value="activity">All activity on the package</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>UPS Tracking Number:</td>
+										<td><input size=30 name="trackno" maxlength=35>
+										</td>
+									</tr>
+									<tr>
+										<td>Track by:</td>
+										<td><select name=type>
+												<option value=trackno selected>Package Number</option>
+												<option value=shipno>Shipment Number</option>
+												<option value=refno>Reference Number</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2"><table border="1">
+												<tr>
+													<td><table>
+															<tr>
+																<th colspan="2">Track by Reference Additional Data</th>
+															</tr>
+															<tr>
+																<td> Destination Country:<br>
+																	<span class="pdgnote">Note: Required</span> </td>
+																<td valign="top"><select name=destcntry>
+																		<!---UPS_COUNTRIES--->
+																	</select>
+																</td>
+															</tr>
+															<tr>
+																<td colspan=2>Optional data for tracking by Reference Number:</td>
+															</tr>
+															<tr>
+																<td>Destination Postal Code:</td>
+																<td><input name=destzip maxlength=16 size=12>
+																</td>
+															</tr>
+															<tr>
+																<td>Shipper Account Number:</td>
+																<td><input name=acctno size=10 maxlength=10 value="!---ACCT_NO---">
+																</td>
+															</tr>
+															<tr>
+																<td colspan=2><input type=checkbox name="usedates" value="yes">
+																	Use date range to narrow search.</td>
+															</tr>
+															<tr>
+																<td colspan=2><table id=dates border=0>
+																		<tr valign="baseline">
+																			<td>Start of Date Range:</td>
+																			<td><select name=beginmon>
+																					<option value="01">January</option>
+																					<option value="02">February</option>
+																					<option value="03">March</option>
+																					<option value="04">April</option>
+																					<option value="05">May</option>
+																					<option value="06">June</option>
+																					<option value="07">July</option>
+																					<option value="08">August</option>
+																					<option value="09">September</option>
+																					<option value="10">October</option>
+																					<option value="11">November</option>
+																					<option value="12">December</option>
+																				</select>
+																				<select name=beginday>
+																					<option value="01">1</option>
+																					<option value="02">2</option>
+																					<option value="03">3</option>
+																					<option value="04">4</option>
+																					<option value="05">5</option>
+																					<option value="06">6</option>
+																					<option value="07">7</option>
+																					<option value="08">8</option>
+																					<option value="09">9</option>
+																					<option>10</option>
+																					<option>11</option>
+																					<option>12</option>
+																					<option>13</option>
+																					<option>14</option>
+																					<option>15</option>
+																					<option>16</option>
+																					<option>17</option>
+																					<option>18</option>
+																					<option>19</option>
+																					<option>20</option>
+																					<option>21</option>
+																					<option>22</option>
+																					<option>23</option>
+																					<option>24</option>
+																					<option>25</option>
+																					<option>26</option>
+																					<option>27</option>
+																					<option>28</option>
+																					<option>29</option>
+																					<option>30</option>
+																					<option>31</option>
+																				</select>
+																				,
+																				<select name=beginyr>
+																					<option>2002</option>
+																					<option>2003</option>
+																					<option>2004</option>
+																					<option>2005</option>
+																					<option>2006</option>
+																					<option>2007</option>
+																					<option>2008</option>
+																					<option>2009</option>
+																					<option>2010</option>
+																					<option>2011</option>
+																					<option>2012</option>
+																				</select>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>End of Date Range: </td>
+																			<td><select name=stopmon>
+																					<option value="01">January</option>
+																					<option value="02">February</option>
+																					<option value="03">March</option>
+																					<option value="04">April</option>
+																					<option value="05">May</option>
+																					<option value="06">June</option>
+																					<option value="07">July</option>
+																					<option value="08">August</option>
+																					<option value="09">September</option>
+																					<option value="10">October</option>
+																					<option value="11">November</option>
+																					<option value="12">December</option>
+																				</select>
+																				<select name=stopday>
+																					<option value="01">1</option>
+																					<option value="02">2</option>
+																					<option value="03">3</option>
+																					<option value="04">4</option>
+																					<option value="05">5</option>
+																					<option value="06">6</option>
+																					<option value="07">7</option>
+																					<option value="08">8</option>
+																					<option value="09">9</option>
+																					<option>10</option>
+																					<option>11</option>
+																					<option>12</option>
+																					<option>13</option>
+																					<option>14</option>
+																					<option>15</option>
+																					<option>16</option>
+																					<option>17</option>
+																					<option>18</option>
+																					<option>19</option>
+																					<option>20</option>
+																					<option>21</option>
+																					<option>22</option>
+																					<option>23</option>
+																					<option>24</option>
+																					<option>25</option>
+																					<option>26</option>
+																					<option>27</option>
+																					<option>28</option>
+																					<option>29</option>
+																					<option>30</option>
+																					<option>31</option>
+																				</select>
+																				,
+																				<select name=stopyr>
+																					<option>2002</option>
+																					<option>2003</option>
+																					<option>2004</option>
+																					<option>2005</option>
+																					<option>2006</option>
+																					<option>2007</option>
+																					<option>2008</option>
+																					<option>2009</option>
+																					<option>2010</option>
+																					<option>2011</option>
+																					<option>2012</option>
+																				</select>
+																			</td>
+																		</tr>
+																	</table></td>
+															</tr>
+														</table></td>
+												</tr>
+											</table></td>
+									</tr>
+								</table></td>
+						</tr>
+					</table>
+				</div>
+			</form></td>
+	</tr>
+	<tr>
+		<td colspan=2><hr>
+		</td>
+	</tr>
+	<tr>
+		<td align=center colspan=2><h5>UPS<sup>&reg;</sup>, UPS &amp; Shield Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup><br>
+				are registered trademarks of United Parcel Service of America, Inc.</h5></td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

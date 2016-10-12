@@ -1,0 +1,110 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2242182-->                                    
+<!--prodoptiondetailform.htm-->
+<title>PDG Commerce Option Definition</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Option Definition</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<div !---DISPLAY_ALERT--- >
+<div id="pdg-pagetoplinks">
+<a href="!---MODULE_NAME---?displayspecificproduct.!---PRODUCT_INDEX---=Details!---PROD_CAT_LINK---&configroot=!---CONFIGROOT---" title="Return to main product page">Return to main product page</a>
+</div>
+	<form method="post" action="!---MODULE_NAME---">
+		<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+		<!---PROD_CAT_NAME--->
+		<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+		<!---REMOVE_OPTION_SEL--->
+		<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td colspan=2 class="pdgheader"><b>Product
+					<!---OPTION_INFO--->
+					Add a New Option Selection</b> </td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1">Selection #:</td>
+				<td width=50% class="pdgdata1"><input type="text" size="2" name="optionselectionnumber" value="!---OPT_SELECT_NUM---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">Available Selection:</td>
+				<td class="pdgdata2"><input type="text" size="35" name="optionselectionvalue" value="!---OPT_SELECT_VALUE---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">Sku Suffix:</td>
+				<td class="pdgdata1"><input type="text" size="35" name="optionselectionsku" value="!---OPT_SELECT_SKU---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">Price Change if Chosen:</td>
+				<td class="pdgdata2"><input type="text" size="10" name="optionselectionpricechange" value="!---OPT_SELECT_PRICE---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">Taxable Price Change:</td>
+				<td class="pdgdata1"><input type="text" size="10" name="optionselectiontaxpricechange" value="!---OPT_SELECT_TAX---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">Weight Change if Chosen:</td>
+				<td class="pdgdata2"><input type="text" size="10" name="optionselectionweight" value="!---OPT_SELECT_WEIGHT---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">Custom Text:</td>
+				<td class="pdgdata1"><input type="checkbox" name="optionselectioncustom" !---OPT_SELECT_CUSTOM--- ></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">Cost/Letter of Text:</td>
+				<td class="pdgdata2"><input type="text" size="6" checked name="optionselectioncostperletter" value="!---OPT_SELECT_COST_LETTER---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">Taxable Custom Text Price:</td>
+				<td class="pdgdata1"><input type="text" size="6" checked name="optionselectiontaxcostperletter" value="!---OPT_SELECT_TAX_LETTER---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">One Time Price Change?:</td>
+				<td class="pdgdata2"><input type="checkbox" name="optionselectiononetime" !---OPT_SELECT_ONETIME--- ></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">Display Selection Name if Chosen:</td>
+				<td class="pdgdata1"><input type="checkbox" name="optionselectionshow" !---OPT_SELECT_SHOW--- ></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">Display Option Description Name if Chosen:</td>
+				<td class="pdgdata2"><input type="checkbox" name="optopnselectiontitle" !---OPT_SELECT_TITLE--- ></td>
+			</tr>
+			<tr>
+				<td colspan=2 align=center><hr>
+					<input type="submit" class="pdgbutton" name="addoptionselection.!---PRODUCT_INDEX---.!---OPTION_INDEX---" value="Submit Option Selection Information">
+					<hr>
+				</td>
+			</tr>
+		</table>
+		<table class="pdgbody" width=90% cellpadding=5 cellspacing=0 border=1>
+			<tr>
+				<td colspan=12 class="pdgheader"><b>Current Selections</b> </td>
+			</tr>
+			<tr>
+				<td colspan=11 >&nbsp;</td>
+			</tr>
+			<tr valign="top">
+				<td><b>&nbsp;#&nbsp;&nbsp;</b></td>
+				<td><b>Selection Name</b></td>
+				<td align="center"><b>Sku Suffix</b></td>
+				<td align="center"><b>Price Change</b></td>
+				<td align="center"><b>Weight Change</b></td>
+				<td align="center"><b>Custom Text</b></td>
+				<td align="center"><b>Cost per Letter</b></td>
+				<td align="center"><b>One Time?</b></td>
+				<td align="center"><b>Show Name </b></td>
+				<td align="center"><b>Show Desc</b></td>
+				<td>&nbsp;</td>
+			</tr>
+			<!---PRODUCT_OPTIONS--->
+		</table>
+		<table width=100%>
+			<tr>
+				<td align=center class="pdgcopy">&copy;1997-
+					<!---CURRENT_YEAR--->
+					PDG Software, Inc. </td>
+			</tr>
+		</table>
+	</form>
+</div>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

@@ -1,0 +1,1 @@
+GoLive users can utilize this template set and add existing GoLive coding directly to the storefront pages.  Uses HTML documents located in [docroot]/PDGEditorTemplates/.

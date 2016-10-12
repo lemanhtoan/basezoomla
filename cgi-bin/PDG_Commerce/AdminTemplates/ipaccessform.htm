@@ -1,0 +1,177 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3864186-->                                    
+<!--  ipaccessform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+IP Access</title>
+<script language="javascript">
+var autoiptoggle=0;
+function confirmsubmit(toggle){
+	if(toggle==0){
+		if(autoiptoggle){
+			return(1);
+		
+		}
+		else{
+			return(confirm('Changes are made live right away.  If you have entered an IP number for\n'+
+					'the administrator, make sure it is correct or you will be locked out of your\n'+
+					'Web site administrator.  If you would like to continue click on [OK], \n'+
+					'otherwise click [Cancel].'));
+		}
+	}
+	else{
+	 autoiptoggle=1;
+	 return(1);
+	}
+}
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>IP Access</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<!--cmt: li menu and seperators go here--->
+<!--cmt: <li class="seperator"></li> -->
+<li><a href="javascript:void(0)" tsid="current-section">Current Information</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="autodeny-section">Automatic Deny</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="storedeny-section">Store Deny</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="adminallowed-section">Administrator Allow</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form.htm--->
+<form method="post" action="!---MODULE_NAME---" id=form1 name=form1 OnSubmit="return (confirmsubmit(0));" class="pdg_sectionfrm">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form-close.htm--->
+<!--cmt: current-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="current-section">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader"><b>Your Current IP</b> </td>
+		</tr>
+		<tr>
+			<td> Your Current IP Number is
+				<!---CURRENT_IP--->
+				<br/>
+				<br/>
+				The IP lists allow two (2) special 'wildcard' characters.
+				<p> The first character is an asterisk(*). In this instance the asterisk (*) 'wildcard' represents the entire range of numbers for that block of the IP number. <br/>
+&nbsp;&nbsp;&nbsp;<i>For example,</i><b> 10.10.*.*</b> </p><br/>
+&nbsp;&nbsp;&nbsp;would translate to any IP number from 10.10.0.0 to 10.10.255.255.
+				<p> The second 'wildcard' character is a question mark (?). The question mark (?) represents a single digit in the IP number. <br/>
+&nbsp;&nbsp;&nbsp;<i>For example,</i><b> 192.168.0.1??</b></p> <br/>
+&nbsp;&nbsp;&nbsp;would translate to any IP number from 192.168.0.100 to 192.168.0.199.
+				<p> Constraints for the IP numbers in the list:<br/>
+					<br/>
+					-Any block of the IP number must begin with a digit or have a single asterisk (*) in the block.<br/>
+&nbsp;&nbsp;&nbsp;<i>For example,</i> <b>10.10.0*.01</b> is invalid and <b>255.10.?0.1</b> is invalid<br/>
+					<br/>
+					-The entire IP number cannot begin with an asterisk (*) or question mark (?).<br/>
+&nbsp;&nbsp;&nbsp;<i>For example,</i> <b>*.10.0.01</b> is invalid and <b>?55.10.10.1</b> is invalid. <br/>
+					<br/></p>
+			</td>
+		</tr>
+	</table>
+	</div>
+<!--cmt: auto-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="autodeny-section">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader"><b>Automatic Deny</b></td>
+		</tr>
+		<tr>
+			<td> 
+			&nbsp;			
+			</td>
+		</tr>
+		<tr>
+			<td> 
+			Automatically block an IP address if they attempt to authorize <input type="text" name="numattempts" size="4" value="!---NUMATTEMPTS---" /> credit cards in <input type="text" name="numminutes" size="4" value="!---NUMMINUTES---" /> minutes.<br/><br/>
+Please Enter IP Quarantine Duration: <input type="text" name="quarantineminutes" size="4" value="!---QUARANTINEMINUTES---" /> (minutes)<br/><br/>
+			<input type="radio" name="ipblockaction" value="off" !---OFF_CHECK--- /> Disabled.<br/>
+			<input type="radio" name="ipblockaction" value="quarantine" !---QUARANTINE_CHECK--- /> Quarantine IP Only.<br/>
+			<input type="radio" name="ipblockaction" value="removesession" !---REMOVE_CHECK--- /> Quarantine IP and Remove session (this will delete the shopping basket).<br/>
+			<input type="radio" name="ipblockaction" value="permanent" !---PERMANENT_CHECK--- /> Permanently Block IP.<br/>
+			<br />
+			</td>
+		</tr>
+		<tr>
+			<td> 
+			<input type="submit" name="submitautoip"  value="Submit" OnClick="confirmsubmit(1);"/> 
+			</td>
+		</tr>
+		<tr>
+			<td> 
+			Purge IP from Automatic Block List: <input type="text" name="purgeip" /> <input type="submit" name="purgeipaction"  value="Remove IP" /> 
+			</td>
+		</tr>
+	</table>
+</div>
+<!--cmt: storedeny-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="storedeny-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader"><b>Store IP Deny List</b> </td>
+		</tr>
+		<tr>
+			<td> Below is a list of IP numbers that are Not Allowed access to your Internet store. To add IP numbers to the list, just enter the IP numbers separated by commas (,) and click on 'Submit Changes'. <br/>
+				<br/>
+&nbsp;&nbsp;&nbsp;<i>For example,</i><b> 192.16?.*.*,10.10.0.*,</b> etc.<br/>
+				<br/>
+			</td>
+		</tr>
+		<tr>
+			<td align=center><textarea cols=70 rows=5 name=ipdeny><!---IP_DENY_LIST--->
+</textarea>
+				<br/>
+				<br/>
+			</td>
+		</tr>
+		<tr>
+			<td align=center><input type="submit" class="pdgbutton" name=updateiplists value="Submit Changes">
+				<br/>
+				<br/>
+			</td>
+		</tr>
+	</table>
+	</div>
+<!--cmt: adminallowed-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="adminallowed-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="nopdgheader"><b>Administrator IP Allowed List</b> </td>
+		</tr>
+		<tr>
+			<td> Below is a list of IP numbers that are allowed access to your Internet store's Merchant Administrator.<br/>
+				<br/>
+				If you are connecting to the internet via a modem (including cable modem) or a DSL connection, then the last block or last two blocks of your IP number may change each time you connect to the Internet.<br/>
+&nbsp;&nbsp;&nbsp;<i>For example, </i><b>64.63.*.*</b> will allow any IP number that starts with 64.63 to connect <br/>
+&nbsp;&nbsp;&nbsp;to your Internet store's Merchant Administrator.<br/>
+				<br/>
+				If you would like to add more IP numbers to the list, just enter the IP numbers separated by commas (,) and click on 'Submit Changes'.<br/>
+&nbsp;&nbsp;&nbsp;<i>For example, </i> <b>192.16?.*.*,10.10.0.*,</b> etc.<br/>
+				<br/>
+			</td>
+		</tr>
+		<tr>
+			<td align=center><textarea cols=70 rows=5 name=ipallow><!---IP_ALLOW_LIST--->
+</textarea>
+				<br/>
+				<br/>
+			</td>
+		</tr>
+		<tr>
+			<td align=center><input type="submit" class="pdgbutton" name=updateiplists value="Submit Changes">
+				<br/>
+				<br/>
+			</td>
+		</tr>
+	</table>
+	</div>
+<!---INCLUDE AdminTemplates/_includes/section-formftr1.htm--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/section-formftr2.htm--->

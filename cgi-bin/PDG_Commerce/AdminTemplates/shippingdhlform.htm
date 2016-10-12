@@ -1,0 +1,376 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--7609107-->                                    
+<!--shippingdhlform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Shipping Costs Configuration</title>
+<script language=Javascript>
+function UpdateRealTimeShipDisplay(idx){
+	document.shiprules.realtimeship[idx].checked=true;
+	switch(idx){
+		case 0:
+			document.getElementById('norealtimeship').style.visibility = "visible";
+			document.getElementById('upsrealtimeship').style.visibility = "hidden";
+			document.getElementById('uspsrealtimeship').style.visibility = "hidden";
+			document.getElementById('fedexrealtimeship').style.visibility = "hidden";
+			document.getElementById('dhlrealtimeship').style.visibility = "hidden";
+			break;
+		case 1:
+			document.getElementById('norealtimeship').style.visibility = "hidden";
+			document.getElementById('upsrealtimeship').style.visibility = "visible";
+			document.getElementById('uspsrealtimeship').style.visibility = "hidden";
+			document.getElementById('fedexrealtimeship').style.visibility = "hidden";
+			document.getElementById('dhlrealtimeship').style.visibility = "hidden";
+			break;
+		case 2:
+			document.getElementById('norealtimeship').style.visibility = "hidden";
+			document.getElementById('upsrealtimeship').style.visibility = "hidden";
+			document.getElementById('uspsrealtimeship').style.visibility = "visible";
+			document.getElementById('fedexrealtimeship').style.visibility = "hidden";
+			document.getElementById('dhlrealtimeship').style.visibility = "hidden";
+			break;
+		case 3:
+			document.getElementById('norealtimeship').style.visibility = "hidden";
+			document.getElementById('upsrealtimeship').style.visibility = "hidden";
+			document.getElementById('uspsrealtimeship').style.visibility = "hidden";
+			document.getElementById('fedexrealtimeship').style.visibility = "visible";
+			document.getElementById('dhlrealtimeship').style.visibility = "hidden";
+			break;
+		case 4:
+			document.getElementById('norealtimeship').style.visibility = "hidden";
+			document.getElementById('upsrealtimeship').style.visibility = "hidden";
+			document.getElementById('uspsrealtimeship').style.visibility = "hidden";
+			document.getElementById('fedexrealtimeship').style.visibility = "hidden";
+			document.getElementById('dhlrealtimeship').style.visibility = "visible";
+			break;
+	}
+}
+
+function sethiddenshipdata(){
+	if(document.shiprules.shippingmethoddesc.value.length==0){
+		alert('Please provide a shipping method description.');
+		return false;
+	}
+	if(document.shiprules.realtimeship[1].checked){
+		document.shiprules.shippingmethod.value=document.shiprules.shippingmethodups.value;
+		document.shiprules.shippingrate.value=document.shiprules.shippingrateups.value;
+		document.shiprules.shippingpackage.value=document.shiprules.shippingpackageups.value;
+		if(document.shiprules.shippingmethod.value=="99"){
+			if((document.shiprules.shippingpackage.value!="00") && (document.shiprules.shippingpackage.value!="02")){
+				alert('For UPS rate comparision you must select \'Shipper Supplied Packaging\' or \'Package\' for the packaging type.');
+				return false;
+			}
+		}
+	}
+	else if (document.shiprules.realtimeship[2].checked){
+		document.shiprules.shippingmethod.value=document.shiprules.shippingmethodusps.value;
+		document.shiprules.shippingrate.value=document.shiprules.shippingrateusps.value;
+		document.shiprules.shippingpackage.value=document.shiprules.shippingpackageusps.value;
+		if(	(document.shiprules.shippingmethod.value=="C") ||
+			(document.shiprules.shippingmethod.value=="D") ||
+			(document.shiprules.shippingmethod.value=="E") ||
+			(document.shiprules.shippingmethod.value=="F") ||
+			(document.shiprules.shippingmethod.value=="H") ||
+			(document.shiprules.shippingmethod.value=="J")) {
+			if(document.shiprules.shippingpackage.value!="none"){
+			alert('For U.S. Postal Service Parcel Post, Bound Printed Matter, Library Mail, Media Mail, First Class and Compare Rates you must select \'Shipper Supplied Packaging\' for the packaging type.');
+				return false;
+			}
+		}
+		else if ((document.shiprules.shippingmethod.value=="A")||(document.shiprules.shippingmethod.value=="B")){
+			if(	(document.shiprules.shippingpackage.value!="none") &&
+				(document.shiprules.shippingpackage.value!="0-1095") &&
+				(document.shiprules.shippingpackage.value!="0-1096") &&
+				(document.shiprules.shippingpackage.value!="0-1097") &&
+				(document.shiprules.shippingpackage.value!="0-1098") &&
+				(document.shiprules.shippingpackage.value!="EP13A") &&
+				(document.shiprules.shippingpackage.value!="EP14") &&
+				(document.shiprules.shippingpackage.value!="EP14F")) {
+			alert('For U.S. Postal Service Priority Mail and Express Mail you must select either Shipper Supplied Packaging, Box, Video, Tube, Tyvek Envelope, Flat Rate Envelope for the packaging type.');
+				return false;
+			}
+
+		}
+		else if ((document.shiprules.shippingmethod.value=="G")){
+			if(	(document.shiprules.shippingpackage.value!="pack") &&
+				(document.shiprules.shippingpackage.value!="post") &&
+				(document.shiprules.shippingpackage.value!="mbln") &&
+				(document.shiprules.shippingpackage.value!="envl")) {
+			alert('For U.S. Postal Service International Mail you must select either International Shipper Supplied Packaging, International Postcards or aerogrammes, International Matter for the Blind, or International Evelope for the packaging type.');
+				return false;
+			}
+		}
+	}
+	else if (document.shiprules.realtimeship[3].checked){
+		document.shiprules.shippingmethod.value=document.shiprules.shippingmethodfedex.value;
+		document.shiprules.shippingrate.value=document.shiprules.shippingratefedex.value;
+		document.shiprules.shippingpackage.value=document.shiprules.shippingpackagefedex.value;
+	}
+	else if (document.shiprules.realtimeship[4].checked){
+		document.shiprules.shippingmethod.value=document.shiprules.shippingmethoddhl.value;
+		document.shiprules.shippingrate.value=document.shiprules.shippingratedhl.value;
+		document.shiprules.shippingpackage.value=document.shiprules.shippingpackagedhl.value;
+	}
+	else{
+		document.shiprules.shippingmethod.value="";
+		document.shiprules.shippingrate.value="";
+		document.shiprules.shippingpackage.value="";
+	}
+	return ture;
+}
+PDG.callOnPageLoad(function(){
+	UpdateRealTimeShipDisplay(0!---RT_SHIP_METHOD_DISPLAY_INDEX---);
+});
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Shipping Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<!--ship_configs-->
+<form method="post" action="!---MODULE_NAME---" name="shiprules" onSubmit="return(sethiddenshipdata());">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=3 class="pdgheader"><b>Add A New Shipping Method</b> </td>
+		</tr>
+		<tr>
+			<td colspan=3><!---SHIP_MODIFY_MSG--->
+				<br>
+&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="50"><b>Rule #</b></td>
+			<td><b>Description</b></td>
+			<td><b>Additional Cost</b></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="shippingmethodruleno" value="!---SHIP_RULE_NUM---" size="2">
+			</td>
+			<td><input type="text" name="shippingmethoddesc" value="!---SHIP_RULE_DISC---" size="40">
+			</td>
+			<td><input type="text" name="shippingmethodprice" value="!---SHIP_RULE_PRICE_CHANGE---" size="10">
+			</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=2 id="ship_selections">
+		<tr>
+			<td align=right valign=top width=30%><table id="gen_settings" width=100%>
+					<tr>
+						<td align="center" COLSPAN=2><b><span class="underlined">General Shipping Settings</span></b></td>
+					</tr>
+					<tr>
+						<td align="center" width="25"><input type="checkbox" name="shippingmethodreqinfo" value="yes" !---SHIP_RULE_INFO--- >
+						</td>
+						<td align="left">Requires Shipping Info</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="checkbox" name="shippingmethodaddsub" value="yes" !---SHIP_RULE_SUBTOTAL--- >
+						</td>
+						<td align="left">Add Subtotal Rules?</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="checkbox" name="shippingmethodaddwt" value="yes" !---SHIP_RULE_WEIGHT--- >
+						</td>
+						<td align="left">Add Weight Rules?</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="checkbox" name="shippingmethodaddqty" value="yes" !---SHIP_RULE_QTY--- >
+						</td>
+						<td align="left">Add Quantity Rules?</td>
+					</tr>
+					<tr>
+						<td align="center"><input type="checkbox" name="shippingmethodnodisplay" value="yes" !---SHIP_RULE_NO_DISPLAY--- >
+						</td>
+						<td align="left">Do Not Display on Checkout Page?</td>
+					</tr>
+					<tr>
+						<td align=left><input type="text" name="shippingmethodbackupno" value="!---SHIP_RULE_BACKUP_NUM---" size="2">
+						</td>
+						<td> Back Up Method: </td>
+					</tr>
+				</table>
+				<!--gen_settings"-->
+			</td>
+			<td align=left valign=top width=60%><table width=420 height=210 id="rt_settings">
+					<tr>
+						<td align=center valign=top><div id="realtimeshiparea" style="height:210;width:420;position:absolute;"> <b><span class="underlined">Real Time Shipping Settings</span></b><br>
+								<br>
+								<input type=radio name=realtimeship OnBlur="UpdateRealTimeShipDisplay(0);" OnFocus="UpdateRealTimeShipDisplay(0);" value=none>
+								<a href="javascript:{};" onClick="UpdateRealTimeShipDisplay(0);">None</a>&nbsp;
+								<input type=radio name=realtimeship OnBlur="UpdateRealTimeShipDisplay(1);" OnFocus="UpdateRealTimeShipDisplay(1);" value=ups>
+								<a href="javascript:{};" onClick="UpdateRealTimeShipDisplay(1);">UPS&reg;</a>&nbsp;
+								<input type=radio name=realtimeship OnBlur="UpdateRealTimeShipDisplay(2);" OnFocus="UpdateRealTimeShipDisplay(2);" value=usps>
+								<a href="javascript:{};" onClick="UpdateRealTimeShipDisplay(2);">USPS</a>&nbsp;
+								<input type=radio name=realtimeship OnBlur="UpdateRealTimeShipDisplay(3);" OnFocus="UpdateRealTimeShipDisplay(3);" value=fedex>
+								<a href="javascript:{};" onClick="UpdateRealTimeShipDisplay(3);">FedEx&reg;</a>&nbsp;
+								<br>
+								<br>
+								<input type=hidden name=shippingmethod value="">
+								<input type=hidden name=shippingrate value="">
+								<input type=hidden name=shippingpackage value="">
+								<div id="norealtimeship" style="height:100;width:420;position:relative;left:0px;top:50px;visibility:visible;">
+									<table>
+										<tr>
+											<td colspan=2 align=center valign=top><b>Real Time Shipping Not Selected</b> </td>
+										</tr>
+									</table>
+								</div>
+								<div id="upsrealtimeship" style="height:200;width:420;position:absolute;left:0px;top:60px;visibility:hidden;">
+									<table>
+										<tr>
+											<td colspan=2 align=center><b>UPS&reg; Shipping</b> </td>
+										</tr>
+										<tr>
+											<td> Shipping Method: </td>
+											<td><select NAME="shippingmethodups">
+													<!---UPS_METHOD_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td> Pickup: </td>
+											<td><select NAME="shippingrateups">
+													<!---UPS_PICKUP_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td> Packaging: </td>
+											<td><select NAME="shippingpackageups" >
+													<!---UPS_PACKAGE_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div id="uspsrealtimeship" style="height:200;width:420;position:absolute;left:0px;top:60px;visibility:hidden;">
+									<table>
+										<tr>
+											<td colspan=2 align=center><b>U.S.&nbsp;Postal&nbsp;Service&nbsp;Shipping</b> </td>
+										</tr>
+										<tr>
+											<td> Shipping Method: </td>
+											<td><select NAME="shippingmethodusps">
+													<!---USPS_METHOD_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td> Pickup: </td>
+											<td><select NAME="shippingrateusps" >
+													<!---USPS_PICKUP_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td> Packaging: </td>
+											<td><select NAME="shippingpackageusps">
+													<!---USPS_PACKAGE_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div id="fedexrealtimeship" style="height:200;width:420;position:absolute;left:0px;top:60px;visibility:hidden;">
+									<table>
+										<tr>
+											<td colspan=2 align=center><b>FedEx Shipping</b> </td>
+										</tr>
+										<tr>
+											<td> Shipping Method: </td>
+											<td><select NAME="shippingmethodfedex">
+													<!---FEDEX_METHOD_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td> Pickup: </td>
+											<td><select NAME="shippingratefedex">
+													<!---FEDEX_PICKUP_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td> Packaging: </td>
+											<td><select NAME="shippingpackagefedex">
+													<!---FEDEX_PACKAGE_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div id="dhlrealtimeship" style="height:200;width:420;position:absolute;left:0px;top:60px;visibility:hidden;">
+									<table>
+										<tr>
+											<td colspan=2 align=center><b>DHL&reg; Shipping</b> </td>
+										</tr>
+										<tr>
+											<td> Shipping Method: </td>
+											<td><select NAME="shippingmethoddhl">
+													<!---DHL_METHOD_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td> Pickup: </td>
+											<td><select NAME="shippingratedhl">
+													<!---DHL_PICKUP_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td> Packaging: </td>
+											<td><select NAME="shippingpackagedhl">
+													<!---DHL_PACKAGE_SELECT_OPTIONS--->
+												</select>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div></td>
+					</tr>
+				</table>
+				<!--rt_settings-->
+			</td>
+		</tr>
+	</table>
+	<!--ship_selections-->
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td align=left><b><i>* You Can Use a Combination of General and Real Time Shipping </i></b></td>
+		</tr>
+		<tr>
+			<td align=left><br>
+				Discount Shipping By&nbsp;
+				<input type="text" name="shippingmethoddisc" value="!---SHIP_RULE_FLOOR_DISC---" size="5">
+				For Orders That Are Over&nbsp;
+				<input type="text" name="shippingmethodfloor" value="!---SHIP_RULE_FLOOR_VALUE---" size="6">
+				<select name="shippingmethodfloortype">
+					<!---SHIP_RULE_FLOOR_TYPE_SEL--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align=center><br>
+				<input type="submit" class="pdgbutton" name="addshippingmethod" value="Add&nbsp;Shipping&nbsp;Method">
+				<!---SHIP_METHOD_TO_BE_REMOVED--->
+				<br>
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+	<tr>
+		<td class="pdgheader"><b>Current Shipping Methods</b> </td>
+	</tr>
+	<tr>
+		<td><form method="post" action="!---MODULE_NAME---" name="modify_ship_config">
+				<!---SHIP_METHOD_INFO--->
+			</form></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

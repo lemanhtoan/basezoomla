@@ -1,0 +1,52 @@
+<?php $pages = $this->paginator->getPages('Sliding') ?>
+<?php $options = $this->options ?: array() ?>
+<?php $params = $this->params ?: array() ?>
+<?php $reuseParams = $this->reuseParams ?: true ?>
+<?php $reuseQueries = $this->reuseQueries ?: true ?>
+
+
+<?php if ($pages->pageCount): ?>
+
+    <div class="<?php echo $this->paginatorClass ?: 'pagination' ?>">
+        <!-- Previous page link -->
+        <?php if (isset($pages->previous)): ?>
+            <?php $this->useQuery ? $options['query']['page'] = $pages->previous : $params['page'] = $pages->previous ?>
+            <a class="prev-page" href="<?php echo $this->url($this->paginationRoute, $params, $options, $reuseParams, $reuseQueries); ?>">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        <?php else: ?>
+            <a class="prev-page disabled" href="javascript:;">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        <?php endif; ?>
+
+        <!-- Numbered page links -->
+        <div class="list-page">
+            <?php foreach ($pages->pagesInRange as $page): ?>
+                <?php if ($page != $pages->current): ?>
+                    <?php $this->useQuery ? $options['query']['page'] = $page : $params['page'] = $page ?>
+                    <a href="<?php echo $this->url($this->paginationRoute, $params, $options, $reuseParams, $reuseQueries); ?>">
+                        <?php echo $page; ?>
+                    </a>
+                <?php else: ?>
+                    <a class="active" href="javascript:;">
+                        <?php echo $page; ?>
+                    </a>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Next page link -->
+        <?php if (isset($pages->next)): ?>
+            <?php $this->useQuery ? $options['query']['page'] = $pages->next : $params['page'] = $pages->next ?>
+            <a class="next-page" href="<?php echo $this->url($this->paginationRoute, $params, $options, $reuseParams, $reuseQueries); ?>">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        <?php else: ?>
+            <a class="next-page disabled" href="javascript:;">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        <?php endif; ?>
+    </div>
+
+<?php endif; ?>

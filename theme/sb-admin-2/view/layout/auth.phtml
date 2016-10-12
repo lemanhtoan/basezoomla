@@ -1,0 +1,37 @@
+<?php
+
+$this->inlineScript()->prependFile($this->basePath() . '/app.js');
+
+$this->headLink()
+    ->appendStylesheet('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css')
+    ->appendStylesheet($this->basePath() . '/elfinder_assets/css/elfinder.min.css')
+    ->appendStylesheet($this->basePath() . '/elfinder_assets/css/theme.css');
+
+$this->inlineScript()
+    ->appendFile('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js')
+    ->appendFile($this->basePath() . '/elfinder_assets/js/elfinder.min.js')
+    ->appendFile($this->basePath() . '/plugins/jquery.shiftclick/jquery.shiftclick-0.2.0.min.js');
+
+?>
+
+<?php echo $this->doctype(); ?>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle()->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->themePath('favicon.ico')))?>
+
+    <!-- Scripts -->
+    <?php echo $this->headScript() ?>
+
+</head>
+<body>
+
+    <div class="container">
+        <?php echo $this->content ?>
+    </div>
+
+</body>
+</html>

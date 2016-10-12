@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_subscribe</name>
+	<author>SD3-JAV</author>
+	<creationDate>July 2015</creationDate>
+	<copyright>Copyright (C) 2015 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>sd3@qsoftvietnam.com</authorEmail>
+	<authorUrl>www.qsoftvietnam.com</authorUrl>
+	<version>3.0.0</version>
+	<files>
+		<filename module="mod_subscribe">mod_subscribe.php</filename>
+		<folder>tmpl</folder>
+		<filename>mod_subscribe.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+        	
+			<fieldset name="basic">
+
+            </fieldset>
+            
+			<fieldset name="advanced">
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

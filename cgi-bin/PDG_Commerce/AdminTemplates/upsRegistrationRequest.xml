@@ -1,0 +1,25 @@
+<?xml version = "1.0"?>
+<RegistrationRequest>
+	<Request>
+		<TransactionReference>
+			<CustomerContext>UPS Registration</CustomerContext>
+			<XpciVersion>1.0001</XpciVersion>
+		</TransactionReference>
+		<RequestAction>Register</RequestAction>
+		<RequestOption>suggest</RequestOption>
+	</Request>
+	<UserId>Username</UserId>
+	<Password>secret</Password>
+	<RegistrationInformation>
+		<UserName>Lara Croft</UserName>
+		<Title>Freelancer</Title>
+		<CompanyName>Tomb Radier Gold</CompanyName>
+		<Address>
+			<AddressLine1>123 Testing Place</AddressLine1>
+			<City>Anytown</City>
+			<CountryCode>US</CountryCode>
+		</Address>
+		<PhoneNumber>7705551212</PhoneNumber>
+		<EMailAddress>lcroft@tombraider.edu</EMailAddress>
+	</RegistrationInformation>
+</RegistrationRequest>

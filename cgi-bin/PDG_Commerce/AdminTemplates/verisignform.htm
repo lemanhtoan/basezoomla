@@ -1,0 +1,115 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2369398-->                                    
+<!--verisignform.htm (payflow)-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Payflow Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Payflow Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Payflow Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% align=left class="pdgdata1">Payflow account type:</td>
+			<td class="pdgdata1"><input type="radio" name="pntype" !---VERISIGN_LINK--- value="link" >
+				Payflow Link <br>
+				<input type="radio" name="pntype" !---VERISIGN_PRO--- value="pro">
+				Payflow Pro </td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">Payflow account login ID:</td>
+			<td class="pdgdata2"><input type="text" name="pnlogin" value="!---VERISIGN_LOGIN---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">Payflow account password:</td>
+			<td class="pdgdata1"><input type="text" name="pnpassword" value="!---VERISIGN_PASSWORD---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">Payflow Partner:</td>
+			<td class="pdgdata2"><input type="text" name="pnpart" value="!---VERISIGN_PARTNER---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">Payflow Vendor Name:</td>
+			<td class="pdgdata1"><input type="text" name="pnvend" value="!---VERISIGN_VENDOR---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">Payflow authorization type:</td>
+			<td class="pdgdata2"><select name="pnauthtype">
+					<!---VERISIGN_AUTHTYPE--->
+				</select></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">Payflow Host:</td>
+			<td class="pdgdata1"><input type="text" name="pnhost" value="!---VERISIGN_SERVER---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">Payflow port:</td>
+			<td class="pdgdata2"><input type="text" name="pnport" value="!---VERISIGN_PORT---" size="8"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">File to which Payflow transactions are logged:</td>
+			<td VALIGN=TOP class="pdgdata1"><input type="text" name="pnlogfile" value="!---VERISIGN_LOGFILE---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">Send the maximum amount of data when using pfpro:</td>
+			<td VALIGN=TOP class="pdgdata2"><input type="checkbox" !---SEND_ALL_PFPRO_DATA_CHECK--- name="sendallpndata" value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Payflow Fraud Protection Settings</b> </td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1"> Accept &quot;Flagged for review by filters&quot; (RESULT 126) <br>
+				as a valid (authorized) transaction:* </td>
+			<td class="pdgdata1"><input type=checkbox name="pfl126accept"  !---PAYFLOW_ACCEPT_126--- value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2"> Accept &quot;Not processed by filters&quot; (RESULT 127) <br>
+				as a valid (authorized) transaction:*<br>
+			</td>
+			<td class="pdgdata2"><input type=checkbox name="pfl127accept"  !---PAYFLOW_ACCEPT_127--- value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=left class="pdgdata1"> Acceptance message for Fraud Protection Result Codes:<br>
+				<span class="pdgnote">used in customer emails, payment result templates and order log<br>
+				</span>
+				<textarea name="pflfraudtxt" cols=70 rows=4><!---PAYFLOW_FRAUD_MSG--->
+</textarea>
+				<br>
+&nbsp; </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Payflow Link Settings</b> </td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">Allow &quot;Show Confirm&quot; Payflow Link page:<br>
+				<span class=pdgnote>*This is required for the Payflow Link Buyer Authentication service</span></td>
+			<td VALIGN=TOP class="pdgdata1"><input type="checkbox" !---SEND_SHOWCONFIRM--- name="sendshowconfirm" value="yes">
+			</td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2"> Redirect to Payflow Template: </td>
+			<td class="pdgdata2"><input type=text name="pflredirecttemplate" value="!---PAYFLOW_REDIRECT_TEMPLATE---">
+			</td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1"> Maximum size of transaction directory: </td>
+			<td class="pdgdata1"><input type=text name="pflmaxktmpdir" value="!---PAYFLOW_DIR_MAX---">
+				K </td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><hr>
+				<input type="submit" class="pdgbutton" name="changepaymentnet" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

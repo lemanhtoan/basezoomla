@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_setting</name>
+	<author>SD3-JAV</author>
+	<creationDate>July 2015</creationDate>
+	<copyright>Copyright (C) 2015 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>sd3@qsoftvietnam.com</authorEmail>
+	<authorUrl>www.qsoftvietnam.com</authorUrl>
+	<version>3.0.0</version>
+	<files>
+		<filename module="mod_setting">mod_setting.php</filename>
+		<folder>tmpl</folder>
+		<filename>mod_setting.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			
+            <fieldset name="basic">
+				<field name="logo_image" type="media"                    
+                    label="Logo" />  
+                    
+                <field name="icon_image" type="media"                    
+                    label="Icon" />  
+
+				<field
+					name="logo_title"
+					type="text"
+					label="Title" />
+				<field
+					name="logo_alt"
+					type="text"
+					label="Alt" />	
+                 <field
+					name="bground_color"
+					type="color"
+                    default="#fff"
+					label="Background color" />
+                    
+                 <field name="bground_image" type="media"                    
+                    label="Background image (priority)" />
+                    			
+			</fieldset>
+            
+			<fieldset name="Header_setting">
+				<field
+					name="header_color"
+					type="color"
+                    default="#eee"
+					label="Header background color" />
+				<field
+					name="header_menu_active"
+					type="color"
+                    default="#eee"
+					label="Header menu color active" />
+				<field
+					name="header_menu_hover"
+					type="color"
+                    default="#eee"
+					label="Header menu color hover" />
+                <field
+					name="header_menu_inactive"
+					type="color"
+                    default="#eee"
+					label="Header menu color inactive" /> 
+                <field
+					name="header_menu_sub_bground"
+					type="color"
+                    default="#eee"
+					label="Header sub menu background" /> 
+                <field
+					name="header_menu_sub_color"
+					type="color"
+                    default="#eee"
+					label="Header sub menu color" /> 
+                 <field
+					name="header_menu_sub_color_hover"
+					type="color"
+                    default="#eee"
+					label="Header sub menu hover" />
+                 <field
+					name="header_menu_sub_color_link_hover"
+					type="color"
+                    default="#eee"
+					label="Sub menu background hover" />
+				<field
+					name="mobile_submenu_color"
+					type="color"
+                    default="#fff"
+					label="Mobile submenu color" />
+			</fieldset>
+            
+			<fieldset name="Footer_setting">
+				<field
+					name="footer_color"
+					type="color"
+                    default="#eee"
+					label="Footer background color" /> 
+                <field
+					name="footer_color_text"
+					type="color"
+                    default="#eee"
+					label="Footer text color" /> 			
+			</fieldset>
+            
+            <fieldset name="Subscribe_setting">
+				<!--<field name="subscribe_image" type="media"                    
+                    label="Subscribe icon" />                     
+				<field name="subscribe_image_hover" type="media"                    
+                    label="Subscribe icon hover" />--> 
+
+                <field name="email_template" type="note" 
+                	label="EMAIL_TEMPLATE" close="true" />
+
+                <field name="email_subject" type="text" 
+                	label="EMAIL_SUBJECT"/>
+                <field name="email_sendor_name" type="text" 
+                	label="EMAIL_SENDER_NAME" />
+                <field name="reply_to_name" type="text" 
+                	label="REPLY_TO_NAME" />
+                <field name="reply_to_email" type="text" 
+                	label="REPLY_TO_EMAIL" />
+
+                <field name="email_template_content_en_GB" type="editor"
+					label="TEMPLATE CONTENT English (UK)" filter="safehtml" /> 
+
+				<field name="email_template_content_fr_FR" type="editor"
+					label="TEMPLATE CONTENT French (FR)" filter="safehtml" /> 
+
+				<field name="email_template_content_it_IT" type="editor"
+					label="TEMPLATE CONTENT Italian (IT)" filter="safehtml" /> 
+					
+				<field name="email_template_content_de_DE" type="editor"
+					label="TEMPLATE CONTENT German (DE)" filter="safehtml" /> 
+
+			</fieldset>
+            
+            <fieldset name="basic">			
+			</fieldset>
+            
+            <fieldset name="Order_setting" label="Order Setting">
+            	<!--
+				<field name="order_image" type="media"                    
+                    label="Subscribe icon" />                     
+				<field name="order_image_hover" type="media"                    
+                    label="Subscribe icon hover" /> 
+                -->
+
+                <field name="order_email_template" type="note" 
+                	label="EMAIL_TEMPLATE" close="true" />
+
+                <field name="order_email_subject" type="text" 
+                	label="EMAIL_SUBJECT"/>
+                <field name="order_email_sendor_name" type="text" 
+                	label="EMAIL_SENDER_NAME" />
+                <field name="order_reply_to_name" type="text" 
+                	label="REPLY_TO_NAME" />
+                <field name="order_reply_to_email" type="text" 
+                	label="REPLY_TO_EMAIL" />
+
+                <field name="order_other_email_receive" type="text" 
+                	label="Other email received " hint="separated by comma" />
+
+                <field name="order_email_template_content_en_GB" type="editor"
+					label="TEMPLATE CONTENT English (UK)" filter="safehtml" /> 
+
+				<field name="order_email_template_content_fr_FR" type="editor"
+					label="TEMPLATE CONTENT French (FR)" filter="safehtml" /> 
+
+				<field name="order_email_template_content_it_IT" type="editor"
+					label="TEMPLATE CONTENT Italian (IT)" filter="safehtml" /> 
+					
+				<field name="order_email_template_content_de_DE" type="editor"
+					label="TEMPLATE CONTENT German (DE)" filter="safehtml" /> 
+			</fieldset>
+
+			<fieldset name="claim_setting" label="Claim setting">
+
+                <field name="claim_email_template" type="note" 
+                	label="EMAIL_TEMPLATE" close="true" />
+
+                <field name="claim_email_subject" type="text" 
+                	label="EMAIL_SUBJECT" />
+                <field name="claim_email_sendor_name" type="text" 
+                	label="EMAIL_SENDER_NAME" />
+                <field name="claim_reply_to_name" type="text" 
+                	label="REPLY_TO_NAME" />
+                <field name="claim_reply_to_email" type="text" 
+                	label="REPLY_TO_EMAIL" />
+                <field name="claim_other_email_receive" type="text" 
+                	label="Other email received" hint="separated by comma" />
+                <field name="claim_template_content_en_GB" type="editor"
+                	label="TEMPLATE CONTENT English (UK)" filter="safehtml" /> 
+
+                <field name="claim_template_content_fr_FR" type="editor"
+                	label="TEMPLATE CONTENT French (FR)" filter="safehtml" /> 
+
+                <field name="claim_template_content_it_IT" type="editor"
+                	label="TEMPLATE CONTENT Italian (IT)" filter="safehtml" /> 
+
+                <field name="claim_template_content_de_DE" type="editor"
+                	label="TEMPLATE CONTENT German (DE)" filter="safehtml" /> 
+			</fieldset>
+            
+            <fieldset name="productshow_setting" label="Product front-end setting">
+  
+                <field name="productshow_setting_num_slider" type="list" default="10" label="Number items product slideshow" description="">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="30">30</option>
+                  <option value="1000000">All</option>
+                </field>
+                
+                <field name="productshow_setting_num_product" type="list" default="10" label="Number items product" description="">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="30">30</option>
+                  <option value="1000000">All</option>
+                </field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

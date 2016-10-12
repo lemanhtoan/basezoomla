@@ -1,0 +1,77 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1327817-->                                    
+<!-- viaklixform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Elavon Virtual Merchant Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Elavon Virtual Merchant Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+  <input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+  <table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+    <tr> 
+      <td colspan=2 class="pdgheader"> <b>Elavon Virtual Merchant Settings</b> </td>
+    </tr>
+    <tr> 
+      <td colspan=2 class="pdgdata2">
+        <input type="checkbox" name="vkvirtualmerchant" value="Yes" !---VIAKLIX_VIRTUAL_MERCHANT_CHECK--- > I use Virtual Merchant <br><span class=pdgnote> Check for Elavon Virtual Merchant</span>
+      </td>
+    </tr>
+    <tr> 
+      <td width="50%" class="pdgdata1">Virtual Merchant ID:<br>
+        <span class=pdgnote>*Required for Virtual Merchant</span>
+      </td>
+      <td width="50%" class="pdgdata1">
+        <input type="text" name="vkvirtual" value="!---VIAKLIX__VIRTUAL_MERCHANT---" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="50%" class="pdgdata2">User ID:</td>
+      <td width="50%" class="pdgdata2">
+        <input type="text" name="vklogin" value="!---VIAKLIX_LOGIN---" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td class="pdgdata1">PIN:</td>
+      <td class="pdgdata1">
+        <input type="text" name="vkpassword" value="!---VIAKLIX_PASSWORD---" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td class="pdgdata2">Authorization Only:</td>
+      <td class="pdgdata2">
+        <input type="checkbox" name="vkauthmode" value="yes" !---VIAKLIX_AUTH_ONLY_CHECK--- >
+      </td>
+    </tr>
+    <tr> 
+      <td class="pdgdata1">Gateway:<br>
+        <span class=pdgnote>leave blank for default</span>
+      </td>
+      <td class="pdgdata1">
+        <input type="text" name="vkgateway" value="!---VIAKLIX_SERVER---" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td class="pdgdata2">Test mode: </td>
+      <td class="pdgdata2">
+        <input type=checkbox name="vktestmode" value="yes" !---VIAKLIX_TEST_MODE_CHECK--- >
+      </td>
+    </tr>
+    <tr> 
+      <td class="pdgdata1">File for logging transactions: </td>
+      <td class="pdgdata1">
+        <input type="text" name="vklogfile" value="!---VIAKLIX_LOG_FILE---" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" align="center">
+        <hr>
+        <input type="submit" class="pdgbutton" name="changeviaklix" value="Submit Changes">
+        <hr>
+      </td>
+    </tr>
+  </table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

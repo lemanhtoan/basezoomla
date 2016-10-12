@@ -1,0 +1,104 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2146770-->                                    
+<!--categoryinvform.htm-->
+<title>PDG Commerce Product Categories Inventory</title>
+<script type="text/javascript">
+function listinv(cat){
+		var newlocation = "!---MODULE_NAME---?" + "displayinventory=action&productcategory="+ cat +"&prodperpage=" + document.invform.prodperpage.value;
+		self.location=newlocation;
+
+}
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Product Categories Inventory</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+<table width="90%" cellpadding="5" border=0 class="pdg-flattenborders pdgbody" style="margin-left:4px; text-align:left" align="left">
+<!--	<tr>
+		<td class="pdgheader" colspan=2><b>Inventory Update</b></td>
+	</tr>
+	-->
+	<tr>
+		<td width="50%" valign=top><table>
+				<tr>
+					<td colspan=2><b>Commerce has
+						<!---NUMBER_OF_CATEGORIES--->
+						product categories.</b><br>
+						Commerce will only display 50 product categories at a time (the list is sorted by category code). You can start the list at any product category, just type in a starting code and click the "Start at Category" button.
+						<div class="frmblk" style="margin:8px">
+							<form method="post" action="!---MODULE_NAME---">
+								<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+								<input type="text" name="startatprodcat" value="!---PRODCAT_START_ENTRY---">
+								<input type="submit" class="pdgbutton" name="displayproductcategoriesinv" value="Start at Category" >
+								<input type="hidden" name="displayproductcategoriesinv" value="action" >
+							</form>
+						</div></td>
+				</tr>
+				<tr>
+					<td colspan=2><b>Select a Category to View Its Inventory</b> </td>
+				</tr>
+				<tr>
+					<td colspan=2 valign=top><div class="frmhidden">
+							<form method="#" action="post" name="invform">
+								<input type=hidden name=prodperpage value=50 >
+							</form>
+						</div></td>
+				</tr>
+				<tr>
+					<td  width="50%" valign=top align="center" class="pdgheader"><b>Product Category</b></td>
+					<td  width="50%" valign=top align="center" class="pdgheader"><b>Category Description</b></td>
+				</tr>
+				<!---PROD_CATAGORY_INV--->
+			</table></td>
+		<td width="50%" valign=top style="border-left:1PX SOLID"><form method=POST action="!---MODULE_NAME---">
+				<table >
+					<tr>
+						<td align=center><b>Inventory Rapid Update</b> </td>
+					</tr>
+					<tr>
+						<td> The inventory update data should contain a line for each product being updated, and each line should have a product sku and the quantity separated by a comma. You also have the option of adding a third column to adjust the inventory flags. (e.g. A0001,46 or A0001,46,key - look below for valid key values) <br>							
+							<div style="margin-top:8px">
+								<b>Using PDG .inv file format for Rapid Update</b>
+								<input type=checkbox name=cartinv value=yes>
+							</div></td>
+					</tr>
+					<tr>
+						<td align=center><div>
+								<textarea cols=30 rows=25 name=inventorycsv></textarea>
+							</div></td>
+					</tr>
+					<tr>
+						<td align=center><div>
+								<input type=submit name=rapidinvupdate value="Update Inventory">
+							</div></td>
+					</tr>
+				</table>
+			</form>
+			<table border=1 class="pdg-flattenborders" cellpadding="5" style="margin-top:8px">
+				<tr>
+					<td align=center><b>Product Key</b><br>
+						these keys are for products that are not in stock<br>
+					</td>
+					<td align=left><b>a</b> Display in Searches and allow backorder
+						<hr>
+						<b>b</b> If out of stock, DO NOT display in Searches, and allow backorder
+						<hr>
+						<b>c</b> Display in Searches and do NOT allow backorder
+						<hr>
+						<b>d</b> If out of stock, DO NOT display in Searches, and DO NOT allow backorder </td>
+				</tr>
+				<tr>
+					<td align=center><b>Option Key</b><br>
+						these keys are for items that are tracked by option<br>
+					</td>
+					<td><b>x</b> Do not track this option combination
+						<hr>
+						<b>y</b> Allow backorder and track this option combination
+						<hr>
+						<b>z</b> Do NOT allow backorder and track this option combination </td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

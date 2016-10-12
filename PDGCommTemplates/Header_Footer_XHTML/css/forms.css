@@ -1,0 +1,258 @@
+#inputsubmit {
+width: 150px ;
+margin-left: auto ;
+margin-right: auto ;
+}
+
+/***************************************
+ navigation login form
+***************************************/
+#navloginform {
+width:200px;
+margin:auto;
+}
+#navloginform fieldset{
+padding:2px;
+}
+#navloginform legend{
+font-weight:bold;
+font-size:9pt;
+}
+#navloginform label{
+display:block;
+height:2em;
+padding:2px 2px 0;
+}
+#navloginform input {
+width:100px;
+margin-right:5px;
+margin-top:-20px;
+border:1px solid #999999;
+float:right;
+clear:right;
+background:#fff;
+}
+#navloginform input:focus,#navloginform input:hover {
+border:1px solid #333333;
+}
+#navloginform input.navsubmitform {
+margin-top:10px;
+}
+#navinputsubmit {
+width: 80px ;
+margin-left: auto ;
+margin-right: auto ;
+}
+/***************************************
+login form
+***************************************/
+
+#loginform {
+width:300px;
+margin:auto;
+}
+#loginform fieldset{
+padding:10px;
+}
+#loginform legend{
+font-weight:bold;
+font-size:9pt;
+}
+#loginform label{
+display:block;
+height:2em;
+padding:10px 10px 0;
+}
+#loginform input {
+margin-right:20px;
+border:1px solid #999999;
+float:right;
+clear:right;
+background:#fff;
+}
+#loginform input:focus,#loginform input:hover {
+border:1px solid #333333;
+}
+
+/***************************************
+register form
+***************************************/
+
+#registerform {
+width:500px;
+margin:auto;
+}
+#registerform fieldset{
+padding:10px;
+}
+#registerform legend{
+font-weight:bold;
+font-size:9pt;
+}
+#registerform label{
+display:block;
+height:2em;
+padding:10px 10px 0;
+}
+#registerform input,#registerform select {
+margin-right:20px;
+margin-top:-25px;
+border:1px solid #999999;
+float:right;
+clear:right;
+background:#fff;
+}
+#registerform input.submitform {
+margin-top:10px;
+}
+#registerform input:focus,#registerform input:hover {
+border:1px solid #333333;
+}
+
+/***************************************
+ checkout form
+***************************************/
+
+#checkoutform {
+width:500px;
+margin:auto;
+}
+#checkoutform fieldset{
+padding:10px;
+}
+#checkoutform legend{
+font-weight:bold;
+font-size:9pt;
+}
+#checkoutform label{
+display:block;
+height:2em;
+padding:5px;
+}
+#checkoutform input,#checkoutform select {
+margin-right:20px;
+margin-top:-20px;
+border:1px solid #999999;
+float:right;
+clear:right;
+background:#fff;
+}
+#checkoutform input.submitform {
+margin-top:15px;
+}
+#basket {
+width: 500px ;
+margin-left: auto ;
+margin-right: auto ;
+padding:0px;
+}
+#checkoutform input:focus,#checkoutform input:hover {
+border:1px solid #333333;
+}
+
+/***************************************
+ Verify form
+***************************************/
+
+#verifyform {
+width:500px;
+margin:auto;
+}
+#verifyform fieldset{
+padding:10px;
+}
+#verifyform legend{
+font-weight:bold;
+font-size:9pt;
+}
+#verifyform label{
+display:block;
+height:2em;
+padding:5px;
+}
+#verifyform input,#verifyform select {
+margin-right:20px;
+margin-top:-20px;
+border:1px solid #999999;
+float:right;
+clear:right;
+background:#fff;
+}
+#verifyform input.submitform {
+margin-top:15px;
+}
+#verifyform input:focus,#verifyform input:hover {
+border:1px solid #333333;
+}
+
+/***************************************
+ search form
+***************************************/
+
+#searchform {
+width:400px;
+margin:auto;
+}
+#searchform fieldset{
+padding:5px;
+}
+#searchform legend{
+font-weight:bold;
+font-size:9pt;
+}
+#searchform label{
+display:block;
+height:2em;
+padding:10px 10px 0;
+}
+#searchform input,#searchform select {
+margin-right:20px;
+margin-top:-25px;
+border:1px solid #999999;
+float:right;
+clear:right;
+background:#fff;
+}
+#searchform input.submitform {
+margin-top:15px;
+}
+#searchform input:focus,#searchform input:hover {
+border:1px solid #333333;
+}
+
+
+/***************************************
+ ship estimate form
+***************************************/
+
+#shipestimate {
+width:380px;
+float:right;
+}
+#shipestimate fieldset{
+padding:2px;
+}
+#shipestimate legend{
+font-weight:bold;
+font-size:9pt;
+}
+#shipestimate label{
+display:block;
+height:2em;
+padding:5px 5px 0;
+}
+#shipestimate input,#shipestimate select {
+margin-right:5px;
+margin-top:-25px;
+border:1px solid #999999;
+float:right;
+clear:right;
+background:#fff;
+}
+#shipestimate input.submitform {
+margin:5px 0 10px 0;
+}
+#shipestimate input:focus,#searchform input:hover {
+border:1px solid #333333;
+}
+

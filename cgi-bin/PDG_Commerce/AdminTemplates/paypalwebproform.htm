@@ -1,0 +1,102 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2480712-->                                    
+<!--paypalwebproform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+PayPal Website Pro Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>PayPal Website Pro Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" id=form1 name=form1>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>PayPal Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata1"><a HREF="https://www.paypal.com/us/mrb/pal=7WM8BX8JUQJDW" target="_blank"><img  SRC="https://www.pdgsoft.com/images/paypal_signup.gif" BORDER="0"></a> </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2" width=50%> Select a PayPal Solution: </td>
+			<td class="pdgdata2" width=50%><input type=radio name="paypalexpresscheckoutonly" value="yes" !---PAYPAL_WEBPRO_EXPRESS_CHECKOUT_ONLY--- >
+				Express Checkout <br>
+				<input type=radio name="paypalexpresscheckoutonly" value="no" !---PAYPAL_WEBPRO_BOTH--- >
+				Website Payments Pro </td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> PayPal Website Pro User Name: </td>
+			<td class="pdgdata1"><input name="paypalwebproacct" value="!---PAYPAL_WEBPRO_ACCT---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> PayPal Website Pro Password: </td>
+			<td class="pdgdata2"><input type=password name="paypalwebpropw" value="!---PAYPAL_WEBPRO_PASSWORD---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> PayPal Website Pro Certificate File: <br>
+				<span class=pdgnote>*(path relative to PDG_Commerce directory)</span></td>
+			<td class="pdgdata1"><input name="paypalwebprocert" value="!---PAYPAL_WEBPRO_CERT_FILE---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> PayPal Website Pro Return to Store URL: <br>
+				<span class=pdgnote>*(redirect back to store - include http[s]://)</span></td>
+			<td class="pdgdata2"><input name="paypalwebproreturnurl" value="!---PAYPAL_WEBPRO_RETURN_TO_STORE_URL---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> PayPal Website Pro Cancel URL: <br>
+				<span class=pdgnote>*(redirect back to store URL - include http[s]://)</span></td>
+			<td class="pdgdata1"><input name="paypalwebprocancelurl" value="!---PAYPAL_WEBPRO_CANCEL_URL---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> PayPal Website Pro Authorization Type:</td>
+			<td class="pdgdata2"><select name="paypalwebproauthtype" >
+					<!---PAYPAL_WEBPRO_AUTHTYPE--->
+				</select></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> To which page do you want to return your customer? <br>
+				(How many PDG Shipping Methods do you have?)<br>
+				<span class=pdgnote>*only used for PayPal Express Checkout.</span></td>
+			<td class="pdgdata1"><input type=radio selected name="paypalwebproreturn" !---PAYPAL_WEBPRO_SHIP_SELECT--- value="selectshippingaction" size=50>
+				Return to Shipping Selection Page <br>
+				<span class=pdgnote>(I have more than one shipping method or use Rate Compare)</span><br>
+				<input name="paypalshiptemplate" value="!---PAYPAL_WEBPRO_SHIP_TEMPLATE---" size=50>
+				<br>
+				<input type=radio selected name="paypalwebproreturn" !---PAYPAL_WEBPRO_VERIFY_SELECT--- value="verifyaction" size=50>
+				Return to Verify Page <br>
+				<span class=pdgnote>(I have one or no shipping methods and I do not use Rate Compare)</span><br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">File to which PayPal transactions are logged: </td>
+			<td class="pdgdata2"><input name="paypalwebprologfile" value="!---PAYPAL_WEBPRO_LOGFILE---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> Log Pending PayPal transactions: </td>
+			<td class="pdgdata1"><input type=checkbox name="paypalwebprologpending" value="Yes" !---PAYPAL_WEBPRO_LOG_PENDING--- ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Send items ordered to PayPal:<br>
+			</td>
+			<td class="pdgdata2"><input type=checkbox name="paypalwebprosenditemdata" value="Yes" !---PAYPAL_WEBPRO_SEND_ITEM_DATA--- >
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> Use PayPal Address for both shipping and billing address:<br>
+				<span class=pdgnote>*only shipping addresses are provided by PayPal Website Pro</span><br>
+			</td>
+			<td class="pdgdata1"><input type=checkbox name="usepaypaladdrforboth" value="Yes" !---PAYPAL_WEBPROS_SHIP_ADDR_ONLY--- >
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2><br>
+				<input type="submit" class="pdgbutton" name="changepaypalwebpro" value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

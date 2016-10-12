@@ -1,0 +1,18 @@
+<div class="col-md-12">
+    <h1 class="page-header"><?php echo $layout['title'] ?></h1>
+</div>
+
+<div class="container-fluid" id="<?php echo $layout['id'] ?>">
+    <div class="row">
+        <?php foreach ($items as $post) : ?>
+            <div class="col-md-4 col-sm-6">
+                <div class="item">
+                    <a href="<?php echo $this->cmsurl($post) ?>">
+                        <img class="img-responsive" src="<?php echo $post->image->getImageUrl(800, 500) ?>" />
+                        <a class="title" href="<?php echo $this->cmsurl($post) ?>"><?php echo $post ?></a>
+                    </a>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>

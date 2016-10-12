@@ -1,0 +1,21 @@
+.pdghead {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 22px;
+font-weight: bold;
+color: #ffffff;
+background-color:#047E54;
+}
+
+.pdghead2 {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 22px;
+font-weight: bold;
+color: #ffffff;
+background-color:#0982C4;
+}
+
+.pdgcopy {
+font-family: Arial; 
+font-size: 10px;
+color: #646464;
+}

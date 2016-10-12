@@ -1,0 +1,73 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1184699-->                                    
+<!--scheduleshipmentform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Schedule Shipment</title>
+<script language=JavaScript>
+	function validaterequest(){
+		if (confirm ('Requesting this action will remove all orders not yet scheduled for delivery.\n'+
+			     'You will not be able to retrieve these orders for shipping once they have\n'+
+			     'been removed.  If you want to continue click [OK], otherwise click [Cancel].')){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>On-line Shipment Scheduling</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table class="pdgbody" id="edit_outer" width=100% cellpadding=5 cellspacing=0 border=0 >
+	<tr>
+		<td colspan=2 class="pdgheader"><b>Order Selection/Storage Options</b> </td>
+	</tr>
+	<tr>
+		<td colspan=2 valign=top><!---SET_ORDER_INST--->
+			<form method="POST" action="!---MODULE_NAME---">
+				Include the Following Web Store Orders for Shipment Scheduling
+				<input type=radio name=ordermem value=none !---ORDER_NONE_MEM--- >
+				None
+				<input type=radio name=ordermem value=UPS !---ORDER_UPS_MEM--- >
+				UPS only
+				<input type=radio name=ordermem value=all !---ORDER_ALL_MEM--- >
+				All
+				<input type="submit" class="pdgbutton" name=setordermem value="Set">
+			</form></td>
+	</tr>
+	<tr>
+		<td colspan=2 class="pdgheader"><b>New Orders</b> </td>
+	</tr>
+	<tr>
+		<td colspan=2 valign=top><form method="POST" action="!---MODULE_NAME---">
+				<table width=100%>
+					<tr>
+						<!---NEW_SHIPMENT--->
+					</tr>
+				</table>
+			</form></td>
+	</tr>
+	<tr>
+		<td colspan=2 class="pdgheader"><b>Partial or Failed Orders</b> </td>
+	</tr>
+	<tr>
+		<td colspan=2 valign=top><form method="POST" action="!---MODULE_NAME---">
+				<table  width=100%>
+					<tr>
+						<!---FAILED_SHIPMENTS--->
+					</tr>
+				</table>
+			</form></td>
+	</tr>
+	<tr>
+		<td colspan=2 class="pdgheader"><b>Remove All Orders</b> </td>
+	</tr>
+	<tr>
+		<td colspan=2 valign=top align=center><form method=post action="!---MODULE_NAME---" OnSubmit="return validaterequest()" >
+				<input type="submit" class="pdgbutton" name=removeallrtshiporders value="Remove All Orders" >
+			</form></td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

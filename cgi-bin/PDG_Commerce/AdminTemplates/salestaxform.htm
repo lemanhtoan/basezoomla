@@ -1,0 +1,152 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2663585-->                                    
+<!--salestaxform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Sales Tax Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Sales Tax Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Add A New Sales Tax Rule</b> </td>
+		</tr>
+		<tr>
+			<td align=left><table>
+					<tr>
+						<td align=left> Country: </td>
+					</tr>
+					<tr>
+						<td align=left><select name="salestaxcountry">
+								<!---COUNTRY_LIST--->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align=left> State (US and Canada Tax Only): </td>
+					</tr>
+					<tr>
+						<td align=left><select name="salestaxstate">
+								<option value="ZZ"> Non-US / Non-Canada </option>
+								<option value="AL"> Alabama (US) </option>
+								<option value="AK"> Alaska (US) </option>
+								<option value="AB"> Alberta (Canada) </option>
+								<option value="AZ"> Arizona (US) </option>
+								<option value="AR"> Arkansas (US) </option>
+								<option value="BC"> British Columbia (Canada) </option>
+								<option value="CA"> California (US) </option>
+								<option value="CO"> Colorado (US) </option>
+								<option value="CT"> Connecticut (US) </option>
+								<option value="DE"> Delaware (US) </option>
+								<option value="DC"> District of Columbia (US) </option>
+								<option value="FL"> Florida (US) </option>
+								<option value="GA"> Georgia (US) </option>
+								<option value="HI"> Hawaii (US) </option>
+								<option value="ID"> Idaho (US) </option>
+								<option value="IL"> Illinois (US) </option>
+								<option value="IN"> Indiana (US) </option>
+								<option value="IA"> Iowa (US) </option>
+								<option value="KS"> Kansas (US) </option>
+								<option value="KY"> Kentucky (US) </option>
+								<option value="LA"> Louisiana (US) </option>
+								<option value="ME"> Maine (US) </option>
+								<option value="MB"> Manitoba (Canada) </option>
+								<option value="MD"> Maryland (US) </option>
+								<option value="MA"> Massachusetts (US) </option>
+								<option value="MI"> Michigan (US) </option>
+								<option value="MN"> Minnesota (US) </option>
+								<option value="MS"> Mississippi (US) </option>
+								<option value="MO"> Missouri (US) </option>
+								<option value="MT"> Montana (US) </option>
+								<option value="NE"> Nebraska (US) </option>
+								<option value="NV"> Nevada (US) </option>
+								<option value="NB"> New Brunswick (Canada) </option>
+								<option value="NH"> New Hampshire (US) </option>
+								<option value="NJ"> New Jersey (US) </option>
+								<option value="NM"> New Mexico (US) </option>
+								<option value="NY"> New York (US) </option>
+								<option value="NF"> Newfoundland (Canada) </option>
+								<option value="NC"> North Carolina (US) </option>
+								<option value="ND"> North Dakota (US) </option>
+								<option value="NT"> Northwest Territories (Canada) </option>
+								<option value="NS"> Nova Scotia (Canada) </option>
+								<option value="NU"> Nunavut (Canada) </option>
+								<option value="OH"> Ohio (US) </option>
+								<option value="OK"> Oklahoma (US) </option>
+								<option value="OR"> Oregon (US) </option>
+								<option value="ON"> Ontario (Canada) </option>
+								<option value="PA"> Pennsylvania (US) </option>
+								<option value="PE"> Prince Edward Island (Canada) </option>
+								<option value="QC"> Quebec (Canada) </option>
+								<option value="RI"> Rhode Island (US) </option>
+								<option value="SK"> Saskatchewan (Canada) </option>
+								<option value="SC"> South Carolina (US) </option>
+								<option value="SD"> South Dakota (US) </option>
+								<option value="TN"> Tennessee (US) </option>
+								<option value="TX"> Texas (US) </option>
+								<option value="UT"> Utah (US) </option>
+								<option value="VT"> Vermont (US) </option>
+								<option value="VA"> Virginia (US) </option>
+								<option value="WA"> Washington (US) </option>
+								<option value="WV"> West Virginia (US) </option>
+								<option value="WI"> Wisconsin (US) </option>
+								<option value="WY"> Wyoming (US) </option>
+								<option value="YT"> Yukon Territory (Canada) </option>
+							</select>
+						</td>
+					</tr>
+				</table></td>
+			<td>
+			<table>
+				<tr>
+					<td>Tax Percent:</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="salestaxpercent" size="6" maxlength="6">
+						%</td>
+				</tr>
+				<tr>
+					<td>Sales Tax Label</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="salestaxlabel" size="15"></td>
+				</tr>
+				<tr>
+					<td>Tax Shipping?
+						<input type="checkbox" name="shippingmethodtaxable" value="yes" !---SHIP_RULE_TAX--- >
+				</tr>
+				</td>
+				
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2><input type="submit" class="pdgbutton" name="addsalestax" value="Add Sales Tax Rule">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>&nbsp;</td>
+		</tr>
+	</table>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=6 class="pdgheader"><b>Current Sales Tax Rules</b> </td>
+		</tr>
+		<tr>
+			<td align="center"><b>Country</b></td>
+			<td><b>State (US and Canada Only)</b></td>
+			<td><b>Tax Percent</b></td>
+			<td><b>Sales Tax Label</b></td>
+			<td><b>Tax Shipping?</b></td>
+			<td>&nbsp;</td>
+		</tr>
+		<!---SALES_TAX_RULES--->
+		<tr>
+			<td colspan="6">&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

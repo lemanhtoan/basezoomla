@@ -1,0 +1,110 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Untitled Document</title>
+<!---PDG_HEAD_INSERT--->
+<meta name="robots" content="index, follow" />
+</head>
+<body>
+<!--  Inserted from document Templates/Top_Nav.html BEGIN-->
+<!---TOP_NAV--->
+<!--  Inserted from document templates/Top_Nav.html END-->
+<table style="width:100%;">
+  <tr> 
+    <td style="text-align:center" class="pdgmain" colspan="4"> You have the option of logging 
+      in, registering or proceeding to checkout (without logging in or registering). 
+      Please select one of the actions listed below, then fill in the necessary 
+      information to continue with the checkout process. </td>
+  </tr>
+  <tr> 
+    <td style="text-align:center" class="pdgmain" colspan="4"> <hr /> </td>
+  </tr>
+  <tr>
+  <td style="text-align:right;" class="pdgmain" colspan="4">
+	<form method="post" action="!---SCRIPT_NAME---" style="text-align:right;float:right;">
+		<div class="pdg-no-display">
+		<!---FORCE_COOKIE_BABBLE--->
+		<!---BABBLE_EXPIRE_DATA--->
+		<input type="hidden" name="bypasscheckoutselect" value="yes" />
+		</div>
+
+		<table style="text-align:right;float:right;">
+		<tr> 
+		<td style="text-align:right;float:right;">
+			<table style="text-align:right;float:right;">
+			<tr> 
+			<td style="text-align:right;vertical-align:middle;" class="pdgmain"> User Name:<br /> </td>
+			<td style="text-align:left;vertcal-align:middle" class="pdgmain"> <input type="text" name="username" style="width:200px;" />
+			</td>
+			</tr>
+			<tr> 
+			<td style="text-align:left;vertcal-align:middle" class="pdgmain"> Password:<br /> </td>
+			<td style="text-align:left;vertcal-align:middle" class="pdgmain"> <input type="password" name="password" style="width:200px;"  />
+			</td>
+			</tr>
+			</table> 
+		</td>
+		<td style="text-align:left;vertcal-align:middle" class="pdgmain" > 
+		<!---LOGIN_LINK--->      
+		</td>
+		</tr>
+		</table>
+  	</form>
+     </td>
+    </tr>
+    <tr> 
+      <td style="text-align:center" class="pdgmain" colspan="4"> 
+ 
+  <br />
+  <hr />
+  <br /></td></tr>  
+	<tr>
+	<td style="text-align:center"  class="pdgmain" colspan="4">
+		<form method="post" action="!---SCRIPT_NAME---">
+		<div class="pdg-no-display">
+		<input type="hidden" name="gotocheckout" value="yes" />
+		<!---FORCE_COOKIE_BABBLE--->
+		</div>
+		<table>
+		<tr> 
+		<td style="text-align:right;vertical-align:middle;" class="pdgmain"> Customer&nbsp;Category Registration&nbsp;Code:      </td>
+		<td style="text-align:left;vertical-align:middle;" class="pdgmain"> <input type="text" name="custcatregcode" value="" style="width:200px" />
+		<br /> </td>
+		<td align="center" valign="middle" class="pdgmain"> 
+		<!---START_REGISTER_LINK--->      </td>
+		</tr>
+		</table>
+		</form>
+	</td>
+     </tr>
+    <tr> 
+      <td class="pdgmain" colspan="4"> 
+  <br />
+  <hr />
+  <br /></td></tr>  
+    <tr> 
+      <td style="text-align:right;vertical-align:middle;"  class="pdgmain" colspan="2"> I do not want 
+        to register or login. I just want to checkout! <br /> </td>
+      <td style="text-align:right;vertical-align:middle;"  class="pdgmain"> 
+	<form method="post" action="!---SCRIPT_NAME---">
+	<div class="pdg-no-display">
+	<!---FORCE_COOKIE_BABBLE--->
+	<input type="hidden" name="normalcheckout" value="yes" />        
+	</div>
+	<div class="pdg-checkout">
+	<!---CHECKOUT_LINK--->      
+	</div>
+	</form>
+	</td>
+    </tr>
+    <tr> 
+      <td style="text-align:center;vertical-align:middle;" class="pdgmain" colspan="4"> 
+  <br />
+  <hr />
+  <br /></td></tr>  
+</table>
+<!--  Inserted from document Templates/Bottom_Nav.html BEGIN-->
+<!---BOTTOM_NAV--->
+<!--  Inserted from document templates/Bottom_Nav.html END-->
+</body>
+</html>

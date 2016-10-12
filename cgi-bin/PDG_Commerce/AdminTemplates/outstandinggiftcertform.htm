@@ -1,0 +1,60 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--818953-->                                     
+<!--outstandinggiftcertform.htm-->
+<title>PDG Commerce Gift Certificates</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Gift Certificates</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<div !---DB_VERSION_ALERT--->
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=4 class="pdgheader"><b>Outstanding Gift Certificates</b> </td>
+		</tr>
+		<tr>
+			<td colspan=4>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=4><b>You Have
+				<!---NUM_OUTSTANDING_GCERTS--->
+				Purchased Gift Certificates Totaling
+				<!---OUTSTANDING_TOTAL--->
+				</b><br>
+				You are at position
+				<!---CURRENT_POSITION--->
+				in the Purchased Gift Certificates list<br>
+				<form method="post" action="!---MODULE_NAME---" >
+					<select name=startatnumber>
+						<!---SELECT_GCERT_JUMP--->
+					</select>
+					<input type="submit" class="pdgbutton" name=outstandinggcerts value="Position in List">
+				</form></td>
+		</tr>
+		<tr>
+			<td colspan=4>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=4 class="pdgheader"><b>Gift Certificate Listing</b></td>
+		</tr>
+		<tr>
+			<td align=left> Code </td>
+			<td align=right> Original Amount </td>
+			<td align=right> Amount Remaining </td>
+			<td align=right>&nbsp;</td>
+		</tr>
+		<!---OUTSTANDING_GCERTS--->
+		<tr>
+			<td colspan=4>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><!---PREVIOUS_POSITION--->
+			</td>
+			<td colspan=2 align=left><!---NEXT_POSITION--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=4>&nbsp;</td>
+		</tr>
+	</table>
+</div>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

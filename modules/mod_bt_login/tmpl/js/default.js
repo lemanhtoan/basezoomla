@@ -1,0 +1,803 @@
+jQuery.noConflict();
+if(typeof(BTLJ)=='undefined') var BTLJ = jQuery;
+if(typeof(btTimeOut)=='undefined') var btTimeOut;
+if(typeof(requireRemove)=='undefined') var requireRemove = true;
+
+var height_window = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; ///alert(height_window);
+
+BTLJ(document).ready(function() {
+ 
+	BTLJ('#btl-content').appendTo('body');
+	BTLJ(".btl-input #jform_profile_aboutme").attr("cols",21);
+	BTLJ('.bt-scroll .btl-buttonsubmit').click(function(){		
+		setTimeout(function(){
+			if(BTLJ("#btl-registration-error").is(':visible')){
+				BTLJ('.bt-scroll').data('jsp').scrollToY(0,true);
+			}else{
+				var position = BTLJ('.bt-scroll').find('.invalid:first').position();
+				if(position) BTLJ('.bt-scroll').data('jsp').scrollToY(position.top-15,true);
+			}
+		},20);
+	})
+	//SET POSITION
+	if(BTLJ('.btl-dropdown').length){
+		setFPosition();
+		BTLJ(window).resize(function(){
+			setFPosition();
+		})
+	}
+	
+	BTLJ(btlOpt.LOGIN_TAGS).addClass("btl-modal");
+	if(btlOpt.REGISTER_TAGS != ''){
+		BTLJ(btlOpt.REGISTER_TAGS).addClass("btl-modal");
+	}
+    
+    //forgot
+    BTLJ(btlOpt.FORGOT_TAGS).addClass("btl-modal");
+
+	// Login event
+	var elements = '#btl-panel-login';
+	if (btlOpt.LOGIN_TAGS) elements += ', ' + btlOpt.LOGIN_TAGS;
+	if (btlOpt.MOUSE_EVENT =='click'){ 
+		BTLJ(elements).click(function (event) {
+				showLoginForm();
+				event.preventDefault();
+		});	
+	}else{
+		BTLJ(elements).hover(function () {
+				showLoginForm();
+		},function(){});
+	}
+
+	// Registration/Profile event
+	elements = '#btl-panel-registration';
+	if (btlOpt.REGISTER_TAGS) elements += ', ' + btlOpt.REGISTER_TAGS;
+	if (btlOpt.MOUSE_EVENT =='click'){ 
+		BTLJ(elements).click(function (event) {
+			showRegistrationForm();
+			event.preventDefault();
+		});	
+		BTLJ("#btl-panel-profile").click(function(event){
+			showProfile();
+			event.preventDefault();
+		});
+	}else{
+		BTLJ(elements).hover(function () {
+				if(!BTLJ("#btl-integrated").length){
+					showRegistrationForm();
+				}
+		},function(){});
+		BTLJ("#btl-panel-profile").hover(function () {
+				showProfile();
+		},function(){});
+	}
+	BTLJ('#register-link a').click(function (event) {
+			if(BTLJ('.btl-modal').length){
+				BTLJ.modal.close();setTimeout("showRegistrationForm();",1000);
+			}
+			else{
+				showRegistrationForm();
+			}
+			event.preventDefault();
+	});	
+    
+    //forgot event
+    var elements = '#btl-panel-forgot';
+	if (btlOpt.FORGOT_TAGS) elements += ', ' + btlOpt.FORGOT_TAGS;
+	if (btlOpt.MOUSE_EVENT =='click'){ 
+		BTLJ(elements).click(function (event) {
+			showForgotForm();
+			event.preventDefault();
+		});	
+	}else{
+		BTLJ(elements).hover(function () {
+				showForgotForm();
+		},function(){});
+	}
+    
+    BTLJ('#forgot-link a').click(function (event) {
+		if(BTLJ('.btl-modal').length){
+			BTLJ.modal.close();
+            setTimeout("showForgotForm();",1000);
+		}
+		else{
+			showForgotForm();
+		}
+		event.preventDefault();
+	});	    
+    
+
+
+	// Close form
+	BTLJ(document).click(function(event){
+		if(requireRemove && event.which == 1) btTimeOut = setTimeout('BTLJ("#btl-content > div").slideUp();BTLJ(".btl-panel span").removeClass("active");',10);
+		requireRemove =true;
+	})
+	BTLJ(".btl-content-block").click(function(){requireRemove =false;});	
+	BTLJ(".btl-panel span").click(function(){requireRemove =false;});	
+	
+	// Modify iframe
+	BTLJ('#btl-iframe').load(function (){
+		//edit action form	
+		oldAction=BTLJ('#btl-iframe').contents().find('form').attr("action");
+		if(oldAction!=null){
+			if(oldAction.search("tmpl=component")==-1){
+				if(BTLJ('#btl-iframe').contents().find('form').attr("action").indexOf('?')!=-1){	
+					BTLJ('#btl-iframe').contents().find('form').attr("action",oldAction+"&tmpl=component");
+				}
+				else{
+					BTLJ('#btl-iframe').contents().find('form').attr("action",oldAction+"?tmpl=component");
+				}
+			}
+		}
+	});	
+	
+	//reload captcha click event
+	BTLJ('span#btl-captcha-reload').click(function(){
+		BTLJ.ajax({
+						type: "post",
+						url: btlOpt.BT_AJAX,
+						data: 'bttask=reload_captcha',
+						success: function(html){
+							BTLJ('#recaptcha img').attr('src', html);
+						}
+					});
+	});
+
+});
+
+function setFPosition(){
+	if(btlOpt.ALIGN == "center"){
+		BTLJ("#btl-content > div").each(function(){
+			var panelid = "#"+this.id.replace("content","panel");
+			var left = BTLJ(panelid).offset().left + BTLJ(panelid).width()/2 - BTLJ(this).width()/2;
+			if(left < 0) left = 0;
+			BTLJ(this).css('left',left);
+		});
+	}else{
+		if(btlOpt.ALIGN == "right"){
+			BTLJ("#btl-content > div").css('right',BTLJ(document).width()-BTLJ('.btl-panel').offset().left-BTLJ('.btl-panel').width());
+		}else{
+			BTLJ("#btl-content > div").css('left',BTLJ('.btl-panel').offset().left);
+		}
+	}	
+	BTLJ("#btl-content > div").css('top',BTLJ(".btl-panel").offset().top+BTLJ(".btl-panel").height()+2);	
+}
+
+// SHOW LOGIN FORM
+function showLoginForm(){
+    /*setTimeout(function(){
+        BTLJ("#username_focus").focus(); 
+    }, 1000);*/
+	BTLJ('.btl-panel span').removeClass("active");
+	var el = '#btl-panel-login';
+	if (btlOpt.LOGIN_TAGS) el += ', ' + btlOpt.LOGIN_TAGS;
+	BTLJ.modal.close();
+	var containerWidth = 0;
+	var containerHeight = 0;
+	containerHeight = 371;
+	containerWidth = 357;
+	
+	if(containerWidth>BTLJ(window).width()){
+		containerWidth = BTLJ(window).width()-50;
+	}
+	if(btlOpt.EFFECT == "btl-modal"){
+		BTLJ(el).addClass("active");
+		BTLJ("#btl-content > div").slideUp();
+		BTLJ("#btl-content-login").modal({
+			overlayClose:true,
+			persist :true,
+			autoPosition:true,
+			fixed: BTLJ(window).width()>500,
+			onOpen: function (dialog) {
+				dialog.overlay.fadeIn();
+				dialog.container.show();
+				dialog.data.show();		
+			},
+			onClose: function (dialog) {
+				dialog.overlay.fadeOut(function () {
+					dialog.container.hide();
+					dialog.data.hide();		
+					BTLJ.modal.close();
+					BTLJ('.btl-panel span').removeClass("active");
+				});
+			},
+			containerCss:{
+				height:containerHeight,
+				width:containerWidth
+			}
+		})			 
+	}
+	else
+	{	
+		setFPosition();
+		BTLJ("#btl-content > div").each(function(){
+			if(this.id=="btl-content-login")
+			{
+				if(BTLJ(this).is(":hidden")){
+					BTLJ(el).addClass("active");
+					BTLJ(this).slideDown();
+					}
+				else{
+					BTLJ(this).slideUp();
+					BTLJ(el).removeClass("active");
+				}						
+					
+			}
+			else{
+				if(BTLJ(this).is(":visible")){						
+					BTLJ(this).slideUp();
+					BTLJ('#btl-panel-registration').removeClass("active");
+				}
+			}
+			
+		})
+	}
+}
+
+// SHOW REGISTRATION FORM
+function showRegistrationForm(){
+	if(BTLJ("#btl-integrated").length){
+		window.location.href=BTLJ("#btl-integrated").val();
+		return;
+	}
+	BTLJ('.btl-panel span').removeClass("active");
+	BTLJ.modal.close();
+	var el = '#btl-panel-registration';
+	var containerWidth = 0;
+	var containerHeight = 0;
+	containerHeight = "auto";
+	containerWidth = "auto";
+	if(containerWidth>BTLJ(window).width()){
+		containerWidth = BTLJ(window).width();
+	}
+        
+        BTLJ("#btl-content-registration").css("max-height", BTLJ(window).height() - 180);
+	if(btlOpt.EFFECT == "btl-modal"){
+		BTLJ(el).addClass("active");
+		BTLJ("#btl-content > div").slideUp();
+		BTLJ("#btl-content-registration").modal({
+			overlayClose:true,
+			persist :true,
+			autoPosition:true,
+			fixed: BTLJ(window).width()>500,
+			onOpen: function (dialog) {
+				dialog.overlay.fadeIn();
+				dialog.container.show();
+				dialog.data.show();		
+			},
+			onClose: function (dialog) {
+				dialog.overlay.fadeOut(function () {
+					dialog.container.hide();
+					dialog.data.hide();		
+					BTLJ.modal.close();
+					BTLJ('.btl-panel span').removeClass("active");
+				});
+			},
+			containerCss:{
+				height:containerHeight,
+				width:containerWidth
+			}
+		})
+	}
+	else
+	{	
+		setFPosition();
+		BTLJ("#btl-content > div").each(function(){
+			if(this.id=="btl-content-registration")
+			{
+				if(BTLJ(this).is(":hidden")){
+					BTLJ(el).addClass("active");
+					BTLJ(this).slideDown();
+					}
+				else{
+					BTLJ(this).slideUp();								
+					BTLJ(el).removeClass("active");
+					}
+			}
+			else{
+				if(BTLJ(this).is(":visible")){						
+					BTLJ(this).slideUp();
+					BTLJ('#btl-panel-login').removeClass("active");
+				}
+			}
+			
+		})
+	}
+}
+
+
+
+// SHOW FORGOT FORM
+function showForgotForm(){
+	if(BTLJ("#btl-integrated").length){
+		window.location.href=BTLJ("#btl-integrated").val();
+		return;
+	}
+	BTLJ('.btl-panel span').removeClass("active");
+	BTLJ.modal.close();
+	var el = '#btl-panel-forgot';
+	var containerWidth = 0;
+	var containerHeight = 0;
+	containerHeight = "auto";
+	containerWidth = "auto";
+	if(containerWidth>BTLJ(window).width()){
+		containerWidth = BTLJ(window).width();
+	}
+	if(btlOpt.EFFECT == "btl-modal"){
+		BTLJ(el).addClass("active");
+		BTLJ("#btl-content > div").slideUp();
+		BTLJ("#btl-content-forgot").modal({
+			overlayClose:true,
+			persist :true,
+			autoPosition:true,
+			fixed: BTLJ(window).width()>500,
+			onOpen: function (dialog) {
+				dialog.overlay.fadeIn();
+				dialog.container.show();
+				dialog.data.show();		
+			},
+			onClose: function (dialog) {
+				dialog.overlay.fadeOut(function () {
+					dialog.container.hide();
+					dialog.data.hide();		
+					BTLJ.modal.close();
+					BTLJ('.btl-panel span').removeClass("active");
+				});
+			},
+			containerCss:{
+				height:containerHeight,
+				width:containerWidth
+			}
+		})
+	}
+	else
+	{	
+		setFPosition();
+		BTLJ("#btl-content > div").each(function(){
+			if(this.id=="btl-content-forgot")
+			{
+				if(BTLJ(this).is(":hidden")){
+					BTLJ(el).addClass("active");
+					BTLJ(this).slideDown();
+					}
+				else{
+					BTLJ(this).slideUp();								
+					BTLJ(el).removeClass("active");
+					}
+			}
+			else{
+				if(BTLJ(this).is(":visible")){						
+					BTLJ(this).slideUp();
+					BTLJ('#btl-panel-login').removeClass("active");
+				}
+			}
+			
+		})
+	}
+}
+
+
+
+// SHOW PROFILE (LOGGED MODULES)
+function showProfile(){
+	setFPosition();
+	var el = '#btl-panel-profile';
+	BTLJ("#btl-content > div").each(function(){
+		if(this.id=="btl-content-profile")
+		{
+			if(BTLJ(this).is(":hidden")){
+				BTLJ(el).addClass("active");
+				BTLJ(this).slideDown();
+				}
+			else{
+				BTLJ(this).slideUp();	
+				BTLJ('.btl-panel span').removeClass("active");
+			}				
+		}
+		else{
+			if(BTLJ(this).is(":visible")){						
+				BTLJ(this).slideUp();
+				BTLJ('.btl-panel span').removeClass("active");	
+			}
+		}
+		
+	})
+}
+
+
+
+// AJAX FORGOT
+function forgotAjax(){ 
+
+	BTLJ("#btl-forgot-error").hide();
+	BTLJ(".btl-error-detail").hide();
+	
+	if(BTLJ("#jform_email").val()==""){
+		BTLJ("#btl-forgot-error").html(btlOpt.MESSAGES.REQUIRED_EMAIL).show();
+		BTLJ("#jform_email").focus();
+		return false;
+	}
+
+	var emailRegExp = /^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.([a-zA-Z]){2,4})$/;
+	
+	if(!emailRegExp.test(BTLJ("#jform_email").val())){		
+		BTLJ("#btl-forgot-error").html(btlOpt.MESSAGES.EMAIL_INVALID).show();
+		BTLJ("#jform_email").focus().select();
+		return false;
+	}
+	
+	var datasubmit = BTLJ('#btl-content-forgot form').serialize();
+
+	BTLJ.ajax({
+	   type: "POST",
+	   beforeSend:function(){
+		   //BTLJ("#btl-register-in-process").show();			   
+	   },
+	   url: btlOpt.BT_AJAX,
+	   data: datasubmit,
+	   success: function(html){				  
+		  BTLJ("#btl-register-in-process").hide();	
+		  if(html.indexOf('$error$')!= -1){
+			  BTLJ("#btl-forgot-error").html(html.replace('$error$',''));  
+			  BTLJ("#btl-forgot-error").show();				  
+		   }else{				   
+			   BTLJ(".btl-formforgot").children("div").hide();
+			   BTLJ("#btl-success-2").html(html);	
+			   BTLJ("#btl-success-2").show();	
+               BTLJ("#user-registration p").hide();
+               BTLJ("#jform_email").hide();
+               BTLJ(".btl-buttonsubmit-forgot").hide();
+               
+			   setTimeout(function() {window.location.reload();},7000);
+
+		   }
+	   },
+	   error: function (XMLHttpRequest, textStatus, errorThrown) {
+			alert(textStatus + ': Ajax request failed');
+	   }
+	});
+	return false;
+}
+
+
+// AJAX REGISTRATION
+function registerAjax(){
+
+	BTLJ("#btl-registration-error").hide();
+        BTLJ("#btl-registration-error-fields").hide();
+	BTLJ(".btl-error-detail").hide();
+	
+        var fields = [ BTLJ("#btl-input-name"), 
+            BTLJ("#btl-input-email1"),
+            BTLJ("#btl-input-phone"), 
+            BTLJ("#btl-input-street"),
+            BTLJ("#btl-input-city"), 
+            BTLJ("#btl-input-zipcode"),
+            BTLJ("#btl-input-street-delevery"),
+            BTLJ("#btl-input-city-delevery"), 
+            BTLJ("#btl-input-zipcode-delevery"),
+            BTLJ("#btl-input-password1"),
+            BTLJ("#btl-input-password2")         
+        ];
+        var i = fields.length;
+        while (i--) {
+            fields[i].removeClass('red'); 
+            if (fields[i].val().length > 0 ) {
+            
+                fields.splice(i, 1);
+                
+            } else {
+                var val = fields;
+            
+                fields[i].addClass('red'); 
+            }
+            
+        }
+        //console.log(val);
+        //console.log(fields.length);
+        if(fields.length > 1){ //alert("fd");
+            BTLJ("#btl-registration-error-fields").html(btlOpt.MESSAGES.REQUIRED_FIELDS).show();
+            //console.log(btlOpt.MESSAGES.REQUIRED_FIELDS);
+        }
+        
+        //console.log(fields);
+
+	if(BTLJ("#btl-input-name").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_NAME).show();
+		BTLJ("#btl-input-name").focus();
+                //BTLJ("#btl-input-name").addClass('red');
+		return false;
+	}//else{BTLJ("#btl-input-name").removeClass('red');}
+
+	/*if(BTLJ("#btl-input-contact").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_CONTACT).show();
+		BTLJ("#btl-input-contact").focus();
+                //BTLJ("#btl-input-contact").addClass('red');
+		return false;
+	}*/
+
+
+	if(BTLJ("#btl-input-email1").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_EMAIL).show();
+		BTLJ("#btl-input-email1").focus();
+                //BTLJ("#btl-input-email1").addClass('red');
+		return false;
+	}
+	var emailRegExp = /^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.([a-zA-Z]){2,4})$/;
+	
+	if(!emailRegExp.test(BTLJ("#btl-input-email1").val())){		
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.EMAIL_INVALID).show();
+		BTLJ("#btl-input-email1").focus().select();
+               // BTLJ("#btl-input-email1").addClass('red');
+		return false;
+	}
+        
+	if(BTLJ("#btl-input-phone").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_PHONE).show();
+		BTLJ("#btl-input-phone").focus();
+                //BTLJ("#btl-input-phone").addClass('red');
+		return false;
+	}
+
+	if(BTLJ("#btl-input-street").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_STREET).show();
+		BTLJ("#btl-input-street").focus();
+               // BTLJ("#btl-input-street").addClass('red');
+		return false;
+	}
+
+	if(BTLJ("#btl-input-city").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_CITY).show();
+		BTLJ("#btl-input-city").focus();
+                //BTLJ("#btl-input-city").addClass('red');
+		return false;
+	}
+
+	if(BTLJ("#btl-input-zipcode").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_ZIPCODE).show();
+		BTLJ("#btl-input-zipcode").focus();
+                //BTLJ("#btl-input-zipcode").addClass('red');
+		return false;
+	}
+        
+        //delevery
+        if(BTLJ("#btl-input-street-delevery").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_STREET_DELEVERY).show();
+		BTLJ("#btl-input-street-delevery").focus();
+                //BTLJ("#btl-input-street-delevery").addClass('red');
+		return false;
+	}
+
+	if(BTLJ("#btl-input-city-delevery").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_CITY_DELEVERY).show();
+		BTLJ("#btl-input-city-delevery").focus();
+                //BTLJ("#btl-input-city-delevery").addClass('red');
+		return false;
+	}
+
+	if(BTLJ("#btl-input-zipcode-delevery").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_ZIPCODE_DELEVERY).show();
+		BTLJ("#btl-input-zipcode-delevery").focus();
+                //BTLJ("#btl-input-zipcode-delevery").addClass('red');
+		return false;
+	}
+        //btl-input-street-delevery
+
+	if(BTLJ("#btl-input-password1").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_PASSWORD).show();
+		BTLJ("#btl-input-password1").focus();
+                //BTLJ("#btl-input-password1").addClass('red');
+		return false;
+	}
+        
+        if(BTLJ("#btl-input-password1").val().length < 6 ){ 
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.LENGTH_PASSWORD).show();
+		BTLJ("#btl-input-password1").focus();
+		return false;
+	}
+        
+
+	if(BTLJ("#btl-input-password2").val()==""){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.REQUIRED_VERIFY_PASSWORD).show();
+		BTLJ("#btl-input-password2").focus();
+                //BTLJ("#btl-input-password2").addClass('red');
+		return false;
+	}
+
+	if(BTLJ("#btl-input-password2").val()!=BTLJ("#btl-input-password1").val()){
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.PASSWORD_NOT_MATCH).show();
+		BTLJ("#btl-input-password2").focus().select();
+		BTLJ("#btl-registration-error").show();
+		return false;
+	}
+
+
+	if(btlOpt.RECAPTCHA =="1"){
+		if(BTLJ('#recaptcha_response_field').length && BTLJ('#recaptcha_response_field').val()==''){
+			BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.CAPTCHA_REQUIRED).show();
+			BTLJ('#recaptcha_response_field').focus();
+			return false;
+		}	
+	}else if(btlOpt.RECAPTCHA =="2"){
+		if(BTLJ('#btl-captcha').length && BTLJ('#btl-captcha').val()==''){
+			BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.CAPTCHA_REQUIRED).show();
+			BTLJ('#btl-captcha').focus();
+			return false;
+		}	
+	}
+    
+    var numberRegExp = /^\d*$/;
+	if(!numberRegExp.test(BTLJ("#btl-input-zipcode").val())){		
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.NUMBER_ONLY_ZIPCODE).show();
+		BTLJ("#btl-input-zipcode").focus().select();
+		return false;
+	}
+        
+        if(!numberRegExp.test(BTLJ("#btl-input-zipcode-delevery").val())){		
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.NUMBER_ONLY_ZIPCODE_DELEVERY).show();
+		BTLJ("#btl-input-zipcode-delevery").focus().select();
+		return false;
+	}
+    
+    var phoneRegExp = /^(\+|-)?\d+$/; ///^\+(?:[0-9] ?){6,14}[0-9]$/;
+	if(!phoneRegExp.test(BTLJ("#btl-input-phone").val())){		
+		BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.NUMBER_ONLY_PHONE).show();
+		BTLJ("#btl-input-phone").focus().select();
+		return false;
+	}
+    
+
+	if(!numberRegExp.test(BTLJ("#btl-input-zipcode-delevery").val())){		
+	BTLJ("#btl-registration-error").html(btlOpt.MESSAGES.NUMBER_ONLY_ZIPCODE_DELEVERY).show();
+	BTLJ("#btl-input-zipcode-delevery").focus().select();
+	return false;
+	}    	
+	 	
+        
+	var datasubmit = BTLJ('#btl-content-registration form').serialize();
+    var height_window = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+	BTLJ.ajax({
+		   type: "POST",
+		   beforeSend:function(){
+               BTLJ("#btl-register-in-process").css("height", BTLJ(".btl-formregistration").height() + 1 +'px');
+			   BTLJ("#btl-register-in-process").show();			   
+		   },
+		   url: btlOpt.BT_AJAX,
+		   data: datasubmit,
+		   success: function(html){				  
+			   //if html contain "Registration failed" is register fail
+			  BTLJ("#btl-register-in-process").show();	
+			  if(html.indexOf('$error$')!= -1){
+				  BTLJ("#btl-registration-error").html(html.replace('$error$',''));  
+                  //console.log(BTLJ("#btl-registration-error"));
+                  var n = BTLJ("#btl-registration-error").length; 
+                  if(n > 0){
+                    BTLJ("#btl-register-in-process").css("height", BTLJ(".btl-formregistration").height() + 21 +'px');                   
+                    BTLJ("#btl-register-in-process").hide();
+                  }
+				  BTLJ("#btl-registration-error").show();
+				  if(btlOpt.RECAPTCHA =="1"){
+					  if(typeof(Recaptcha) != 'undefined'){
+						Recaptcha.reload();
+					  }else if(typeof(grecaptcha) != 'undefined'){
+						  grecaptcha.reset('bt-login-recaptcha');
+					  }
+				  }else if(btlOpt.RECAPTCHA =="2"){
+					BTLJ.ajax({
+						type: "post",
+						url: btlOpt.BT_AJAX,
+						data: 'bttask=reload_captcha',
+						success: function(html){
+							BTLJ('#recaptcha img').attr('src', html);
+						}
+					});
+				  }
+				  
+			   }else{
+	            BTLJ("#register-header").remove();
+                BTLJ("#register-success").css('display', 'block');                
+				BTLJ(".btl-formregistration").children("div").hide();
+				BTLJ("#btl-success").html(html);	
+			   	BTLJ("#btl-success").show();
+			   }
+		   },
+		   error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert(textStatus + ': Ajax request failed');
+		   }
+		});
+		return false;
+}
+
+// AJAX LOGIN
+function loginAjax(){     
+
+	if(BTLJ("#btl-input-username").val()=="") {
+		showLoginError(btlOpt.MESSAGES.REQUIRED_USERNAME);
+		return false;
+	}
+
+	if(BTLJ("#btl-input-password").val()==""){
+		showLoginError(btlOpt.MESSAGES.REQUIRED_PASSWORD);
+		return false;
+	}
+	
+	var emailRegExp = /^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.([a-zA-Z]){2,4})$/;
+	if(!emailRegExp.test(BTLJ("#btl-input-username").val())){	
+		showLoginError(btlOpt.MESSAGES.EMAIL_INVALID);	
+		BTLJ("#btl-input-username").focus().select();
+		return false;
+	}
+
+	//capcha
+	if(BTLJ("#jform_user_capcha").val()==""){
+		showLoginError(btlOpt.MESSAGES.REQUIRED_CAPCHA);
+		return false;
+	}
+	
+	var token = BTLJ('.btl-buttonsubmit input:last').attr("name");
+	var value_token = encodeURIComponent(BTLJ('.btl-buttonsubmit input:last').val()); 
+	var datasubmit= "bttask=login&username="+encodeURIComponent(BTLJ("#btl-input-username").val())
+	+"&passwd=" + encodeURIComponent(BTLJ("#btl-input-password").val())
+	+ "&"+token+"="+value_token
+	+"&return="+ encodeURIComponent(BTLJ("#btl-return").val());
+	
+	if(BTLJ("#btl-checkbox-remember").is(":checked")){
+		datasubmit += '&remember=yes';
+	}
+    
+    //alert(datasubmit);
+	
+	BTLJ.ajax({
+	   type: "POST",
+	   beforeSend:function(){
+		   BTLJ("#btl-login-in-process").show();
+		   BTLJ("#btl-login-in-process").css('height',BTLJ('#btl-content-login').outerHeight()+'px');		   
+	   },
+	   url: btlOpt.BT_AJAX,
+	   data: datasubmit,
+	   success: function (html, textstatus, xhrReq){
+	   //	alert(html);
+		  if(html == "1" || html == 1){
+  				//console.log("ok 1");
+			    window.location.href=btlOpt.BT_RETURN;
+		   }else{
+			   if(html.indexOf('</head>')==-1){		   
+			   		//console.log("error authe -1");
+					showLoginError(btlOpt.MESSAGES.E_LOGIN_AUTHENTICATE);
+				}
+				else
+				{
+					if(html.indexOf('btl-panel-profile')==-1){ 
+						//console.log("plugin -1");
+						showLoginError('Another plugin has redirected the page on login, Please check your plugins system');
+					}
+					else
+					{
+						//console.log("not ok");
+						window.location.href=btlOpt.BT_RETURN;
+					}
+				}
+		   }
+	   },
+	   error: function (XMLHttpRequest, textStatus, errorThrown) {
+	   		//console.log("ajax fail!");
+			alert(textStatus + ': Ajax request failed!');
+	   }
+	});
+	return false;
+}
+
+
+
+function showLoginError(notice,reload){
+	BTLJ("#btl-login-in-process").hide();
+	BTLJ("#btl-login-error").html(notice);
+	BTLJ("#btl-login-error").show();
+	if(reload){
+		setTimeout(function() {window.location.reload();},5000);
+	}
+}
+
+         

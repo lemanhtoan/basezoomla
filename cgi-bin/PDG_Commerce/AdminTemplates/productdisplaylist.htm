@@ -1,0 +1,31 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--564521-->                                     
+<!--  productdisplaylist.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Product Display List</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Product Display List</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<table height=300>
+<tr>
+<td>
+<a href="!---MODULE_NAME---?showdisplaylist&amp;listid=0" class="pdgoitab">Create New Product Display List</a><br>
+</td>
+</tr>
+<tr>
+<td>
+<!---PRODUCT_DISPLAY_LIST---></td>
+</tr>
+<tr>
+<td valign=middle>
+<form method="post" action="!---MODULE_NAME---" id="pdgproductlistall">
+<input type="hidden" name="showallproddisplaylist" value="action" ><input type="image" src="!---CONFIGROOT---_resources/images/famicons/arrow_refresh_small.png"  style="float:left;border:none;">
+<a href="javascript:void(0);" onClick="javascript:document.getElementById('pdgproductlistall').submit();" > refresh product display list</a>
+</form>
+</td>
+</tr>
+</table>
+
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

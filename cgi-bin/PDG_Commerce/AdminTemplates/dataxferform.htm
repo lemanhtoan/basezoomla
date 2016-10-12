@@ -1,0 +1,190 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3363273-->                                    
+<!--  dataxferform.htm  -->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+Product Data Import/Export</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Product Data Import/Export</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<!--cmt: li menu and seperators go here--->
+<!--cmt: <li class="seperator"></li> -->
+<li><a href="javascript:void(0)" tsid="import-section">Import Products</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="export-section">Export Products</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="filemanage-section">Manage Files</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="googlebase-section">Google Base Settings</a></li>
+<li class="seperator"></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-close.htm--->
+
+<!--cmt: import-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="import-section">
+<form method="post" action="!---MODULE_NAME---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+<!--		<tr>
+			<td class="pdgheader"><b>Import Products</b> </td>
+		</tr>-->
+		<tr>
+			<td align=center><table width=100%>
+					<tr>
+						<td width="50%" align="left" class="pdgdata1"><b>Synchronize</b> products with CSV file <span class="pdgnote">(The web site will only contain products found in the CSV)</span> </td>
+						<td width="50%" class="pdgdata1"><input type=radio name=importtype value=sync></td>
+					</tr>
+					<tr>
+						<td align="left" class="pdgdata2"><b>Append</b> CSV file to site's products <span class="pdgnote">(Only adds products to web site)</span> </td>
+						<td class="pdgdata2"><input type=radio name=importtype value=append></td>
+					</tr>
+					<tr>
+						<td class="pdgdata1"><b>Update</b> products with CSV file <span class="pdgnote">(Updates or adds products to web site)</span> </td>
+						<td class="pdgdata1"><input type=radio name=importtype value=update checked></td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center><b>Please Select Import File to Use</b><br>
+				<select name="csvfilename">
+					<option value=**FILE*NOT*SELECTED*>Please Select a CSV File</option>
+					<!---CSV_FILE_SELECT--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center><input type="submit" class="pdgbutton" name=importproddata value="Begin Importing Products">
+			</td>
+		</tr>
+	</table>
+</form>
+</div>
+<!--cmt: filemanage-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="filemanage-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+<!--	<tr>
+		<td class="pdgheader" ><b>Manage Files</b> </td>
+	</tr>-->
+	<tr>
+		<td align=center><form ACTION="!---MODULE_NAME---" METHOD=POST>
+				<!---CSV_FILE_MANAGEMENT--->
+			</form></td>
+	</tr>
+	<tr>
+		<td align=center>&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="pdgheader" ><b>Upload File (files with the same name will be over written)</b> </td>
+	</tr>
+	<tr>
+		<td align=center>&nbsp;
+			<form ENCTYPE="multipart/form-data" ACTION="!---MODULE_NAME---" METHOD=POST>
+				Upload Import File:
+				<input NAME="uploadfile" TYPE="file">
+				<input type="submit" class="pdgbutton" name=displaydataxfer VALUE="Send File">
+			</form></td>
+	</tr>
+	<tr>
+		<td align=center>&nbsp;</td>
+	</tr>
+</table>
+</div>
+<!--cmt: export-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="export-section">
+<form method="post" action="!---MODULE_NAME---" name=pdgexport>
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+<!--		<tr>
+			<td class="pdgheader" colspan=2><b>Export Products</b> </td>
+		</tr>-->
+		<tr>
+			<td align=center><table width="100%">
+					<tr>
+						<td width="50%" align="left" class="pdgdata1"> Create PDG Export File: </td>
+						<td width="50%" class="pdgdata1"><input type=text name=exportcsvname size=30>
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="pdgdata2"> Create Froogle Data Feed File: </td>
+						<td class="pdgdata2"><input type=text name=frooglecsvname size=30>
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="pdgdata1"> Create Yahoo Product Feed File: </td>
+						<td class="pdgdata1"><input type=text name=yahoocsvname size=30>
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="pdgdata2"> Select a product category if appropriate </td>
+						<td class="pdgdata2"><select name=prodcat>
+								<!---PRODUCT_CATEGORY_SELECT--->
+							</select>
+						</td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td align=center>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center><input type="submit" class="pdgbutton" name=exportproddata value="Begin Exporting Products">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type=hidden name=exportinit value=yes>
+ </td>
+		</tr>
+	</table>
+</form>
+</div>
+<!--cmt: googlebase-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="googlebase-section" class="page-section">
+<form method="post" action="!---MODULE_NAME---" >
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+<!--		<tr>
+			<td class="pdgheader" colspan=2><b>Google Base Settings</b> </td>
+		</tr>-->
+		<tr>
+			<td align=center><table width="100%">
+					<tr>
+						<td width="50%" align="left" class="pdgdata1"> Location of products: </td>
+						<td width="50%" class="pdgdata1"><input type=text name=googlelocation size=30 value="!---FROOGLE_LOCATION---">
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="pdgdata2"> Condition of products: </td>
+						<td class="pdgdata2"><input type=text name=googlecondition size=30 value="!---FROOGLE_CONDITION---">
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="pdgdata1"> User Defined field number for Google product type: </td>
+						<td class="pdgdata1"><input type=text name=googleudprodtype size=6 value="!---FROOGLE_PROD_TYPE_UD---">
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td align=center colspan=2><input type="submit" class="pdgbutton" name=updategooglebase value="Submit">
+						</td>
+					</tr>
+					<tr>
+						<td colspan=2 align=center></td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+</form>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-ftr.htm--->

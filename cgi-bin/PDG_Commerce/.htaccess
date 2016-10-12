@@ -1,0 +1,9 @@
+AuthUserFile /dev/null
+AuthGroupFile /dev/null
+AuthName Unknown
+AuthType Basic
+
+<Limit GET>
+deny from all
+</Limit>
+

@@ -1,0 +1,4 @@
+          <!--- Since this file gets embedded in an HTML page, you can
+	include HTML properties in here --->
+
+<b>This is a small gadget.</b> This gadget will wash your car for you once a week, without any prodding.  Also capable of ordering pizza every Friday evening.<p>

@@ -1,0 +1,532 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--11910598-->                                   
+<!--qbwcform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+QBWC For QuickBooks POS Settings</title>
+<script language="JavaScript">
+var imgcount=0;
+var thumbcount=0;
+function updateexampleimage(pathcheck){
+	var selectidx=document.qbwc.QBWC_IMAGE_NAME_SOURCE.selectedIndex;
+	if((selectidx>0)&&(selectidx<4)&&(document.qbwc.QBWC_IMAGE_EXTENSION.value.length>0)){
+		var tmp= new Array(5);
+	
+		if((imgcount==0)&&(pathcheck==1)&&(document.qbwc.QBWC_IMAGE_PATH.value.length>0)){
+			var dcheck=document.qbwc.QBWC_IMAGE_PATH.value.charAt(0);
+			var dlen=document.qbwc.QBWC_IMAGE_PATH.value.length-1;
+			if(dlen<0) dlen=0;
+			var dcheck2=document.qbwc.QBWC_IMAGE_PATH.value.charAt(dlen);
+			if(dcheck!='/'){
+				alert("your directory path should start with '/' or 'http[s]://");
+			}
+			if(dcheck2!='/'){
+				alert("your directory path should end with '/'");
+			}
+			imgcount++;
+		}
+	
+		tmp[0]="";
+		tmp[1]="[Item Number]";
+		tmp[2]="[UPC]";
+		tmp[3]="[ALU]";
+		tmp[4]="";
+		document.qbwc.showimagesetting.value=	document.qbwc.QBWC_IMAGE_PATH.value+ tmp[selectidx]+ document.qbwc.QBWC_IMAGE_EXTENSION.value;
+	}
+	else{
+		document.qbwc.showimagesetting.value="";
+	}
+}
+
+function updateexamplethumb(pathcheck){
+var selectidx=document.qbwc.QBWC_IMAGE_NAME_SOURCE.selectedIndex;
+	if((selectidx>0)&&(selectidx<4)&&(document.qbwc.QBWC_IMAGE_THUMB_SUFFIX.value.length>0)){
+		var tmp= new Array(5);
+		
+		if((thumbcount==0)&&(pathcheck==1)&&(document.qbwc.QBWC_IMAGE_THUMB_PREFIX.value.length>0)){
+			var dcheck=document.qbwc.QBWC_IMAGE_THUMB_PREFIX.value.charAt(0);
+			var dlen=document.qbwc.QBWC_IMAGE_THUMB_PREFIX.value.length-1;
+			if(dlen<0) dlen=0;
+			var dcheck2=document.qbwc.QBWC_IMAGE_THUMB_PREFIX.value.charAt(dlen);
+			
+			if(dcheck!='/'){
+				alert("your thumbnail directory path should start with '/' or 'http[s]://");
+			}
+			if(dcheck2!='/'){
+				alert("your thumbnail directory path should end with '/'");
+			}
+			thumbcount++;
+		}
+		tmp[0]="";
+		tmp[1]="[Item Number]";
+		tmp[2]="[UPC]";
+		tmp[3]="[ALU]";
+		tmp[4]="";
+		document.qbwc.showthumbsetting.value= document.qbwc.QBWC_IMAGE_THUMB_PREFIX.value+ tmp[selectidx]+ document.qbwc.QBWC_IMAGE_THUMB_SUFFIX.value;
+	}
+	else{
+		document.qbwc.showthumbsetting.value= "";
+	}
+}
+
+function validatestyle(){
+	if((document.qbwc.QBWC_STYLE_DESC_UD.value.length>0)&&
+	(document.qbwc.QBWC_STYLE_OPTION_UD.value.length>0)&&
+	(document.qbwc.QBWC_STYLE_DEPT_UD.value.length>0)){
+	}
+	else	if((document.qbwc.QBWC_STYLE_DESC_UD.value.length==0)&&
+	(document.qbwc.QBWC_STYLE_OPTION_UD.value.length==0)&&
+	(document.qbwc.QBWC_STYLE_DEPT_UD.value.length==0)){
+	}
+	else{
+		document.qbwc.QBWC_STYLE_DESC_UD.focus();
+		alert("you must fill in a value for all style user defined fields \n -or- \nyou must leave all style user defined fields blank");
+		return(false);
+	}
+	if((document.qbwc.qbwc_version.selectedIndex==0)&&(document.qbwc.QBWC_SUBTRACT_QTY_ON_ORDER.checked)){
+		alert("you must be using QB POS Version 6 to use the 'subtract quantity on customer/sales order feature' ");
+		document.qbwc.QBWC_SUBTRACT_QTY_ON_ORDER.checked=false;
+		return(false);
+
+	}
+	return(true);
+}
+
+function setqbposversion(){
+if("!---QBWC_QBPOS_VERSION---" == "9.0")
+document.qbwc.qbwc_version.selectedIndex=4;
+else if("!---QBWC_QBPOS_VERSION---" == "8.0")
+document.qbwc.qbwc_version.selectedIndex=3;
+else if("!---QBWC_QBPOS_VERSION---" == "7.0")
+document.qbwc.qbwc_version.selectedIndex=2;
+else if(!---QBWC_QBPOS_VERSION---0 == 60)
+document.qbwc.qbwc_version.selectedIndex=1;
+else
+document.qbwc.qbwc_version.selectedIndex=0;
+}
+
+/*
+function toggleadvanced(){
+	if(document.qbwc.advanceddisplay.value=="visible"){
+		document.qbwc.advanceddisplay.value="hidden";
+		document.getElementById('advanced').style.visibility = "hidden";
+	}
+	else{
+		document.qbwc.advanceddisplay.value="visible";
+		document.getElementById('advanced').style.visibility = "visible";
+	}
+}
+*/
+
+function setstyleuserdefs(){
+	if(document.qbwc.QBWC_ENABLE_STYLE_DISPLAY.checked) {
+		if((document.qbwc.QBWC_STYLE_OPTION_UD.value.length==0)&&
+		(document.qbwc.QBWC_STYLE_DESC_UD.value.length==0)&&
+		(document.qbwc.QBWC_STYLE_DEPT_UD.value.length==0)){
+			
+			document.qbwc.QBWC_STYLE_OPTION_UD.value='6';
+			document.qbwc.QBWC_STYLE_DESC_UD.value='7';
+			document.qbwc.QBWC_STYLE_DEPT_UD.value='8';
+		}
+	}
+	else{
+		document.qbwc.QBWC_STYLE_OPTION_UD.value='';
+		document.qbwc.QBWC_STYLE_DESC_UD.value='';
+		document.qbwc.QBWC_STYLE_DEPT_UD.value='';
+	}
+}
+
+function initpage(){
+	//document.qbwc.advanceddisplay.value="hidden";
+	updateexamplethumb(0);
+	updateexampleimage(0);
+	setqbposversion();
+	if(document.qbwc.qbwc_computer.value.length==0){
+		document.qbwc.qbwc_computer.value='localhost';
+	}
+	if((document.qbwc.QBWC_STYLE_OPTION_UD.value.length>0)||
+	(document.qbwc.QBWC_STYLE_DESC_UD.value.length>0)||
+	(document.qbwc.QBWC_STYLE_DEPT_UD.value.length>0)){
+		document.qbwc.QBWC_ENABLE_STYLE_DISPLAY.checked=true;
+	}
+	if(document.qbwc.qbwc_non_tax_cat.value.length==0){
+		document.qbwc.qbwc_non_tax_cat.value='Exempt';
+	}
+
+}
+PDG.callOnPageLoad(initpage);
+</script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>QBWC For QuickBooks POS Settings</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<!--cmt: li menu and seperators go here--->
+<li><a href="javascript:void(0)" tsid="general-section">General</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="productimport-section">Import</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="imgandstyles-section">Image and Style</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="advanced-section">Advanced</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form.htm--->
+<form method="post" name=qbwc action="!---MODULE_NAME---" onSubmit="return(validatestyle());" class="pdg_sectionfrm">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form-close.htm--->
+<!--cmt: general-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="general-section">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgdata2">QBWC for QuickBooks POS Status</td>
+			<td class="pdgdata2"><b><!---QB_POS_ACTIVE---></b></td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata1"><a href="http://demo.pdgsoft.com/QBWC_install.exe" target=_blank>Download the QuickBooks Web Connector</a> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata2"><a href="!---MODULE_NAME---?sendqwcfile=action" target=_blank>Download PDG Web Connector Configuration File(*.qwc)</a> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> QuickBooks Web Connector User: </td>
+			<td width=50% class="pdgdata1"><input type=text name=qbwc_user value="!---QBWC_USER---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> QuickBooks Web Connector Password: </td>
+			<td width=50% class="pdgdata2"><input type=text name=qbwc_pw value="!---QBWC_PW---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> QBPOS Company: </td>
+			<td width=50% class="pdgdata1"><input type=text name=qbwc_company value="!---QBWC_QBPOS_COMPANY---">
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> QBPOS Version: </td>
+			<td width=50% class="pdgdata2"><select name=qbwc_version>
+					<option>5</option>
+					<option>6</option>
+					<option value="7.0">7</option>
+					<option value="8.0">8</option>
+					<option value="9.0">9</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Import all orders as: </td>
+			<td width=50% class="pdgdata1"><input type=radio name=qbwc_qbpos_sales_order value="1" !---QBWC_QBPOS_IMPORT_SALES_ORDER--- >
+				Sales Orders (Pro and Multi-Store Pro versions only)<br>
+				<input type=radio name=qbwc_qbpos_sales_order value="2" !---QBWC_QBPOS_IMPORT_SALES_RECEIPT--- >
+				Sales Receipts (Retail versions please select this option)<br>
+				<input type=radio name=qbwc_qbpos_sales_order value="0" !---QBWC_QBPOS_IMPORT_ON_PAYMENT--- >
+				Based on Payment Type (Pro and Multi-Store Pro versions only)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class=pdgnote>(online methods import as receipts)</span><br>
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2><input type=submit class=pdgbutton value="Submit Changes" name=changeqbwcsettings>
+			</td>
+		</tr>		
+</table>
+</div>
+<!--cmt: productimport-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="productimport-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="nopdgheader"><b>QBWC Product Import Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Default inventory settings for out of stock items/products: </td>
+			<td width=50% class="pdgdata1"><select name="QBWC_INV_DEFAULT">
+					<!---QBWC_INV_DEFAULT_SELECT_OPTS--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Calculate inventory by subtracting quantity on customer/sales order from quantity on hand: </td>
+			<td width=50% class="pdgdata2"><input type=checkbox name=QBWC_SUBTRACT_QTY_ON_ORDER !---QBWC_SUBTRACT_QTY_ON_ORDER_CHECK--- value=yes>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Calculate inventory by adding quantity on purchase order to quantity on hand: </td>
+			<td width=50% class="pdgdata1"><input type=checkbox name=QBWC_ADD_QTY_ON_PURCHASE_ORDER !---QBWC_ADD_QTY_ON_PURCHASE_ORDER_CHECK--- value=yes>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Add newly imported products to the 'Inactive Product Category':<br>
+				<span class=pdgnote>Products will not be available for purchase until moved to another category.</span> </td>
+			<td width=50% class="pdgdata2"><input type=checkbox name="qbwc_new_prod_to_inactive" value="yes" !---QBWC_NEW_PROD_TO_INACTIVE--- >
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Do not move products from their assigned department/category within PDG during synchronization: </td>
+			<td width=50% class="pdgdata1"><input type=checkbox name="qbwc_donot_move_prod_to_cat" value="yes" !---QBWC_DO_NOT_MOVE_PROD_TO_CAT--- onChange="if(this.checked)document.qbwc.qbwc_leave_in_stage.checkec=true;">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Do not move products in the 'Inactive Product Category' during synchronization: </td>
+			<td width=50% class="pdgdata2"><input type=checkbox name="qbwc_leave_in_stage" value="yes" !---QBWC_LEAVE_IN_STAGE--- >
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Add the following as searchable keywords: </td>
+			<td width=50% class="pdgdata1"><input type=checkbox name=qbwc_use_UPC_for_keywords value="yes" !---QBWC_USE_UPC_IN_KEYWORDS--- >
+				UPC<br>
+				<input type=checkbox name=qbwc_use_ALU_for_keywords value="yes" !---QBWC_USE_ALU_IN_KEYWORDS--- >
+				ALU<br>
+				<input type=checkbox name=qbwc_use_DESC2_for_keywords value="yes" !---QBWC_USE_DESC2_IN_KEYWORDS--- >
+				Description 2 </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Add QBPOS value to the product's user defined field:<br>
+				<span class=pdgnote>*Enter a number 0-9 that corresponds to the appropriate user defined field or leave blank</span> </td>
+			<td width=50% class="pdgdata2"><input type=text name=qbwc_use_UPC_for_userdef value="!---QBWC_USE_UPC_IN_USERDEF---" size=2 maxlength=1>
+				UPC<br>
+				<input type=text name=qbwc_use_ALU_for_userdef value="!---QBWC_USE_ALU_IN_USERDEF---"  size=2 maxlength=1>
+				ALU<br>
+				<input type=text name=qbwc_use_DESC2_for_userdef value="!---QBWC_USE_DESC2_IN_USERDEF---"  size=2 maxlength=1>
+				Description 2<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Non-Tax category label: </td>
+			<td width=50% class="pdgdata1"><input type=text name=qbwc_non_tax_cat value="!---QBWC_NON_TAX_CATEGORY---" >
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2><input type=submit class=pdgbutton value="Submit Changes" name=changeqbwcsettings>
+			</td>
+		</tr>		
+</table>
+</div>
+<!--cmt: imgandstyles-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="imgandstyles-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>QBWC Product Image Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Image file source: <br>
+				<span class=pdgnote>This setting is for both thumbnail size and full size product images.</span> </td>
+			<td width=50% class="pdgdata1"><select name=QBWC_IMAGE_NAME_SOURCE>
+					<!---QBWC_IMAGE_NAME_SOURCE_SELECT_OPTS--->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Default setting for full size image file: <br>
+				<br>
+				Example:
+				<input type=text name=showimagesetting class="pdgdata2" style="border:none" value="" OnFocus()="this.blur();" size=40>
+			</td>
+			<td width=50% class="pdgdata2"><b>Directory path for full size image:</b>
+				<input type=text name=QBWC_IMAGE_PATH value="!---QBWC_IMAGE_PATH---" size=15 MAXLENGTH=100 onBlur="updateexampleimage(1);" onFocus="updateexampleimage(1);">
+				<span class=pdgnote>eg.&nbsp;'/images/'</span><br>
+				<br>
+				<b>Extension for full size image:</b>
+				<input type=text name=QBWC_IMAGE_EXTENSION value="!---QBWC_IMAGE_EXTENSION---" MAXLENGTH=100 onBlur="updateexampleimage(0);" onFocus="updateexampleimage(0);">
+				<span class=pdgnote>eg.&nbsp;'.JPG'</span><br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> Default setting for thumbnail size image file: <br>
+				<br>
+				Example:
+				<input type=text name=showthumbsetting class="pdgdata1" style="border:none" value="" OnFocus()="this.blur();" size=40>
+			</td>
+			<td width=50% class="pdgdata1"><b>Directory path for thumbnail image:</b>
+				<input type=text name=QBWC_IMAGE_THUMB_PREFIX value="!---QBWC_IMAGE_THUMB_PREFIX---" MAXLENGTH=100 onBlur="updateexamplethumb(1);" onFocus="updateexamplethumb(1);">
+				<span class=pdgnote>eg.&nbsp;'/images/thumb/'</span><br>
+				<br>
+				<b>Extension for thumbnail image:</b>
+				<input type=text name=QBWC_IMAGE_THUMB_SUFFIX value="!---QBWC_IMAGE_THUMB_SUFFIX---" MAXLENGTH=100 onBlur="updateexamplethumb(0);" onFocus="updateexamplethumb(0);">
+				<span class=pdgnote>eg.&nbsp;'.JPG'</span><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>QBWC Product Style Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata1"> A QuickBooks POS style is a group of products in the same department with an identical description. The size and attribute are different for each product in the 'style'. The settings below will allow you to display products with the same style on a single page with a dropdown menu for each product variation. </td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Enable style display (based on QB POS styles)<br>
+				<span CLASS=pdgnote>*by default this will use user defined fields 6,7, and 8.</span> </td>
+			<td class="pdgdata2"><input type=checkbox name=QBWC_ENABLE_STYLE_DISPLAY value="yes" onChange="setstyleuserdefs();">
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1"> Add the size/attribute to the product description<br>
+			</td>
+			<td class="pdgdata1"><input type=checkbox name=QBWC_ADD_ATTRIB_AND_SIZE_TO_DESC value="yes" !---QBWC_ADD_ATTRIB_AND_SIZE_TO_DESC_CHECK--- >
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> Display order for Attribute/Size: </td>
+			<td class="pdgdata2"><input type=radio name=QBWC_STYLE_ORDER value="ATTRIBUTE" !---QBWC_STYLE_ORDER_ATTR_CHECK--- >
+				Attribute first<br>
+				<input type=radio name=QBWC_STYLE_ORDER value="SIZE" !---QBWC_STYLE_ORDER_SIZE_CHECK--- >
+				Size first<br>
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=2><input type=submit class=pdgbutton value="Submit Changes" name=changeqbwcsettings>
+			</td>
+		</tr>		
+</table>
+</div>
+<!--cmt: advanced-section
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="page-section" id="advanced-section">
+		<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td colspan=2 class="nopdgheader"><b>Advanced QuickBooks POS Settings
+					<!---QB_POS_ACTIVE--->
+					</b> </td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> QBPOS Computer: </td>
+				<td width=50% class="pdgdata1"><input type=text name=qbwc_computer value="!---QBWC_QBPOS_COMPUTER---">
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Use the same customer for all orders: </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name=qbwc_use_web_customer value="yes" !---QBWC_USE_WEB_CUSTOMER--- >
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> QBPOS Inventory Store:<br>
+					<span class=pdgnote>*enter 1-10 to use quantity on hand from an individual store or leave blank to use a combined total from all stores.</span> </td>
+				<td width=50% class="pdgdata1"><input type=text name=qbwc_qbpos_store_for_inv value="!---QBWC_QBPOS_INV_STORE---" size=4 maxlength=2>
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> Do not change inventory settings for existing products: </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name=QBWC_DO_NOT_CHANGE_INV_SETTINGS !---QBWC_DO_NOT_CHANGE_INV_SETTINGS_CHECK--- value=yes>
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1">Do not change image settings for existing products:</td>
+				<td width=50% class="pdgdata1"><input type=checkbox name=QBWC_DO_NOT_CHANGE_IMAGE value=yes !---QBWC_DO_NOT_CHANGE_IMAGE_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> DO NOT update the web store: </td>
+				<td width=50% class="pdgdata2"><input type=checkbox name="qbwc_dont_change_item_desc" value="yes" !---QBWC_DONT_CHANGE_ITEM_DESC--- >
+					Product's Description<br>
+					<input type=checkbox name="qbwc_dont_change_cat_desc" value="yes" !---QBWC_DONT_CHANGE_CATEGORY_DESC--- >
+					Category's/Department's Description </td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">Default product weight:</td>
+				<td class="pdgdata1"><input type=text name=QBWC_DEFAULT_WT value="!---QBWC_DEFAULT_WT---" size=6>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">Do not change product weight for existing products:</td>
+				<td class="pdgdata2"><input type=checkbox name=QBWC_DONT_CHANGE_WT value="yes" !---QBWC_DONT_CHANGE_WT_CHECK--- size=6>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">POS Custom field label:
+					<input type=text name=QBWC_CUSTOM_LABEL_1 value="!---QBWC_CUSTOM_LABEL_1---" size=30></td>
+				<td class="pdgdata1">mapped to PDG:
+					<!---CUSTOM_TARGET_DROPDOWN_1--->
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">POS Custom field label:
+					<input type=text name=QBWC_CUSTOM_LABEL_2 value="!---QBWC_CUSTOM_LABEL_2---" size=30></td>
+				<td class="pdgdata2">mapped to PDG:
+					<!---CUSTOM_TARGET_DROPDOWN_2--->
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">POS Custom field label:
+					<input type=text name=QBWC_CUSTOM_LABEL_3 value="!---QBWC_CUSTOM_LABEL_3---" size=30></td>
+				<td class="pdgdata1">mapped to PDG:
+					<!---CUSTOM_TARGET_DROPDOWN_3--->
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">POS Custom field label:
+					<input type=text name=QBWC_CUSTOM_LABEL_4 value="!---QBWC_CUSTOM_LABEL_4---" size=30></td>
+				<td class="pdgdata2">mapped to PDG:
+					<!---CUSTOM_TARGET_DROPDOWN_4--->
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">POS Custom field label:
+					<input type=text name=QBWC_CUSTOM_LABEL_5 value="!---QBWC_CUSTOM_LABEL_5---" size=30></td>
+				<td class="pdgdata1">mapped to PDG:
+					<!---CUSTOM_TARGET_DROPDOWN_5--->
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">Do not update Custom fields on existing products:</td>
+				<td class="pdgdata2"><input type=checkbox name=QBWC_DONT_UPDATE_CUSTOM value="yes" !---QBWC_DONT_UPDATE_CUSTOM_CHECK--- >
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">Item template for styles:<br>
+					<span class=pdgnote>to change go to 'Site Design Template Settings'</span></td>
+				<td class="pdgdata1"><!---QBWC_STYLE_TEMPLATE--->
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2"> User defined field number (0-9) for QuickBooks POS Description:<br>
+					<span class=pdgnote>The contents of this user defined field should not be modified. The field is the key that determines which products have the same style.</span> </td>
+				<td class="pdgdata2"><input type=text name=QBWC_STYLE_DESC_UD value="!---QBWC_STYLE_DESC_UD---" size=4>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1"> User defined field number (0-9) for QuickBooks POS Department Code:<br>
+					<span class=pdgnote>The contents of this user defined field should not be modified. The field is the key that determines which products have the same style.</span> </td>
+				<td class="pdgdata1"><input type=text name=QBWC_STYLE_DEPT_UD value="!---QBWC_STYLE_DEPT_UD---" size=4>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2"> User defined field number (0-9) for QuickBooks POS Attribute/Size:<br>
+					<span class=pdgnote>The contents of this user defined field can be modified. The contents of this field will be a choice in the dropdown menu.</span> </td>
+				<td class="pdgdata2"><input type=text name=QBWC_STYLE_OPTION_UD value="!---QBWC_STYLE_OPTION_UD---" size=4>
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> QBPOS Log file: </td>
+				<td width=50% class="pdgdata1"><input type=text name=qbwc_logfile value="!---QBWC_LOGFILE---">
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata2"> QBPOS CustomerType: </td>
+				<td width=50% class="pdgdata2"><input type=radio name=QBWC_CUSTOMER_TYPE !---QBWC_CUST_TYPE_NOT_CHECK--- value="0">
+					Do not set CustomerType<br>
+					<input type=radio name=QBWC_CUSTOMER_TYPE !---QBWC_CUST_TYPE_STRING_CHECK--- value="1">
+					Use this string
+					<input type=text name="QBWC_CUSTOMER_TYPE_STRING" value="!---QBWC_CUSTOMER_TYPE_STRING---" size=12 maxlength=11 >
+					<br>
+					<input type=radio name=QBWC_CUSTOMER_TYPE !---QBWC_CUST_TYPE_CUSTCAT_CHECK--- value="2">
+					Use Customer Category Name<br>
+					<input type=radio name=QBWC_CUSTOMER_TYPE !---QBWC_CUST_TYPE_AFF_CHECK--- value="3">
+					Use Affiliate Code<br>
+				</td>
+			</tr>
+			<tr>
+				<td width=50% class="pdgdata1"> QBPOS Set IsUsingWithQB:<br>
+					<span class=pdgnote>Select to share the customer information with QuickBooks financial software. Required to offer a store charge account to the customer.</span> </td>
+				<td width=50% class="pdgdata1"><input type=checkbox name=QBWC_IS_USING_WITH_QB !---QBWC_IS_USING_WITH_QB_CHECK--- value="yes">
+				</td>
+			</tr>
+			<tr>
+				<td align=center colspan=2><input type=submit class=pdgbutton value="Submit Changes" name=changeqbwcsettings>
+				</td>
+			</tr>
+		</table>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-formftr1.htm--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/section-formftr2.htm--->

@@ -1,0 +1,39 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1129042-->                                    
+<!--upstrackform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+- UPS OnLine&reg;Tools Tracking Results</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>UPS OnLine<sup>&reg;</sup>Tracking Results</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---" id=form1 name=form1>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td class="pdgheader"> UPS<sup>&reg;</sup> Tracking Results </td>
+		</tr>
+		<tr>
+			<td>&nbsp;
+				<!---TRACK_RESULTS--->
+			</td>
+		</tr>
+		<tr>
+			<td > NOTICE: The UPS package tracking systems accessed via this service (the &quot;Tracking Systems&quot;) and tracking information obtained through this service (the &quot;Information&quot;) are the private property of UPS. UPS authorizes you to use the Tracking Systems solely to track shipments tendered by or for you to UPS for delivery and for no other purpose. Without limitation, you are not authorized to make the Information available on any web site or otherwise reproduce, distribute, copy, store, use or sell the Information for commercial gain without the express written consent of UPS. This is a personal service, thus your right to use the Tracking System or Information is non-assignable. Any access or use that is inconsistent with these terms is unauthorized and strictly prohibited. </td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align=center><input type="submit" class="pdgbutton" name="displayupstracking" value="Track New Package">
+			</td>
+		</tr>
+		<tr>
+			<td align=center><h5>UPS<sup>&reg;</sup>, UPS &amp; Shield Design<sup>&reg;</sup> and UNITED PARCEL SERVICE<sup>&reg;</sup><br>
+					are registered trademarks of United Parcel Service of America, Inc.</h5></td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

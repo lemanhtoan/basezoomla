@@ -1,0 +1,118 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--2305790-->                                    
+<!--2281937-->                                    
+<!--2258084-->                                    
+<!--prodcatdetailform.htm-->
+<title>Product Category Details</title>
+<script LANGUAGE="JavaScript" SRC="!---CONFIGROOT---_resources/compat/js/imageuploader.js"></script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Product Category Details</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<input type=hidden name=pdgimgdir value="!---IMG_DIRECTORY---" ID="imgdirpath">
+<form method="post" action="!---MODULE_NAME---" name="pdgform" target="main-content">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Product Category
+				<!---PROD_CAT_CODE--->
+				Details</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2><!---PROD_CAT_NAME--->
+			</td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Product Category Description:</td>
+			<td class="pdgdata1"><input type="text" name="catdesc" value="!---CAT_DESC---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Product Category Store Builder Template:</td>
+			<td class="pdgdata2"><input type="text" name="cattemplate" value="!---CAT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Product Category Image URL:
+				<script language=javascript>
+	<!--
+	var pdgimg="!---IMG_UPLOADER---";
+	if(pdgimg.length>0)
+		document.write('<a class="pdg-imageupload" onclick="javascript:imageupload(\'document.pdgform.catimage\',\'!---IMG_UPLOADER---\');">upload&nbsp;image</a>');
+	-->
+	</script>
+			</td>
+			<td class="pdgdata1"><input type="text" name="catimage" value="!---CAT_IMAGE---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Product Category Parent Code:</td>
+			<td class="pdgdata2"><input type="text" name="catparent" value="!---PROD_CAT_PARENT---" size="50"></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Product Category Specific Text:</td>
+			<td class="pdgdata1"><textarea rows="2" cols="50" name="cattext"><!---CAT_TEXT--->
+</textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" class="pdgbutton"  name="changecategorydetails" value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+</form>
+<form method="post" action="!---MODULE_NAME---">
+	<input type=hidden name=prodcatdisc value=disctype>
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="productindex.-99" value="index">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>Product Category
+				<!---PROD_CAT_CODE--->
+				Quantity Discounts</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata1"><!---PROD_CAT_NAME--->
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center height=50 class="pdgdata2"><input type="submit" class="pdgbutton pdgoitab" name=viewallqtydiscforpcat value="View ALL Quantity Discounts">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center height=50 class="pdgdata1"><br>
+				<select name=prodqtydisccustcat >
+					<option value=-1>Edit For ALL Customer Categories</option>
+					<!---CUST_CAT_SELECT_LIST--->
+				</select>
+				<input type="submit" class="pdgbutton pdgoitab" name=editcustcatqtydiscforprod value="Edit/View Selected Quantity Discount">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align=center height=50 class="pdgdata2"><br>
+				Copy
+				<select name=srccustcatpcatqtydisc>
+					<option value=-1>Select Customer Category</option>
+					<!---CUST_CAT_SELECT_LIST--->
+				</select>
+				quantity discount from product category code
+				<input name="copypcatsinglefromcode" size="20" maxsize="20">
+				to this product category's
+				<select name=destcustcatpcatqtydisc>
+					<option value=-1>Select Customer Category</option>
+					<!---CUST_CAT_SELECT_LIST--->
+				</select>
+				customer category quantity discount table
+				<input type="submit" class="pdgbutton"  name="copypcatsinglediscount" value="Copy Selected Discount">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align=center height=50 class="pdgdata1">Copy <b>ALL</b> discounts from product category code
+				<input name="copyallpcatdiscfrom" size="20" maxsize="20">
+				<input type="submit" class="pdgbutton"  name="copyallpcatdisc" value="Copy ALL Discounts">
+				<br>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

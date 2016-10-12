@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<VoidShipmentRequest>
+	<Request>
+		<TransactionReference>
+			<CustomerContext></CustomerContext>
+			<XpciVersion>1.0001</XpciVersion>
+		</TransactionReference>
+		<RequestAction>Void</RequestAction>
+		<RequestOption>1</RequestOption>
+	</Request>
+	<ShipmentIdentificationNumber></ShipmentIdentificationNumber>
+</VoidShipmentRequest>

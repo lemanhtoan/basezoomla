@@ -1,0 +1,115 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--3053184-->                                    
+<!--myobform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+MYOB Settings</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>MYOB Settings</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+<!--		<tr>
+			<td colspan=2 class="pdgheader"><b>MYOB Settings</b> </td>
+		</tr>-->
+		<tr>
+			<td width=50% class="pdgdata1"> Enable MYOB import files: </td>
+			<td width=50% class="pdgdata1"><input type=checkbox !---WRITE_MYOB_CSV--- name=writemyobcsv value=yes>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> MYOB customer import file name (customer cards import file): </td>
+			<td width=50% class="pdgdata2"><input type="text" value="!---MYOB_CUSTOMER_FILE---" name=myobcustomerfile>
+				<input type=submit name=sendmyobcustfile value="Download" class=pdgbutton>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> MYOB sales import file name (sales import file): </td>
+			<td width=50% class="pdgdata1"><input type="text" value="!---MYOB_ORDER_FILE---" name=myoborderfile>
+				<input type=submit name=sendmyoborderfile value="Download" class=pdgbutton>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Enable MYOB item file:<br>
+				<span class=pdgnote>*Note: this file is required if your products do not already exist in MYOB.</span> </td>
+			<td width=50% class="pdgdata2"><input type=checkbox value="yes" !---WRITE_MYOB_ITEMS--- name=writemyobitems>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> MYOB item import file name (item import file): </td>
+			<td width=50% class="pdgdata1"><input type="text" value="!---MYOB_ITEM_FILE---" name=myobitemfile>
+				<input type=submit name=sendmyobitemfile value="Download" class=pdgbutton>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> MYOB item vendor name:<br>
+				<span class=pdgnote>*Note: you can enter the vendor name here for all products or if you want to set on a per product basis, you can enter '#USERDEFx' to specify the user defined field that contains this data.</span> </td>
+			<td width=50% class="pdgdata2"><input type="text" value="!---MYOB_ITEM_VENDOR---" name=myobitemvendor>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> MYOB item asset account:<br>
+				<span class=pdgnote>*Note: you can enter the item asset account (5 digit number) for all products or if you want to set on a per product basis, you can enter '#USERDEFx' to specify the user defined field that contains this data.</span> </td>
+			<td width=50% class="pdgdata1"><input type="text" value="!---MYOB_ITEM_ASSET_ACT---" name=myobitemassetact>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> MYOB item income account:<br>
+				<span class=pdgnote>*Note: you can enter the item income account (5 digit number) for all products or if you want to set on a per product basis, you can enter '#USERDEFx' to specify the user defined field that contains this data.</span> </td>
+			<td width=50% class="pdgdata2"><input type="text" value="!---MYOB_ITEM_INCOME_ACT---" name=myobitemincomeact>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> MYOB item expense account:<br>
+				<span class=pdgnote>*Note: you can enter the item expense account (5 digit number) for all products or if you want to set on a per product basis, you can enter '#USERDEFx' to specify the user defined field that contains this data.</span> </td>
+			<td width=50% class="pdgdata1"><input type="text" value="!---MYOB_ITEM_EXPENSE_ACT---" name=myobitemexpenseact>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> Enable full skus for item import:<br>
+				<span class=pdgnote>*Note: the full sku is the base sku with option suffixes.</span> </td>
+			<td width=50% class="pdgdata2"><input type=checkbox value="yes" !---MYOB_USE_FULL_SKU--- name=myobusefullsku>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> My MYOB program is on a computer with MacOS:<br>
+			</td>
+			<td width=50% class="pdgdata1"><input type=checkbox value="yes" !---MYOB_USE_CR_EOL--- name=myobusecreol>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata2"> My Item Sales Status should be: </td>
+			<td width=50% class="pdgdata2"><input type=radio value="blank" !---MYOB_BLANK_SALE_STATUS--- name=myobsalestatus>
+				left blank<br>
+				<input type=radio value="auto" !---MYOB_AUTO_SALE_STATUS--- name=myobsalestatus>
+				set automatically based on the 'Payment Method'<br>
+				<input type=radio value="order" !---MYOB_ORDER_SALE_STATUS--- name=myobsalestatus>
+				set as an 'Order'<br>
+				<input type=radio value="invoice" !---MYOB_INVOICE_SALE_STATUS--- name=myobsalestatus>
+				set as an 'Invoice'<br>
+			</td>
+		</tr>
+		<tr>
+			<td width=50% class="pdgdata1"> My Item Sales Amount Paid should be: </td>
+			<td width=50% class="pdgdata1"><input type=radio value="none" !---MYOB_TOTAL_AMOUNT_PAID--- name=myobamtpaid>
+				set to the order total<br>
+				<input type=radio value="auto" !---MYOB_AUTO_AMOUNT_PAID--- name=myobamtpaid>
+				set automatically based on 'Payment Method'<br>
+				<input type=radio value="0.0" !---MYOB_ZERO_AMOUNT_PAID--- name=myobamtpaid>
+				set to 0.0 (zero)<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2><input type=hidden name=checkmyobposetting value=yes>
+				<input type=checkbox  !---MYOB_CUST_PO_CHECKBOX--- name=myobposetting value=yes>
+				Set the PDG Invoice to Customer Purchase Order and let MYOB create my invoice numbers. </td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type=submit class=pdgbutton value="Submit Changes" name=changemyobsettings>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

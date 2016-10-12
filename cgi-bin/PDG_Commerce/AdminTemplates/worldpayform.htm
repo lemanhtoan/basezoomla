@@ -1,0 +1,86 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1908240-->                                    
+<!--worldpayform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+WorldPay Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>WorldPay Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>WorldPay Settings</b> </td>
+		</tr>
+		<tr>
+			<td width=50% align=left class="pdgdata1">WorldPay account Installation ID:</td>
+			<td width=50% class="pdgdata1"><input type="text" name="worldpaycustid" value="!---WORLDPAY_INSTALL_ID---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">WorldPay preferred account:</td>
+			<td class="pdgdata2"><input type="text" name="worldpayprefacct" value="!---WORLDPAY_PREFACCT---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">WorldPay Server Name:</td>
+			<td class="pdgdata1"><input type="text" name="worldpayserver" value="!---WORLDPAY_SERVER---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">Transaction language:</td>
+			<td class="pdgdata2"><input type="text" name="worldpaylanguage" value="!---WORLDPAY_LANGUAGE---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">WorldPay authorization type:</td>
+			<td class="pdgdata1"><select name="worldpayauthtype">
+					<!---WORLDPAY_AUTHTYPE--->
+				</select></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">WorldPay transaction mode:</td>
+			<td class="pdgdata2"><select name="worldpaytestmode">
+					<!---WORLDPAY_TESTMODE--->
+				</select></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">WorldPay template for redirect back to the site:</td>
+			<td class="pdgdata1"><input type="text" name="worldpaytemplate" value="!---WORLDPAY_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">Template for post to WorldPay:</td>
+			<td class="pdgdata2"><input type="text" name="worldpayredirecttemplate" value="!---WORLDPAY_REDIRECT_TEMPLATE---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">WorldPay secret password for md5 signature:</td>
+			<td class="pdgdata1"><input type="text" name="worldpaysecret" value="!---WORLDPAY_SECRET---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">WorldPay callback password:</td>
+			<td class="pdgdata2"><input type="text" name="worldpayaddr" value="!---WORLDPAY_ADDR---" size="50"></td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">WorldPay temporary directory maximum size: </td>
+			<td valign=top class="pdgdata1"><input type="text" name="worldpaytmpdirmaxsize" value="!---WORLDPAY_TMP_DIR_MAX_SZE---" size="5">
+				K</td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata2">WorldPay connection type (buyit action only): </td>
+			<td valign=top class="pdgdata2"><input type="radio" name="worldpayconx" !---WORLDPAY_USE_GET--- value="get"  >
+				Get &nbsp;
+				<input type="radio" name="worldpayconx" !---WORLDPAY_USE_POST--- value="post"  >
+				Post </td>
+		</tr>
+		<tr>
+			<td align=left class="pdgdata1">File to which WorldPay transactions are logged:</td>
+			<td valign=top class="pdgdata1"><input type="text" name="worldpaylogfile" value="!---WORLDPAY_LOGFILE---" size="50"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><hr>
+				<input type="submit" class="pdgbutton" name="changeworldpay" value="Submit Changes">
+				<hr>
+			</td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

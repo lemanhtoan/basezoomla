@@ -1,0 +1,38 @@
+<div class="blog-views accordion-views">
+    <div class="views-content">
+        <?php for ($i=0;$i<count($items);$i++) : ?>
+            <article>
+                    <img src="<?php if(isset($items[$i]->image) && $items[$i]->image != '')echo $items[$i]->image->getImageUrl(1170,400);?>">
+                    <div class="post-time col-md-1 col-md-push-2">
+                        <p>
+                            <?php echo $items[$i]->updatedAt->format('M'); ?><br />
+                            <?php echo $items[$i]->updatedAt->format('d'); ?>
+                        </p>
+                    </div>
+                    <div class="col-md-7 col-md-push-2">
+                        <h2 class="article-title"><?php echo $items[$i]->name; ?></h2>
+                        <?php if($items[$i]->mode == "short" && $i != 0):?>
+                            <div class="teaser"><?php echo $items[$i]->description; ?></div>
+                        <?php endif; ?>
+                        <div class="article-body <?php if($items[$i]->mode == "full" || $i == 0) echo "full-node";?>">
+                            <?php echo $items[$i]->content; ?>
+                        </div>
+                        <?php if($items[$i]->mode == "short" && $i != 0):?><a href="javascript:void(0)" class="read-more">Read more</a><?php endif; ?>
+                    </div>
+            </article>
+        <?php endfor; ?>
+    </div>
+    <!--
+    <div class="pagination">
+        <a href="#" class="prev-page"><i class="fa fa-angle-left"></i></a>
+        <div class="list-page">
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+        </div>
+        <a href="#" class="next-page"><i class="fa fa-angle-right"></i></a>
+    </div>
+    -->
+</div>

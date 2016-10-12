@@ -1,0 +1,78 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--1749220-->                                    
+<!--paypalform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+PayPal IPN Configuration</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>PayPal IPN Configuration</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type=hidden name="configroot" value="!---CONFIGROOT---">
+	<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+		<tr>
+			<td colspan=2 class="pdgheader"><b>PayPal Settings</b> </td>
+		</tr>
+		<tr>
+			<td colspan=2 class="pdgdata2"><a HREF="https://www.paypal.com/us/mrb/pal=7WM8BX8JUQJDW" target="_blank"><img  SRC="https://www.pdgsoft.com/images/paypal_signup.gif" BORDER="0"></a> </td>
+		</tr>
+		<tr>
+			<td width= 50% class="pdgdata1"> PayPal Account: </td>
+			<td width= 50% class="pdgdata1"><input name="paypalacct" value="!---PAYPAL_ACCT---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2"> PayPal Server Name: (including http[s]://)</td>
+			<td class="pdgdata2"><input name="paypalserver" value="!---PAYPAL_SERVER---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">PayPal IPN Notify URL: (including http[s]://)</td>
+			<td class="pdgdata1"><input name="paypalreturnurl" value="!---PAYPAL_RETURN_URL---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">PayPal Redirect Template: </td>
+			<td class="pdgdata2"><input name="paypalredirect" value="!---PAYPAL_REDIRECT---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Page to Display When Returning to Your Site from PayPal After a Payment has been Completed: (including http[s]:// )</td>
+			<td class="pdgdata1"><input name="paypalreturntositeurl" value="!---PAYPAL_RETURN_TO_SITE_URL---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Page to Display When Returning to Your Site from PayPal After a Payment has been Canceled: (including http[s]:// )</td>
+			<td class="pdgdata2"><input name="paypalcanceltositeurl" value="!---PAYPAL_CANCEL_TO_SITE_URL---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">PayPal Temporary Directory Maximum Size: </td>
+			<td class="pdgdata1"><input name="paypaltmdirsize" value="!---PAYPAL_TMP_DIR_MAX_SIZE---" size=5>
+				K</td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">File to which PayPal transactions are logged: </td>
+			<td class="pdgdata2"><input name="paypallogfile" value="!---PAYPAL_LOGFILE---" size=50></td>
+		</tr>
+		<tr>
+			<td class="pdgdata1">Log Pending PayPal transactions to log files: </td>
+			<td class="pdgdata1"><input type=checkbox name="paypallogpending" value="Yes" !---PAYPAL_LOG_PENDING--- ></td>
+		</tr>
+		<tr>
+			<td class="pdgdata2">Send items ordered to PayPal:<br>
+				<span class="pdgnote">Note: If you are utilizing quantity or subtotal discounting, this feature should not be enabled.</span> </td>
+			<td class="pdgdata2"><input type=checkbox name="paypalsenditemdata" value="Yes" !---PAYPAL_SEND_ITEM_DATA--- >
+			</td>
+		</tr>
+		<tr>
+			<td align=center colspan=1><br>
+				<input type="submit" class="pdgbutton" name="changepaypal" value="Submit Changes">
+			</td>
+		</tr>
+	</table>
+	<table width=100%>
+		<tr>
+			<td align=center class="pdgcopy">&copy;1997-
+				<!---CURRENT_YEAR--->
+				PDG Software, Inc. </td>
+		</tr>
+	</table>
+</form>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

@@ -1,0 +1,706 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--14264094-->                                   
+<!--proddetailform.htm-->
+<title>Product: !---PROD_DESCRIPTION---</title>
+<script LANGUAGE="JavaScript" SRC="!---CONFIGROOT---_resources/compat/js/imageuploader.js"></script>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Product Definition</span>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-open.htm--->
+<!--cmt: li menu and seperators go here-->
+<li><a href="javascript:void(0)" tsid="general-section">General</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="images-section">Images</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="inventory-section">Inventory</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="category-section">Multiple Categories</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="salespricing-section">Sales and Pricing</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="softgoods-section">Softgoods</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="options-section">Options</a></li>
+<li class="seperator"></li>
+<li><a href="javascript:void(0)" tsid="userdata-section">User Defined Data</a></li>
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form.htm--->
+<input type=hidden name=pdgimgdir value="!---IMG_DIRECTORY---" ID="imgdirpath">
+<form method="post" action="!---MODULE_NAME---" name=pdgprodform style="margin:0px;padding:0px">
+	<input type=image name="changespecificproduct.!---PRODUCT_INDEX---" value=action src="!---CONFIGROOT---transparent.gif" style="display:none">
+	<input type="hidden" name="productcategory" value="!---PROD_CAT_CODE---">
+	<input type="hidden" name="returnaction" value="!---PREV_ACTION---">
+	<input type="hidden" name="productindex.!---PRODUCT_INDEX---" value="display">
+<!---INCLUDE AdminTemplates/_includes/sectionmnu-form-close.htm--->		
+<!--cmt: general-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="general-section">
+<div !---DISPLAY_ALERT--- ></div>
+		<!---PROD_CAT_NAME--->
+		<!---PROD_DESC_DISPLAY--->
+		<table class="pdgbody" width="100%" cellpadding="5" cellspacing="0" border="0">
+			<tr>
+				<td class="nopdgheader" colspan="3" ><a name="top"></a> <b>Product Settings</b> </td>
+			</tr>
+			<tr>
+				<td colspan="3" align="left">
+					<!---PROD_SKU--->					
+					<!---QBPOS_STYLE_DISPLAY_BUTTON--->
+					<hr>
+				</td>
+			</tr>
+			<!---DISPLAY_OLD_SKU--->
+			<tr>
+				<td  class="pdgdata1" >&nbsp;</td>
+				<td  class="pdgdata1" ><!---START_SKU_COLOR--->
+					Product Code:
+					<!---END_SKU_COLOR---></td>
+				<td  class="pdgdata1" width="60%"><input type="text" size="20" name="newsku" value="!---PROD_SKU---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">Product Category:</td>
+				<td class="pdgdata2"><!---PROD_CAT_CODE--->(!---PROD_CAT_LABEL---)</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">
+					<table><tr><!---MOVE_PRODUCT_ACTION---></tr></table>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">&nbsp;</td>
+				<td class="pdgdata1"><!---START_DESC_COLOR--->
+					One-line Description:
+					<!---END_DESC_COLOR---></td>
+				<td class="pdgdata1"><input type="text" size="50" maxsize="254" name="editproductdescription" value="!---PROD_DESCRIPTION---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2"><!---START_KEYWORD_COLOR--->
+					Keywords:
+					<!---END_KEYWORD_COLOR---></td>
+				<td class="pdgdata2"><input type=text name="editproductkeywords" value="!---PROD_KEYWORDS---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">&nbsp;</td>
+				<td class="pdgdata1">Product Displayed in Searches:</td>
+				<td class="pdgdata1"><input type="checkbox" name="editproductsearchable" !---PROD_SEARCHABLE--- ></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">Unit Price:</td>
+				<td class="pdgdata2"><input type="text" size="10" name="editproductprice" value="!---PROD_PRICE---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">&nbsp;</td>
+				<td class="pdgdata1">Taxable Price:</td>
+				<td class="pdgdata1"><input type="text" size="10" name="editproducttaxableprice" value="!---PROD_TAX_PRICE---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">Additional Unit Shipping:</td>
+				<td class="pdgdata2"><input type="text" size="10" name="editproductadditionalshipping" value="!---PROD_ADD_SHIP---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">&nbsp;</td>
+				<td class="pdgdata1">Minimum number to order:</td>
+				<td class="pdgdata1"><input type="text" size="10" name="editproductminqty" value="!---PROD_MIN_QTY---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">Maximum number to order:</td>
+				<td class="pdgdata2"><input type="text" size="10" name="editproductmaxqty" value="!---PROD_MAX_QTY---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">&nbsp;</td>
+				<td class="pdgdata1">Weight:</td>
+				<td class="pdgdata1"><input type="text" size="10" name="editproductweight" value="!---PROD_WEIGHT---">
+					lbs.</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">Unit Of Measure Label</td>
+				<td class="pdgdata2"><input type="text" size="50" name="editproductunitofmeasure" value="!---PROD_UNIT_OF_MEASURE---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">&nbsp;</td>
+				<td class="pdgdata1">Frequent Shopper Points:</td>
+				<td class="pdgdata1"><input type="text" size="10" name="editproductbonuspoints" value="!---PROD_BONUS_POINTS---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">Number of Items Per Box:</td>
+				<td class="pdgdata2"><input type="text" size="10" name="editproductnumberperbox" value="!---PROD_NUM_PER_BOX---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata1">&nbsp;</td>
+				<td class="pdgdata1">Product Dimensions:</td>
+				<td class="pdgdata1"> Height:
+					<input type="text" size="4" name="editproductheight" value="!---PROD_HEIGHT---">
+					Length:
+					<input type="text" size="4" name="editproductlength" value="!---PROD_LENGTH---">
+					Width:
+					<input type="text" size="4" name="editproductwidth" value="!---PROD_WIDTH---">
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">Allow Fraction Quantity?:</td>
+				<td class="pdgdata2"><input type="checkbox" name="editproductfractionqty" !---PROD_FRACTION_QTY--- ></td>
+			</tr>
+
+
+			<tr>
+				<td class="pdgdata1">&nbsp;</td>
+				<td class="pdgdata1">Item Template</td>
+				<td class="pdgdata1"><input type="text" size="35" name="editproductitemtemplate" value="!---PROD_ITEM_TEMPLATE---"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td colspan="2" class="pdgdata2">Specific Product Text:<br>
+					<textarea rows="8" cols="75" name="editproductdescfile" class="pdg-wysiwyg" editortitle="Product Text"><!---PROD_DESC_FILE--->
+</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2" align="center"><br>
+					<br>
+					<input type="submit" class="pdgbutton"  class="submit" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes"></td>
+			</tr>
+		</table>						
+</div>
+<!--cmt: images-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->			
+<div class="page-section" id="images-section">
+<div>
+		<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td class="pdgdata2" colspan="5">
+				<!---PROD_SKU---><hr>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan="5"><b>Image List</b> </td>
+			</tr>
+			<tr>
+				<td colspan="5">
+				<span class="pdgnote">The first images in the list are the main product and thumbnail images.</span>
+				<input type="hidden" size="35" name="editproductimageurl" value="!---PROD_IMAGE_URL---">
+				<input type="hidden" size="35" name="editproductthumburl" value="!---PROD_THUMB_URL---">
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgdata1"><b>#</b></td>
+				<td class="pdgdata1"><b>Large Image</b></td>
+				<td class="pdgdata1"><b>Thumbnail Image</b></td>
+				<td class="pdgdata1"><b>Alternate Text</b></td>
+				<td class="pdgdata1">&nbsp;</td>
+			</tr>
+			<!---EXTRA_IMAGE_LIST--->
+
+		</table>						
+</div>
+<div>
+		<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td class="pdgheader" colspan="5"><b>Add Another Image</b> </td>
+			</tr>
+			<tr>
+				<td class="pdgdata2"><input type="text" name="extraimgindex" value="" size="3"></td>
+				<td class="pdgdata2"><input type="text" name="extraimgurl" value=""></td>
+				<td class="pdgdata2"><input type="text" name="extrathumbimgurl" value=""></td>
+				<td class="pdgdata2"><input type="text" name="extraimgalt"></td>
+				<td class="pdgdata2"><input type="submit" name="addextraimg" value="Add image"></td>
+			</tr>
+			<tr>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">
+					<script language=javascript>
+	<!--
+	var pdgimg="!---IMG_UPLOADER---";
+	if(pdgimg.length>0)
+		document.write('<a class="pdg-imageupload" onclick="javascript:imageuploadprod(\'document.pdgprodform.extraimgurl\',\'document.pdgprodform.extrathumbimgurl\',\'!---IMG_UPLOADER---\');">upload&nbsp;image</a>');
+	-->
+	</script>
+				</td>
+				<td class="pdgdata2">
+					<script language=javascript>
+	<!--
+	var pdgimg="!---IMG_UPLOADER---";
+	if(pdgimg.length>0)
+		document.write('<a class="pdg-imageupload" onclick="javascript:imageuploadprod(\'document.pdgprodform.extrathumbimgurl\',\'\',\'!---IMG_UPLOADER---\');">upload&nbsp;image</a>');
+	-->
+	</script>
+				</td>
+				<td class="pdgdata2">&nbsp;</td>
+				<td class="pdgdata2">&nbsp;</td>
+			</tr>
+		</table>
+</div>
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;<br />
+</div>
+
+
+<!--cmt: inventory-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->			
+<div class="page-section" id="inventory-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td class="nopdgheader" colspan=3 ><a name="inventory"></a> <b>Inventory</b> </td>
+			</tr>
+			<tr>
+				<td colspan=3 align=left>
+					<!---PROD_SKU--->
+					<hr>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"><p>These settings allow you to control the inventory for this specific product. To enable tracking for this product, check the first box. To disable, leave the box unchecked. If the product has options, you may track inventory by its options by checking the second box.<br>
+&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>Track Inventory for Product?:</td>
+				<td><input type="checkbox" name="editproductkeepinventory" !---PROD_KEEP_INV--- ></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>Track Inventory for All Option Variations?:</td>
+				<td><input type="checkbox" name="editproductkeepinventorybyoptions" !---PROD_KEEP_OPTION_INV--- ></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2" align="center"><input type="submit" class="pdgbutton" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes"></td>
+			</tr>
+			<tr>
+				<td colspan=3>&nbsp;</td>
+			</tr>
+</table>						
+</div>
+<!--cmt: images-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->			
+<div class="page-section" id="category-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td>
+				<!---PROD_SKU---><hr>
+				</td>
+			</tr>
+			<tr>
+				<td>
+<p>These settings allow you to display this product in more than one category.  Check the categories in which this product should appear. You can include this product in up to 100 additional categories.  Please note: this product will automatically appear within its primary category and all parent categories of the primary (these boxes are checked and greyed out be default).<br>
+&nbsp;</p>
+<!---LINKED_CATEGORIES--->
+				</td>
+			</tr>
+			<tr>
+				<td>
+<br>
+<input type="submit" class="pdgbutton" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes">
+<br>
+				</td>
+			</tr>
+</table>
+</div>
+<!--cmt: salespricing-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="salespricing-section">		
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td colspan="3">
+				<!---PROD_SKU---><hr>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3><b>Dynamic Pricing</b> </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2 class="pdgdata1"><input type=checkbox name=allowdynamicpricing !---DYNAMIC_PRICE_CHECK--- value=yes>
+					Allow Dynamic Pricing for this product. </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2 class="pdgdata2"><input type=checkbox name=zerodynamictaxprice !---ZERO_TAX_DYNAMIC_PRICE_CHECK--- value=yes>
+					Set Dynamic Taxable Price to Zero. </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2" align="center"><input type="submit" class="pdgbutton" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes">
+					<br>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><b>Up Sales</b> </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2> Please enter the product SKU's for up sale below. The SKU's should be comma (,) separated and you may provide link text by following the SKU with the link text surrounded by brackets. <b>Note:</b> No commas (,) are allowed in the link text between the brackets.(ex. SKU1 [Click Here for Newer Version], SKU2 [Click here for Product with One Year Support Plan]). </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2><textarea rows="3" cols="75" name="editproductupsales"><!---PROD_UPSALE--->
+</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2" align="center"><input type="submit" class="pdgbutton" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes">
+					<br>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><b>Cross Sales</b> </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2> Please enter the product SKU's for cross sales below. The SKU's should be comma (,) separated and you may provide link text by following the SKU with the link text surrounded by brackets. <b>Note:</b> No commas (,) are allowed in the link text between the brackets. (ex. SKU1 [Click Here for Carrying Case], SKU2 [Click here for a One Year Support Plan]). </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2><textarea rows="3" cols="75" name="editproductcrosssales"><!---PROD_CROSSSALE--->
+</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2><input type=checkbox name=prodbasketcrosssale !---BASKET_CROSSSALE_CHECK--- value=yes>
+					Add cross sale links to the basket page output. (Note that this option determines the display on the default basket. To display these links on a customized basket template, you will need to use the appropriate PDG tags.) </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2><input type=checkbox name=prodmultiaddcrosssale !---MULTIADD_CROSSSALE_CHECK--- value=yes>
+					Display multiadd cross sale page when this product is added to the basket. (shows cross sale page before the basket is displayed) </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2> Cross Sale Multiadd Template:
+					<input type=text name=crosssalemultiaddtemplate value="!---MULTIADD_CROSSSALE_TEMPLATE---" size=40>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2" align="center"><input type="submit" class="pdgbutton" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes">
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><a name="category"></a> <b>Customer Category Pricing</b> </td>
+			</tr>
+			<tr>
+				<td colspan=3 align=left>
+					<!---PROD_SKU--->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"><p>This section allows you to enter product specific discounts for a customer category. Enter the discount amount in the input boxes provided. Entries left blank will default to the standard price or the default category price for the product. To set a new price enter the discount amount (for taxable price, enter the taxable discount immediately following the unit discount, separating the two with a colon. e.g. 12.00:10.00) then click the 'Submit Changes' button<br>
+&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan=2><div class="fntlarger"><b>Standard Product Price:
+						<!---PROD_PRICE--->
+						Standard Taxable Price:
+						<!---PROD_TAX_PRICE--->
+						</b> </div>
+					<table border=1 width=100% cellpadding=5>
+						<tr>
+							<td width="25%"><b>Customer&nbsp;Category</b></td>
+							<td width="25%"><b>Discount&nbsp;Type</b></td>
+							<td width="25%"><b><!---CUST_CAT_PRICING_LABEL---></b></td>
+							<td width="25%"><b>User&nbsp;Price</b></td>
+						</tr>
+						<!---PROD_PRICE_CAT--->
+					</table></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input type="submit" class="pdgbutton" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes"></td>
+			</tr>
+			<tr>
+				<td colspan=3>&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><a name="discount"></a> <b>Quantity Discounts</b> </td>
+			</tr>
+			<tr>
+				<td colspan=3 align=left>
+					<!---PROD_SKU--->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"><p>These settings allow you to pass along 'quantity price breaks' for this product. Establish the breaks by completing minimum and maximum fields with the minimum and maximum quantities. In the Unit Price Change field, enter the amount of the <b>discount</b>. (eg. -1.50, -2.00)<br>
+&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td colspan=3 align=center><table border=1>
+						<tr>
+							<td valign=middle align=center><input type="submit" class="pdgbutton pdgoitab" name=viewallqtydiscforprod value="View ALL Quantity Discounts">
+							</td>
+						</tr>
+						<tr>
+							<td valign=middle align=center><select name=prodqtydisccustcat>
+									<option value=-1>Edit For ALL Customer Categories</option>
+									<!---CUST_CAT_SELECT_LIST--->
+								</select>
+								<input type="submit" class="pdgbutton pdgoitab" name=editcustcatqtydiscforprod value="Edit/View Selected Quantity Discount">
+							</td>
+						</tr>
+						<tr>
+							<td valign=middle align=center> Copy
+								<select name=srccustcatprodqtydisc>
+									<option value=-1>Select Customer Categories</option>
+									<!---CUST_CAT_SELECT_LIST--->
+								</select>
+								quantity discount from product code
+								<input name="copyitemsinglediscfromsku" size="20" maxsize="20">
+								to this product's
+								<select name=destcustcatprodqtydisc>
+									<option value=-1>Select Customer Categories</option>
+									<!---CUST_CAT_SELECT_LIST--->
+								</select>
+								customer category quantity discount table
+								<input type="submit" class="pdgbutton" name="copysingleitemdiscount.!---PRODUCT_INDEX---"
+		value="Copy Selected Discount">
+							</td>
+						</tr>
+						<tr>
+							<td valign=middle align=center> Copy <b>ALL</b> discounts from product code
+								<input name="copyallitemdiscfromsku" size="20" maxsize="20">
+								<input type="submit" class="pdgbutton" name="copyallitemdiscount.!---PRODUCT_INDEX---" value="Copy ALL Discounts">
+							</td>
+						</tr>
+					</table></td>
+			</tr>
+			<tr>
+				<td colspan=3>&nbsp;</td>
+			</tr>	
+		</table>					
+</div>
+<!--cmt: softgoods-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="softgoods-section">			
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>
+			<tr>
+				<td colspan="3">
+				<!---PROD_SKU---><hr>
+				</td>
+			</tr>
+			<tr>
+				<td class="nopdgheader" colspan="3" ><a name="softgood"></a> <b>Product Softgoods</b> </td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2"><p>These are the settings required if you are to allow a customer to download a product, generate a key, or run an external program upon purchase. Fill out the settings and submit your changes if the product requires them. If the product does not require these settings, leave them blank.<br>
+&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2"><!---START_SG_DATA_COLOR--->
+					Softgood Data to Display on ThankYou / CreditAccept Template:
+					<!---END_SG_DATA_COLOR--->
+					<br>
+					<textarea rows="2" cols="75" name="editproductsoftgood"><!---PROD_SOFTGOOD--->
+</textarea></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><!---START_SG_PAYLOAD_COLOR--->
+					Location of Softgood Payload
+					<!---END_SG_PAYLOAD_COLOR--->
+				</td>
+				<td><input type="text" size="50" name="editproductsoftgoodpayload" value="!---PROD_SOFTGOOD_LOC---"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><!---START_SG_MIME_COLOR--->
+					MIME Type of Softgood Payload
+					<!---END_SG_MIME_COLOR--->
+				</td>
+				<td><input type="text" size="50" name="editproductsoftgoodmime" value="!---PROD_SOFTGOOD_MIME---"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>Maximum Number of Allowed Downloads of Softgood Payload</td>
+				<td><input type="text" size="3" name="editproductsoftgoodnumber" value="!---PROD_NUM_DOWNLAODS---"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>Duration of Download Window (in Minutes) of Softgood Payload</td>
+				<td><input type="text" size="6" name="editproductsoftgoodwindow" value="!---PROD_SOFTGOOD_WINDOW_DURATION---"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2" align="center"><input type="submit" class="pdgbutton" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes"></td>
+			</tr>
+			<tr>
+				<td colspan=3>&nbsp;</td>
+			</tr>
+		</table>
+		</div>
+<!--cmt: sectionidhere-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="options-section">
+<table class="pdgbody" width="100%" cellpadding="5" cellspacing="0" border="0">
+			<tr>
+				<td colspan="3" align="left">
+					<!---PROD_SKU---><hr>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><a name="option"></a> <b>Product Options</b> </td>
+			</tr>
+			<tr>
+				<td colspan="3"><p>This section defines the available options (eg. Color) for this product. Each option has definable selections (eg. Red, White, and Blue). When customers add this product to their shopping basket, they will choose one selection for each option. To remove a particular option, press the <b>Remove</b> button for that option. To add an option, enter its description and press <b>Add</b>. To view and modify option selections for a specific option, press the <b>Details</b> button next to that option.</p></td>
+			</tr>
+			<tr>
+				<td colspan=3 align=center><br>
+					<table bgcolor=#ffffff width=90% cellpadding=0 cellspacing=0>
+						<tr>
+							<td class="pdgheader" colspan=5><b>Add a New Option</b> </td>
+						</tr>
+						<tr>
+							<td valign="top"><input type="text" name="addproductoptionnumber" size="2" value="#" OnFocus="this.value='';"></td>
+							<td valign="top"><input type="text" name="addproductoptiondescriptoin" size="35" value="Enter Option Name" OnFocus="this.value='';">
+								<br>
+								<span class="pdgnote">(e.g. size/color)</span></td>
+							<td valign="top"><input type="submit"  class="pdgbutton" name="addproductoption.!---PRODUCT_INDEX---" value="Add"></td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan=5>&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="pdgheader"><b>Option #</b></td>
+							<td class="pdgheader"><b>Description</b></td>
+							<td class="pdgheader" colspan=3>&nbsp;</td>
+						</tr>
+						<!---PROD_OPTIONS--->
+					</table>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><b>Copy Options from Other Products</b> </td>
+			</tr>
+			<tr>
+				<td colspan="3"> Copy option number
+					<input type="text" name="addproductoptionfromindex" size="2">
+					from product
+					<input type="text" name="addproductoptionfromsku" size="20">
+					into row
+					<input type="text" name="addproductoptiontoindex" size="2">
+&nbsp;
+					<input type="submit"  class="pdgbutton" name="addproductoptioncopy.!---PRODUCT_INDEX---" value="Copy">
+					<br>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><b>Invalid Option Combination Rules</b> </td>
+			</tr>
+			<tr>
+				<td colspan="3"><p>Use this feature to Lock-Out certain option combinations. Which means, you can have Commerce stop customers from buying items with specific option combinations. Please select the invalid option combination below. Once you have made a selection please click on the <b>Add Invalid Combination Rule</b> button. You can also remove an existing Option Lock-Out by clicking the <b>Remove</b> button next to the invalid combination.</p></td>
+			</tr>
+			<tr>
+				<td colspan=3>
+				<table border=1 width=100% cellpadding=5>
+						
+							<tr><!---PROD_OPTION_LOCK--->
+	
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><b>Add a New Invalid Option Combination Rule</b> </td>
+			</tr>
+			<tr>
+				<td colspan=3 align=center><table border=1 bgcolor=#ffffff width=100% cellpadding=5>
+						<tr>
+							<td><b>Option #</b></td>
+							<td><b>Description</b></td>
+							<td><b>Selection</b></td>
+						</tr>
+						<!---PROD_OPTION_LOCK_SELECT--->
+					</table></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input type="submit"  class="pdgbutton" name="addproductlockoption.!---PRODUCT_INDEX---" value="Add Invalid Combination Rule">
+					<br>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><b>Default Option Combination</b> </td>
+			</tr>
+			<tr>
+				<td colspan="3"> Use this feature to select the default option combination for this product. This means that Commerce will load the combination displayed below when the preadd page is created for this item. You can only use this feature if you have an <b>Option Lock</b> defined in the area above. Simply select the desired default combination and then click on <b>Submit Default Option</b>. </td>
+			</tr>
+			<tr>
+				<td colspan=3><br>
+					<b>Current Default Setting:</b> </td>
+			</tr>
+			<tr>
+				<td colspan=3><table>
+						<!---PRODUCT_DEFAULT_OPTION--->
+					</table></td>
+			</tr>
+			<tr>
+				<td class="pdgheader" colspan=3 ><b>Select New Default Option Combination</b> </td>
+			</tr>
+			<tr>
+				<td colspan=3><table>
+						<!---PRODUCT_DEFAULT_OPTION_SELECT--->
+					</table></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input type="submit" class="pdgbutton" name="adddefaultoption.!---PRODUCT_INDEX---" value="Submit Default Option">
+					<br>
+					<br>
+				</td>
+			</tr>
+		</table>
+		</div>
+<!--cmt: userdata-section
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+<div class="page-section" id="userdata-section">
+<table class="pdgbody" width=100% cellpadding=5 cellspacing=0 border=0>			
+			<tr>
+				<td colspan="3" align="left">
+					<!---PROD_SKU---><hr>
+				</td>
+			</tr>
+			<tr>
+				<td class="nopdgheader" colspan=3 ><a name="userdef"></a> <b>User Defined Data</b> </td>
+			</tr>
+			<tr>
+				<td colspan="3"><p>These fields can be customized by the Administrator to add extra information about each product. Each user defined field should represent the same thing for all products. For example field one can be used for upsales. You can enter links for other products to buy, and then place the tag for User defined one on the Item page. The tag will place the contents of User defined one on the Item page. This is only one example of how User Defined fields can be used.<br>
+&nbsp;</p></td>
+			</tr>
+			<tr>
+				<td colspan="3"><table width=100% cellpadding=5>
+						<!---PROD_USER_DEF--->
+					</table></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input type="submit" class="pdgbutton" name="changespecificproduct.!---PRODUCT_INDEX---" value="Submit Changes"  class="submit">
+					<br>
+					<br>
+				</td>
+			</tr>
+		</table>
+</div>
+<!---INCLUDE AdminTemplates/_includes/section-formftr1.htm--->
+</form>
+<!---INCLUDE AdminTemplates/_includes/section-formftr2.htm--->

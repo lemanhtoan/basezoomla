@@ -1,0 +1,263 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Checkout - Please Provide Contact, Billing and Shipping Info</title>
+<!---SHIP_SELECT_JAVASCRIPT--->
+<!---PDG_HEAD_INSERT--->
+</head>
+<body>
+<!--  Inserted from document Templates/Top_Nav.html BEGIN-->
+!---TOP_NAV---
+<!--  Inserted from document templates/Top_Nav.html END-->
+
+<h1>Checkout</h1>
+<form method="post" action="!---SCRIPT_NAME---">
+<table style="border:none;">
+         <tr>
+          <td colspan="2" style="text-align:left;">
+        <!---USERMSG [USER], You Are Ordering the Following: ---><br /><br />
+        </td>
+         </tr>
+         <tr>
+           <td colspan="2" style="text-align:center;">
+      <table id="shopping-cart-table" class="data-table cart-table">
+                <colgroup><col width="1">
+                <col>
+                <col width="1">
+                                        <col width="1">
+                                        <col width="1">
+                            <col width="1">
+                                        <col width="1">
+
+                            </colgroup><thead>
+                    <tr class="first last">
+                        <th rowspan="1">&nbsp;</th>
+                        <th rowspan="1"><span class="nobr">Product Name</span></th>
+                        <th rowspan="1"></th>
+                                                <th class="a-center" colspan="1"><span class="nobr">Unit Price</span></th>
+                        <th rowspan="1" class="a-center">Qty</th>
+                        <th class="a-center" colspan="1">Subtotal</th>
+                        <th rowspan="1" class="a-center">&nbsp;</th>
+                    </tr>
+                                    </thead>
+		
+                <tfoot>
+                    <tr class="first last">
+                        <td align="right" colspan="50" class="a-right last">             
+                            <button type="submit" title="Continue Shopping" class="button" onclick="discountForm.submit(false)" name="return" value="action"><span><span>Continue Shopping</span></span></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <input type="hidden" name="defaction" value="recalc"><input type="submit" name="recalc" value="Recalculate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" title="Secure Checkout" class="button" onclick="discountForm.submit(false)" name="checkout" value="submit"><span><span>Secure Checkout</span></span></button>
+
+                        </td>
+                    </tr>
+                </tfoot>
+<!---BEGIN_REPEAT--->
+                <tbody>
+
+                                    <tr class="first last odd">
+    <td><img src="!---THUMB---" alt="!---DESC---" width="100"></td>
+    <td>
+        <h5 class="product-name">
+                    <!---DESC--->
+                </h5>
+                                                        </td>
+    <td class="a-center">
+               &nbsp;&nbsp;
+            </td>
+    
+    
+                <td class="a-right">
+                            <span class="cart-price">
+                                                &nbsp;&nbsp; <span class="price"><!---BASEAMOUNT---></span>                
+            </span>
+
+
+                    </td>
+                        <td class="a-center">
+        <input name="cart[563][qty]" value="!---QTY---" size="4" title="Qty" class="input-text qty" maxlength="12">
+    </td>
+        <td class="a-right">
+                    <span class="cart-price">
+        
+                                                <span class="price"><!---QTYAMOUNT---></span>                            
+        </span>
+            </td>
+            <td class="a-center last">&nbsp;&nbsp;</td>
+</tr>
+                                </tbody>
+           <!---END_REPEAT---> 
+</table>
+<br />
+        </td>
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:center;">
+        <!---SUBMIT_LINK--->
+        </td>
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:center;">
+        <h3>Contact Information</h3>
+                </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        name:</td>
+         <td style="text-align:left;">!---USERNAME---<input type="hidden" name="contactname" value="!---USERNAME---" /></td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        email:</td>
+         <td style="text-align:left;">!---EMAIL---<input type="hidden" name="contactemail" value="!---EMAIL---" /> </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        company:</td>
+         <td style="text-align:left;">!---COMPANY_NAME---<input type="hidden" name="company" value="!---COMPANY_NAME---" /> </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        phone:</td>
+         <td style="text-align:left;">!---PHONE1---<input type="hidden" name="phone1" value="!---PHONE1---" />              </td>
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:center;">
+         </td>
+         </tr>
+        <tr>
+         <td colspan="2" style="text-align:left;">
+        <h3>Billing Information</h3>
+        <p>If paying by credit card, then your billing name should match the name
+        on the credit card and your billing address should match your credit card's
+        billing address.</p>
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        first name:</td>
+         <td style="text-align:left;">
+        !---BILL_FIRST_NAME---<input type="hidden" name="billfirstname" value="!---BILL_FIRST_NAME---" /></td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        last name:</td>
+         <td style="text-align:left;">!---BILL_LAST_NAME---<input type="hidden" name="billlastname" value="!---BILL_LAST_NAME---" /> </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        address line 1:</td>
+         <td style="text-align:left;">!---BILL_STREET1---<input type="hidden" name="billstreet1" value="!---BILL_STREET1---" /></td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        address line 2:</td>
+         <td style="text-align:left;">!---BILL_STREET2---<input type="hidden" name="billstreet2" value="!---BILL_STREET2---" /></td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        city:</td>
+         <td style="text-align:left;">!---BILL_CITY---<input type="hidden" name="billcity" value="!---BILL_CITY---" />  </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        state (US/Canada):</td>
+         <td style="text-align:left;"><!---BILLSTATE---></td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        other (international):</td>
+         <td style="text-align:left;">!---BILL_PROVINCE---<input type="hidden" name="billprovince" value="!---BILL_PROVINCE---" /></td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        zip code:</td>
+         <td style="text-align:left;">!---BILL_ZIP---<input type="hidden" name="billzip" value="!---BILL_ZIP---" />             </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        Country:</td>
+         <td style="text-align:left;"><!---BILLCOUNTRY--->                                                          </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        billing comment:</td>
+         <td style="text-align:left;">!---BILL_TEXT---<input type="hidden" name="billtext" value="!---BILL_TEXT---" />       </td>
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:left;">
+        <h3>Shipping Information</h3>
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        ship via:</td>
+         <td style="text-align:left;"><!---SHIPPINGMETHOD--->
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        ship to</td>
+         <td style="text-align:left;"><!---SHIPPING_DEST_SELECT--->
+        </td>
+        </tr>
+        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        name:</td>
+         <td style="text-align:left;">!---SHIP_NAME---<input type="hidden" name="shipname" value="!---SHIP_NAME---" />                     </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        address line 1:</td>
+         <td style="text-align:left;">!---SHIP_STREET1---<input type="hidden" name="shipstreet1" value="!---SHIP_STREET1---" /> </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        address line 2:</td>
+         <td style="text-align:left;">!---SHIP_STREET2---<input type="hidden" name="shipstreet2" value="!---SHIP_STREET2---" />  </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        city:</td>
+         <td style="text-align:left;">!---SHIP_CITY---<input type="hidden" name="shipcity" value="!---SHIP_CITY---" />        </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        state (US/Canada):</td>
+         <td style="text-align:left;"><!---SHIPSTATE--->
+          </td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        other (international):</td>
+         <td style="text-align:left;">!---SHIP_PROVINCE---<input type="hidden" name="shipprovince" value="!---SHIP_PROVINCE---" /></td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        zip code:</td>
+         <td style="text-align:left;">!---SHIP_ZIP---<input type="hidden" name="shipzip" value="!---SHIP_ZIP---" /></td>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        country:</td>
+         <td style="text-align:left;"><!---SHIPCOUNTRY---><br>
+        </tr>
+        <tr>
+         <td style="text-align:left;">
+        shipping comment:</td>
+         <td style="text-align:left;">!---REG_SHIP_TEXT---<input type="hidden" name="shiptext" value="!---REG_SHIP_TEXT---" />
+        </tr>
+        <tr>
+         <td colspan="2" style="text-align:center;">
+        <p>&nbsp;</p>
+        <!---SUBMIT_LINK--->
+        </td>
+        </tr>
+</table>
+</form>
+
+<!--  Inserted from document Templates/Bottom_Nav.html BEGIN-->
+!---BOTTOM_NAV---
+<!--  Inserted from document templates/Bottom_Nav.html END-->
+</body>
+</html>

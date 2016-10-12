@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="COM_SEND_NEWSLETTER_FORM_LBL_NEWSLETTER_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" />
+        <field name="blog_articles" type="foreignkey" class="inputbox span8" multiple="multiple"
+            label="INCLUDE_BLOG_POSTS" input_type="list" table="#__blog" key_field="id" value_field="name"  /> 
+
+       <field name="filter_blog_articles" type="sql" class="inputbox"
+            onchange="this.form.submit();" translate="true"
+            query="SELECT `id`, `name` AS val FROM `#__blog`" key_field="id" value_field="val"
+             />
+
+        <field name="send_time" type="text" id="datetimepicker" label="SEND_TIME" />
+        <field name="is_sent" type="hidden" default="0" />
+	</fieldset>
+</form>

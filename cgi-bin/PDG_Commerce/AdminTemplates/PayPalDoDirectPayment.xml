@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+   <SOAP-ENV:Header>
+      <RequesterCredentials xmlns="urn:ebay:api:PayPalAPI" SOAP-ENV:mustUnderstand="1">
+         <Credentials xmlns="urn:ebay:apis:eBLBaseComponents">
+            <Username></Username>
+            <Password></Password>
+            <Subject/>
+         </Credentials>
+      </RequesterCredentials>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      <DoDirectPaymentReq xmlns="urn:ebay:api:PayPalAPI">
+         <DoDirectPaymentRequest>
+            <Version xmlns="urn:ebay:apis:eBLBaseComponents">1.0</Version>
+            <DoDirectPaymentRequestDetails xmlns="urn:ebay:apis:eBLBaseComponents">
+               <PaymentAction></PaymentAction>
+               <PaymentDetails>
+                  <OrderTotal currencyID="USD" xmlns="urn:ebay:apis:eBLBaseComponents">0.0</OrderTotal>
+			<InvoiceID/>
+               </PaymentDetails>
+               <CreditCard>
+                  <CreditCardType></CreditCardType>
+                  <CreditCardNumber></CreditCardNumber>
+                  <ExpMonth></ExpMonth>
+                  <ExpYear></ExpYear>
+                  <CardOwner>
+                     <Payer></Payer>
+                     <PayerName>
+                       <FirstName></FirstName>
+                       <LastName></LastName>
+                     </PayerName>
+                     <Address>
+                        <Street1></Street1>
+                        <CityName></CityName>
+                        <StateOrProvince></StateOrProvince>
+                        <Country></Country>
+                        <PostalCode></PostalCode>
+                     </Address>
+                  </CardOwner>
+               </CreditCard>
+            </DoDirectPaymentRequestDetails>
+         </DoDirectPaymentRequest>
+      </DoDirectPaymentReq>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

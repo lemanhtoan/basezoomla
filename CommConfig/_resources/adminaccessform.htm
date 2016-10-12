@@ -1,0 +1,48 @@
+<!--1208552-->
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+- Admin Users</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Admin Users</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method=post action="!---MODULE_NAME---">
+	<table width="100%" cellspacing="0" cellpadding="5" border="0">
+		<tr>
+			<td colspan="4" class="pdgheader"> Add New User </td>
+		</tr>
+		<tr>
+			<td width="25%"> User Name: </td>
+			<td width="25%"> Password: </td>
+			<td width="25%"> Confirm Password: </td>
+			<td width="25%">&nbsp;</td>
+		</tr>
+		<tr>
+			<td><input type="text" name="username" size="15">
+				<br>
+				<br>
+			</td>
+			<td><input type="password" name="password" size="15">
+				<br>
+				<br>
+			</td>
+			<td><input type="password" name="password2" size="15">
+				<br>
+				<br>
+			</td>
+			<td valign="top"><input type="submit" class="pdgbutton" name="adduser" value="Add New User">
+			</td>
+		</tr>
+	</table>
+</form>
+<table width="100%" cellspacing="0" cellpadding="5" border="0">
+	<tr>
+		<td class="pdgheader">Current Users </td>
+	</tr>
+	<tr>
+		<td><!---ADMIN_USERS--->
+		</td>
+	</tr>
+</table>
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->

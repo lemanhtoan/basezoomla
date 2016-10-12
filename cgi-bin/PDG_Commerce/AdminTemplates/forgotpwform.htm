@@ -1,0 +1,41 @@
+<!---INCLUDE AdminTemplates/_includes/compat-hdr.htm--->
+<!--731492-->                                     
+<!--forgotpwform.htm-->
+<title>
+<!---ADMIN_HEADER_LABEL--->
+- Forgot Administration Account Password</title>
+<!---INCLUDE AdminTemplates/_includes/compat-bdy.htm--->
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-hdr.htm--->
+<span>Admin Users</span>
+<!---INCLUDE AdminTemplates/_includes/compat-sectionmnu-ftr.htm--->
+<form method="post" action="!---MODULE_NAME---">
+<input type="hidden" name="returnaction" value="login=action">
+	<table width="100%" cellspacing="0" cellpadding="5" border="0">
+		<tr>
+			<td colspan="2" class="pdgheader"><b>Forgot Administration Account Password</b></td>
+		</tr>
+		<tr>
+			<td colspan="2" >You have forgot your PDG Commerce V5 password!. <br>  </td>
+		</tr>
+		<tr>
+			<td colspan="2" >Please fill in the information below and PDG Commerce Will send you a temporary account password.  Please note 
+			will have to change your temporary password once you log in.</td>
+		</tr>
+		<tr>
+			<td width="50%" align=right> User Name: </td>
+			<td width="50%" align=left> <input type="text" name="username" size="25"> </td>
+		</tr>
+		<tr>
+			<td width="50%" align=right> Email: </td>
+			<td width="50%" align=left> <input type="text" name="email" size="25"> </td>
+		</tr>
+		<tr>
+			<td colspan=2 align=center><input type="submit" class="pdgbutton" name="sendadminpw" value="Submit">
+
+			</td>
+		</tr>
+	</table>
+
+</form>
+
+<!---INCLUDE AdminTemplates/_includes/compat-ftr.htm--->
